@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.4">
-<info created="D:20151109100231" modified="D:20151109100443"/>
+<info created="D:20151109100231" modified="D:20151109213844"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -202,13 +202,13 @@ h
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
 <dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
 <textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
 <textsize name="Large" value="\Large"/>
 <textsize name="LARGE" value="\LARGE"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="Huge" value="\Huge"/>
-<textsize name="small" value="\small"/>
 <textsize name="footnote" value="\footnotesize"/>
-<textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
 <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
 <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
@@ -236,39 +236,39 @@ h
 <view layers="alpha" active="alpha"/>
 <view layers="beta" active="beta"/>
 <view layers="gamma" active="gamma"/>
-<path layer="alpha" matrix="0.75 0 0 1 48 0" stroke="black">
+<path layer="alpha" matrix="0.1875 0 0 0.25 172 408" stroke="black" pen="heavier">
 224 512 m
 224 576 l
 192 544 l
 h
 </path>
-<path matrix="-0.75 0 0 1 400 0" stroke="black">
+<path matrix="-0.1875 0 0 0.25 260 408" stroke="black" pen="heavier">
 224 512 m
 224 576 l
 192 544 l
 h
 </path>
-<path layer="beta" stroke="black">
-240 512 m
+<path layer="beta" matrix="0.25 0 0 0.25 160 408" stroke="black" pen="heavier">
+248 512 m
 192 560 l
 208 576 l
 h
 </path>
-<path stroke="black">
-216 512 m
+<path matrix="0.25 0 0 0.25 160 408" stroke="black" pen="heavier">
+200 512 m
 256 560 l
 240 576 l
 h
 </path>
-<path layer="gamma" stroke="black">
+<path layer="gamma" matrix="0.25 0 0 0.25 160 408" stroke="black" pen="heavier">
 240 512 m
 240 576 l
-192 560 l
+192 544 l
 h
 </path>
-<path stroke="black">
+<path matrix="0.25 0 0 0.25 160 408" stroke="black" pen="heavier">
 208 512 m
-256 560 l
+256 544 l
 208 576 l
 h
 </path>

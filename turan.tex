@@ -67,10 +67,11 @@ For example,
 \[
     \ex(n,\{\edgea,\vertexb,\vertexc,\disjointb,\disjointc\}) = n-2 \enspace .
 \]
-This is because the set $X$ in this case forbids any form of crossings
-between the edges of triangles. Thus, the number maximum number of
-triangles we can have while avoiding $X$ is the number of triangles in
-a triangulation of a convex $n$-gon, i.e., $n-2$.
+This is because the set
+$X=\{\edgea,\vertexb,\vertexc,\disjointb,\disjointc\}$ in this case
+forbids any form of crossings between the edges of triangles. Thus, the
+number maximum number of triangles we can have while avoiding $X$ is the
+number of triangles in a triangulation of a convex $n$-gon, i.e., $n-2$.
 
 \begin{table}
 \begin{center}
@@ -117,18 +118,17 @@ of $\ex(n,X)$.
   Let $S$ be a set of triangles that achieves $\ex(n,X)$. For each pair
   of vertices $u$ and $w$ independently and uniformly choose a direction
   $\overrightarrow{uw}$ or $\overleftarrow{uw}$.  We then obtain a set
-  $S'\subseteq S$ by removing any triangle that has a directed edge
-  for which the triangle is to the left of the edge.  Observe that the
-  set $S'$ does not contain any pair of triangles forming an $\edgeb$
-  configuration.
+  $S'\subseteq S$ by removing any triangle that has a directed edge for
+  which the triangle is to the left of the edge.  Observe that the set
+  $S'$ does not contain a $\edgeb$ configuration.
 
   For any particular triangle $t\in S$, the probability that $t\in S'$
   is exactly $1/8$ since each of $t$'s three edges much be directed
-  clockwise.  By linearity of expectation, $\E[|S'|]\ge|S|/8=\ex(n,X)/8$.
-  We conclude therefore that there exists some subset $S''\subseteq S$
-  of size least $\ex(n,X)/8$ that does not contain a pair of triangles
-  that form an $\edgeb$ configuration.  The set $S''$ proves that
-  $\ex(n,X\cup\{\edgeb\}) \ge \ex(n,X)/8$.
+  clockwise and edge directions are chosen independently.  By linearity of
+  expectation, $\E[|S'|]=|S|/8=\ex(n,X)/8$.  We conclude therefore that
+  there exists some subset $S''\subseteq S$ of size least $\ex(n,X)/8$
+  that does not contain a $\edgeb$ configuration.  The set $S''$ proves
+  that $\ex(n,X\cup\{\edgeb\}) \ge \ex(n,X)/8$.
 \end{proof}
 
 From this point onward, we will frequently include \edgeb\ in sets of
@@ -136,16 +136,16 @@ forbidden configurations when proving upper bounds.  By \lemref{xcup}
 any upper bound we prove this way holds (within a factor of 8) without
 including \edgeb.
 
-It will be helpful to consider an top-bottom variant of $\ex(n,X)$ that
+It will be helpful to consider an top/bottom variant of $\ex(n,X)$ that
 is defined as follows.  Partition the vertices of a convex $n$-gon using a
-horizontal line into a \emph{bottom half} of size $\lfloor n/2\rfloor$ and
+horizontal line into a \emph{top half} of size $\lfloor n/2\rfloor$ and
 a \emph{bottom half} of size $\lceil n/2\rceil$.  We define $\ex'(n,X)$
 analogously to $\ex(n,X)$ except that we only count triangles have one
 vertex in the bottom half and one vertex in the top half.
 
 The following lemma helps us use divide-and-conquer to prove upper bounds:
 
-\begin{lem}
+\begin{lem}\lemlabel{top-bottom}
   If $\ex'(n,X)\in O(n^c)$, then
 \[
    \ex(n,X)\in 
@@ -156,26 +156,17 @@ The following lemma helps us use divide-and-conquer to prove upper bounds:
 \]
 \end{lem}
 
-
-
 \begin{thm}\thmlabel{blech}
-  $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in \Theta(n)$
+  $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in \Omega(n)\cap O(n\log n)$.
 \end{thm}
 
 \begin{proof}
-  We claim that in any set, $S$, of triangles that avoids
-  \{\edgea,\vertexb,\vertexc,\edgeb\}, each vertex takes part in at most two
-  triangles, which establishes the claim. To see this, consider some
-  vertex $u$ and, without loss of generality, assume $u$ has minimum $y$
-  coordinate among all vertices.  Among all triangles incident on $u$,
-  consider the triangles $t_1$ (respectively, $t_2$) first struck by a
-  downward vertical ray that originates at $u$ and then rotates clockwise
-  (respectively, counterclockwise).  There are two cases to consider:
-  \begin{enumerate}
-    \item $t_1=t_2$.  In this case, any other triangle incident on $u$ either shares an edge with $t_1$, which is forbidden, or it forms a $\vertexb$ configuration with $t_1$, which is also forbidden.  Therefore, in this case, $t_1$ is the only triangle incident on $u$.
+  The $\Omega(n)$ lower bound is achievable by many constructions including,
+  for example, any triangulation of a convex $n$-gon.
 
-    \item $t_1\neq t_2$.  In this case, $t_1$
-  \end{enumerate}
+  To prove the $O(n\log n)$ upper bound, it suffices---by
+  Lemmas~\ref{lem:xcup} and \ref{lem:top-bottom}---to show that
+  $\ex'(n,\{\edgea,\vertexb,\vertexc,\edgeb\})\in O(n)$.
 \end{proof}
 
 

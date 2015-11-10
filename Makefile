@@ -1,7 +1,7 @@
 
 ipefigs=$(wildcard figs/*.ipe)
 
-turan.pdf : turan.tex $(ipefigs)
+turan.pdf : turan.tex turan.bib $(ipefigs)
 	(cd figs; make)
 	latexmk -pdf turan.tex 	
 

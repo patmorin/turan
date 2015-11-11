@@ -69,14 +69,20 @@ largest set, $S$, of triangles one can create whose vertices are $n$
 points in convex position, and such that no pair of triangles in $S$
 forms a configuration in $X$.  We call the size of this set $\ex(n,X)$.
 For example, 
-\[
+\begin{equation}
     \ex(n,\{\edgea,\vertexb,\vertexc,\disjointb,\disjointc\}) = n-2 \enspace .
-\]
+\end{equation}
 This is because the set
 $X=\{\edgea,\vertexb,\vertexc,\disjointb,\disjointc\}$ in this case
-forbids any form of crossings between the edges of triangles. Thus, the
-number maximum number of triangles we can have while avoiding $X$ is the
-number of triangles in a triangulation of a convex $n$-gon, i.e., $n-2$.
+forbids any form of crossings between the edges of triangles. Thus,
+the number maximum number of triangles we can have while avoiding $X$
+is the number of triangles in a triangulation of a convex $n$-gon,
+i.e., $n-2$. One of the results in this paper is that nearly the
+same bound holds even if we allow the $\disjointb$ and $\disjointc$
+configuration. In particular, our \thmref{blech} shows that
+$\ex(n,\{\edgea,\vertexb,\vertexc\}) \in O(n\log n)$.
+
+
 
 \begin{table}
 \begin{center}
@@ -99,10 +105,16 @@ number of triangles in a triangulation of a convex $n$-gon, i.e., $n-2$.
   \hline
   $\ex(n,\{\disjointa,\disjointb,\vertexa,\vertexb\}) = n$ & \cite{brass.rote.ea:triangles} \\
   \hline
+  $\ex(n,\vertexa,\vertexb,\vertexc) \in \Theta(n)$ & from hypergraphs \\
+  $\ex(n,\edgea,\edgeb) \in \Theta(n^2)$ & from hypergraphs \\
+  $\ex(n,\disjointa,\disjointb,\disjointc) \in \Theta(n^2)$ & from hypergraphs \\ \hline
+  $\ex(n,X\subset\{\edgea,\edgeb,\vertexa,\vertexb,\vertexc,\disjointa,\disjointb,\disjointc\}) \in \Omega(n)$ & here (contradicts \cite{brass.rote.ea:triangles}) \\
   $\ex(n,\{\edgea,\vertexb\}) \in \Omega(n^{3/2})$ & here \\
   $\ex(n,\{\edgea,\vertexb,\vertexa\}) \in \Omega(n^{3/2})$ & here \\
+  $\ex(n,\{\edgea,\edgeb,\vertexb,\vertexa,\disjointa,\disjointb\}) \in \Omega(n^{3/2})$ & here \\
   $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in \Omega(n) \cap O(n\log n)$ & \thmref{blech} \\
   $\ex(n,X\cup\{\edgeb\})\in \Theta(\ex(n,X))$ & \lemref{xcup} \\
+  
   \end{tabular}
 \end{center}
 \caption{Known and new results on $\ex(n,X)$ for different sets $X$.}

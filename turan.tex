@@ -10,6 +10,8 @@
 citecolor=linkblue, filecolor=linkblue, menucolor=linkblue, pagecolor=linkblue,
 urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 
+\usepackage{array}
+
 
 % To reduce space in lists
 \usepackage{enumitem}  
@@ -254,7 +256,31 @@ vertices 2 and 7 and the pink triangle joining top vertices 2 and 3
 violate the second condition and these two triangles form $\vertexb$
 configuration at top vertex 2.
 
+The following table summarizes the constraints induced by various
+configurations:
 
+\begin{center}
+\begin{tabular}{m{1em}|m{.45\textwidth}|m{.45\textwidth}}
+      & killed by $(x,y)$ in subsequent rounds & killed by $(x,y)$
+ in current round \\ \hline
+$\edgea$ & $\{\}$
+         & $x=y'$ \\ 
+$\edgeb$ & $\{(x,y)\}$
+         & $\{(x,y'):  y\neq y'\}$ \\
+$\vertexa$ & $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$
+         & $\{(x',y'): x < y'\}$ \\
+$\vertexb$ & $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$
+         & $\{(x',y'):x'<x, y'>y\}$ \\
+$\vertexc$ & $\{(x',y) : x'>x \}\cup\{(x,y') : y'>y \}$
+         & $\{(x',y'):y < y' < x < x'\}$ \\
+$\disjointa$ & $\{(x',y'): x'< y\}$ 
+         & $\{\}$ \\
+$\disjointb$ & $\{(x',y'): y'> y\}$ 
+         & $\{\}$ \\
+$\disjointc$ & $\{(x',y'): y < y' <x,\,\, x'>x\}$
+         & $\{\}$ \\
+\end{tabular}
+\end{center}
 \section{Some Bounds}
 
 Now, with our tools in hand, we are ready to study some problems.

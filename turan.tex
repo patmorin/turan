@@ -36,6 +36,7 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 \newcommand{\disjointc}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-disjoint-3}}}
 
 \DeclareMathOperator{\ex}{ex}
+\DeclareMathOperator{\on}{\overline{ex}}
 
 
 
@@ -84,11 +85,17 @@ same bound holds even if we allow the $\disjointb$ and $\disjointc$
 configuration. In particular, our \thmref{blech} shows that
 $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in O(n\log n)$.
 
+Sometimes it is more natural to describe the allowable configurations than the forbidden configurations. For this, we use the notation 
+\[
+   \on(n,X) = \ex(n,\{\edgea,\edgeb,\vertexa,\vertexb,\vertexc,
+                       \disjointa,\disjointb,\disjointc\} \setminus X) \enspace .
+\]
+
 
 
 \begin{table}
 \begin{center}
-\begin{tabular}{ll}
+\begin{tabular}{m{.55\textwidth}m{.4\textwidth}}
   \hline
   $\ex(n,\{\edgeb\})\in \Theta(n^3)$ & \cite{brass:turan} \\
   $\ex(n,\{\edgea\})\in \Theta(n^2)$ & \cite{brass:turan} \\
@@ -105,15 +112,24 @@ $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in O(n\log n)$.
   $\ex(n,\{\vertexb,\vertexc\})\in \Theta(n^2)$ & \cite{brass:turan} \\
   $\ex(n,\{\vertexa,\vertexc\})\in \Theta(n^2)$ & \cite{brass:turan} \\
   \hline
-  $\ex(n,\{\disjointa,\disjointb,\vertexa,\vertexb\}) = n$ & \cite{brass.rote.ea:triangles} \\
+  $\ex(n,\{\disjointa,\disjointb,\vertexa,\vertexb\}) = n$ \newline
+  $\on(n,\{\edgea,\edgeb,\disjointc,\vertexc\}) = n$
+    & \cite{brass.rote.ea:triangles} \\
   \hline
-  $\ex(n,\vertexa,\vertexb,\vertexc) \in \Theta(n)$ & from hypergraphs \\
-  $\ex(n,\edgea,\edgeb) \in \Theta(n^2)$ & from hypergraphs \\
-  $\ex(n,\disjointa,\disjointb,\disjointc) \in \Theta(n^2)$ & from hypergraphs \\ \hline
-  $\ex(n,X\subset\{\edgea,\edgeb,\vertexa,\vertexb,\vertexc,\disjointa,\disjointb,\disjointc\}) \in \Omega(n)$ & here (contradicts \cite{brass.rote.ea:triangles}) \\
+  $\ex(n,\{\disjointa,\disjointb,\vertexa,\vertexb,\edgeb\}) \in \Theta(n)$ \newline
+  $\on(n,\{\edgea,\disjointc,\vertexc\}) \Theta(n)$
+    & \cite{brass.rote.ea:triangles} and \lemref{xcup} \\
+  \hline
+  $\ex(n,\{\vertexa,\vertexb,\vertexc\}) \in \Theta(n)$ & from hypergraphs \\
+  $\ex(n,\{\edgea,\edgeb\}) \in \Theta(n^2)$ & from hypergraphs \\
+  $\ex(n,\{\disjointa,\disjointb,\disjointc\}) \in \Theta(n^2)$ & from hypergraphs \\ \hline
+  $\ex(n,X\subset\{\edgea,\edgeb,\vertexa,\vertexb,\vertexc,\disjointa,\disjointb,\disjointc\}) \in \Omega(n)$ & here  \\
   $\ex(n,\{\edgea,\vertexb\}) \in \Omega(n^{3/2})$ & here \\
-  $\ex(n,\{\edgea,\vertexb,\vertexa\}) \in \Omega(n^{3/2})$ & here \\
-  $\ex(n,\{\edgea,\edgeb,\vertexb,\vertexa,\disjointa,\disjointb\}) \in \Omega(n^{3/2})$ & here \\
+  $\ex(n,\{\edgea,\vertexb,\vertexa\}) \in \Omega(n^{3/2})$ & here \\ \hline
+  $\ex(n,\{\edgea,\edgeb,\vertexb,\vertexa,\disjointa\})
+      \in\Omega(n^{3/2})$ \newline
+  $\on(n,\{\vertexc,\disjointb,\disjointc\}) \in \Omega(n^{3/2})$  
+    & here (contradicts \cite{brass.rote.ea:triangles}) \\ \hline
   $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in \Omega(n) \cap O(n\log n)$ & \thmref{blech} \\
   $\ex(n,X\cup\{\edgeb\})\in \Theta(\ex(n,X))$ & \lemref{xcup} \\
   

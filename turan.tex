@@ -10,6 +10,9 @@
 citecolor=linkblue, filecolor=linkblue, menucolor=linkblue, pagecolor=linkblue,
 urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 
+
+\DeclareMathOperator{\sign}{sign}
+
 \usepackage{array}
 
 
@@ -116,10 +119,6 @@ Sometimes it is more natural to describe the allowable configurations than the f
   $\on(n,\{\edgea,\edgeb,\disjointc,\vertexc\}) = n$
     & \cite{brass.rote.ea:triangles} \\
   \hline
-  $\ex(n,\{\disjointa,\disjointb,\vertexa,\vertexb,\edgeb\}) \in \Theta(n)$ \newline
-  $\on(n,\{\edgea,\disjointc,\vertexc\}) \Theta(n)$
-    & \cite{brass.rote.ea:triangles} and \lemref{xcup} \\
-  \hline
   $\ex(n,\{\vertexa,\vertexb,\vertexc\}) \in \Theta(n)$ & from hypergraphs \\
   $\ex(n,\{\edgea,\edgeb\}) \in \Theta(n^2)$ & from hypergraphs \\
   $\ex(n,\{\disjointa,\disjointb,\disjointc\}) \in \Theta(n^2)$ & from hypergraphs \\ \hline
@@ -132,6 +131,11 @@ Sometimes it is more natural to describe the allowable configurations than the f
     & here (contradicts \cite{brass.rote.ea:triangles}) \\ \hline
   $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in \Omega(n) \cap O(n\log n)$ & \thmref{blech} \\
   $\ex(n,X\cup\{\edgeb\})\in \Theta(\ex(n,X))$ & \lemref{xcup} \\
+  \hline
+  $\ex(n,\{\disjointa,\disjointb,\vertexa,\vertexb,\edgeb\}) \in \Theta(n)$ \newline
+  $\on(n,\{\edgea,\disjointc,\vertexc\}) \in \Theta(n)$
+    & \cite{brass.rote.ea:triangles} and \lemref{xcup} \\
+  \hline
   
   \end{tabular}
 \end{center}
@@ -252,52 +256,94 @@ on the points selected in rounds $1,\ldots,i-1$.  In the top/bottom view,
 the $i$th round determines which pairs of top vertices form a triangle
 with the $i$th bottom vertex, where the bottom vertices are labelled
 $1,\ldots,n$ from right to left.
+Of course, the constraints imposed on the play of the game depend on
+the set of forbidden configurations we study.  By proving upper or lower bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on the maximum number of triangles obtained in the top-bottom view.
 
-Of course, the constraints imposed on the play of the game depend
-on the set of forbidden configurations.  For example, the $\vertexb$
-configuration adds two restrictions:
-\begin{itemize}
-   \item During a single round, we cannot select $(x_1,y_1)$ and
-      $(x_2,y_2)$ with $y_1<y_2$ and $x_1>x_2$ since this would create
-      a $\vertexb$ configuration at the bottom vertex.
+\Tabref{forbidden} summarizes the constraints on the puzzle induced
+by various configurations.  The left column describes what happens
+in subsequent rounds when the central (black) point is placed during
+a round; none of the points marked with red crosses can be used in
+subsequent rounds.  The right column shows what happens during the same
+round; none of the points marked with red crosses can be selected during
+the same round.  One caveat worth noting is that, unless $\edgea$ is a
+forbidden configuration, the same point can be chosen in different rounds.
 
-   \item If $(x_1,y_1)$ is selected in some round, then we cannot,
-      in a later round, select $(x_1,y_2)$ with $y_2<y_1$ nor can
-      we select $(x_2,y_1)$ with $x_2<x_1$.  Doing so would create
-      a $\vertexb$ configuration at the top vertex labelled $x_1$
-      (respectively, at the top vertex labelled $y_1$).
-\end{itemize}
-For example, in \figref{point-view} the green triangle joining top
-vertices 2 and 7 and the pink triangle joining top vertices 2 and 3
-violate the second condition and these two triangles form $\vertexb$
-configuration at top vertex 2.
 
-The following table summarizes the constraints induced by various
-configurations:
-
+\begin{table}
 \begin{center}
-\begin{tabular}{m{1em}|m{.45\textwidth}|m{.45\textwidth}}
-      & killed by $(x,y)$ in subsequent rounds & killed by $(x,y)$
+\begin{tabular}{m{1ex}|>{\centering\arraybackslash}m{.45\textwidth}|>{\centering\arraybackslash}m{.45\textwidth}}
+      & killed by $(x,y)$ in later rounds & killed by $(x,y)$
  in current round \\ \hline
-$\edgea$ & $\{\}$
-         & $x=y'$ \\ 
-$\edgeb$ & $\{(x,y)\}$
-         & $\{(x,y'):  y\neq y'\}$ \\
-$\vertexa$ & $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$
-         & $\{(x',y'): x < y'\}$ \\
-$\vertexb$ & $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$
-         & $\{(x',y'):x'<x, y'>y\}$ \\
-$\vertexc$ & $\{(x',y) : x'>x \}\cup\{(x,y') : y'>y \}$
-         & $\{(x',y'):y < y' < x < x'\}$ \\
-$\disjointa$ & $\{(x',y'): x'< y\}$ 
-         & $\{\}$ \\
-$\disjointb$ & $\{(x',y'): y'> y\}$ 
-         & $\{\}$ \\
-$\disjointc$ & $\{(x',y'): y < y' <x,\,\, x'>x\}$
-         & $\{\}$ \\
+$\edgeb$ & \includegraphics[scale=.9]{figs/killers-1} \break% 
+           $\{\}$  
+         & \includegraphics[scale=.9]{figs/killersb-1} \break% 
+           $\{(x',x)\} \cup \{(y,y')\}$ \\ 
+$\edgea$ & \includegraphics[scale=.9]{figs/killers-2} \break% 
+           $\{(x,y)\}$ 
+         & \includegraphics[scale=.9]{figs/killersb-2} \break% 
+           $\{(x,y')\} \cup \{(x',y)\}$ \\
+$\vertexa$ & \includegraphics[scale=.9]{figs/killers-3} \break% 
+             $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$ 
+           & \includegraphics[scale=.9]{figs/killersb-3} \break%
+             $\{(x',y'): x' < y\text{ or } y'> x\}$ \\
+$\vertexb$ &  \includegraphics[scale=.9]{figs/killers-4} \break%
+              $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$ 
+         &  \includegraphics[scale=.9]{figs/killersb-4} \break%
+            $\{(x',y'):\sign(x'-x)=\sign(y-y')\}$ \\
+$\vertexc$ &  \includegraphics[scale=.9]{figs/killers-5} \break% 
+              $\{(x',y) : x'>x \}\cup\{(x,y') : y'>y \}$ 
+         &  \includegraphics[scale=.9]{figs/killersb-5} \break% 
+            $\{(x',y'):\sign(x'-x)=\sign(y'-y)\}$ \\
+$\disjointa$ &  \includegraphics[scale=.9]{figs/killers-6} \break%
+                $\{(x',y'): x'< y\}$
+         & \includegraphics[scale=.9]{figs/killersb-6} \break%
+           $\{\}$ \\
+$\disjointb$ & \includegraphics[scale=.9]{figs/killers-7} \break%
+               $\{(x',y'): x'>x, y'< y\}$
+         & \includegraphics[scale=.9]{figs/killersb-7} \break%
+           $\{\}$ \\
+$\disjointc$ &\includegraphics[scale=.9]{figs/killers-8} \break%
+               $\{(x',y'): y < y' <x,\,\, x'>x\}$
+         & \includegraphics[scale=.9]{figs/killersb-8} \break%
+           $\{\}$ \\
 \end{tabular}
 \end{center}
+   \caption{The restrictions placed on the dot puzzle when for each of 
+     the forbidden subconfigurations.}
+   \tablabel{forbidden}
+\end{table}
 \section{Some Bounds}
+
+
+From \tabref{forbidden}, some previous upper bounds naturally fall out. For
+example, Bra\ss's results \cite{brass:turan} that $\ex(\vertexb)$ and
+$\ex(\vertexc)$ are each $O(n^2)$ come from the fact that, during a single
+round of the dot puzzle, the $y$ coordinates of the points must form
+an non-decreasing (respectively, non-increasing) sequence when sorted
+by $x$-coordinates.  This immediately implies that one can select at
+most $2n-2$ points during a single round of the dot puzzle game, for a
+total of at most $2n^2-2n$ points during all $n$ rounds.  (Note, in the
+top/bottom view, the bound on the number of the points selected during a
+single round is a bound on the number of triangles incident to a bottom
+vertex.)  The bounds $\ex(\vertexb)\in O(n^2)$ and $\ex(\vertexc)\in
+O(n^2)$ then immediately follow from \lemref{top-bottom}.
+
+Similarly, we can almost recover the result of Bra\ss, Rote and Swanepoel
+on $\ex(\disjointa, \disjointb, \vertexa,\vertexb)$. From the forbidden
+configurations $\vertexa$, $\vertexb$, and $\disjointa$, we obtain the
+following rule
+\begin{center}
+  \includegraphics{figs/killers-3}
+\end{center}
+for which points are disallowed in subsequent rounds.  From $\vertexb$, we have the rule
+\begin{center}
+  \includegraphics{figs/killersb-4} \enspace .
+\end{center}
+Together, these two rules tell us that the points $\bigcup_{i=1}^n
+Q_i$ must have $y$ coordinates that form a non-decreasing sequence
+when ordered $x$-coordinate.  Therefore, $|Q_i|\le 2n-2$.  The bound
+$\ex(\disjointa, \disjointb, \vertexa,\vertexb)\in O(n\log n)$ then
+follows from \lemref{top-bottom}.
 
 Now, with our tools in hand, we are ready to study some problems.
 

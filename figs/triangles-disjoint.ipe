@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.4">
-<info created="D:20151109100231" modified="D:20151109213844"/>
+<info created="D:20151109100231" modified="D:20151117094436"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -234,39 +234,39 @@ h
 <layer name="beta"/>
 <layer name="gamma"/>
 <view layers="alpha" active="alpha"/>
-<view layers="beta" active="beta"/>
+<view layers="beta" active="alpha"/>
 <view layers="gamma" active="gamma"/>
-<path layer="alpha" matrix="0.1875 0 0 0.25 172 408" stroke="black" pen="heavier">
+<path layer="alpha" matrix="0.1875 0 0 0.25 172 416" stroke="black" pen="heavier">
 224 512 m
 224 576 l
 192 544 l
 h
 </path>
-<path matrix="-0.1875 0 0 0.25 260 408" stroke="black" pen="heavier">
+<path matrix="-0.1875 0 0 0.25 260 416" stroke="black" pen="heavier">
 224 512 m
 224 576 l
 192 544 l
 h
 </path>
-<path layer="beta" matrix="0.25 0 0 0.25 160 408" stroke="black" pen="heavier">
+<path layer="beta" matrix="0.25 0 0 0.25 160 416" stroke="black" pen="heavier">
 248 512 m
 192 560 l
 208 576 l
 h
 </path>
-<path matrix="0.25 0 0 0.25 160 408" stroke="black" pen="heavier">
+<path matrix="0.25 0 0 0.25 160 416" stroke="black" pen="heavier">
 200 512 m
 256 560 l
 240 576 l
 h
 </path>
-<path layer="gamma" matrix="0.25 0 0 0.25 160 408" stroke="black" pen="heavier">
+<path layer="gamma" matrix="0.25 0 0 0.25 160 416" stroke="black" pen="heavier">
 240 512 m
 240 576 l
 192 544 l
 h
 </path>
-<path matrix="0.25 0 0 0.25 160 408" stroke="black" pen="heavier">
+<path matrix="0.25 0 0 0.25 160 416" stroke="black" pen="heavier">
 208 512 m
 256 544 l
 208 576 l

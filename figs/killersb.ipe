@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.4">
-<info created="D:20151116114303" modified="D:20151116220013"/>
+<info created="D:20151116114303" modified="D:20151117153810"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -238,7 +238,8 @@ h
 <layer name="eta"/>
 <layer name="theta"/>
 <layer name="iota"/>
-<view layers="alpha iota" active="iota"/>
+<layer name="hidden"/>
+<view layers="alpha iota" active="alpha"/>
 <view layers="alpha beta" active="beta"/>
 <view layers="alpha delta" active="delta"/>
 <view layers="alpha epsilon" active="epsilon"/>
@@ -246,7 +247,7 @@ h
 <view layers="alpha" active="alpha"/>
 <view layers="alpha eta" active="eta"/>
 <view layers="alpha theta" active="theta"/>
-<use layer="alpha" name="mark/circle(sx)" pos="196 628" size="small" stroke="black"/>
+<use layer="hidden" name="mark/circle(sx)" pos="196 628" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="196 628" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="204 636" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="208 640" size="small" stroke="black"/>
@@ -285,7 +286,7 @@ h
 <use name="mark/circle(sx)" pos="188 620" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="192 624" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="224 624" size="small" stroke="black"/>
-<use name="mark/disk(sx)" pos="224 636" size="normal" stroke="black"/>
+<use layer="alpha" name="mark/disk(sx)" pos="224 636" size="normal" stroke="black"/>
 <use layer="beta" name="mark/cross(sx)" pos="224 656" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="224 652" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="224 648" size="normal" stroke="red"/>
@@ -393,7 +394,7 @@ h
 <use name="mark/cross(sx)" pos="232 652" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="228 652" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="228 652" size="normal" stroke="red"/>
-<use layer="alpha" matrix="1 0 0 1 -8 0" name="mark/circle(sx)" pos="208 632" size="small" stroke="black"/>
+<use layer="hidden" matrix="1 0 0 1 -8 0" name="mark/circle(sx)" pos="208 632" size="small" stroke="black"/>
 <use matrix="1 0 0 1 -8 0" name="mark/circle(sx)" pos="208 628" size="small" stroke="black"/>
 <use matrix="1 0 0 1 -8 0" name="mark/circle(sx)" pos="208 628" size="small" stroke="black"/>
 <use matrix="1 0 0 1 -4 -4" name="mark/circle(sx)" pos="204 624" size="small" stroke="black"/>
@@ -420,7 +421,7 @@ h
 <use name="mark/cross(sx)" pos="204 628" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="204 624" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="204 620" size="normal" stroke="red"/>
-<use layer="alpha" matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="192 624" size="small" stroke="black"/>
+<use layer="hidden" matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="192 624" size="small" stroke="black"/>
 <use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="208 624" size="small" stroke="black"/>
 <use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="208 624" size="small" stroke="black"/>
 <use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="224 624" size="small" stroke="black"/>
@@ -494,5 +495,11 @@ h
 <use name="mark/cross(sx)" pos="244 660" size="normal" stroke="red"/>
 <use layer="beta" name="mark/cross(sx)" pos="224 616" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="244 636" size="normal" stroke="red"/>
+<path layer="alpha" matrix="1.1 0 0 1.1 -22.7 -63.5" stroke="black" join="1">
+184 616 m
+244 676 l
+244 616 l
+h
+</path>
 </page>
 </ipe>

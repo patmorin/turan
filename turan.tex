@@ -7,11 +7,12 @@
 \usepackage[dvipsnames]{color}
 \definecolor{linkblue}{named}{Blue}
 \hypersetup{colorlinks=true, linkcolor=linkblue,  anchorcolor=linkblue,
-citecolor=linkblue, filecolor=linkblue, menucolor=linkblue, pagecolor=linkblue,
+citecolor=linkblue, filecolor=linkblue, menucolor=linkblue,
 urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 
 
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\survivors}{survivors}
 
 \usepackage{array}
 
@@ -177,6 +178,7 @@ forbidden configurations when proving upper bounds.  By \lemref{xcup}
 any upper bound we prove this way holds (within a factor of 8) without
 including \edgeb.
 
+
 \subsection{The Top/Bottom View}
 
 It will be helpful to consider an top/bottom variant of $\ex(n,X)$
@@ -249,31 +251,34 @@ vertices are labelled $1,\ldots,n$ from left to right.
    \figlabel{point-view}
 \end{figure}
 
-The puzzle proceeds in $n$ rounds and during the $i$th round, the player
-selects a set $Q_i\subseteq Q$ subject to certain constraints that depend
-on the points selected in rounds $1,\ldots,i-1$.  In the top/bottom view,
-the $i$th round determines which pairs of top vertices form a triangle
-with the $i$th bottom vertex, where the bottom vertices are labelled
-$1,\ldots,n$ from right to left.
-Of course, the constraints imposed on the play of the game depend on
-the set of forbidden configurations we study.  By proving upper or lower bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on the maximum number of triangles obtained in the top-bottom view.
+The dot-puzzle proceeds in $n$ rounds and during the $i$th round, the
+player selects a set $Q_i\subseteq Q$ subject to certain constraints
+that depend on the points selected in rounds $1,\ldots,i-1$.  In the
+top/bottom view, the $i$th round determines which pairs of top vertices
+form a triangle with the $i$th bottom vertex, where the bottom
+vertices are labelled $1,\ldots,n$ from right to left.  
 
-\Tabref{forbidden} summarizes the constraints on the puzzle induced
-by various configurations.  The left column shows the forbidden
+Of course, the constraints on which points can be selected during round
+$i$ depend on the set of forbidden configurations and $\bigcup_{j=1}^{i-1}
+Q_i$.  By proving upper or lower bounds on $\sum_{i=1}^n |Q_i|$ we obtain
+bounds on the maximum number of triangles obtained in the top-bottom view.
+
+\Tabref{forbidden} summarizes the constraints on the puzzle induced by
+various forbidden configurations.  The left column shows the forbidden
 configuration.  The middle column describes what happens in subsequent
-rounds when the large black point is placed during a round; none
-of the points marked with red crosses can be used in subsequent rounds.
+rounds when the large black point is placed during a round; none of
+the points marked with red crosses can be used in subsequent rounds.
 The right column shows what happens during the same round; none of the
 points marked with red crosses can be selected during the same round.
-One caveat worth noting is that, unless $\edgea$ is a forbidden
-configuration, the same point can be chosen in different rounds.
 
+%One caveat worth noting is that, unless $\edgea$ is a forbidden
+%configuration, the same point can be chosen in different rounds.
 
 \begin{table}
 \begin{center}
 \begin{tabular}{m{1ex}|>{\centering\arraybackslash}m{.45\textwidth}|>{\centering\arraybackslash}m{.45\textwidth}}
-      & killed by $(x,y)$ in later rounds & killed by $(x,y)$
- in current round \\ \hline
+      & killed by $(x,y)$ in later rounds 
+         & killed by $(x,y)$ in current round \\ \hline
 $\edgeb$ & \includegraphics[scale=.8]{figs/killers-1} \break% 
            $\{\}$  
          & \includegraphics[scale=.8]{figs/killersb-1} \break% 
@@ -314,78 +319,114 @@ $\disjointc$ &\includegraphics[scale=.8]{figs/killers-8} \break%
 \end{table}
 \section{Some Bounds}
 
-We say that a point set is \emph{non-decreasing} (respectively, increasing, non-increasing, decreasing) if, when sorted lexicographically, the $y$ coordinates of the points form a non-decreasing (respectively, increasing, non-increasing, decreasing) sequence.
+We say that a point set is \emph{non-decreasing} (respectively,
+increasing, non-increasing, decreasing) if, when sorted lexicographically,
+the $y$ coordinates of the points form a non-decreasing (respectively,
+increasing, non-increasing, decreasing) sequence.
 
 From \tabref{forbidden}, some previous upper bounds naturally fall out.
 For example, Bra\ss's results \cite{brass:turan} that $\ex(\vertexb)$
-and $\ex(\vertexc)$ are each $O(n^2)$ come from the fact that the points
-selected during a single round of the dot puzzle must be non-decreasing
-(respectively, non-increasing).  This immediately implies that one can
-select at most $2n-2$ points during a single round of the dot puzzle game,
-for a total of at most $2n^2-2n$ points during all $n$ rounds.  (Note, in
-the top/bottom view, the bound on the number of the points selected during
-a single round is a bound on the number of triangles incident to a bottom
+and $\ex(\vertexc)$ are each $O(n^2)$ come from the fact that the
+points selected during a single round of the dot puzzle must be
+non-decreasing (respectively, non-increasing); see the right column
+of \tabref{forbidden}.  This immediately implies that one can select at
+most $2n-2$ points during a single round of the dot puzzle game, for a
+total of at most $2n^2-2n$ points during all $n$ rounds.  (Note, in the
+top/bottom view, the bound on the number of the points selected during a
+single round is a bound on the number of triangles incident to a bottom
 vertex.)  The bounds $\ex(\vertexb)\in O(n^2)$ and $\ex(\vertexc)\in
 O(n^2)$ then immediately follow from \lemref{top-bottom}.
 
 Similarly, we can almost recover the result of Bra\ss, Rote and
 Swanepoel \cite{brass.rote.ea:triangles} on $\ex(\disjointa, \disjointb,
-\vertexa,\vertexb)$. From the forbidden configurations $\vertexa$,
-$\vertexb$, and $\disjointa$, we obtain the following rule
+\vertexa,\vertexb)$. 
+By forbidding $\vertexb$, we have the rule
+\begin{center}
+  \includegraphics{figs/killersb-4} \enspace ,
+\end{center}
+which ensures that the set of points taken during a single round form an increasing point set.  From the forbidden configurations $\vertexa$,
+$\vertexb$, $\disjointa$, and $\disjointb$, we obtain the rule
 \begin{center}
   \includegraphics{figs/killers-9}
 \end{center}
-for which points are disallowed in subsequent rounds.  By forbidding $\vertexb$, we have the rule
-\begin{center}
-  \includegraphics{figs/killersb-4} \enspace .
-\end{center}
-Together, these two rules tell us that the points $\bigcup_{i=1}^n Q_i$
-are non-decreasing, so $|\bigcup_{i=1}^n Q_i|\le 2n-2$.  Furthermore,
-for each $i\in\{1,\ldots,n-1\}$, $|Q_i\cap Q_{i+1}|\le 1$ (any point
-in the common intersection is the top-right point of $Q_i$, which
-is the bottom-left point of $Q_{i+1}$.  Therefore, $|Q_i|\le 2n-2$.
-The bound $\ex(\disjointa, \disjointb, \vertexa,\vertexb)\in O(n\log n)$
-then follows from \lemref{top-bottom}.
+for which points are disallowed in subsequent rounds.  This rule ensures
+that, after round $i$ any points chosen are either the topmost-rightmost
+point in $Q_i$ or are above and to the right of this point.  Taken
+together, these rules imply that
+\[
+    \sum_{i=1}^n|Q_i| \le 3n-2 \enspace ,
+\]
+Since the union of $Q_i$ is an increasing sequence (whose length is
+therefore at most $2n-2$), and each $Q_i$ shares at most one point with
+$Q_{i+1}$.  The bound $\ex(\disjointa, \disjointb, \vertexa,\vertexb)\in
+O(n\log n)$ then follows from \lemref{top-bottom}.
+
+For round $i$
 
 Now, with our tools in hand, we are ready to study some problems.
 
 \begin{thm}\thmlabel{blech}
-  $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in \Omega(n)\cap O(n\log n)$.
+  $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in O(n\log n)$.
 \end{thm}
 
 \begin{proof}
-  The $\Omega(n)$ lower bound is achievable by many constructions including,
-  for example, any triangulation of a convex $n$-gon.
-
-  To prove the $O(n\log n)$ upper bound, it suffices---by
-  Lemmas~\ref{lem:xcup} and \ref{lem:top-bottom}---to show that
-  $\ex'(n,\{\edgea,\vertexb,\vertexc,\edgeb\})\in O(n)$.
-
-  We claim that each
-  vertex in the top half is the left vertex of at most one triangle
-  and is the right vertex of at most one triangle.  Therefore,
-  each vertex of the top half is used in at most two triangles, so
-  $\ex'(n,\{\edgea,\vertexb,\vertexc,\edgeb\}) \in O(n)$.
-
-  Refer to \figref{triple-fig}.
-  To see why each vertex in the top half is the left vertex of at most
-  one triangle, observe that, since $\edgea$ and $\edgeb$ are forbidden
-  configurations, the only other possibilties for two triangles to share
-  a left vertex result in a $\vertexb$ or $\vertexc$ configuration.
-  The argument for why each vertex is the right vertex of at most one
-  triangle is symmetric.
-  \begin{figure}
-    \begin{center}
-       \begin{tabular}{c@{\hspace{2em}}c}
-          \includegraphics{figs/triple-fig-1} &
-          \includegraphics{figs/triple-fig-2} 
-       \end{tabular}
-    \end{center}
-    \caption{Using a vertex as the left vertex of two triangles creates a 
-      forbidden configuration}
-  \end{figure}
-  \figlabel{triple-fig}
+  Since we forbid $\vertexb$, we know that the set of points taken
+  during each round forms an increasing point set.  In particular,
+  within a single round of the dot-puzzle we can take at most
+  one point from each column.   Taking the union of the rules
+  for $\edgea$, $\vertexb$, and $\vertexc$, we obtain the rule
+  \begin{center}
+     \includegraphics{figs/killers-10}
+  \end{center}
+  which ensures that during subsequent rounds we can not take a point from
+  any column used in the previous round.  Thus, the sets $Q_1,\ldots,Q_n$
+  contain at most one point from each column and have total size at
+  most $n-1$.  This proves that, in the top-bottom view, we have at most
+  $n-1$ triangles and the theorem then follows from \lemref{top-bottom}.
 \end{proof}
+
+I have the following two conjectures that are based on the fact that the
+only large examples I know of for $\disjointb$ configurations repeatedly
+use the same dots (and they all lie on a common vertical or horizontal
+line).
+
+
+\begin{lem}\lemlabel{constant-degree}
+  For any three points $a,b,c\in Q$ with no common $x$ or $y$
+  coordinates 
+  \[ |\survivors(\{\disjointb\},\{a,b,c\})|\in O(1) \]
+\end{lem}
+
+\begin{thm}
+  $\ex(\edgea,\disjointb) \in O(n\log n)$.
+\end{thm}
+
+\begin{proof}[Proof sketch]
+  Follows from \lemref{constant-degree} and the fact that the $\edgea$
+  configuration prevents seecting the same point twice.
+\end{proof}
+
+\begin{thm}
+    $\ex(\vertexb,\disjointb) \in O(n\log n)$.
+\end{thm}
+
+\begin{proof}[Proof sketch]
+  Follows from \lemref{constant-degree} and the fact that the $\edgea$
+  configuration prevents seecting the same point twice.
+
+\end{proof}
+
+\begin{thm}
+    $\ex(\vertexc,\disjointb) \in O(n\log n)$.
+\end{thm}
+
+
+\begin{conj}
+    $\ex(\edgea,\vertexb) \in \Theta(n^{3/2})$.
+\end{conj}
+
+
+
 
 \bibliographystyle{plain}
 \bibliography{turan}

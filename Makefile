@@ -6,4 +6,4 @@ turan.pdf : turan.tex turan.bib $(ipefigs)
 	latexmk -pdf turan.tex 	
 
 clean :
-	rm -f slides.pdf figs/*.pdf
+	rm -f turan.pdf figs/*.pdf

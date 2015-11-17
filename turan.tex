@@ -128,13 +128,12 @@ Sometimes it is more natural to describe the allowable configurations than the f
   $\ex(n,\{\edgea,\edgeb,\vertexb,\vertexa,\disjointa\})
       \in\Omega(n^{3/2})$ \newline
   $\on(n,\{\vertexc,\disjointb,\disjointc\}) \in \Omega(n^{3/2})$  
-    & here (contradicts \cite{brass.rote.ea:triangles}) \\ \hline
+    & here  \\ \hline
   $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in \Omega(n) \cap O(n\log n)$ & \thmref{blech} \\
   $\ex(n,X\cup\{\edgeb\})\in \Theta(\ex(n,X))$ & \lemref{xcup} \\
   \hline
-  $\ex(n,\{\disjointa,\disjointb,\vertexa,\vertexb,\edgeb\}) \in \Theta(n)$ \newline
-  $\on(n,\{\edgea,\disjointc,\vertexc\}) \in \Theta(n)$
-    & \cite{brass.rote.ea:triangles} and \lemref{xcup} \\
+  $\ex(n,\{\disjointa,\disjointb,\vertexb\}) \in \Theta(n)$
+    & extension of \cite{brass.rote.ea:triangles} \\
   \hline
   
   \end{tabular}
@@ -260,13 +259,14 @@ Of course, the constraints imposed on the play of the game depend on
 the set of forbidden configurations we study.  By proving upper or lower bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on the maximum number of triangles obtained in the top-bottom view.
 
 \Tabref{forbidden} summarizes the constraints on the puzzle induced
-by various configurations.  The left column describes what happens
-in subsequent rounds when the central (black) point is placed during
-a round; none of the points marked with red crosses can be used in
-subsequent rounds.  The right column shows what happens during the same
-round; none of the points marked with red crosses can be selected during
-the same round.  One caveat worth noting is that, unless $\edgea$ is a
-forbidden configuration, the same point can be chosen in different rounds.
+by various configurations.  The left column shows the forbidden
+configuration.  The middle column describes what happens in subsequent
+rounds when the large black point is placed during a round; none
+of the points marked with red crosses can be used in subsequent rounds.
+The right column shows what happens during the same round; none of the
+points marked with red crosses can be selected during the same round.
+One caveat worth noting is that, unless $\edgea$ is a forbidden
+configuration, the same point can be chosen in different rounds.
 
 
 \begin{table}
@@ -274,37 +274,37 @@ forbidden configuration, the same point can be chosen in different rounds.
 \begin{tabular}{m{1ex}|>{\centering\arraybackslash}m{.45\textwidth}|>{\centering\arraybackslash}m{.45\textwidth}}
       & killed by $(x,y)$ in later rounds & killed by $(x,y)$
  in current round \\ \hline
-$\edgeb$ & \includegraphics[scale=.9]{figs/killers-1} \break% 
+$\edgeb$ & \includegraphics[scale=.8]{figs/killers-1} \break% 
            $\{\}$  
-         & \includegraphics[scale=.9]{figs/killersb-1} \break% 
+         & \includegraphics[scale=.8]{figs/killersb-1} \break% 
            $\{(x',x)\} \cup \{(y,y')\}$ \\ 
-$\edgea$ & \includegraphics[scale=.9]{figs/killers-2} \break% 
+$\edgea$ & \includegraphics[scale=.8]{figs/killers-2} \break% 
            $\{(x,y)\}$ 
-         & \includegraphics[scale=.9]{figs/killersb-2} \break% 
+         & \includegraphics[scale=.8]{figs/killersb-2} \break% 
            $\{(x,y')\} \cup \{(x',y)\}$ \\
-$\vertexa$ & \includegraphics[scale=.9]{figs/killers-3} \break% 
+$\vertexa$ & \includegraphics[scale=.8]{figs/killers-3} \break% 
              $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$ 
-           & \includegraphics[scale=.9]{figs/killersb-3} \break%
+           & \includegraphics[scale=.8]{figs/killersb-3} \break%
              $\{(x',y'): x' < y\text{ or } y'> x\}$ \\
-$\vertexb$ &  \includegraphics[scale=.9]{figs/killers-4} \break%
+$\vertexb$ &  \includegraphics[scale=.8]{figs/killers-4} \break%
               $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$ 
-         &  \includegraphics[scale=.9]{figs/killersb-4} \break%
+         &  \includegraphics[scale=.8]{figs/killersb-4} \break%
             $\{(x',y'):\sign(x'-x)=\sign(y-y')\}$ \\
-$\vertexc$ &  \includegraphics[scale=.9]{figs/killers-5} \break% 
+$\vertexc$ &  \includegraphics[scale=.8]{figs/killers-5} \break% 
               $\{(x',y) : x'>x \}\cup\{(x,y') : y'>y \}$ 
-         &  \includegraphics[scale=.9]{figs/killersb-5} \break% 
+         &  \includegraphics[scale=.8]{figs/killersb-5} \break% 
             $\{(x',y'):\sign(x'-x)=\sign(y'-y)\}$ \\
-$\disjointa$ &  \includegraphics[scale=.9]{figs/killers-6} \break%
+$\disjointa$ &  \includegraphics[scale=.8]{figs/killers-6} \break%
                 $\{(x',y'): x'< y\}$
-         & \includegraphics[scale=.9]{figs/killersb-6} \break%
+         & \includegraphics[scale=.8]{figs/killersb-6} \break%
            $\{\}$ \\
-$\disjointb$ & \includegraphics[scale=.9]{figs/killers-7} \break%
+$\disjointb$ & \includegraphics[scale=.8]{figs/killers-7} \break%
                $\{(x',y'): x'>x, y'< y\}$
-         & \includegraphics[scale=.9]{figs/killersb-7} \break%
+         & \includegraphics[scale=.8]{figs/killersb-7} \break%
            $\{\}$ \\
-$\disjointc$ &\includegraphics[scale=.9]{figs/killers-8} \break%
+$\disjointc$ &\includegraphics[scale=.8]{figs/killers-8} \break%
                $\{(x',y'): y < y' <x,\,\, x'>x\}$
-         & \includegraphics[scale=.9]{figs/killersb-8} \break%
+         & \includegraphics[scale=.8]{figs/killersb-8} \break%
            $\{\}$ \\
 \end{tabular}
 \end{center}
@@ -314,36 +314,38 @@ $\disjointc$ &\includegraphics[scale=.9]{figs/killers-8} \break%
 \end{table}
 \section{Some Bounds}
 
+We say that a point set is \emph{non-decreasing} (respectively, increasing, non-increasing, decreasing) if, when sorted lexicographically, the $y$ coordinates of the points form a non-decreasing (respectively, increasing, non-increasing, decreasing) sequence.
 
-From \tabref{forbidden}, some previous upper bounds naturally fall out. For
-example, Bra\ss's results \cite{brass:turan} that $\ex(\vertexb)$ and
-$\ex(\vertexc)$ are each $O(n^2)$ come from the fact that, during a single
-round of the dot puzzle, the $y$ coordinates of the points must form
-an non-decreasing (respectively, non-increasing) sequence when sorted
-by $x$-coordinates.  This immediately implies that one can select at
-most $2n-2$ points during a single round of the dot puzzle game, for a
-total of at most $2n^2-2n$ points during all $n$ rounds.  (Note, in the
-top/bottom view, the bound on the number of the points selected during a
-single round is a bound on the number of triangles incident to a bottom
+From \tabref{forbidden}, some previous upper bounds naturally fall out.
+For example, Bra\ss's results \cite{brass:turan} that $\ex(\vertexb)$
+and $\ex(\vertexc)$ are each $O(n^2)$ come from the fact that the points
+selected during a single round of the dot puzzle must be non-decreasing
+(respectively, non-increasing).  This immediately implies that one can
+select at most $2n-2$ points during a single round of the dot puzzle game,
+for a total of at most $2n^2-2n$ points during all $n$ rounds.  (Note, in
+the top/bottom view, the bound on the number of the points selected during
+a single round is a bound on the number of triangles incident to a bottom
 vertex.)  The bounds $\ex(\vertexb)\in O(n^2)$ and $\ex(\vertexc)\in
 O(n^2)$ then immediately follow from \lemref{top-bottom}.
 
-Similarly, we can almost recover the result of Bra\ss, Rote and Swanepoel
-on $\ex(\disjointa, \disjointb, \vertexa,\vertexb)$. From the forbidden
-configurations $\vertexa$, $\vertexb$, and $\disjointa$, we obtain the
-following rule
+Similarly, we can almost recover the result of Bra\ss, Rote and
+Swanepoel \cite{brass.rote.ea:triangles} on $\ex(\disjointa, \disjointb,
+\vertexa,\vertexb)$. From the forbidden configurations $\vertexa$,
+$\vertexb$, and $\disjointa$, we obtain the following rule
 \begin{center}
-  \includegraphics{figs/killers-3}
+  \includegraphics{figs/killers-9}
 \end{center}
-for which points are disallowed in subsequent rounds.  From $\vertexb$, we have the rule
+for which points are disallowed in subsequent rounds.  By forbidding $\vertexb$, we have the rule
 \begin{center}
   \includegraphics{figs/killersb-4} \enspace .
 \end{center}
-Together, these two rules tell us that the points $\bigcup_{i=1}^n
-Q_i$ must have $y$ coordinates that form a non-decreasing sequence
-when ordered $x$-coordinate.  Therefore, $|Q_i|\le 2n-2$.  The bound
-$\ex(\disjointa, \disjointb, \vertexa,\vertexb)\in O(n\log n)$ then
-follows from \lemref{top-bottom}.
+Together, these two rules tell us that the points $\bigcup_{i=1}^n Q_i$
+are non-decreasing, so $|\bigcup_{i=1}^n Q_i|\le 2n-2$.  Furthermore,
+for each $i\in\{1,\ldots,n-1\}$, $|Q_i\cap Q_{i+1}|\le 1$ (any point
+in the common intersection is the top-right point of $Q_i$, which
+is the bottom-left point of $Q_{i+1}$.  Therefore, $|Q_i|\le 2n-2$.
+The bound $\ex(\disjointa, \disjointb, \vertexa,\vertexb)\in O(n\log n)$
+then follows from \lemref{top-bottom}.
 
 Now, with our tools in hand, we are ready to study some problems.
 

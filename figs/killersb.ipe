@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.4">
-<info created="D:20151116114303" modified="D:20151116141544"/>
+<info created="D:20151116114303" modified="D:20151116220013"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -248,7 +248,6 @@ h
 <view layers="alpha theta" active="theta"/>
 <use layer="alpha" name="mark/circle(sx)" pos="196 628" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="196 628" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="200 632" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="204 636" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="208 640" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="212 644" size="small" stroke="black"/>
@@ -267,9 +266,6 @@ h
 <use name="mark/circle(sx)" pos="212 636" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="208 636" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="208 636" size="small" stroke="black"/>
-<use matrix="1 0 0 1 -4 0" name="mark/circle(sx)" pos="208 632" size="small" stroke="black"/>
-<use matrix="1 0 0 1 -4 0" name="mark/circle(sx)" pos="208 628" size="small" stroke="black"/>
-<use matrix="1 0 0 1 -4 0" name="mark/circle(sx)" pos="208 628" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="224 628" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="224 628" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="224 632" size="small" stroke="black"/>
@@ -279,58 +275,17 @@ h
 <use name="mark/circle(sx)" pos="224 648" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="224 652" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="224 652" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 4" name="mark/circle(sx)" pos="228 652" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 4" name="mark/circle(sx)" pos="232 652" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 4" name="mark/circle(sx)" pos="232 652" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 4" name="mark/circle(sx)" pos="236 652" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 4" name="mark/circle(sx)" pos="236 652" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 652" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 652" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 668" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 664" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 664" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="240 660" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="240 660" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 656" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 648" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 644" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 640" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="240 636" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 632" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 632" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 628" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="228 636" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="232 636" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="236 636" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="192 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="208 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="208 624" size="small" stroke="black"/>
 <use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="224 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="240 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="196 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="200 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="204 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="204 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="212 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="216 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="220 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="220 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="228 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="232 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="236 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 0 -4" name="mark/circle(sx)" pos="236 624" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="188 620" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="192 624" size="small" stroke="black"/>
-<use name="mark/circle(sx)" pos="240 624" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="224 624" size="small" stroke="black"/>
-<use matrix="1 0 0 1 -4 0" name="mark/circle(sx)" pos="208 624" size="small" stroke="black"/>
-<use name="mark/disk(sx)" pos="224 636" size="large" stroke="black"/>
-<use layer="iota" name="mark/cross(sx)" pos="204 636" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="204 632" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="204 628" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="204 624" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="204 624" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="204 620" size="normal" stroke="red"/>
+<use name="mark/disk(sx)" pos="224 636" size="normal" stroke="black"/>
 <use layer="beta" name="mark/cross(sx)" pos="224 656" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="224 652" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="224 648" size="normal" stroke="red"/>
@@ -340,12 +295,7 @@ h
 <use name="mark/cross(sx)" pos="224 628" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="224 624" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="224 620" size="normal" stroke="red"/>
-<use layer="delta" name="mark/cross(sx)" pos="200 632" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="200 628" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="200 628" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="200 624" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="200 620" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="196 620" size="normal" stroke="red"/>
+<use layer="delta" name="mark/cross(sx)" pos="196 620" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="196 620" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="196 624" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="196 624" size="normal" stroke="red"/>
@@ -353,11 +303,6 @@ h
 <use name="mark/cross(sx)" pos="192 624" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="192 620" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="188 620" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="228 660" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="232 660" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="236 660" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="240 660" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="240 660" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="240 664" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="236 664" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="236 664" size="normal" stroke="red"/>
@@ -374,11 +319,6 @@ h
 <use name="mark/cross(sx)" pos="232 636" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="236 636" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="240 636" size="normal" stroke="red"/>
-<use layer="iota" name="mark/cross(sx)" pos="224 656" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="228 656" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="232 656" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="236 656" size="normal" stroke="red"/>
-<use name="mark/cross(sx)" pos="240 656" size="normal" stroke="red"/>
 <use layer="epsilon" name="mark/cross(sx)" pos="208 640" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="212 640" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="216 640" size="normal" stroke="red"/>
@@ -453,5 +393,106 @@ h
 <use name="mark/cross(sx)" pos="232 652" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="228 652" size="normal" stroke="red"/>
 <use name="mark/cross(sx)" pos="228 652" size="normal" stroke="red"/>
+<use layer="alpha" matrix="1 0 0 1 -8 0" name="mark/circle(sx)" pos="208 632" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -8 0" name="mark/circle(sx)" pos="208 628" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -8 0" name="mark/circle(sx)" pos="208 628" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -4 -4" name="mark/circle(sx)" pos="204 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -4 -4" name="mark/circle(sx)" pos="204 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -8 0" name="mark/circle(sx)" pos="208 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 0 8" name="mark/circle(sx)" pos="232 652" size="small" stroke="black"/>
+<use matrix="1 0 0 1 0 8" name="mark/circle(sx)" pos="232 652" size="small" stroke="black"/>
+<use matrix="1 0 0 1 0 8" name="mark/circle(sx)" pos="236 652" size="small" stroke="black"/>
+<use matrix="1 0 0 1 0 8" name="mark/circle(sx)" pos="236 652" size="small" stroke="black"/>
+<use layer="iota" name="mark/cross(sx)" pos="200 632" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="200 628" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="200 624" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="200 620" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="228 660" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="232 660" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="236 660" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="240 660" size="normal" stroke="red"/>
+<use layer="zeta" name="mark/cross(sx)" pos="228 656" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="232 656" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="236 656" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="240 656" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="240 656" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="204 632" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="204 628" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="204 624" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="204 620" size="normal" stroke="red"/>
+<use layer="alpha" matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="192 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="208 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="208 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="224 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="240 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="196 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="204 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="204 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="212 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="216 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="220 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="220 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="228 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="232 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="236 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -8" name="mark/circle(sx)" pos="236 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 -4" name="mark/circle(sx)" pos="188 620" size="small" stroke="black"/>
+<use matrix="1 0 0 1 0 -8" name="mark/circle(sx)" pos="204 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 0 -8" name="mark/circle(sx)" pos="204 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -4 -8" name="mark/circle(sx)" pos="192 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -8 -8" name="mark/circle(sx)" pos="192 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 672" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 652" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 652" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 668" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 664" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 664" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 660" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 660" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 656" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 648" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 644" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 640" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 636" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 632" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 632" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 628" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 0" name="mark/circle(sx)" pos="240 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 4 4" name="mark/circle(sx)" pos="240 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 8 -4" name="mark/circle(sx)" pos="236 624" size="small" stroke="black"/>
+<use matrix="1 0 0 1 8 -4" name="mark/circle(sx)" pos="236 624" size="small" stroke="black"/>
+<use layer="delta" name="mark/cross(sx)" pos="184 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="188 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="192 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="196 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 664" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 668" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 672" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 676" size="normal" stroke="red"/>
+<use layer="epsilon" name="mark/cross(sx)" pos="244 632" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 628" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 624" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 620" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="240 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="236 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="232 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="232 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="228 616" size="normal" stroke="red"/>
+<use layer="zeta" name="mark/cross(sx)" pos="244 656" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 652" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 652" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 648" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 644" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 640" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="204 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="208 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="212 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="216 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="220 616" size="normal" stroke="red"/>
+<use layer="iota" name="mark/cross(sx)" pos="200 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 660" size="normal" stroke="red"/>
+<use layer="beta" name="mark/cross(sx)" pos="224 616" size="normal" stroke="red"/>
+<use name="mark/cross(sx)" pos="244 636" size="normal" stroke="red"/>
 </page>
 </ipe>

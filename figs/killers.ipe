@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.4">
-<info created="D:20151116114303" modified="D:20151117153752"/>
+<info created="D:20151116114303" modified="D:20151118120800"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -229,6 +229,17 @@ h
 <tiling name="falling" angle="-60" step="4" width="1"/>
 <tiling name="rising" angle="30" step="4" width="1"/>
 </ipestyle>
+<ipestyle>
+<opacity name="10%" value="0.1"/>
+<opacity name="20%" value="0.2"/>
+<opacity name="30%" value="0.3"/>
+<opacity name="40%" value="0.4"/>
+<opacity name="50%" value="0.5"/>
+<opacity name="60%" value="0.6"/>
+<opacity name="70%" value="0.7"/>
+<opacity name="80%" value="0.8"/>
+<opacity name="90%" value="0.9"/>
+</ipestyle>
 <page>
 <layer name="alpha"/>
 <layer name="beta"/>
@@ -240,6 +251,9 @@ h
 <layer name="theta"/>
 <layer name="iota"/>
 <layer name="hidden"/>
+<layer name="kappa"/>
+<layer name="lambda"/>
+<layer name="mu"/>
 <view layers="alpha iota" active="alpha"/>
 <view layers="alpha beta" active="beta"/>
 <view layers="alpha delta" active="delta"/>
@@ -250,6 +264,10 @@ h
 <view layers="alpha theta" active="theta"/>
 <view layers="alpha gamma delta epsilon eta iota" active="iota"/>
 <view layers="alpha beta epsilon zeta iota" active="iota"/>
+<view layers="alpha kappa" active="kappa"/>
+<view layers="alpha lambda" active="lambda"/>
+<view layers="alpha mu" active="mu"/>
+<view layers="alpha kappa lambda mu" active="mu"/>
 <use layer="hidden" name="mark/circle(sx)" pos="196 628" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="196 628" size="small" stroke="black"/>
 <use name="mark/circle(sx)" pos="200 632" size="small" stroke="black"/>
@@ -524,5 +542,2387 @@ h
 244 616 l
 h
 </path>
+<group layer="kappa" matrix="1 0 0 1 0 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -20 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -20 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -20 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -20 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -20 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 12">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 8">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 0">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 8">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 0">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 0">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 0">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 -4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -12">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -16">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -24">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -16">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -24">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -24">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -24">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="black" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<use layer="lambda" name="mark/disk(sx)" pos="232 640" size="normal" stroke="red"/>
+<group matrix="1 0 0 1 24 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 12">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 8">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 8">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<use layer="mu" name="mark/disk(sx)" pos="228 628" size="normal" stroke="blue"/>
+<group matrix="1 0 0 1 24 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -20 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -20 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -20 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -24 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -24 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -24 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -28 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -28 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -28 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 8">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 0">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 8">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 20 0">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 16 0">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 12 0">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 24 12">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group layer="lambda" matrix="1 0 0 1 -16 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -36">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -40">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -44">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -48">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -4">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -8">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -12">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -16">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -8">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -12">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -16">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -12">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -16">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -16">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 8 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="red" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group layer="mu" matrix="1 0 0 1 4 -24">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -24">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -24">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -24">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -24">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -12 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -28">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -16 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -20 -32">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -12">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -16">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -12">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -16">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 0 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -16">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -4 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 -8 -20">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
+<group matrix="1 0 0 1 4 -8">
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+172 672 m
+176 668 l
+</path>
+<path matrix="0.6 0 0 0.6 115.6 262" stroke="blue" pen="heavier" cap="1" opacity="50%">
+176 672 m
+172 668 l
+</path>
+</group>
 </page>
 </ipe>

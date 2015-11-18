@@ -12,6 +12,10 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 
 
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\xmax}{xmax}
+\DeclareMathOperator{\xmin}{xmin}
+\DeclareMathOperator{\ymax}{ymax}
+\DeclareMathOperator{\ymin}{ymin}
 \DeclareMathOperator{\survivors}{survivors}
 
 \usepackage{array}
@@ -391,11 +395,21 @@ use the same dots (and they all lie on a common vertical or horizontal
 line).
 
 
-\begin{lem}\lemlabel{constant-degree}
-  For any three points $a,b,c\in Q$ with no common $x$ or $y$
-  coordinates 
-  \[ |\survivors(\{\disjointb\},\{a,b,c\})|\in O(1) \]
+\begin{lem}\lemlabel{survivor-structure}
+  Let $S\subseteq Q$ be a set of points that have at least two distinct
+  $x$-coordinates and at least two distinct $y$-coordinates.  Then,
+  $\survivors(\{\disjointb\},S)$ consists of the triangular region
+  $\{(x,y)\in Q: x<\ymin(S)\}$, the rectangular region $\{(x,y)\in Q:
+  \xmax(S) <x <\ymax(S), ymax(S)\le y\le \xmax(S)\}$, and $O(1)$ additional points.  (See \figref{survivor-structure}.)
 \end{lem}
+
+\begin{figure}
+  \begin{center}
+      \includegraphics{figs/killers-11}
+  \end{center}
+  \caption{Illustration of \lemref{survivor-structure}. The structure of {$\survivors(\{\protect\disjointb\},S)$} consists mainly of a triangle determined by $\min(S)$ and a rectangle determined by $\ymax(S)$ and $\xmin(S)$.}
+  \figlabel{survivor-structure}
+\end{figure}
 
 \begin{thm}
   $\ex(\edgea,\disjointb) \in O(n\log n)$.
@@ -403,7 +417,7 @@ line).
 
 \begin{proof}[Proof sketch]
   Follows from \lemref{constant-degree} and the fact that the $\edgea$
-  configuration prevents seecting the same point twice.
+  configuration prevents selecting the same point twice.
 \end{proof}
 
 \begin{thm}

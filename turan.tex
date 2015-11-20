@@ -321,6 +321,23 @@ $\disjointc$ &\includegraphics[scale=.8]{figs/killers-8} \break%
      the forbidden subconfigurations.}
    \tablabel{forbidden}
 \end{table}
+
+
+
+\begin{figure}
+   \begin{center}
+      \newlength{\ka}
+      \setlength{\ka}{\textwidth}
+      \addtolength{\ka}{-1cm}
+      \begin{tabular}{c@{\hspace{1cm}}c}
+        \includegraphics[width=.48\ka]{figs/crapper-2} & 
+        \includegraphics[width=.48\ka]{figs/crapper-1} \\
+        (a) & (b)
+      \end{tabular}
+   \end{center}
+   \caption{The regions killed by forbidden configurations during (a)~the current round and (b)~subsequent rounds.}
+   \figlabel{forbidden-color}
+\end{figure}
 \section{Some Bounds}
 
 We say that a point set is \emph{non-decreasing} (respectively,
@@ -396,28 +413,49 @@ line).
 
 
 \begin{lem}\lemlabel{survivor-structure}
-  Let $S\subseteq Q$ be a set of points that have at least two distinct
-  $x$-coordinates and at least two distinct $y$-coordinates.  Then,
-  $\survivors(\{\disjointb\},S)$ consists of the triangular region
-  $\{(x,y)\in Q: x<\ymin(S)\}$, the rectangular region $\{(x,y)\in Q:
-  \xmax(S) <x <\ymax(S), ymax(S)\le y\le \xmax(S)\}$, and $O(1)$ additional points.  (See \figref{survivor-structure}.)
+  Let $S\subseteq Q$, $|S|\ge 1$. Then, $\survivors(\{\disjointb\},S)$
+  is contained in of a triangular region $T=\{(x,y)\in Q: x<\ymin(S)\}$,
+  a rectangular region $R\subseteq\{(x,y)\in Q: \xmax(S) \le x, ymax(S)\le
+  y\le \xmax(S)\}$, and a set $L$ of $O(1)$ additional horizontal and vertical lines.
 \end{lem}
 
-\begin{figure}
-  \begin{center}
-      \includegraphics{figs/killers-11}
-  \end{center}
-  \caption{Illustration of \lemref{survivor-structure}. The structure of {$\survivors(\{\protect\disjointb\},S)$} consists mainly of a triangle determined by $\min(S)$ and a rectangle determined by $\ymax(S)$ and $\xmin(S)$.}
-  \figlabel{survivor-structure}
-\end{figure}
-
 \begin{thm}
-  $\ex(\edgea,\disjointb) \in O(n\log n)$.
+  $\ex(n,\{\edgea,\disjointb\}) \in O(n\log n)$.
 \end{thm}
 
 \begin{proof}[Proof sketch]
-  Follows from \lemref{constant-degree} and the fact that the $\edgea$
-  configuration prevents selecting the same point twice.
+  Without loss of generality, $|Q_1|\ge 1$.  Furthermore, forbidding
+  $\edgea$ implies that $Q_1$ contains at most one point from each row
+  and each column, so $|Q_i|\le n-1$.
+
+  In round $i>1$, $\survivors(\{\edgea,\disjointb\},\bigcup_{j=1}^i
+  Q_i)$ has the structure described in \lemref{survivor-structure}.
+  Let $T_i$, $R_i$ and $L_i$ denote the sets $T$, $R$, and $L$ described
+  in \lemref{survivor-structure} when applied to the point set
+  $\survivors(\{\edgea,\disjointb\},\bigcup_{j=1}^i Q_i)$.
+
+  Now, $Q_i$ contains at most one point in each row and each column, so it
+  contains at most one point from each line in $L$ and $\ell_i\in O(1)$.
+  Furthermore, if $T_{i}$ has a side length of $r$, then $T_{i+1}$ has a 
+  side-length of at most $r-\min\{t_i-1,0\}$.
+
+
+
+  Furthermore, if
+
+
+
+  $Q_i$ contains $t$ points in $T$, then $\xmin(\bigcup_{j=1}^i Q_j) \le
+  \xmin(\bigcup_{j=1}^{i-1}Q_j)-t$ (so $T$ loses at least $t$ columns).
+  Similarly, if $Q_i$ contains $r$ points in $T$, then $R$ loses at
+  least $r$ columns.
+  
+  Using the obvious notation, we have that
+  \[
+      \sum_{j=1}^n 
+  \]
+
+
 \end{proof}
 
 \begin{thm}

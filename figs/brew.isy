@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+    <!DOCTYPE ipestyle SYSTEM "ipe.dtd">
+    <ipestyle name="colors">
+    <color name="aliceblue" value="0.941 0.973 1"/>
+    <color name="brew1" value="0.552941176471 0.827450980392 0.780392156863"/>
+<color name="brew2" value="1.0 1.0 0.701960784314"/>
+<color name="brew3" value="0.745098039216 0.729411764706 0.854901960784"/>
+<color name="brew4" value="0.98431372549 0.501960784314 0.447058823529"/>
+<color name="brew5" value="0.501960784314 0.694117647059 0.827450980392"/>
+<color name="brew6" value="0.992156862745 0.705882352941 0.38431372549"/>
+<color name="brew7" value="0.701960784314 0.870588235294 0.411764705882"/>
+<color name="brew8" value="0.988235294118 0.803921568627 0.898039215686"/>
+</ipestyle>

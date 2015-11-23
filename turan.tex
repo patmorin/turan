@@ -267,62 +267,75 @@ $i$ depend on the set of forbidden configurations and $\bigcup_{j=1}^{i-1}
 Q_i$.  By proving upper or lower bounds on $\sum_{i=1}^n |Q_i|$ we obtain
 bounds on the maximum number of triangles obtained in the top-bottom view.
 
-\Tabref{forbidden} summarizes the constraints on the puzzle induced by
-various forbidden configurations.  The left column shows the forbidden
-configuration.  The middle column describes what happens in subsequent
-rounds when the large black point is placed during a round; none of
-the points marked with red crosses can be used in subsequent rounds.
-The right column shows what happens during the same round; none of the
-points marked with red crosses can be selected during the same round.
+\Figref{forbidden-color} summarizes the constraints on the puzzle induced by
+various forbidden configurations.  The left side of the figure shows
+restrictions on the locations of points placed during a single round.
+It is interpreted as follows:  If the black central point, $p$, is placed
+during round $i$, and we wish to avoid some particular configuration,
+$c$, then we should not place any points in the part of the figure that
+has the same colour as $c$.  For instance, if we wish to avoid the
+configuration $c=\edgea$ configuration, then we should not place any
+points in the same row or column as the central point; such a point
+would correspond to a $\edgea$ configuration in which the shared edge joins
+a bottom vertex to a left (same row) or right (same column) vertex.
+
+The right column of \figref{forbidden-color} shows the constraints placed on the
+locations of points placed in subsequent rounds.  Its interpretation is
+similar to the the left side of the figure. For example, if we wish to
+avoid a $\vertexb$ configuration and we place the central point, $p$,
+during round $i$, then, in every round $j>i$, we should not place any
+point directly to the left or directly below $p$.  Any such point would
+correspond to a $\vertexb$ configuration in which the shared vertex is
+the left vertex (to the left of $p$) or the right vertex (below $p$)
+of both triangles.
 
 %One caveat worth noting is that, unless $\edgea$ is a forbidden
 %configuration, the same point can be chosen in different rounds.
 
-\begin{table}
-\begin{center}
-\begin{tabular}{m{1ex}|>{\centering\arraybackslash}m{.45\textwidth}|>{\centering\arraybackslash}m{.45\textwidth}}
-      & killed by $(x,y)$ in later rounds 
-         & killed by $(x,y)$ in current round \\ \hline
-$\edgeb$ & \includegraphics[scale=.8]{figs/killers-1} \break% 
-           $\{\}$  
-         & \includegraphics[scale=.8]{figs/killersb-1} \break% 
-           $\{(x',x)\} \cup \{(y,y')\}$ \\ 
-$\edgea$ & \includegraphics[scale=.8]{figs/killers-2} \break% 
-           $\{(x,y)\}$ 
-         & \includegraphics[scale=.8]{figs/killersb-2} \break% 
-           $\{(x,y')\} \cup \{(x',y)\}$ \\
-$\vertexa$ & \includegraphics[scale=.8]{figs/killers-3} \break% 
-             $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$ 
-           & \includegraphics[scale=.8]{figs/killersb-3} \break%
-             $\{(x',y'): x' < y\text{ or } y'> x\}$ \\
-$\vertexb$ &  \includegraphics[scale=.8]{figs/killers-4} \break%
-              $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$ 
-         &  \includegraphics[scale=.8]{figs/killersb-4} \break%
-            $\{(x',y'):\sign(x'-x)=\sign(y-y')\}$ \\
-$\vertexc$ &  \includegraphics[scale=.8]{figs/killers-5} \break% 
-              $\{(x',y) : x'>x \}\cup\{(x,y') : y'>y \}$ 
-         &  \includegraphics[scale=.8]{figs/killersb-5} \break% 
-            $\{(x',y'):\sign(x'-x)=\sign(y'-y)\}$ \\
-$\disjointa$ &  \includegraphics[scale=.8]{figs/killers-6} \break%
-                $\{(x',y'): x'< y\}$
-         & \includegraphics[scale=.8]{figs/killersb-6} \break%
-           $\{\}$ \\
-$\disjointb$ & \includegraphics[scale=.8]{figs/killers-7} \break%
-               $\{(x',y'): x'>x, y'< y\}$
-         & \includegraphics[scale=.8]{figs/killersb-7} \break%
-           $\{\}$ \\
-$\disjointc$ &\includegraphics[scale=.8]{figs/killers-8} \break%
-               $\{(x',y'): y < y' <x,\,\, x'>x\}$
-         & \includegraphics[scale=.8]{figs/killersb-8} \break%
-           $\{\}$ \\
-\end{tabular}
-\end{center}
-   \caption{The restrictions placed on the dot puzzle when for each of 
-     the forbidden subconfigurations.}
-   \tablabel{forbidden}
-\end{table}
-
-
+%\begin{table}
+%\begin{center}
+%\begin{tabular}{m{1ex}|>{\centering\arraybackslash}m{.45\textwidth}|>{\centering\arraybackslash}m{.45\textwidth}}
+%      & killed by $(x,y)$ in later rounds 
+%         & killed by $(x,y)$ in current round \\ \hline
+%$\edgeb$ & \includegraphics[scale=.8]{figs/killers-1} \break% 
+%           $\{\}$  
+%         & \includegraphics[scale=.8]{figs/killersb-1} \break% 
+%           $\{(x',x)\} \cup \{(y,y')\}$ \\ 
+%$\edgea$ & \includegraphics[scale=.8]{figs/killers-2} \break% 
+%           $\{(x,y)\}$ 
+%         & \includegraphics[scale=.8]{figs/killersb-2} \break% 
+%           $\{(x,y')\} \cup \{(x',y)\}$ \\
+%$\vertexa$ & \includegraphics[scale=.8]{figs/killers-3} \break% 
+%             $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$ 
+%           & \includegraphics[scale=.8]{figs/killersb-3} \break%
+%             $\{(x',y'): x' < y\text{ or } y'> x\}$ \\
+%$\vertexb$ &  \includegraphics[scale=.8]{figs/killers-4} \break%
+%              $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$ 
+%         &  \includegraphics[scale=.8]{figs/killersb-4} \break%
+%            $\{(x',y'):\sign(x'-x)=\sign(y-y')\}$ \\
+%$\vertexc$ &  \includegraphics[scale=.8]{figs/killers-5} \break% 
+%              $\{(x',y) : x'>x \}\cup\{(x,y') : y'>y \}$ 
+%         &  \includegraphics[scale=.8]{figs/killersb-5} \break% 
+%            $\{(x',y'):\sign(x'-x)=\sign(y'-y)\}$ \\
+%$\disjointa$ &  \includegraphics[scale=.8]{figs/killers-6} \break%
+%                $\{(x',y'): x'< y\}$
+%         & \includegraphics[scale=.8]{figs/killersb-6} \break%
+%           $\{\}$ \\
+%$\disjointb$ & \includegraphics[scale=.8]{figs/killers-7} \break%
+%               $\{(x',y'): x'>x, y'< y\}$
+%         & \includegraphics[scale=.8]{figs/killersb-7} \break%
+%           $\{\}$ \\
+%$\disjointc$ &\includegraphics[scale=.8]{figs/killers-8} \break%
+%               $\{(x',y'): y < y' <x,\,\, x'>x\}$
+%         & \includegraphics[scale=.8]{figs/killersb-8} \break%
+%           $\{\}$ \\
+%\end{tabular}
+%\end{center}
+%   \caption{The restrictions placed on the dot puzzle when for each of 
+%     the forbidden subconfigurations.}
+%   \tablabel{forbidden}
+%\end{table}
+%
 
 \begin{figure}
    \begin{center}
@@ -345,12 +358,12 @@ increasing, non-increasing, decreasing) if, when sorted lexicographically,
 the $y$ coordinates of the points form a non-decreasing (respectively,
 increasing, non-increasing, decreasing) sequence.
 
-From \tabref{forbidden}, some previous upper bounds naturally fall out.
+From \figref{forbidden-color}, some previous upper bounds naturally fall out.
 For example, Bra\ss's results \cite{brass:turan} that $\ex(\vertexb)$
 and $\ex(\vertexc)$ are each $O(n^2)$ come from the fact that the
 points selected during a single round of the dot puzzle must be
 non-decreasing (respectively, non-increasing); see the right column
-of \tabref{forbidden}.  This immediately implies that one can select at
+of \figref{forbidden-color}.  This immediately implies that one can select at
 most $2n-2$ points during a single round of the dot puzzle game, for a
 total of at most $2n^2-2n$ points during all $n$ rounds.  (Note, in the
 top/bottom view, the bound on the number of the points selected during a
@@ -365,7 +378,8 @@ By forbidding $\vertexb$, we have the rule
 \begin{center}
   \includegraphics{figs/killersb-4} \enspace ,
 \end{center}
-which ensures that the set of points taken during a single round form an increasing point set.  From the forbidden configurations $\vertexa$,
+which ensures that the set of points taken during a single round form
+a non-decreasing point set.  From the forbidden configurations $\vertexa$,
 $\vertexb$, $\disjointa$, and $\disjointb$, we obtain the rule
 \begin{center}
   \includegraphics{figs/killers-9}
@@ -377,12 +391,134 @@ together, these rules imply that
 \[
     \sum_{i=1}^n|Q_i| \le 3n-2 \enspace ,
 \]
-Since the union of $Q_i$ is an increasing sequence (whose length is
+Since the union of $Q_i$ is a non-decreasing point set (whose size is
 therefore at most $2n-2$), and each $Q_i$ shares at most one point with
 $Q_{i+1}$.  The bound $\ex(\disjointa, \disjointb, \vertexa,\vertexb)\in
 O(n\log n)$ then follows from \lemref{top-bottom}.
 
-For round $i$
+\section{New Results}
+
+After this warm-up, and with the dot-puzzle view, we are ready to prove
+some new results.  We begin with a collection of results on forbidding
+the $\disjointb$ configuration.
+
+\subsection{Forbidding Crossing Vertex-Disjoint Triangles}
+
+In the following, we use the notation $\ymin(S)$ denote the minimum
+$x$-coordinate of any point in the point set $S$.  If $S$ is empty,
+then we define $\xmin(S)$ as $n+1$.  We define $\ymin(S)$, $\xmax(S)$,
+and $\ymax(S)$ similarly, except that $\ymin(\emptyset) = n$,
+$\ymax(\emptyset)=0$, and $\xmax(\emptyset)=1$.
+
+
+\begin{obs}\obslabel{disjointb-region}
+  For any non-empty set $S\subset Q$, $\survivors(\{\disjointb\},S)$
+  is contained in the union of a \emph{triangular region} $T=\{(x,y)\in
+  Q: x\le \xmin(S)+1\}$, a \emph{rectangular region} $R=\{(x,y)\in Q:
+  x\ge \xmax(S),\, y\ge \ymax(S)\}$, a \emph{vertical line} $V=\{(x,y)\in Q:
+  x=\xmin(S)\}$ and a \emph{horizontal line} $H=\{(x,y)\in Q: y=\ymin(S)\}$.
+\end{obs}
+
+\obsref{disjointb-region} gives us a form of \emph{potential function}
+that we can use.  We will apply it with $S=\bigcup_{j=1}^i Q_i$ so that as
+rounds proceed, any time the value of $\xmax(S)$ or $\ymax(S)$ increase,
+the size of the rectangle $R$ decreases. Any time the value of $\ymin(S)$
+decreases, the size of the triangle $T$ decreases.  So that we can refer
+to these point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$ and
+we define $T_i$, $R_i$, $V_i$, and $H_i$ as in \obsref{disjointb-region},
+but with respect to the set $S=S_i$.
+
+\begin{thm}\thmlabel{disjointb-edgea}
+  $\ex(n,\{\disjointb,\edgea\}) \in O(n\log n)$.
+\end{thm}
+
+\begin{proof}
+  We will directly bound $\sum_{i=1}^n |Q_i|$.  We begin by noting that,
+  since we forbid $\edgea$, the set of points in each $Q_i$ contains
+  at most one point from each row and each column.  We will use this
+  fact implicitly for the rest of the proof.
+
+  Now, observe that if $Q_i$ contains $t_i\ge 2$ points in $T_i$, then
+  $\ymin(S_{i+1}) \le \xmin(S_i)-t_i+2\}$.  This immediately
+  implies that $\sum_{i=1}^n t_i \le 3n$.
+
+  Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$, then
+  $\ymax(S_{i+1})\ge \ymax(S_i)+r_i-1$.  This immediately
+  implies that $\sum_{i=1}^n r_i\le 2n$.
+  
+  Finally, we observe that $Q_i$ contains at most one point each from
+  $H_i$ and $V_i$, so
+  \[
+      \sum_{i=1}^{n}|Q_i| \le \sum_{i=1}^n(t_i+r_i+2) \le 7n \enspace .
+  \]
+  We have just shown that $\ex'(n,,\{\disjointb,\edgea\})\in O(n)$,
+  so the theorem follows from \lemref{top-bottom}.
+\end{proof}
+
+\begin{thm}\thmlabel{disjointb-vertexa}
+  $\ex(n,\{\disjointb,\vertexa\}) \in \Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+   The upper bound follows from the $O(n^2)$ upper bound on
+   $\ex(n,\{\disjointb\})$ \cite{brass:turan}.
+   For the lower-bound, we set $Q_1=\{(x,y)\in Q: x>n/2, y<n/2\}$ and
+   set $Q_2=Q_3=\cdots Q_n=\emptyset$.
+\end{proof}
+
+\begin{thm}\thmlabel{disjointb-vertexb}
+  $\ex(n,\{\disjointb,\vertexb\}) \in O(n\log n)$.
+\end{thm}
+
+\begin{proof}
+   The proof is similar to the proof of \thmref{disjointb-edgea}.
+   The forbidden configuration $\vertexb$ implies that each set $Q_i$
+   must be non-decreasing (see the left side of \figref{forbidden-color}.
+   We will use this fact implicitly for the rest of the proof.
+
+   Now, if $Q_i$ contains $t_i$ points in $T_i$, then the fact
+   that $Q_i$ is non-decreasing implies that $\ymin(S_{i+1})\le
+   \ymin(S_i)-\lfloor t_i/2 \rfloor$.  This immediately implies that
+   $\sum_{j=1}^n t_i \le 3n$.
+
+   Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$, then the fact
+   that $Q_i$ is non-decreasing means that
+   \[
+       \ymax(S_{i+1})+\xmax(S_{i+1}) \ge \ymax(S_{i})+\xmax(S_{i}) + r_i - 1 \enspace .
+   \]
+   This immediately implies that $\sum_{j=1}^n r_i \le 3n$.
+
+   To account for points of $Q_i$ on the vertical line $V_i$, we consider
+   the lowest point of $\survivors(\{\disjointb\},Q_i)$ on  
+   $V_i\setminus T_i\setminus R_i$ and denote the $y$-coordinate of this
+   point by $y_i$.  If $V_i\setminus T_i\setminus R_i$ contains $v_i\ge
+   1$ points of $Q_i$, then $y_{i+1}\ge y_i+v_i-1$.  This immediately
+   implies that $\sum_{j=1}^n v_i \le 2n$.
+
+   Accounting for points of $Q_i$ on the horizontal line $H_i$ is similar,
+   but with respect to the left-most point of 
+   $\survivors(\{\disjointb\},Q_i)$ in $H_i\setminus T_i\setminus R_i$.
+
+   Summing everything, we find that
+   $\ex'(n,\{\disjointb,\vertexb\})\le\sum_{j=1}^n |Q_i|\le 10n$, and
+   we finish by applying \lemref{top-bottom}.
+\end{proof}
+
+\begin{thm}\thmlabel{disjointb-vertexb}
+  $\ex(n,\{\disjointb,\vertexb\}) \in O(n\log n)$.
+\end{thm}
+
+\begin{proof}
+  TODO. Similar to previous proof.
+\end{proof}
+
+\begin{thm}
+  $\ex(n,\{\disjointb,\disjointa,\disjointc\}) \in \Theta(n^2)$.
+\end{thm}
+
+\subsection{The Top-Bottom View}
+
+
 
 Now, with our tools in hand, we are ready to study some problems.
 

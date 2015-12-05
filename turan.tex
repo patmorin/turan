@@ -31,17 +31,17 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 \author{Authors TBD}
 
 
-\newcommand{\edgea}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-edge-1}}}
-\newcommand{\edgeb}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-edge-2}}}
+\newcommand{\taco}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-edge-1}}}
+\newcommand{\mariposa}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-edge-2}}}
 
 
-\newcommand{\vertexa}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-vertex-1}}}
-\newcommand{\vertexb}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-vertex-2}}}
-\newcommand{\vertexc}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-vertex-3}}}
+\newcommand{\bat}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-vertex-1}}}
+\newcommand{\nested}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-vertex-2}}}
+\newcommand{\crossing}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-vertex-3}}}
 
-\newcommand{\disjointa}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-disjoint-1}}}
-\newcommand{\disjointb}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-disjoint-2}}}
-\newcommand{\disjointc}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-disjoint-3}}}
+\newcommand{\ears}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-disjoint-1}}}
+\newcommand{\swords}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-disjoint-2}}}
+\newcommand{\david}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-disjoint-3}}}
 
 \DeclareMathOperator{\ex}{ex}
 \DeclareMathOperator{\on}{\overline{ex}}
@@ -51,7 +51,9 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 %\usepackage{lineno}
 %\linenumbers
 
+\pagenumbering{roman}
 \begin{document}
+\begin{titlepage}
 \maketitle
 
 \begin{abstract}
@@ -62,17 +64,21 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
   in which a pair of triangles in such a point set can interact.
 \end{abstract}
 
+\end{titlepage}
+
+\tableofcontents
 
 
 \section{Introduction}
+\pagenumbering{arabic}
 
 Let $t_1$ and $t_2$ be a pair of distinct triangles whose (4--6) vertices
 are in convex position.  There are 8 combinatorially distinct ways that
 these triangle can interact:  2 ways in which the triangles can share
-an edge (\edgea\ and \edgeb), 3 ways in which the triangles can share a
-single vertex (\vertexa, \vertexb, and \vertexc), and 3 ways in which
-the triangles can have no vertices in common (\disjointa, \disjointb,
-and \disjointc).
+an edge (\taco\ and \mariposa), 3 ways in which the triangles can share a
+single vertex (\bat, \nested, and \crossing), and 3 ways in which
+the triangles can have no vertices in common (\ears, \swords,
+and \david).
 
 We consider the following class of problems:  Given a set, $X$,
 of combinatorial configurations of pairs of triangles, what is the
@@ -81,22 +87,22 @@ points in convex position, and such that no pair of triangles in $S$
 forms a configuration in $X$.  We call the size of this set $\ex(n,X)$.
 For example, 
 \begin{equation}
-    \ex(n,\{\edgea,\vertexb,\vertexc,\disjointb,\disjointc\}) = n-2 \enspace .
+    \ex(n,\{\taco,\nested,\crossing,\swords,\david\}) = n-2 \enspace .
 \end{equation}
 This is because the set
-$X=\{\edgea,\vertexb,\vertexc,\disjointb,\disjointc\}$ in this case
+$X=\{\taco,\nested,\crossing,\swords,\david\}$ in this case
 forbids any form of crossings between the edges of triangles. Thus,
 the number maximum number of triangles we can have while avoiding $X$
 is the number of triangles in a triangulation of a convex $n$-gon,
 i.e., $n-2$. One of the results in this paper is that nearly the
-same bound holds even if we allow the $\disjointb$ and $\disjointc$
+same bound holds even if we allow the $\swords$ and $\david$
 configuration. In particular, our \thmref{blech} shows that
-$\ex(n,\{\edgea,\vertexb,\vertexc\}) \in O(n\log n)$.
+$\ex(n,\{\taco,\nested,\crossing\}) \in O(n\log n)$.
 
 Sometimes it is more natural to describe the allowable configurations than the forbidden configurations. For this, we use the notation 
 \[
-   \on(n,X) = \ex(n,\{\edgea,\edgeb,\vertexa,\vertexb,\vertexc,
-                       \disjointa,\disjointb,\disjointc\} \setminus X) \enspace .
+   \on(n,X) = \ex(n,\{\taco,\mariposa,\bat,\nested,\crossing,
+                       \ears,\swords,\david\} \setminus X) \enspace .
 \]
 
 
@@ -105,59 +111,66 @@ Sometimes it is more natural to describe the allowable configurations than the f
 \begin{center}
 \begin{tabular}{m{.55\textwidth}m{.4\textwidth}}
   \hline
-  $\ex(n,\{\edgeb\})\in \Theta(n^3)$ & \cite{brass:turan} \\
-  $\ex(n,\{\edgea\})\in \Theta(n^2)$ & \cite{brass:turan} \\
+  \textbf{Result} & \textbf{Ref.} \\ \hline\hline
+  $\ex(n,\{\mariposa\})\in \Theta(n^3)$ \newline
+  $\ex(n,\{\taco\})\in \Theta(n^2)$ & \cite{brass:turan} \\
   \hline
-  $\ex(n,\{\vertexa\})\in \Theta(n^3)$ & \cite{brass:turan} \\
-  $\ex(n,\{\vertexb\})\in \Theta(n^2)$ & \cite{brass:turan} \\
-  $\ex(n,\{\vertexc\})\in \Theta(n^2)$ & \cite{brass:turan} \\
+  $\ex(n,\{\bat\})\in \Theta(n^3)$ \newline
+  $\ex(n,\{\nested\})\in \Theta(n^2)$ \newline
+  $\ex(n,\{\crossing\})\in \Theta(n^2)$ & \cite{brass:turan} \\
   \hline
-  $\ex(n,\{\disjointa\})\in \Theta(n^3)$ & \cite{brass:turan} \\
-  $\ex(n,\{\disjointb\})\in \Theta(n^2)$ & \cite{brass:turan} \\
-  $\ex(n,\{\disjointc\})\in \Theta(n^2)$ & \cite{brass:turan} \\
+  $\ex(n,\{\ears\})\in \Theta(n^3)$ \newline
+  $\ex(n,\{\swords\})\in \Theta(n^2)$ \newline
+  $\ex(n,\{\david\})\in \Theta(n^2)$ & \cite{brass:turan} \\
   \hline
-  $\ex(n,\{\vertexa,\vertexb\})\in \Theta(n^2)$ & \cite{brass:turan} \\
-  $\ex(n,\{\vertexb,\vertexc\})\in \Theta(n^2)$ & \cite{brass:turan} \\
-  $\ex(n,\{\vertexa,\vertexc\})\in \Theta(n^2)$ & \cite{brass:turan} \\
+  $\ex(n,\{\bat,\nested\})\in \Theta(n^2)$ \newline 
+  $\ex(n,\{\nested,\crossing\})\in \Theta(n^2)$ \newline
+  $\ex(n,\{\bat,\crossing\})\in \Theta(n^2)$ & \cite{brass:turan} \\
   \hline
-  $\ex(n,\{\disjointa,\disjointb,\vertexa,\vertexb\}) = n$ \newline
-  $\on(n,\{\edgea,\edgeb,\disjointc,\vertexc\}) = n$
+  $\ex(n,\{\ears,\swords,\bat,\nested\}) = n$ \newline
+  $\on(n,\{\taco,\mariposa,\david,\crossing\}) = n$
     & \cite{brass.rote.ea:triangles} \\
   \hline
-  $\ex(n,\{\vertexa,\vertexb,\vertexc\}) \in \Theta(n)$ & from hypergraphs \\
-  $\ex(n,\{\edgea,\edgeb\}) \in \Theta(n^2)$ & from hypergraphs \\
-  $\ex(n,\{\disjointa,\disjointb,\disjointc\}) \in \Theta(n^2)$ & from hypergraphs \\ \hline
-  $\ex(n,X\subset\{\edgea,\edgeb,\vertexa,\vertexb,\vertexc,\disjointa,\disjointb,\disjointc\}) \in \Omega(n)$ & here  \\
-  $\ex(n,\{\edgea,\vertexb\}) \in \Omega(n^{3/2})$ & here \\
-  $\ex(n,\{\edgea,\vertexb,\vertexa\}) \in \Omega(n^{3/2})$ & here \\ \hline
-  $\ex(n,\{\edgea,\edgeb,\vertexb,\vertexa,\disjointa\})
-      \in\Omega(n^{3/2})$ \newline
-  $\on(n,\{\vertexc,\disjointb,\disjointc\}) \in \Omega(n^{3/2})$  
-    & here  \\ \hline
-  $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in \Omega(n) \cap O(n\log n)$ & \thmref{blech} \\
-  $\ex(n,X\cup\{\edgeb\})\in \Theta(\ex(n,X))$ & \lemref{xcup} \\
-  \hline
-  $\ex(n,\{\disjointa,\disjointb,\vertexb\}) \in \Theta(n)$
-    & extension of \cite{brass.rote.ea:triangles} \\
-  \hline
+  $\ex(n,\{\bat,\nested,\crossing\}) \in \Theta(n)$ \newline
+  $\ex(n,\{\taco,\mariposa\}) \in \Theta(n^2)$ \newline 
+  $\ex(n,\{\ears,\swords,\david\}) \in \Theta(n^2)$ & from hypergraphs \\ \hline
+%  $\ex(n,X\subset\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}) \in \Omega(n)$ & here  \\
+%  $\ex(n,\{\taco,\nested\}) \in \Omega(n^{3/2})$ & here \\
+%  $\ex(n,\{\taco,\nested,\bat\}) \in \Omega(n^{3/2})$ & here \\ \hline
+%  $\ex(n,\{\taco,\mariposa,\nested,\bat,\ears\})
+%      \in\Omega(n^{3/2})$ \newline
+%  $\on(n,\{\crossing,\swords,\david\}) \in \Omega(n^{3/2})$  
+%    & here  \\ \hline
+%  $\ex(n,\{\taco,\nested,\crossing\}) \in \Omega(n) \cap O(n\log n)$ & \thmref{blech} \\
+%  $\ex(n,X\cup\{\mariposa\})\in \Theta(\ex(n,X))$ & \lemref{xcup} \\
+%  \hline
+%  $\ex(n,\{\ears,\swords,\nested\}) \in \Theta(n)$
+%    & extension of \cite{brass.rote.ea:triangles} \\
+%  \hline
   
   \end{tabular}
 \end{center}
-\caption{Known and new results on $\ex(n,X)$ for different sets $X$.}
+\caption{Known results on $\ex(n,X)$ for different sets $X$.}
 \end{table}
 
 
-\section{Some Easy Results}
+\section{Points of View and Easy Results}
 
+Since there are eight possible forbidden configurations, there are
+$2^8=256$ sets, $X$ for which we can study $\ex(n,X)$.  In this section
+we present a few easy results that help reduce this number and we describe
+different variants of the problem, some of which are easier to work with.
+We begin with a result that cuts the number of interesting sets $X$
+in half.
 
 \subsection{Edge-Sharing Non-Overlapping Triangles are Irrelevant}
 
-The following lemma shows that including the $\edgea$ confguration in
+The following lemma shows that including the $\taco$ confguration in
 the set $X$ of forbidden configurations has no effect on the asymptotics
 of $\ex(n,X)$.
 
 \begin{lem}\lemlabel{xcup}
-   For any $X$, $\ex(n,X\cup\{\edgeb\}) \ge \ex(n,X)/8$.
+   For any $X$, $\ex(n,X\cup\{\mariposa\}) \ge \ex(n,X)/8$.
 \end{lem}
 
 \begin{proof}
@@ -166,34 +179,28 @@ of $\ex(n,X)$.
   $\overrightarrow{uw}$ or $\overleftarrow{uw}$.  We then obtain a set
   $S'\subseteq S$ by removing any triangle that has a directed edge for
   which the triangle is to the left of the edge.  Observe that the set
-  $S'$ does not contain a $\edgeb$ configuration.
+  $S'$ does not contain a $\mariposa$ configuration.
 
   For any particular triangle $t\in S$, the probability that $t\in S'$
   is exactly $1/8$ since each of $t$'s three edges much be directed
   clockwise and edge directions are chosen independently.  By linearity of
   expectation, $\E[|S'|]=|S|/8=\ex(n,X)/8$.  We conclude therefore that
   there exists some subset $S''\subseteq S$ of size least $\ex(n,X)/8$
-  that does not contain a $\edgeb$ configuration.  The set $S''$ proves
-  that $\ex(n,X\cup\{\edgeb\}) \ge \ex(n,X)/8$.
+  that does not contain a $\mariposa$ configuration.  The set $S''$ proves
+  that $\ex(n,X\cup\{\mariposa\}) \ge \ex(n,X)/8$.
 \end{proof}
-
-From this point onward, we will frequently include \edgeb\ in sets of
-forbidden configurations when proving upper bounds.  By \lemref{xcup}
-any upper bound we prove this way holds (within a factor of 8) without
-including \edgeb.
-
 
 \subsection{The Top/Bottom View}
 
-It will be helpful to consider an top/bottom variant of $\ex(n,X)$
-that is defined as follows (see \figref{top-bottom}).  Partition the
-vertices of a convex $n$-gon using a horizontal line into a \emph{top
-half} of size $\lfloor n/2\rfloor$ and a \emph{bottom half} of size
-$\lceil n/2\rceil$.  We define $\ex'(n,X)$ analogously to $\ex(n,X)$
-except that we only count triangles have one vertex in the bottom half
-and one vertex in the top half.  When studying $\ex'$, each triangle
-has a naturally defined \emph{bottom vertex} in the bottom half and a
-\emph{left vertex} and \emph{right vertex}, each in the top half.
+It will be helpful to consider an top/bottom variant of $\ex(n,X)$ that
+is defined as follows (see \figref{top-bottom}).  Partition the vertices
+of a convex $n$-gon using a horizontal line into a \emph{top half} of size
+$\lceil n/2\rceil$ and a \emph{bottom half} of size $\lfloor n/2\rfloor$.
+We define $\ex'(n,X)$ analogously to $\ex(n,X)$ except that we only count
+triangles having one vertex in the bottom half and two vertices in the
+top half.  When studying $\ex'$, each triangle we count has a naturally
+defined \emph{bottom vertex} in the bottom half and a \emph{left vertex}
+and \emph{right vertex}, each in the top half.
 
 \begin{figure}
   \begin{center}
@@ -204,40 +211,48 @@ has a naturally defined \emph{bottom vertex} in the bottom half and a
   \figlabel{top-bottom}
 \end{figure}
 
-The following lemma shows that we can, without losing much, study $\ex'(n,X)$ instead of $\ex(n,X)$.
+The following lemma shows that we can, without losing much, we can study
+$\ex'(n,X)$ instead of $\ex(n,X)$.
 
 \begin{lem}\lemlabel{top-bottom}
   If $\ex'(n,X)\in O(n^c)$, then
-\[
-   \ex(n,X)\in 
-      \begin{cases} 
-          O(n^c)     & \text{if $c>1$} \\
-          O(n\log n) & \text{if $c=1$}
-      \end{cases}
-\]
+  \[
+     \ex(n,X)\in 
+        \begin{cases} 
+            O(n^c)     & \text{if $c>1$} \\
+            O(n\log n) & \text{if $c=1$}
+        \end{cases}
+  \]
 \end{lem}
 
 \begin{proof}
-   Let $S$ be a set of triangles that avoids $X$.  
-   Every triangle in $S$
+   Let $S$ be a set of triangles that avoids $X$.  Every triangle in $S$
    is of one of the following types:
    \begin{enumerate}
-      \item It has one vertex in the top half and two in the bottom half; there are $O(n^{c})$ such triangles.
-      \item It has two vertices in the top half and one in the bottom half; there are $O(n^{c})$ such triangles.
-      \item It has all three vertices in the top half; there are at most $\ex(\lfloor n/2\rfloor,X)$ such triangles.
-      \item It has all three vertices in the bottom half; there are at most $\ex(\lceil n/2\rceil,X)$ such triangles.
+      \item It has one vertex in the top half and two in the bottom half;
+        there are $O(n^{c})$ such triangles.
+      \item It has two vertices in the top half and one in the bottom
+        half; there are $O(n^{c})$ such triangles.
+      \item It has all three vertices in the top half; there are at most
+        $\ex(\lceil n/2\rceil,X)$ such triangles.
+      \item It has all three vertices in the bottom half; there are at
+        most $\ex(\lfloor n/2\rfloor,X)$ such triangles.
    \end{enumerate}
    Thus, we obtain the recurrence inequality:
-   \[  \ex(n,X) = O(n^{c}) + \ex(\lfloor n/2\rfloor,X) + \ex(\lceil n/2\rceil,X) \]
+   \[  \ex(n,X) = O(n^{c}) + \ex(\lceil n/2\rceil,X) + \ex(\lfloor n/2\rfloor,X) \]
    which resolves to $O(n^c)$ for $c>1$ and $O(n\log n)$ for $c=1$.
 \end{proof}
 
 
-\subsection{The Dot Puzzle View}
+\subsection{The Dot-Puzzle View}
 
-It is sometimes helpful to take the top/bottom view of the problem
-and turn it, instead, into a puzzle.  Refer to \figref{point-view}.
-In this puzzle, we are given $\binom{n}{2}$ points,
+The top-bottom version of the problem gives us a sense of orientation,
+but is still difficult to visualize the sets of triangles obtained this
+way. Next, we show that there is a corresponding puzzle that is easy
+to visualize.
+
+Refer to \figref{point-view}.  In this puzzle, we are given $\binom{n}{2}$
+points,
 \[
     Q = \{(x,y): y\in\{1,\ldots,n-1\}, x\in\{y+1,\ldots,n-1\} \} \enspace .
 \]
@@ -250,8 +265,8 @@ vertices are labelled $1,\ldots,n$ from left to right.
    \begin{center}
       \includegraphics{figs/point-view}
    \end{center}
-   \caption{The Dot Puzzle View of the Top/Bottom View. Orange points were
-     selected in round 1, green points in round 2 and pink points in round 3.}
+   \caption{The Dot-Puzzle View of the Top/Bottom View. In this example,
+     four rounds of the Dot-Puzzle have been played.}
    \figlabel{point-view}
 \end{figure}
 
@@ -264,32 +279,29 @@ vertices are labelled $1,\ldots,n$ from right to left.
 
 Of course, the constraints on which points can be selected during round
 $i$ depend on the set of forbidden configurations and $\bigcup_{j=1}^{i-1}
-Q_i$.  By proving upper or lower bounds on $\sum_{i=1}^n |Q_i|$ we obtain
-bounds on the maximum number of triangles obtained in the top-bottom view.
+Q_i$.  By proving bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on
+the maximum number of triangles obtained in the top-bottom view.
 
-\Figref{forbidden-color} summarizes the constraints on the puzzle induced by
-various forbidden configurations.  The left side of the figure shows
-restrictions on the locations of points placed during a single round.
-It is interpreted as follows:  If the black central point, $p$, is placed
-during round $i$, and we wish to avoid some particular configuration,
-$c$, then we should not place any points in the part of the figure that
-has the same colour as $c$.  For instance, if we wish to avoid the
-configuration $c=\edgea$ configuration, then we should not place any
-points in the same row or column as the central point; such a point
-would correspond to a $\edgea$ configuration in which the shared edge joins
-a bottom vertex to a left (same row) or right (same column) vertex.
+\Figref{forbidden-color}.a shows restrictions on the locations of points
+placed during a single round.  It is interpreted as follows:  If the
+central point, $p=(x,y)$, is placed during round $i$, and we wish to
+avoid some particular configuration, $c$, then we should not place any
+points in the parts of the figure that are have label $c$.  For instance,
+if we wish to avoid the configuration $c=\taco$ configuration, then we
+should not place any points in the same row or column as $p$; such a point
+creates a $\taco$ configuration in which the shared edge
+joins a bottom vertex to a left (same row) or right (same column) vertex.
 
-The right column of \figref{forbidden-color} shows the constraints placed on the
-locations of points placed in subsequent rounds.  Its interpretation is
-similar to the the left side of the figure. For example, if we wish to
-avoid a $\vertexb$ configuration and we place the central point, $p$,
-during round $i$, then, in every round $j>i$, we should not place any
-point directly to the left or directly below $p$.  Any such point would
-correspond to a $\vertexb$ configuration in which the shared vertex is
-the left vertex (to the left of $p$) or the right vertex (below $p$)
-of both triangles.
+\Figref{forbidden-color}.b shows the constraints placed on the locations
+of points placed in subsequent rounds.  Its interpretation is similar
+\figref{forbidden-color}.a. For example, if we wish to avoid a
+$\nested$ configuration and we place the central point, $p$, during round
+$i$, then, in every round $j>i$, we should not place any point directly
+to the left or directly below $p$.  Any such point creates 
+a $\nested$ configuration in which the shared vertex is the left vertex
+(to the left of $p$) or the right vertex (below $p$) of both triangles.
 
-%One caveat worth noting is that, unless $\edgea$ is a forbidden
+%One caveat worth noting is that, unless $\taco$ is a forbidden
 %configuration, the same point can be chosen in different rounds.
 
 %\begin{table}
@@ -297,35 +309,35 @@ of both triangles.
 %\begin{tabular}{m{1ex}|>{\centering\arraybackslash}m{.45\textwidth}|>{\centering\arraybackslash}m{.45\textwidth}}
 %      & killed by $(x,y)$ in later rounds 
 %         & killed by $(x,y)$ in current round \\ \hline
-%$\edgeb$ & \includegraphics[scale=.8]{figs/killers-1} \break% 
+%$\mariposa$ & \includegraphics[scale=.8]{figs/killers-1} \break% 
 %           $\{\}$  
 %         & \includegraphics[scale=.8]{figs/killersb-1} \break% 
 %           $\{(x',x)\} \cup \{(y,y')\}$ \\ 
-%$\edgea$ & \includegraphics[scale=.8]{figs/killers-2} \break% 
+%$\taco$ & \includegraphics[scale=.8]{figs/killers-2} \break% 
 %           $\{(x,y)\}$ 
 %         & \includegraphics[scale=.8]{figs/killersb-2} \break% 
 %           $\{(x,y')\} \cup \{(x',y)\}$ \\
-%$\vertexa$ & \includegraphics[scale=.8]{figs/killers-3} \break% 
+%$\bat$ & \includegraphics[scale=.8]{figs/killers-3} \break% 
 %             $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$ 
 %           & \includegraphics[scale=.8]{figs/killersb-3} \break%
 %             $\{(x',y'): x' < y\text{ or } y'> x\}$ \\
-%$\vertexb$ &  \includegraphics[scale=.8]{figs/killers-4} \break%
+%$\nested$ &  \includegraphics[scale=.8]{figs/killers-4} \break%
 %              $\{(x',y) : x'<x \}\cup\{(x,y') : y'<y \}$ 
 %         &  \includegraphics[scale=.8]{figs/killersb-4} \break%
 %            $\{(x',y'):\sign(x'-x)=\sign(y-y')\}$ \\
-%$\vertexc$ &  \includegraphics[scale=.8]{figs/killers-5} \break% 
+%$\crossing$ &  \includegraphics[scale=.8]{figs/killers-5} \break% 
 %              $\{(x',y) : x'>x \}\cup\{(x,y') : y'>y \}$ 
 %         &  \includegraphics[scale=.8]{figs/killersb-5} \break% 
 %            $\{(x',y'):\sign(x'-x)=\sign(y'-y)\}$ \\
-%$\disjointa$ &  \includegraphics[scale=.8]{figs/killers-6} \break%
+%$\ears$ &  \includegraphics[scale=.8]{figs/killers-6} \break%
 %                $\{(x',y'): x'< y\}$
 %         & \includegraphics[scale=.8]{figs/killersb-6} \break%
 %           $\{\}$ \\
-%$\disjointb$ & \includegraphics[scale=.8]{figs/killers-7} \break%
+%$\swords$ & \includegraphics[scale=.8]{figs/killers-7} \break%
 %               $\{(x',y'): x'>x, y'< y\}$
 %         & \includegraphics[scale=.8]{figs/killersb-7} \break%
 %           $\{\}$ \\
-%$\disjointc$ &\includegraphics[scale=.8]{figs/killers-8} \break%
+%$\david$ &\includegraphics[scale=.8]{figs/killers-8} \break%
 %               $\{(x',y'): y < y' <x,\,\, x'>x\}$
 %         & \includegraphics[scale=.8]{figs/killersb-8} \break%
 %           $\{\}$ \\
@@ -351,36 +363,35 @@ of both triangles.
    \caption{The regions killed by forbidden configurations during (a)~the current round and (b)~subsequent rounds.}
    \figlabel{forbidden-color}
 \end{figure}
-\section{Some Bounds}
+
+
+\subsection{Some Easy Bounds}
 
 We say that a point set is \emph{non-decreasing} (respectively,
 increasing, non-increasing, decreasing) if, when sorted lexicographically,
 the $y$ coordinates of the points form a non-decreasing (respectively,
 increasing, non-increasing, decreasing) sequence.
 
-From \figref{forbidden-color}, some previous upper bounds naturally fall out.
-For example, Bra\ss's results \cite{brass:turan} that $\ex(\vertexb)$
-and $\ex(\vertexc)$ are each $O(n^2)$ come from the fact that the
-points selected during a single round of the dot puzzle must be
-non-decreasing (respectively, non-increasing); see the right column
-of \figref{forbidden-color}.  This immediately implies that one can select at
-most $2n-2$ points during a single round of the dot puzzle game, for a
-total of at most $2n^2-2n$ points during all $n$ rounds.  (Note, in the
-top/bottom view, the bound on the number of the points selected during a
-single round is a bound on the number of triangles incident to a bottom
-vertex.)  The bounds $\ex(\vertexb)\in O(n^2)$ and $\ex(\vertexc)\in
-O(n^2)$ then immediately follow from \lemref{top-bottom}.
+From \figref{forbidden-color}, some previous upper bounds naturally
+fall out.  For example, Bra\ss's results \cite{brass:turan} that
+$\ex(\nested)\in O(n^2)$ comes from the fact points selected during a
+single round of the dot puzzle must be non-decreasing, and thus at most
+$2n-3$ points can be selected take part in $Q_i$ during a round $i$.
+Thus $\sum_{j=1}^{n}|Q_i| \le 2n^2-3n$, and the bound $\ex(\nested)\in
+O(n^2)$ immediately follow from \lemref{top-bottom}.  Bra\ss's result
+that $\ex(n,\crossing)\in O(n^2)$ is obtained in a similar way, using
+the fact that the points in any $Q_i$ must be non-increasing.
 
 Similarly, we can almost recover the result of Bra\ss, Rote and
-Swanepoel \cite{brass.rote.ea:triangles} on $\ex(\disjointa, \disjointb,
-\vertexa,\vertexb)$. 
-By forbidding $\vertexb$, we have the rule
+Swanepoel \cite{brass.rote.ea:triangles} on $\ex(\ears, \swords,
+\bat,\nested)$. 
+By forbidding $\nested$, we have the rule
 \begin{center}
   \includegraphics{figs/killersb-4} \enspace ,
 \end{center}
 which ensures that the set of points taken during a single round form
-a non-decreasing point set.  From the forbidden configurations $\vertexa$,
-$\vertexb$, $\disjointa$, and $\disjointb$, we obtain the rule
+a non-decreasing point set.  From the forbidden configurations $\bat$,
+$\nested$, $\ears$, and $\swords$, we obtain the rule
 \begin{center}
   \includegraphics{figs/killers-9}
 \end{center}
@@ -393,14 +404,51 @@ together, these rules imply that
 \]
 Since the union of $Q_i$ is a non-decreasing point set (whose size is
 therefore at most $2n-2$), and each $Q_i$ shares at most one point with
-$Q_{i+1}$.  The bound $\ex(\disjointa, \disjointb, \vertexa,\vertexb)\in
+$Q_{i+1}$.  The bound $\ex(\ears, \swords, \bat,\nested)\in
 O(n\log n)$ then follows from \lemref{top-bottom}.
 
 \section{New Results}
 
+% The following is the start of some bullshit argument, unless I can fix it.
+
+%Earlier, we showed that the inclusion of the $\mariposa$ configuration in
+%the set of excluded configurations, $X$, has no effect on the asymptotics
+%of $\ex(n,X)$.  Here we show that a similar, though slightly weaker,
+%result for the $\nested$ configuration.
+%
+%\begin{lem}
+%  $\ex'(n,\{\taco,\bat\}\cup X) \in \Omega(\ex'(n,\{\taco\}\cup X)/\log n)$.
+%\end{lem} 
+%
+%\begin{proof}[Proof Sketch]
+%    Assume without loss of generality that $n$ is a power of 2 Partition
+%    $Q$ into $O(\log n)$ \emph{layers}, where layer 0 contains
+%    the \emph{square}, $L_0=\{(x,y)\in Q: x\ge n/2,\, y\le n/2\}$.
+%    Subsequent layers are obtained by recursing on the two triangles in
+%    $Q\setminus L_0$, so that $L_1$ contains two squares, $L_2$ contains
+%    four squares, and so on.
+%
+%    Let $Q_1,\ldots,Q_n$ be a play of the dot-puzzle that achieves
+%    $\ex'(n,\{\taco\}\cup X)$ while avoiding $\{\taco\}\cup X$
+%    configurations.  Observe that, because we exclude $\taco$, the sets
+%    $Q_i$ and $Q_j$ are disjoint for all $1\le i<j\le n$.
+%
+%    Then, for any layer $L_i$, the sets $Q_1\cap L_i,\ldots,Q_n\cap L_i$
+%    avoid all configurations in $\{\taco\}\cup X$ as well as $\bat$
+%    configurations.  By the pigeonhole principle, one of these layers,
+%    say $L_i$, has size $\Omega(\ex'(n,\{\taco\}\cup X)/\log n)$.
+%
+%
+%
+%points that maximize
+%\end{proof}
+%
+%is irrelevan
+%
+
 After this warm-up, and with the dot-puzzle view, we are ready to prove
 some new results.  We begin with a collection of results on forbidding
-the $\disjointb$ configuration.
+the $\swords$ configuration.
 
 \subsection{Forbidding Crossing Vertex-Disjoint Triangles}
 
@@ -411,30 +459,30 @@ and $\ymax(S)$ similarly, except that $\ymin(\emptyset) = n$,
 $\ymax(\emptyset)=0$, and $\xmax(\emptyset)=1$.
 
 
-\begin{obs}\obslabel{disjointb-region}
-  For any non-empty set $S\subset Q$, $\survivors(\{\disjointb\},S)$
+\begin{obs}\obslabel{swords-region}
+  For any non-empty set $S\subset Q$, $\survivors(\{\swords\},S)$
   is contained in the union of a \emph{triangular region} $T=\{(x,y)\in
   Q: x\le \xmin(S)+1\}$, a \emph{rectangular region} $R=\{(x,y)\in Q:
   x\ge \xmax(S),\, y\ge \ymax(S)\}$, a \emph{vertical line} $V=\{(x,y)\in Q:
   x=\xmin(S)\}$ and a \emph{horizontal line} $H=\{(x,y)\in Q: y=\ymin(S)\}$.
 \end{obs}
 
-\obsref{disjointb-region} gives us a form of \emph{potential function}
+\obsref{swords-region} gives us a form of \emph{potential function}
 that we can use.  We will apply it with $S=\bigcup_{j=1}^i Q_i$ so that as
 rounds proceed, any time the value of $\xmax(S)$ or $\ymax(S)$ increase,
 the size of the rectangle $R$ decreases. Any time the value of $\ymin(S)$
 decreases, the size of the triangle $T$ decreases.  So that we can refer
 to these point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$ and
-we define $T_i$, $R_i$, $V_i$, and $H_i$ as in \obsref{disjointb-region},
+we define $T_i$, $R_i$, $V_i$, and $H_i$ as in \obsref{swords-region},
 but with respect to the set $S=S_i$.
 
-\begin{thm}\thmlabel{disjointb-edgea}
-  $\ex(n,\{\disjointb,\edgea\}) \in O(n\log n)$.
+\begin{thm}\thmlabel{swords-edgea}
+  $\ex(n,\{\swords,\taco\}) \in O(n\log n)$.
 \end{thm}
 
 \begin{proof}
   We will directly bound $\sum_{i=1}^n |Q_i|$.  We begin by noting that,
-  since we forbid $\edgea$, the set of points in each $Q_i$ contains
+  since we forbid $\taco$, the set of points in each $Q_i$ contains
   at most one point from each row and each column.  We will use this
   fact implicitly for the rest of the proof.
 
@@ -451,29 +499,29 @@ but with respect to the set $S=S_i$.
   \[
       \sum_{i=1}^{n}|Q_i| \le \sum_{i=1}^n(t_i+r_i+2) \le 7n \enspace .
   \]
-  We have just shown that $\ex'(n,,\{\disjointb,\edgea\})\in O(n)$,
+  We have just shown that $\ex'(n,,\{\swords,\taco\})\in O(n)$,
   so the theorem follows from \lemref{top-bottom}.
 \end{proof}
 
-\begin{thm}\thmlabel{disjointb-vertexa}
-  $\ex(n,\{\disjointb,\vertexa\}) \in \Theta(n^2)$.
+\begin{thm}\thmlabel{swords-bat}
+  $\ex(n,\{\swords,\bat\}) \in \Theta(n^2)$.
 \end{thm}
 
 \begin{proof}
    The upper bound follows from the $O(n^2)$ upper bound on
-   $\ex(n,\{\disjointb\})$ \cite{brass:turan}.
+   $\ex(n,\{\swords\})$ \cite{brass:turan}.
    For the lower-bound, we set $Q_1=\{(x,y)\in Q: x>n/2, y<n/2\}$ and
    set $Q_2=Q_3=\cdots Q_n=\emptyset$.
 \end{proof}
 
-\begin{thm}\thmlabel{disjointb-vertexb}
-  $\ex(n,\{\disjointb,\vertexb\}) \in O(n\log n)$.
+\begin{thm}\thmlabel{swords-nested}
+  $\ex'(n,\{\swords,\nested\}) \in O(n)$.
 \end{thm}
 
 \begin{proof}
-   The proof is similar to the proof of \thmref{disjointb-edgea}.
-   The forbidden configuration $\vertexb$ implies that each set $Q_i$
-   must be non-decreasing (see the left side of \figref{forbidden-color}.
+   The proof is similar to the proof of \thmref{swords-edgea}.
+   The forbidden configuration $\nested$ implies that each set $Q_i$
+   must be non-decreasing (see \figref{forbidden-color}a).
    We will use this fact implicitly for the rest of the proof.
 
    Now, if $Q_i$ contains $t_i$ points in $T_i$, then the fact
@@ -484,12 +532,13 @@ but with respect to the set $S=S_i$.
    Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$, then the fact
    that $Q_i$ is non-decreasing means that
    \[
-       \ymax(S_{i+1})+\xmax(S_{i+1}) \ge \ymax(S_{i})+\xmax(S_{i}) + r_i - 1 \enspace .
+       \ymax(S_{i+1})+\xmax(S_{i+1}) 
+             \ge \ymax(S_{i})+\xmax(S_{i}) + r_i - 1 \enspace .
    \]
    This immediately implies that $\sum_{j=1}^n r_i \le 3n$.
 
    To account for points of $Q_i$ on the vertical line $V_i$, we consider
-   the lowest point of $\survivors(\{\disjointb\},Q_i)$ on  
+   the lowest point of $\survivors(\{\swords\},Q_i)$ on  
    $V_i\setminus T_i\setminus R_i$ and denote the $y$-coordinate of this
    point by $y_i$.  If $V_i\setminus T_i\setminus R_i$ contains $v_i\ge
    1$ points of $Q_i$, then $y_{i+1}\ge y_i+v_i-1$.  This immediately
@@ -497,15 +546,15 @@ but with respect to the set $S=S_i$.
 
    Accounting for points of $Q_i$ on the horizontal line $H_i$ is similar,
    but with respect to the left-most point of 
-   $\survivors(\{\disjointb\},Q_i)$ in $H_i\setminus T_i\setminus R_i$.
+   $\survivors(\{\swords\},Q_i)$ in $H_i\setminus T_i\setminus R_i$.
 
    Summing everything, we find that
-   $\ex'(n,\{\disjointb,\vertexb\})\le\sum_{j=1}^n |Q_i|\le 10n$, and
+   $\ex'(n,\{\swords,\nested\})\le\sum_{j=1}^n |Q_i|\le 10n$, and
    we finish by applying \lemref{top-bottom}.
 \end{proof}
 
-\begin{thm}\thmlabel{disjointb-vertexb}
-  $\ex(n,\{\disjointb,\vertexb\}) \in O(n\log n)$.
+\begin{thm}\thmlabel{swords-crossing}
+  $\ex'(n,\{\swords,\crossing\}) \in O(n)$.
 \end{thm}
 
 \begin{proof}
@@ -513,105 +562,47 @@ but with respect to the set $S=S_i$.
 \end{proof}
 
 \begin{thm}
-  $\ex(n,\{\disjointb,\disjointa,\disjointc\}) \in \Theta(n^2)$.
+  $\ex(n,\{\swords,\ears,\david\}) \in \Theta(n^2)$.
 \end{thm}
 
-\subsection{The Top-Bottom View}
-
-
+\subsection{Disorganized Results}
 
 Now, with our tools in hand, we are ready to study some problems.
 
 \begin{thm}\thmlabel{blech}
-  $\ex(n,\{\edgea,\vertexb,\vertexc\}) \in O(n\log n)$.
+  $\ex(n,\{\taco,\nested,\crossing\}) \in O(n\log n)$.
 \end{thm}
 
 \begin{proof}
-  Since we forbid $\vertexb$, we know that the set of points taken
-  during each round forms an increasing point set.  In particular,
-  within a single round of the dot-puzzle we can take at most
-  one point from each column.   Taking the union of the rules
-  for $\edgea$, $\vertexb$, and $\vertexc$, we obtain the rule
+  Since we forbid $\nested$, we know that the set of points taken
+  during each round is non-decreasing.  Taking the union of the rules
+  for $\taco$, $\nested$, and $\crossing$, we obtain the rule
   \begin{center}
      \includegraphics{figs/killers-10}
   \end{center}
-  which ensures that during subsequent rounds we can not take a point from
-  any column used in the previous round.  Thus, the sets $Q_1,\ldots,Q_n$
-  contain at most one point from each column and have total size at
-  most $n-1$.  This proves that, in the top-bottom view, we have at most
-  $n-1$ triangles and the theorem then follows from \lemref{top-bottom}.
-\end{proof}
+  which ensures that during subsequent rounds we can not take a point
+  from any column or row used in the previous round.
 
-I have the following two conjectures that are based on the fact that the
-only large examples I know of for $\disjointb$ configurations repeatedly
-use the same dots (and they all lie on a common vertical or horizontal
-line).
-
-
-\begin{lem}\lemlabel{survivor-structure}
-  Let $S\subseteq Q$, $|S|\ge 1$. Then, $\survivors(\{\disjointb\},S)$
-  is contained in of a triangular region $T=\{(x,y)\in Q: x<\ymin(S)\}$,
-  a rectangular region $R\subseteq\{(x,y)\in Q: \xmax(S) \le x, ymax(S)\le
-  y\le \xmax(S)\}$, and a set $L$ of $O(1)$ additional horizontal and vertical lines.
-\end{lem}
-
-\begin{thm}
-  $\ex(n,\{\edgea,\disjointb\}) \in O(n\log n)$.
-\end{thm}
-
-\begin{proof}[Proof sketch]
-  Without loss of generality, $|Q_1|\ge 1$.  Furthermore, forbidding
-  $\edgea$ implies that $Q_1$ contains at most one point from each row
-  and each column, so $|Q_i|\le n-1$.
-
-  In round $i>1$, $\survivors(\{\edgea,\disjointb\},\bigcup_{j=1}^i
-  Q_i)$ has the structure described in \lemref{survivor-structure}.
-  Let $T_i$, $R_i$ and $L_i$ denote the sets $T$, $R$, and $L$ described
-  in \lemref{survivor-structure} when applied to the point set
-  $\survivors(\{\edgea,\disjointb\},\bigcup_{j=1}^i Q_i)$.
-
-  Now, $Q_i$ contains at most one point in each row and each column, so it
-  contains at most one point from each line in $L$ and $\ell_i\in O(1)$.
-  Furthermore, if $T_{i}$ has a side length of $r$, then $T_{i+1}$ has a 
-  side-length of at most $r-\min\{t_i-1,0\}$.
-
-
-
-  Furthermore, if
-
-
-
-  $Q_i$ contains $t$ points in $T$, then $\xmin(\bigcup_{j=1}^i Q_j) \le
-  \xmin(\bigcup_{j=1}^{i-1}Q_j)-t$ (so $T$ loses at least $t$ columns).
-  Similarly, if $Q_i$ contains $r$ points in $T$, then $R$ loses at
-  least $r$ columns.
-  
-  Using the obvious notation, we have that
-  \[
-      \sum_{j=1}^n 
-  \]
-
-
+  Imagine scanning the points in $Q_i$ in non-decreasing order.  Combining
+  the two preceding observations, we see that each point we scan is in
+  a row and column not used before in $Q_1,\ldots,Q_{i-1}$ and it is
+  on a row or a column that has not appeared before in the scan order.
+  Thus, each point of $Q_i$ that we scan kills one row and/or one column
+  so that this row/column can not be used in $Q_{i+1},\ldots,Q_n$.  Therefore,
+  $\sum_{j=1}^n |Q_i| \le 2n-3$.
 \end{proof}
 
 \begin{thm}
-  $\ex(\vertexb,\disjointb) \in O(n\log n)$.
+  $\ex'(n,\{\nested,\david\})\in \Omega(n^2)$.
 \end{thm}
 
-\begin{proof}[Proof sketch]
-  Follows from \lemref{constant-degree} and the fact that the $\edgea$
-  configuration prevents killinng selecting the same point twice.
+\begin{proof}[Proof Sketch]
+  Repeatedly take points on the diagonal.
 \end{proof}
-
-\begin{thm}
-    $\ex(\vertexc,\disjointb) \in O(n\log n)$.
-\end{thm}
-
 
 \begin{conj}
-    $\ex(\edgea,\vertexb) \in \Theta(n^{3/2})$.
+  $\ex'(n,\{\taco,\nested,\david\})\in O(n)$.
 \end{conj}
-
 
 
 

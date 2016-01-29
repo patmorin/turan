@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.4">
-<info created="D:20160128223439" modified="D:20160129090119"/>
+<info created="D:20160129094619" modified="D:20160129100954"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -235,118 +235,61 @@ h
 <layer name="gamma"/>
 <layer name="delta"/>
 <layer name="epsilon"/>
-<view layers="alpha delta" active="alpha"/>
+<view layers="alpha" active="alpha"/>
 <view layers="alpha beta" active="beta"/>
-<view layers="alpha gamma" active="gamma"/>
-<view layers="alpha gamma epsilon" active="gamma"/>
-<path layer="epsilon" stroke="seagreen" fill="pink" pen="fat">
-345.294 665.298 m
-272 704 l
-338.369 748.346 l
+<view layers="alpha beta gamma" active="gamma"/>
+<view layers="alpha beta gamma delta" active="delta"/>
+<view layers="alpha beta gamma delta epsilon" active="epsilon"/>
+<path layer="alpha" stroke="black">
+224 528 m
+320 528 l
+320 624 l
 h
 </path>
-<path stroke="seagreen" fill="pink" pen="fat">
-286.059 737.941 m
-322.115 658.357 l
-364.346 722.369 l
-h
-</path>
-<path stroke="seagreen" fill="pink" pen="fat">
-322.115 658.357 m
-272 704 l
-338.369 748.346 l
-h
-</path>
-<path stroke="seagreen" fill="pink" pen="fat">
-345.294 665.298 m
-286.059 737.941 l
-364.346 722.369 l
-h
-</path>
-<path layer="beta" stroke="black" fill="pink">
-328.663 657.571 m
-272 704 l
-275.654 722.369 l
+<use name="mark/disk(sx)" pos="284 572" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="296 584" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="300 568" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="308 560" size="normal" stroke="black"/>
+<path stroke="black" fill="pink">
+224 528 m
+244 548 l
+244 528 l
 h
 </path>
 <path stroke="black" fill="pink">
-328.663 657.571 m
-364.346 722.369 l
-368 704 l
+320 584 m
+308 584 l
+308 612 l
+320 612 l
 h
 </path>
-<path layer="delta" stroke="black" fill="pink">
-338.369 659.654 m
-301.631 748.346 l
-320 656 l
+<path stroke="pink" fill="pink" pen="ultrafat">
+276 580 m
+276 528 l
+</path>
+<path stroke="pink" fill="pink" pen="ultrafat">
+320 548 m
+244 548 l
+</path>
+<use name="mark/disk(sx)" pos="292 548" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="276 560" size="normal" stroke="black"/>
+<use layer="beta" name="mark/disk(sx)" pos="240 540" size="normal" stroke="blue"/>
+<path stroke="black" fill="darkred">
+224 528 m
+236 528 l
+236 540 l
 h
 </path>
-<path stroke="black" fill="pink">
-338.369 659.654 m
-320 656 l
-320 752 l
+<use layer="gamma" name="mark/disk(sx)" pos="308 584" size="normal" stroke="blue"/>
+<path stroke="black" fill="darkred">
+312 612 m
+312 592 l
+320 592 l
+320 612 l
 h
 </path>
-<path stroke="black" fill="pink">
-364.346 722.369 m
-368 704 l
-338.369 659.654 l
-h
-</path>
-<path stroke="black" fill="pink">
-338.369 659.654 m
-272 704 l
-275.654 722.369 l
-h
-</path>
-<path stroke="black" fill="pink">
-320 656 m
-272 704 l
-275.654 722.369 l
-h
-</path>
-<use name="mark/disk(sx)" pos="320 656" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="338.369 659.654" size="normal" stroke="red"/>
-<use layer="alpha" name="mark/disk(sx)" pos="353.941 670.059" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="353.941 737.941" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="338.369 748.346" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="320 752" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="301.631 748.346" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="286.059 737.941" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="286.059 670.059" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="301.631 659.654" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="275.654 685.631" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="364.346 685.631" size="normal" stroke="black"/>
-<path layer="beta" stroke="black" fill="pink">
-328.663 657.571 m
-301.631 748.346 l
-h
-</path>
-<path stroke="black" fill="pink">
-328.663 657.571 m
-320 752 l
-h
-</path>
-<path layer="gamma" stroke="seagreen" fill="pink" pen="fat">
-272 704 m
-338.369 748.346 l
-</path>
-<path stroke="seagreen" fill="pink" pen="fat">
-286.059 737.941 m
-364.346 722.369 l
-</path>
-<path layer="beta" stroke="seagreen" fill="pink" pen="fat">
-272 704 m
-275.654 722.369 l
-</path>
-<path stroke="seagreen" fill="pink" pen="fat">
-364.346 722.369 m
-368 704 l
-</path>
-<use layer="alpha" name="mark/disk(sx)" pos="275.654 722.369" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="272 704" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="364.346 722.369" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="368 704" size="normal" stroke="black"/>
-<use layer="beta" name="mark/disk(sx)" pos="328.663 657.571" size="normal" stroke="red"/>
+<use name="mark/disk(sx)" pos="312 592" size="normal" stroke="blue"/>
+<use layer="delta" name="mark/disk(sx)" pos="268 548" size="normal" stroke="blue"/>
+<use name="mark/disk(sx)" pos="276 540" size="normal" stroke="blue"/>
 </page>
 </ipe>

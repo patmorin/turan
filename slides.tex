@@ -65,7 +65,7 @@
       \end{itemize}
       \item What is the maximum number of triangles we can draw on a convex
          $n$-gon before we
-         get a pair that like  \ears, \swords, \nested, or \bat?
+         get a pair like  \ears, \swords, \nested, or \bat?
       \item No geometry!
   \end{itemize}
 \end{frame}
@@ -74,18 +74,19 @@
   \frametitle{Maximum Triangles Problem}
   \framesubtitle{Bra\ss, Rote, Swanepoel (2001)}
 
-  Let $\ex(n,X)$ denote the maximum number of triangles we can draw on a convex $n$-gon before we get a configuration from $X$.
+  Let $\ex(n,X)$ denote the maximum number of triangles we can draw on a convex $n$-gon before we get a configuration from $X$.\\[1ex]
 
-  \textbf{Theorem (BRS2001):} $\ex(n,\{\ears,\swords,\nested,\bat\})\le n$.
+  \uncover<2->
+  {\textbf{Theorem (BRS2001):} $\ex(n,\{\ears,\swords,\nested,\bat\})\le n$.}
 
-  \begin{itemize}[<+->]
-     \item Number polygon vertices $0,\ldots,n-1$
-     \item Represent each triangle as a triple: $(a,b,c)$, with $0\le a<b<c<n$.
-     \item Partially-order triangles according to 
+  \begin{itemize}
+     \item<3-> Number polygon vertices $0,\ldots,n-1$
+     \item<4-> Represent each triangle as a triple: $(a,b,c)$, with $0\le a<b<c<n$.
+     \item<5-> Partially-order triangles according to 
          \[ (x_1,y_1,z_1)\preceq (x_2,y_2,z_2) \Leftrightarrow x_1\le x_2, y_1\le y_2, z_1\le z_2 \] 
-     \item Key insight: Any pair of maximum-area triangles (\taco, \david, \crossing, \mariposa) is comparable! 
-     \item $\Delta_1<\Delta_2<\cdots<\Delta_k \Rightarrow k \le 3n$
-     \item Count a bit more carefully to get $k\le n$ \hfill{QED}
+     \item<6-> Key insight: Any pair of maximum-area triangles (\taco, \david, \crossing, \mariposa) is comparable! 
+     \item<7-> $\Delta_1<\Delta_2<\cdots<\Delta_k \Rightarrow k \le 3n$
+     \item<8-> Count a bit more carefully to get $k\le n$ \hfill{QED}
   \end{itemize}
 \end{frame} 
 
@@ -98,7 +99,12 @@
          a convex $n$-gon before we get a configuration from $X$
  
       \item 256 problems: Determine $\ex(n,X)$ for every $X\subseteq\{\taco,\david,\crossing,\mariposa,\ears,\swords,\nested,\bat\}$
-      \item Bra\ss\ (2004): \\
+   \end{itemize}
+\end{frame}
+
+\begin{frame}
+   \frametitle{Bra\ss\ 2004}
+      Bra\ss\ (2004): 
         \[ \begin{array}{rrr}
            \ex(n,\{\ears\})=\Theta(n^3) & \ex(n,\{\swords\})=\Theta(n^2) & \ex(n,\{\david\})=\Theta(n^2) \\
            \ex(n,\{\bat\})=\Theta(n^3) & \ex(n,\{\nested\})=\Theta(n^2) & \ex(n,\{\crossing\})=\Theta(n^2) \\
@@ -108,18 +114,15 @@
         \[\begin{array}{r}
            \ex(n,\{\bat,\nested\})=\Theta(n^2) \\ \ex(n,\{\crossing,\nested\})=\Theta(n^2) \\ \ex(n,\{\bat,\crossing\})=\Theta(n^2) \\
         \end{array}\]
-   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Proof that $\ex(n,\{\crossing\})=O(n^2)$}
-  \framesubtitle{Bra\ss (2004)}
+  \framesubtitle{Bra\ss\ (2004)}
 
   \centerline{\mi{slidefigs/crossing}}
 
-  \begin{itemize}[<4->]
-      \item[]\ \hfill{QED}
-  \end{itemize}
+  \uncover<4->{\hfill{QED}}
 \end{frame} 
 
 
@@ -140,17 +143,18 @@
 
    \textbf{Theorem:} Any set of triangles of size $N$ contains a subset
     of size at least $N/8$ that has no \mariposa\ pair
-  \begin{itemize}[<+->]
-   \item Randomly direct each pair $u,v$ of vertices ($\overrightarrow{uv}$ or $\overleftarrow{uv}$)
-   \item Discard all triangles that use $uv$ and are on the right of $uv$
+  \begin{itemize}
+   \item<2-> Randomly direct each pair $(u,v)$ of vertices ($\overrightarrow{uv}$ or $\overleftarrow{uv}$)
+   \item<3-> Discard all triangles that use $uv$ and are on the right of $uv$
   \end{itemize}
    \centerline{
        \only<1>{\includegraphics{slidefigs/chucker-1}}%
        \only<2>{\includegraphics{slidefigs/chucker-2}}%
        \only<3->{\includegraphics{slidefigs/chucker-3}}%
     }
-  \begin{itemize}[<+->]
+  \begin{itemize}[<4->]
    \item Resulting set has expected size $N/8$ and no $\mariposa$ pairs
+     \hfill{QED}
   \end{itemize} 
 \end{frame} 
 
@@ -158,11 +162,12 @@
 \begin{frame}
   \frametitle{The Top-Bottom View}
 
-   Let $\ex'(n,X)$ be the just like $\ex(n,X)$ but we only count triangles
+   Define $\ex'(n,X)$ just like $\ex(n,X)$ but only count triangles
    with one vertex in the bottom half and two in the top half.
 
    \centerline{\includegraphics{slidefigs/top-bottom}}
 
+\uncover<2->{
 \textbf{Lemma:}
   If $\ex'(n,X)\in O(n^c)$, then
   \[
@@ -172,14 +177,19 @@
             O(n\log n) & \text{if $c=1$}
         \end{cases}
   \]
+}
+\uncover<3>{
   \emph{Proof:} $\ex(n)\le 2\ex'(n) + 2\ex(n/2)$
+}
 \end{frame} 
+
 
 \begin{frame}
     \frametitle{The Dot-Puzzle View}
     \framesubtitle{A One-Player Game}
 
     \includegraphics[width=.95\textwidth]{figs/point-view}
+    \uncover<2->{\begin{center}A puzzle played in $n$ rounds\end{center}}
 \end{frame}
 
 \begin{frame}
@@ -210,7 +220,32 @@
       \end{tabular}
    }
    \centerline{\includegraphics{slidefigs/swords-region-1}}
+   \invisible<1->{\hfill{QED}}
 \end{frame}
+
+\begin{frame}
+   \frametitle{$\ex'(n,\{\swords,\taco\})=O(n)$}
+   \framesubtitle{
+      %\newlength{\ka}
+      \setlength{\ka}{.3\textwidth}
+      \addtolength{\ka}{-1cm}
+      \begin{tabular}{c@{\hspace{1cm}}c}
+        \includegraphics[width=.48\ka]{figs/crapper-2} & 
+        \includegraphics[width=.48\ka]{figs/crapper-1} 
+      \end{tabular}
+   }
+   \centerline{
+      \only<1>{\includegraphics{slidefigs/swords-region-1}}%
+      \only<2>{\includegraphics{slidefigs/swords-region-2}}%
+      \only<3>{\includegraphics{slidefigs/swords-region-3}}%
+      \only<4->{\includegraphics{slidefigs/swords-region-4}}%
+   }
+   \uncover<4->{\hfill{QED}}\\
+   \uncover<5->{$\ex'(n,\{\swords,\nested\})=O(n)$ and 
+                $\ex'(n,\{\swords,\crossing\})=O(n)$ have similar proofs.}
+\end{frame}
+
+
 
 \begin{frame}
    \frametitle{$\ex'(n,\{\taco,\nested,\crossing\}) = O(n)$}
@@ -225,6 +260,9 @@
    }
    \begin{itemize}[<+->]
       \item \nested\ ensures points in one round are non-decreasing 
+        \begin{itemize}
+          \item Each point is in a new row or new column
+        \end{itemize}
       \item Union of rules ensures these points are killed in subsequent rounds:\\[1ex]
          \centerline{\includegraphics{figs/killers-10}}
       \item Each point in round $i$ kills one row or column in subsequent rounds\hfill{QED}
@@ -243,11 +281,22 @@
         \includegraphics[width=.48\ka]{figs/crapper-1} 
       \end{tabular}
    }
-   \begin{itemize}[<+->]
-      \item Within one round, points must be increasing
-      \item Each point kills a {\textcorner}\ shape
-      \item $\Omega(n^{3/2})$ lower bound is easy
-      \item We have no upper bound better than $O(n^2)$
+   \begin{itemize}
+      \item<1-> Posed in Bra\ss\ 2004
+      \item<2-> Within one round, points must be increasing
+      \item<3-> Each point kills a {\raisebox{-.1ex}{\includegraphics[height=2.0ex]{slidefigs/shape}}}
+ shape
+      \item<4-> $\Omega(n^{3/2})$ lower bound is easy:\\
+      \begin{center}
+        \only<1-4>{\includegraphics{slidefigs/n32-1}}%
+        \only<5>{\includegraphics{slidefigs/n32-2}}%
+        \only<6>{\includegraphics{slidefigs/n32-3}}%
+        \only<7>{\includegraphics{slidefigs/n32-4}}%
+        \only<8>{\includegraphics{slidefigs/n32-5}}%
+        \only<9>{\includegraphics{slidefigs/n32-6}}%
+        \only<10->{\includegraphics{slidefigs/n32-7}}%
+      \end{center}
+      \item<11-> We have no upper bound better than $O(n^2)$
    \end{itemize}
 \end{frame}
 
@@ -255,7 +304,7 @@
    \frametitle{The End}
    \begin{center}
       %\newlength{\ka}
-      \setlength{\ka}{.9\textwidth}
+      \setlength{\ka}{.6\textwidth}
       \addtolength{\ka}{-1cm}
       \begin{tabular}{c@{\hspace{1cm}}c}
         \includegraphics[width=.48\ka]{figs/crapper-2} & 
@@ -263,6 +312,18 @@
       \end{tabular}
    \end{center}
    \centerline{\Huge Thanks!}
+   \begin{itemize}
+      \item P. Braß. Tur\'an-type extremal problems for convex geometric
+      hypergraphs. Contemporary Mathematics, \textbf{342}:25–34, 2004.
+      
+      \item P. Braß, G. Rote, and K. J. Swanepoel. Triangles of extremal area
+      or perimeter in a finite planar point set. Discrete \& Computational
+      Geometry, \textbf{26}(1):51–58, 2001.
+      
+      \item P. Erd\H{o}s and G. Purdy, Some extremal problems in geometry,
+      Journal of Combinatorial Theory Series A, \textbf{10}:246–252, 1971.
+\end{itemize}
+
 \end{frame}
  
 \end{document}

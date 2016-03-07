@@ -90,9 +90,9 @@ For example,
     \ex(n,\{\taco,\nested,\crossing,\swords,\david\}) = n-2 \enspace .
 \end{equation}
 This is because the set
-$X=\{\taco,\nested,\crossing,\swords,\david\}$ in this case
+$X=\{\taco,\nested,\crossing,\swords,\david\}$ 
 forbids any form of crossings between the edges of triangles. Thus,
-the number maximum number of triangles we can have while avoiding $X$
+the maximum number of triangles we can have while avoiding $X$
 is the number of triangles in a triangulation of a convex $n$-gon,
 i.e., $n-2$. One of the results in this paper is that nearly the
 same bound holds even if we allow the $\swords$ and $\david$
@@ -256,7 +256,7 @@ points,
 \[
     Q = \{(x,y): y\in\{1,\ldots,n-1\}, x\in\{y+1,\ldots,n-1\} \} \enspace .
 \]
-These points model the top/bottom view on a set of size $2n$, where the
+These points model the top/bottom view on a convex $2n$-gon, where the
 point $(x,y)$ represents a triangle whose vertices are some point on
 the bottom and the $x$th and $y$th points on the top, where the top
 vertices are labelled $1,\ldots,n$ from left to right.
@@ -277,10 +277,11 @@ top/bottom view, the $i$th round determines which pairs of top vertices
 form a triangle with the $i$th bottom vertex, where the bottom
 vertices are labelled $1,\ldots,n$ from right to left.  
 
-Of course, the constraints on which points can be selected during round
-$i$ depend on the set of forbidden configurations and $\bigcup_{j=1}^{i-1}
-Q_i$.  By proving bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on
-the maximum number of triangles obtained in the top-bottom view.
+Of course, the constraints on which points can be selected during
+round $i$ depend on the set of forbidden configurations and the set
+$\bigcup_{j=1}^{i-1} Q_i$ of points played during previous rounds.
+By proving bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on the maximum
+number of triangles obtained in the top-bottom view.
 
 \Figref{forbidden-color}.a shows restrictions on the locations of points
 placed during a single round.  It is interpreted as follows:  If the
@@ -452,12 +453,22 @@ the $\swords$ configuration.
 
 \subsection{Forbidding Crossing Vertex-Disjoint Triangles}
 
-In the following, we use the notation $\ymin(S)$ denote the minimum
-$x$-coordinate of any point in the point set $S$.  If $S$ is empty,
-then we define $\xmin(S)$ as $n+1$.  We define $\ymin(S)$, $\xmax(S)$,
-and $\ymax(S)$ similarly, except that $\ymin(\emptyset) = n$,
-$\ymax(\emptyset)=0$, and $\xmax(\emptyset)=1$.
+In this section, we focus on the configuration $\swords$ and give
+tight bounds bounds on $\ex'(n,\{\swords, Y\})$ for each of the
+seven $Y\in\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\david\}$.
+Note that the bound $\ex'(n,\{\swords,\mariposa\})\in \Theta(n^2)$ is
+immediate from bound $\ex(n,\{\swords\}\in\Theta(n^2)$ \cite{brass:turan}
+and \lemref{xcup}.
 
+In the following, we use the notation $\xmin(S)$ to denote the
+minimum $x$-coordinate of any point in the point set $S$.  If $S$
+is empty, then we define $\xmin(S)$ as $n+1$.  We define $\ymin(S)$,
+$\xmax(S)$, and $\ymax(S)$ similarly, except that $\ymin(\emptyset)
+= n$, $\ymax(\emptyset)=0$, and $\xmax(\emptyset)=1$.  For any
+$X\subset\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}$
+and any $S\subset Q$, we define $\survivors(X,S)$ to be the subset of
+points in $Q$ that can still be played in the dot-puzzle game if the
+points is $S$ have been played in previous rounds.
 
 \begin{obs}\obslabel{swords-region}
   For any non-empty set $S\subset Q$, $\survivors(\{\swords\},S)$
@@ -567,21 +578,38 @@ but with respect to the set $S=S_i$.
 
 \subsection{Disorganized Results}
 
-Now, with our tools in hand, we are ready to study some problems.
+The following theorem say that we can find very large sets of triangles, all of which pairwise cross.
+
+\begin{thm}\thmlabel{pairwise-crossing}
+   $\ex(n,\{\ears,\bat,\mariposa\})=\Theta(n^3)$
+\end{thm}
+
+\begin{proof}
+  The $O(n^3)$ upper bound is immediate.  For the lower bound,
+  partition the points of the convex $n$-gon into three contiguous
+  sets, $A$, $B$, and $C$, each of size $\lfloor n/3\rfloor$ or
+  $\lceil n/3\rceil$, as appropriate.  Consider the set, $S$, of all
+  triangles having one vertex in each of $A$, $B$, and $C$. It is easy
+  to check that any two triangles in $S$ have a pair of edges that
+  cross, thus they do not form any of \ears, \bat, or \mariposa.
+  Furthermore, $|S|\ge \lfloor n/3\rfloor^3=\Omega(n^3)$, so
+  $\ex(n,\{\ears,\bat,\mariposa\})=\Omega(n^3)$.
+\end{proof}
 
 \begin{thm}\thmlabel{blech}
   $\ex(n,\{\taco,\nested,\crossing\}) \in O(n\log n)$.
 \end{thm}
 
 \begin{proof}
-  Since we forbid $\nested$, we know that the set of points taken
-  during each round is non-decreasing.  Taking the union of the rules
+  Taking the union of the rules
   for $\taco$, $\nested$, and $\crossing$, we obtain the rule
   \begin{center}
      \includegraphics{figs/killers-10}
   \end{center}
   which ensures that during subsequent rounds we can not take a point
-  from any column or row used in the previous round.
+  from any column or row used in the previous round.  Since we forbid
+  $\nested$, we know that the set of points taken during each round
+  is non-decreasing.
 
   Imagine scanning the points in $Q_i$ in non-decreasing order.  Combining
   the two preceding observations, we see that each point we scan is in

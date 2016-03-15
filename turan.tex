@@ -154,6 +154,30 @@ Sometimes it is more natural to describe the allowable configurations than the f
 \end{table}
 
 
+\begin{tabular}{llll}\hline
+  $\ex(n,\taco,\bat)$ & & & \\
+  $\ex(n,\taco,\nested)$ & $\Omega(n^{\log_9 28})$ & $O(n^2)$ & [here] \\
+  $\ex(n,\taco,\crossing)$ & & & \\
+  $\ex(n,\taco,\ears)$ & & & \\
+  $\ex(n,\taco,\swords)$ & $\Omega(n)$ & $O(n\log n)$ & \thmref{taco-swords} \\
+  $\ex(n,\taco,\david)$ & & & \\
+  $\ex(n,\bat,\nested)$ & \multicolumn{2}{c}{$\Theta(n^2$)} & \cite{brass:turan} \\
+  $\ex(n,\bat,\crossing)$ & \multicolumn{2}{c}{$\Theta(n^2$)} & \cite{brass:turan} \\
+  $\ex(n,\bat,\ears)$ & & & \\
+  $\ex(n,\bat,\swords)$ & \multicolumn{2}{c}{$\Theta(n^2$)} & \thmref{bat-swords} \\
+  $\ex(n,\bat,\david)$ & & & \\
+  $\ex(n,\nested,\crossing)$ & \multicolumn{2}{c}{$\Theta(n^2$)} & \cite{brass:turan} \\
+  $\ex(n,\nested,\ears)$ & & & \\
+  $\ex(n,\nested,\swords)$ & $\Omega(n)$ & $O(n\log n)$ & \thmref{nested-swords} \\
+  $\ex(n,\nested,\david)$ & & & \\
+  $\ex(n,\crossing,\ears)$ & & & \\
+  $\ex(n,\crossing,\swords)$ & $\Omega(n)$ & $O(n\log n)$ & \thmref{crossing-swords} \\$\ex(n,\crossing,\david)$ & & & \\
+  $\ex(n,\ears,\swords)$ & \multicolumn{2}{c}{$\Theta(n^2$)} & \thmref{swords-ears-david} \\
+  $\ex(n,\ears,\david)$ & \multicolumn{2}{c}{$\Theta(n^2$)} & \thmref{swords-ears-david} \\
+  $\ex(n,\swords,\david)$ & \multicolumn{2}{c}{$\Theta(n^2$)} & \thmref{swords-ears-david} \\
+\\ \hline
+\end{tabular}
+
 \section{Points of View and Easy Results}
 
 Since there are eight possible forbidden configurations, there are
@@ -476,8 +500,8 @@ to these point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$ and
 we define $T_i$, $R_i$, $V_i$, and $H_i$ as in \obsref{swords-region},
 but with respect to the set $S=S_i$.
 
-\begin{thm}\thmlabel{swords-edgea}
-  $\ex(n,\{\swords,\taco\}) \in O(n\log n)$.
+\begin{thm}\thmlabel{taco-swords}
+  $\ex(n,\{\taco,\swords\}) \in O(n\log n)$.
 \end{thm}
 
 \begin{proof}
@@ -503,7 +527,7 @@ but with respect to the set $S=S_i$.
   so the theorem follows from \lemref{top-bottom}.
 \end{proof}
 
-\begin{thm}\thmlabel{swords-bat}
+\begin{thm}\thmlabel{swords-bat}\thmlabel{bat-swords}
   $\ex(n,\{\swords,\bat\}) \in \Theta(n^2)$.
 \end{thm}
 
@@ -514,8 +538,8 @@ but with respect to the set $S=S_i$.
    set $Q_2=Q_3=\cdots Q_n=\emptyset$.
 \end{proof}
 
-\begin{thm}\thmlabel{swords-nested}
-  $\ex'(n,\{\swords,\nested\}) \in O(n)$.
+\begin{thm}\thmlabel{nested-swords}
+  $\ex'(n,\{\nested,\swords\}) \in O(n)$.
 \end{thm}
 
 \begin{proof}
@@ -553,15 +577,15 @@ but with respect to the set $S=S_i$.
    we finish by applying \lemref{top-bottom}.
 \end{proof}
 
-\begin{thm}\thmlabel{swords-crossing}
-  $\ex'(n,\{\swords,\crossing\}) \in O(n)$.
+\begin{thm}\thmlabel{crossing-swords}
+  $\ex'(n,\{\crossing,\swords\}) \in O(n)$.
 \end{thm}
 
 \begin{proof}
   TODO. Similar to previous proof.
 \end{proof}
 
-\begin{thm}
+\begin{thm}\thmlabel{swords-ears-david}
   $\ex(n,\{\swords,\ears,\david\}) \in \Theta(n^2)$.
 \end{thm}
 

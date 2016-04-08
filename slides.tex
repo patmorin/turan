@@ -31,7 +31,7 @@
 
 \title{Turán-Type Theorems for Triangles \newline in Convex Point Sets}
 \author{Pat Morin}
-\date{January 29, 2016}
+\date{Geometry Seminar \\ April 12, 2016}
 
 \begin{document}
 
@@ -85,7 +85,7 @@
      \item<5-> Partially-order triangles according to 
          \[ (x_1,y_1,z_1)\preceq (x_2,y_2,z_2) \Leftrightarrow x_1\le x_2, y_1\le y_2, z_1\le z_2 \] 
      \item<6-> Key insight: Any pair of maximum-area triangles (\taco, \david, \crossing, \mariposa) is comparable! 
-     \item<7-> $\Delta_1<\Delta_2<\cdots<\Delta_k \Rightarrow k \le 3n$
+     \item<7-> $\Delta_1<\Delta_2<\cdots<\Delta_k \Rightarrow k < 3n$
      \item<8-> Count a bit more carefully to get $k\le n$ \hfill{QED}
   \end{itemize}
 \end{frame} 
@@ -296,17 +296,93 @@
         \only<9>{\includegraphics{slidefigs/n32-6}}%
         \only<10->{\includegraphics{slidefigs/n32-7}}%
       \end{center}
-      \item<11-> We have no upper bound better than $O(n^2)$
+      %\item<11-> We have no upper bound better than $O(n^2)$
    \end{itemize}
 \end{frame}
 
 \begin{frame}
-   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2}$}
+   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
    \begin{itemize}
        \item Ignoring constant factors, we can assume a $n\times n$ board
+       \item Rotating, each point kills an L shape
+       \centerline{\mi{slidefigs/sqrtn}}%
+       \item $\only<2->{3}
+              \only<4->{+3}
+              \only<6->{+3}
+              \only<8->{+3}
+              \only<10->{+3}
+              \only<12->{+3}
+              \only<14->{+3}
+              \only<16->{+3}
+              \only<18->{+3}
+              \only<19->{=27=9^{3/2}}
+             $
    \end{itemize}
-      \centerline{\mi{slidefigs/sqrtn}}%
- \end{frame}
+\end{frame}
+
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
+   \begin{itemize}
+       \item Another strategy:
+       \centerline{\mi{slidefigs/sqrtn-david}}%
+       \item $\only<2->{3}
+              \only<4->{+3}
+              \only<6->{+3}
+              \only<8->{+3}
+              \only<10->{+3}
+              \only<12->{+3}
+              \only<14->{+3}
+              \only<16->{+3}
+              \only<18->{+3}
+              \only<19->{=27=9^{3/2}}
+             $
+   \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
+   \begin{itemize}
+       \item A third try:
+       \centerline{\mi{slidefigs/nine-twentyeight}}%
+       \item $\only<2->{3}
+              \only<4->{+3}
+              \only<6->{+3}
+              \only<8->{+3}
+              \only<10->{+{\color{red}4}}
+              \only<12->{+3}
+              \only<14->{+3}
+              \only<16->{+3}
+              \only<18->{+3}
+              \only<19->{=28=9^{1.516551628}}
+             $
+   \end{itemize}
+\end{frame}
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
+   \begin{itemize}
+       \item For general $n$, use recursion on subproblems of size $(n/9)\times(n/9)$
+       \centerline{\mi{slidefigs/recursion}}%
+       \item \[ T(n) = \begin{cases}
+                 28 & \text{if $n=9$} \\
+                 28 T(n/9) & \text{if $n=9^k$} \end{cases} \]
+       \item $ T(n) = \Theta(n^{\log_9 28}) = \Theta(n^{1.516551628})$
+   \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})$}
+
+   \begin{itemize}[<+->]
+      \item $130\times130$ game has an $X$ point solution
+      \item Recursion gives $\Omega(n^{1.52\ldots})$ solution for $n\times n$
+      \item We still have no $o(n^2)$ upper bound\ldots
+   \end{itemize} 
+\end{frame}
+
 
 \begin{frame}
    \frametitle{The End}

@@ -1,0 +1,478 @@
+<?xml version="1.0"?>
+<!DOCTYPE ipe SYSTEM "ipe.dtd">
+<ipe version="70005" creator="Ipe 7.1.4">
+<info created="D:20160408161200" modified="D:20160408161212"/>
+<ipestyle name="basic">
+<symbol name="arrow/arc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/farc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="mark/circle(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</symbol>
+<symbol name="mark/disk(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+</path>
+</symbol>
+<symbol name="mark/fdisk(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+0.5 0 0 0.5 0 0 e
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</group>
+</symbol>
+<symbol name="mark/box(sx)" transformations="translations">
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</symbol>
+<symbol name="mark/square(sx)" transformations="translations">
+<path fill="sym-stroke">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+</path>
+</symbol>
+<symbol name="mark/fsquare(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+-0.5 -0.5 m
+0.5 -0.5 l
+0.5 0.5 l
+-0.5 0.5 l
+h
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="mark/cross(sx)" transformations="translations">
+<group>
+<path fill="sym-stroke">
+-0.43 -0.57 m
+0.57 0.43 l
+0.43 0.57 l
+-0.57 -0.43 l
+h
+</path>
+<path fill="sym-stroke">
+-0.43 0.57 m
+0.57 -0.43 l
+0.43 -0.57 l
+-0.57 0.43 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="arrow/fnormal(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/pointed(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fpointed(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/linear(spx)">
+<path stroke="sym-stroke" pen="sym-pen">
+-1 0.333 m
+0 0 l
+-1 -0.333 l
+</path>
+</symbol>
+<symbol name="arrow/fdouble(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/double(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<pen name="heavier" value="0.8"/>
+<pen name="fat" value="1.2"/>
+<pen name="ultrafat" value="2"/>
+<symbolsize name="large" value="5"/>
+<symbolsize name="small" value="2"/>
+<symbolsize name="tiny" value="1.1"/>
+<arrowsize name="large" value="10"/>
+<arrowsize name="small" value="5"/>
+<arrowsize name="tiny" value="3"/>
+<color name="red" value="1 0 0"/>
+<color name="green" value="0 1 0"/>
+<color name="blue" value="0 0 1"/>
+<color name="yellow" value="1 1 0"/>
+<color name="orange" value="1 0.647 0"/>
+<color name="gold" value="1 0.843 0"/>
+<color name="purple" value="0.627 0.125 0.941"/>
+<color name="gray" value="0.745"/>
+<color name="brown" value="0.647 0.165 0.165"/>
+<color name="navy" value="0 0 0.502"/>
+<color name="pink" value="1 0.753 0.796"/>
+<color name="seagreen" value="0.18 0.545 0.341"/>
+<color name="turquoise" value="0.251 0.878 0.816"/>
+<color name="violet" value="0.933 0.51 0.933"/>
+<color name="darkblue" value="0 0 0.545"/>
+<color name="darkcyan" value="0 0.545 0.545"/>
+<color name="darkgray" value="0.663"/>
+<color name="darkgreen" value="0 0.392 0"/>
+<color name="darkmagenta" value="0.545 0 0.545"/>
+<color name="darkorange" value="1 0.549 0"/>
+<color name="darkred" value="0.545 0 0"/>
+<color name="lightblue" value="0.678 0.847 0.902"/>
+<color name="lightcyan" value="0.878 1 1"/>
+<color name="lightgray" value="0.827"/>
+<color name="lightgreen" value="0.565 0.933 0.565"/>
+<color name="lightyellow" value="1 1 0.878"/>
+<dashstyle name="dashed" value="[4] 0"/>
+<dashstyle name="dotted" value="[1 3] 0"/>
+<dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
+<dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
+<textsize name="large" value="\large"/>
+<textsize name="Large" value="\Large"/>
+<textsize name="LARGE" value="\LARGE"/>
+<textsize name="huge" value="\huge"/>
+<textsize name="Huge" value="\Huge"/>
+<textsize name="small" value="\small"/>
+<textsize name="footnote" value="\footnotesize"/>
+<textsize name="tiny" value="\tiny"/>
+<textstyle name="center" begin="\begin{center}" end="\end{center}"/>
+<textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
+<textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
+<gridsize name="4 pts" value="4"/>
+<gridsize name="8 pts (~3 mm)" value="8"/>
+<gridsize name="16 pts (~6 mm)" value="16"/>
+<gridsize name="32 pts (~12 mm)" value="32"/>
+<gridsize name="10 pts (~3.5 mm)" value="10"/>
+<gridsize name="20 pts (~7 mm)" value="20"/>
+<gridsize name="14 pts (~5 mm)" value="14"/>
+<gridsize name="28 pts (~10 mm)" value="28"/>
+<gridsize name="56 pts (~20 mm)" value="56"/>
+<anglesize name="90 deg" value="90"/>
+<anglesize name="60 deg" value="60"/>
+<anglesize name="45 deg" value="45"/>
+<anglesize name="30 deg" value="30"/>
+<anglesize name="22.5 deg" value="22.5"/>
+<tiling name="falling" angle="-60" step="4" width="1"/>
+<tiling name="rising" angle="30" step="4" width="1"/>
+</ipestyle>
+<page>
+<layer name="alpha"/>
+<layer name="beta"/>
+<layer name="gamma"/>
+<layer name="delta"/>
+<layer name="epsilon"/>
+<layer name="zeta"/>
+<layer name="eta"/>
+<layer name="theta"/>
+<layer name="iota"/>
+<layer name="kappa"/>
+<layer name="lambda"/>
+<layer name="mu"/>
+<layer name="nu"/>
+<layer name="xi"/>
+<layer name="omicron"/>
+<layer name="pi"/>
+<layer name="rho"/>
+<layer name="sigma"/>
+<layer name="tau"/>
+<layer name="phi"/>
+<layer name="chi"/>
+<layer name="omega"/>
+<layer name="alpha1"/>
+<layer name="alpha2"/>
+<layer name="alpha3"/>
+<layer name="alpha4"/>
+<layer name="alpha5"/>
+<layer name="alpha6"/>
+<view layers="alpha" active="alpha"/>
+<view layers="alpha beta phi" active="phi"/>
+<view layers="alpha beta gamma" active="gamma"/>
+<view layers="alpha beta gamma delta chi" active="chi"/>
+<view layers="alpha beta gamma delta epsilon" active="epsilon"/>
+<view layers="alpha beta gamma delta epsilon zeta omega" active="omega"/>
+<view layers="alpha beta gamma delta epsilon zeta eta" active="eta"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta alpha1" active="alpha1"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota" active="iota"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota kappa alpha2" active="alpha2"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota kappa lambda" active="lambda"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu alpha3" active="alpha3"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu" active="nu"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi alpha4" active="alpha4"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron" active="omicron"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi alpha5" active="alpha5"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho" active="rho"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma alpha6" active="alpha6"/>
+<view layers="alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau" active="tau"/>
+<path layer="alpha" matrix="1 0 0 1 0 -400" stroke="black">
+256 768 m
+256 624 l
+400 624 l
+400 768 l
+h
+</path>
+<use matrix="1 0 0 1 8 -408" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -8 -408" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -24 -408" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -40 -408" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -56 -408" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -72 -408" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -88 -408" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -104 -408" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -120 -408" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 8 -424" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -8 -424" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -24 -424" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -40 -424" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -56 -424" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -72 -424" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -88 -424" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -104 -424" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -120 -424" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 8 -440" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -8 -440" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -24 -440" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -40 -440" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -56 -440" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -72 -440" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -88 -440" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -104 -440" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -120 -440" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 8 -456" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -8 -456" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -24 -456" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -40 -456" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -56 -456" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -72 -456" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -88 -456" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -104 -456" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -120 -456" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 8 -472" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -8 -472" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -24 -472" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -40 -472" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -56 -472" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -72 -472" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -88 -472" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -104 -472" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -120 -472" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 8 -488" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -8 -488" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -24 -488" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -40 -488" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -56 -488" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -72 -488" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -88 -488" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -104 -488" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -120 -488" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 8 -504" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -8 -504" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -24 -504" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -40 -504" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -56 -504" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -72 -504" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -88 -504" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -104 -504" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -120 -504" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 8 -520" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -8 -520" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -24 -520" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -40 -520" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -56 -520" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -72 -520" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -88 -520" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -104 -520" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -120 -520" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 8 -536" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -8 -536" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -24 -536" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -40 -536" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -56 -536" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -72 -536" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -88 -536" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -104 -536" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use matrix="1 0 0 1 -120 -536" name="mark/fdisk(sfx)" pos="384 768" size="large" stroke="black" fill="white"/>
+<use layer="beta" name="mark/fdisk(sfx)" pos="392 360" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="376 344" size="large" stroke="black" fill="black"/>
+<use layer="delta" name="mark/fdisk(sfx)" pos="360 360" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="344 344" size="large" stroke="black" fill="black"/>
+<use layer="beta" name="mark/fdisk(sfx)" pos="328 280" size="large" stroke="black" fill="black"/>
+<use layer="delta" name="mark/fdisk(sfx)" pos="328 264" size="large" stroke="black" fill="black"/>
+<use layer="zeta" name="mark/fdisk(sfx)" pos="392 328" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="376 312" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="328 248" size="large" stroke="black" fill="black"/>
+<use layer="theta" name="mark/fdisk(sfx)" pos="360 328" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="344 312" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="328 232" size="large" stroke="black" fill="black"/>
+<use layer="kappa" name="mark/fdisk(sfx)" pos="312 360" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="296 344" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="280 328" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="264 312" size="large" stroke="black" fill="black"/>
+<use layer="mu" name="mark/fdisk(sfx)" pos="312 280" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="296 264" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="392 296" size="large" stroke="black" fill="black"/>
+<use layer="xi" name="mark/fdisk(sfx)" pos="280 280" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="264 264" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="376 296" size="large" stroke="black" fill="black"/>
+<use layer="pi" name="mark/fdisk(sfx)" pos="312 248" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="296 232" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="360 296" size="large" stroke="black" fill="black"/>
+<use layer="sigma" name="mark/fdisk(sfx)" pos="280 248" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="264 232" size="large" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="344 296" size="large" stroke="black" fill="black"/>
+<use layer="gamma" name="mark/cross(sx)" pos="376 360" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="392 344" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="344 280" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="360 280" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="376 280" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="392 280" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="328 296" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="328 312" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="328 328" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="328 344" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="328 360" size="large" stroke="black"/>
+<use layer="epsilon" name="mark/cross(sx)" pos="344 360" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="360 344" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="344 264" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="360 264" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="376 264" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="392 264" size="large" stroke="black"/>
+<use layer="eta" name="mark/cross(sx)" pos="376 328" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="392 312" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="344 248" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="360 248" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="376 248" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="392 248" size="large" stroke="black"/>
+<use layer="iota" name="mark/cross(sx)" pos="344 328" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="360 312" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="344 232" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="360 232" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="376 232" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="392 232" size="large" stroke="black"/>
+<use layer="lambda" name="mark/cross(sx)" pos="264 360" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="264 344" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="264 328" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="280 344" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="280 360" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="296 360" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="296 328" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="312 328" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="312 344" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="312 312" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="296 312" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="280 312" size="large" stroke="black"/>
+<use layer="nu" name="mark/cross(sx)" pos="312 264" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="296 280" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="296 296" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="312 296" size="large" stroke="black"/>
+<use layer="omicron" name="mark/cross(sx)" pos="280 296" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="264 296" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="264 280" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="280 264" size="large" stroke="black"/>
+<use layer="rho" name="mark/cross(sx)" pos="296 248" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="312 232" size="large" stroke="black"/>
+<use layer="tau" name="mark/cross(sx)" pos="264 248" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="280 232" size="large" stroke="black"/>
+<use layer="phi" name="mark/fdisk(sfx)" pos="392 360" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="376 344" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="328 280" size="large" stroke="red" fill="red"/>
+<use layer="chi" name="mark/fdisk(sfx)" pos="360 360" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="344 344" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="328 264" size="large" stroke="red" fill="red"/>
+<use layer="omega" name="mark/fdisk(sfx)" pos="392 328" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="376 312" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="328 248" size="large" stroke="red" fill="red"/>
+<use layer="alpha1" name="mark/fdisk(sfx)" pos="360 328" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="344 312" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="328 232" size="large" stroke="red" fill="red"/>
+<use layer="alpha2" name="mark/fdisk(sfx)" pos="264 312" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="280 328" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="296 344" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="312 360" size="large" stroke="red" fill="red"/>
+<use layer="alpha3" name="mark/fdisk(sfx)" pos="296 264" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="312 280" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="392 296" size="large" stroke="red" fill="red"/>
+<use layer="alpha4" name="mark/fdisk(sfx)" pos="264 264" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="280 280" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="376 296" size="large" stroke="red" fill="red"/>
+<use layer="alpha5" name="mark/fdisk(sfx)" pos="296 232" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="312 248" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="360 296" size="large" stroke="red" fill="red"/>
+<use layer="alpha6" name="mark/fdisk(sfx)" pos="264 232" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="280 248" size="large" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="344 296" size="large" stroke="red" fill="red"/>
+</page>
+</ipe>

@@ -54,7 +54,8 @@
   \frametitle{Maximum Triangles Problem}
   \framesubtitle{Bra\ss, Rote, Swanepoel (2001)}
 
-  \textbf{Theorem:} Any set of $n$ points determines at most $n$ maximum-area triangles
+  \only<+->{
+  \textbf{Theorem:} Any set of $n$ points determines at most $n$ maximum-area triangles}
   \begin{itemize}[<+->]
       \item WLOG we can assume points are in convex position
       \item How can a pair of maximum area triangles interleave?
@@ -377,8 +378,8 @@
    \frametitle{$\ex(n,\{\taco,\nested\})$}
 
    \begin{itemize}[<+->]
-      \item $130\times130$ game has an $X$ point solution
-      \item Recursion gives $\Omega(n^{1.52\ldots})$ solution for $n\times n$
+      \item $70\times70$ game has an $652$ point solution
+      \item Recursion gives $\Omega(n^{1.5252564009\ldots})$ solution for $n\times n$
       \item We still have no $o(n^2)$ upper bound\ldots
    \end{itemize} 
 \end{frame}

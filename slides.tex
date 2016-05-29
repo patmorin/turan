@@ -9,7 +9,7 @@
 \usecolortheme[named=cured]{structure}
 \usetheme{split}
 }
-
+ 
 \newcommand{\taco}{\raisebox{-.1ex}{\includegraphics[height=2.0ex]{figs/triangles-edge-1}}}
 \newcommand{\mariposa}{\raisebox{-.1ex}{\includegraphics[height=2.0ex]{figs/triangles-edge-2}}}
 
@@ -75,20 +75,20 @@
   \frametitle{Maximum Triangles Problem}
   \framesubtitle{Bra\ss, Rote, Swanepoel (2001)}
 
-  Let $\ex(n,X)$ denote the maximum number of triangles we can draw on a convex $n$-gon before we get a configuration from $X$.\\[1ex]
+  Let $\ex(n,X)$ denote the maximum number of triangles we can draw on a convex $n$-gon before we get a configuration from $X$.\\[2ex]
 
   \uncover<2->
   {\textbf{Theorem (BRS2001):} $\ex(n,\{\ears,\swords,\nested,\bat\})\le n$.}
 
-  \begin{itemize}
-     \item<3-> Number polygon vertices $0,\ldots,n-1$
-     \item<4-> Represent each triangle as a triple: $(a,b,c)$, with $0\le a<b<c<n$.
-     \item<5-> Partially-order triangles according to 
-         \[ (x_1,y_1,z_1)\preceq (x_2,y_2,z_2) \Leftrightarrow x_1\le x_2, y_1\le y_2, z_1\le z_2 \] 
-     \item<6-> Key insight: Any pair of maximum-area triangles (\taco, \david, \crossing, \mariposa) is comparable! 
-     \item<7-> $\Delta_1<\Delta_2<\cdots<\Delta_k \Rightarrow k < 3n$
-     \item<8-> Count a bit more carefully to get $k\le n$ \hfill{QED}
-  \end{itemize}
+%  \begin{itemize}
+%     \item<3-> Number polygon vertices $0,\ldots,n-1$
+%     \item<4-> Represent each triangle as a triple: $(a,b,c)$, with $0\le a<b<c<n$.
+%     \item<5-> Partially-order triangles according to 
+%         \[ (x_1,y_1,z_1)\preceq (x_2,y_2,z_2) \Leftrightarrow x_1\le x_2, y_1\le y_2, z_1\le z_2 \] 
+%     \item<6-> Key insight: Any pair of maximum-area triangles (\taco, \david, \crossing, \mariposa) is comparable! 
+%     \item<7-> $\Delta_1<\Delta_2<\cdots<\Delta_k \Rightarrow k < 3n$
+%     \item<8-> Count a bit more carefully to get $k\le n$ \hfill{QED}
+%  \end{itemize}
 \end{frame} 
 
 \begin{frame}
@@ -283,6 +283,8 @@
       \end{tabular}
    }
    \begin{itemize}
+      \item<1-> We know $\ex'(n,X)$ for every $X$ of size 2 except
+        $X=\{\taco,\nested\}$
       \item<1-> Posed in Bra\ss\ 2004
       \item<2-> Within one round, points must be increasing
       \item<3-> Each point kills a {\raisebox{-.1ex}{\includegraphics[height=2.0ex]{slidefigs/shape}}}
@@ -328,15 +330,15 @@
        \item Another strategy:
        \centerline{\mi{slidefigs/sqrtn-david}}%
        \item $\only<2->{3}
+              \only<3->{+3}
               \only<4->{+3}
+              \only<5->{+3}
               \only<6->{+3}
+              \only<7->{+3}
               \only<8->{+3}
+              \only<9->{+3}
               \only<10->{+3}
-              \only<12->{+3}
-              \only<14->{+3}
-              \only<16->{+3}
-              \only<18->{+3}
-              \only<19->{=27=9^{3/2}}
+              \only<11->{=27=9^{3/2}}
              $
    \end{itemize}
 \end{frame}
@@ -348,15 +350,15 @@
        \item A third try:
        \centerline{\mi{slidefigs/nine-twentyeight}}%
        \item $\only<2->{3}
+              \only<3->{+3}
               \only<4->{+3}
-              \only<6->{+3}
+              \only<5->{+3}
+              \only<6->{+{\color{red}4}}
+              \only<7->{+3}
               \only<8->{+3}
-              \only<10->{+{\color{red}4}}
-              \only<12->{+3}
-              \only<14->{+3}
-              \only<16->{+3}
-              \only<18->{+3}
-              \only<19->{=28=9^{1.516551628}}
+              \only<9->{+3}
+              \only<10->{+3}
+              \only<11->{=28=9^{1.516551628}}
              $
    \end{itemize}
 \end{frame}
@@ -365,8 +367,8 @@
    \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
    \begin{itemize}
        \item For general $n$, use recursion on subproblems of size $(n/9)\times(n/9)$
-       \centerline{\mi{slidefigs/recursion}}%
-       \item \[ T(n) = \begin{cases}
+       \centerline{\includegraphics[scale=0.8]{slidefigs/recursion}}%
+       \item[] \[ T(n) = \begin{cases}
                  28 & \text{if $n=9$} \\
                  28 T(n/9) & \text{if $n=9^k$} \end{cases} \]
        \item $ T(n) = \Theta(n^{\log_9 28}) = \Theta(n^{1.516551628})$
@@ -378,9 +380,25 @@
    \frametitle{$\ex(n,\{\taco,\nested\})$}
 
    \begin{itemize}[<+->]
+      \item Can we do better than $\Theta(n^{1.516551628})$?
       \item $70\times70$ game has an $652$ point solution
       \item Recursion gives $\Omega(n^{1.5252564009\ldots})$ solution for $n\times n$
-      \item We still have no $o(n^2)$ upper bound\ldots
+      \item That's the best lower-bound we have so far\ldots
+   \end{itemize} 
+\end{frame}
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})$---Upper Bounds}
+
+   \begin{itemize}[<+->]
+      \item $O(n^2)$ upper bound is inherited from $\ex(n,\{\taco\})$
+      \item Treat $x$ and $y$ coordinates as vertices of a bipartite graph, $G$
+      \item Each round, $i$, becomes a matching, $M_i$
+      \item No edge from $M_j$, $j\neq i$ joins two vertices used in $M_i$. \\[1ex]
+        \centerline{\includegraphics{slidefigs/induced}}
+      \item Game solution gives a solution to the \emph{Rusza-Szemerédi Induced Matching Problem}
+      \item IM Problem has an $O(n^{2/e^{\log^* n}})$ upper bound
+      \item $\ex(n,\{\taco,\nested\}) \in O(n^2/e^{\log^* n})$
    \end{itemize} 
 \end{frame}
 
@@ -397,6 +415,11 @@
       \end{tabular}
    \end{center}
    \centerline{\Huge Thanks!}
+\end{frame}
+
+
+\begin{frame}
+   \frametitle{References}
    \begin{itemize}
       \item P. Braß. Tur\'an-type extremal problems for convex geometric
       hypergraphs. Contemporary Mathematics, \textbf{342}:25–34, 2004.
@@ -407,8 +430,7 @@
       
       \item P. Erd\H{o}s and G. Purdy, Some extremal problems in geometry,
       Journal of Combinatorial Theory Series A, \textbf{10}:246–252, 1971.
-\end{itemize}
-
+   \end{itemize}
 \end{frame}
  
 \end{document}

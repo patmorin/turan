@@ -31,13 +31,152 @@
 
 \title{Turán-Type Theorems for Triangles \newline in Convex Point Sets}
 \author{Pat Morin}
-\date{Geometry Seminar \\ April 12, 2016}
+\date{Shonan Village Meeting \\ May 30, 2016}
 
 \begin{document}
 
 \begin{frame}
   \titlepage
 \end{frame}
+
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})$}
+%   \framesubtitle{
+%      %\newlength{\ka}
+%      \setlength{\ka}{.3\textwidth}
+%      \addtolength{\ka}{-1cm}
+%      \begin{tabular}{c@{\hspace{1cm}}c}
+%        \includegraphics[width=.48\ka]{figs/crapper-2} & 
+%        \includegraphics[width=.48\ka]{figs/crapper-1} 
+%      \end{tabular}
+%   }
+   \begin{itemize}
+      %\item<1-> We know $\ex'(n,X)$ for every $X$ of size 2 except
+      %  $X=\{\taco,\nested\}$
+      %\item<1-> Posed in Bra\ss\ 2004
+      \item<1-> A puzzle played in $n$ rounds on the $n\times n$ grid
+      \item<2-> Within each round, points must form an increasing sequence
+      \item<3-> Each point kills a {\raisebox{-.1ex}{\includegraphics[angle=180,origin=c,height=2.0ex]{slidefigs/shape}}}
+ shape that can't be played in subsequent rounds
+      \item<4-> The goal is to play as many points as possible
+%      \item<4-> $\Omega(n^{3/2})$ lower bound is easy (and looks tight):\\
+%      \begin{center}
+%        \only<1-4>{\includegraphics{slidefigs/n32-1}}%
+%        \only<5>{\includegraphics{slidefigs/n32-2}}%
+%        \only<6>{\includegraphics{slidefigs/n32-3}}%
+%        \only<7>{\includegraphics{slidefigs/n32-4}}%
+%        \only<8>{\includegraphics{slidefigs/n32-5}}%
+%        \only<9>{\includegraphics{slidefigs/n32-6}}%
+%        \only<10->{\includegraphics{slidefigs/n32-7}}%
+%      \end{center}
+      %\item<11-> We have no upper bound better than $O(n^2)$
+   \end{itemize}
+\end{frame}
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
+   \begin{itemize}
+       %\item Ignoring constant factors, we can assume a $n\times n$ board
+       %\item Rotating, each point kills an L shape
+       \centerline{\mi{slidefigs/sqrtn}}%
+       \item $\only<2->{3}
+              \only<4->{+3}
+              \only<6->{+3}
+              \only<8->{+3}
+              \only<10->{+3}
+              \only<12->{+3}
+              \only<14->{+3}
+              \only<16->{+3}
+              \only<18->{+3}
+              \only<19->{=27=9^{3/2}}
+             $
+   \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
+   \begin{itemize}
+       \item Another strategy:
+       \centerline{\mi{slidefigs/sqrtn-david}}%
+       \item $\only<2->{3}
+              \only<3->{+3}
+              \only<4->{+3}
+              \only<5->{+3}
+              \only<6->{+3}
+              \only<7->{+3}
+              \only<8->{+3}
+              \only<9->{+3}
+              \only<10->{+3}
+              \only<11->{=27=9^{3/2}}
+             $
+   \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
+   \begin{itemize}
+       \item A third try:
+       \centerline{\mi{slidefigs/nine-twentyeight}}%
+       \item $\only<2->{3}
+              \only<3->{+3}
+              \only<4->{+3}
+              \only<5->{+3}
+              \only<6->{+{\color{red}4}}
+              \only<7->{+3}
+              \only<8->{+3}
+              \only<9->{+3}
+              \only<10->{+3}
+              \only<11->{=28=9^{1.516551628}}
+             $
+   \end{itemize}
+\end{frame}
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
+   \begin{itemize}
+       \item For general $n$, use recursion on subproblems of size $(n/9)\times(n/9)$
+       \centerline{\includegraphics[scale=0.8]{slidefigs/recursion}}%
+       \item[] \[ T(n) = \begin{cases}
+                 28 & \text{if $n=9$} \\
+                 28 T(n/9) & \text{if $n=9^k$} \end{cases} \]
+       \item $ T(n) = \Theta(n^{\log_9 28}) = \Theta(n^{1.516551628})$
+   \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})$}
+
+   \begin{itemize}[<+->]
+      \item Can we do better than $\Theta(n^{1.516551628})$?
+      \item $70\times70$ game has an $652$ point solution
+      \item Recursion gives $\Omega(n^{1.5252564009\ldots})$ solution for $n\times n$
+      \item That's the best lower-bound we have so far\ldots
+   \end{itemize} 
+\end{frame}
+
+\begin{frame}
+   \frametitle{$\ex(n,\{\taco,\nested\})$---Upper Bounds}
+
+   \begin{itemize}[<+->]
+      \item $O(n^2)$ upper bound is trivial.
+      \item Treat $x$ and $y$ coordinates as vertices of a bipartite graph, $G$
+      \item Each round, $i$, becomes a matching, $M_i$
+      \item No edge from $M_j$, $j\neq i$, joins two vertices used in $M_i$. \\[1ex]
+        \centerline{\includegraphics{slidefigs/induced}}
+      \item Puzzle solution gives a solution to the \emph{Rusza-Szemerédi Induced Matching Problem}
+      \begin{itemize}
+         \item Puzzle score $=|E(G)|$ 
+      \end{itemize}
+      \item IM Problem has an $O(n^{2/e^{\log^* n}})$ upper bound
+      \item Maximum puzzle score is $O(n^2/e^{\log^* n})$
+   \end{itemize} 
+\end{frame}
+
+
 
 \begin{frame}
   \frametitle{Maximum Triangles Problem}
@@ -270,9 +409,8 @@
    \end{itemize}
 \end{frame} 
 
-
 \begin{frame}
-   \frametitle{$\ex(n,\{\taco,\nested\})$ the open problem}
+   \frametitle{$\ex'(n,\{\taco,\nested\}) = O(n)$}
    \framesubtitle{
       %\newlength{\ka}
       \setlength{\ka}{.3\textwidth}
@@ -282,124 +420,14 @@
         \includegraphics[width=.48\ka]{figs/crapper-1} 
       \end{tabular}
    }
-   \begin{itemize}
-      \item<1-> We know $\ex'(n,X)$ for every $X$ of size 2 except
-        $X=\{\taco,\nested\}$
-      \item<1-> Posed in Bra\ss\ 2004
-      \item<2-> Within one round, points must be increasing
-      \item<3-> Each point kills a {\raisebox{-.1ex}{\includegraphics[height=2.0ex]{slidefigs/shape}}}
- shape
-      \item<4-> $\Omega(n^{3/2})$ lower bound is easy (and looks tight):\\
-      \begin{center}
-        \only<1-4>{\includegraphics{slidefigs/n32-1}}%
-        \only<5>{\includegraphics{slidefigs/n32-2}}%
-        \only<6>{\includegraphics{slidefigs/n32-3}}%
-        \only<7>{\includegraphics{slidefigs/n32-4}}%
-        \only<8>{\includegraphics{slidefigs/n32-5}}%
-        \only<9>{\includegraphics{slidefigs/n32-6}}%
-        \only<10->{\includegraphics{slidefigs/n32-7}}%
-      \end{center}
-      %\item<11-> We have no upper bound better than $O(n^2)$
-   \end{itemize}
-\end{frame}
-
-\begin{frame}
-   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
-   \begin{itemize}
-       \item Ignoring constant factors, we can assume a $n\times n$ board
-       \item Rotating, each point kills an L shape
-       \centerline{\mi{slidefigs/sqrtn}}%
-       \item $\only<2->{3}
-              \only<4->{+3}
-              \only<6->{+3}
-              \only<8->{+3}
-              \only<10->{+3}
-              \only<12->{+3}
-              \only<14->{+3}
-              \only<16->{+3}
-              \only<18->{+3}
-              \only<19->{=27=9^{3/2}}
-             $
-   \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
-   \begin{itemize}
-       \item Another strategy:
-       \centerline{\mi{slidefigs/sqrtn-david}}%
-       \item $\only<2->{3}
-              \only<3->{+3}
-              \only<4->{+3}
-              \only<5->{+3}
-              \only<6->{+3}
-              \only<7->{+3}
-              \only<8->{+3}
-              \only<9->{+3}
-              \only<10->{+3}
-              \only<11->{=27=9^{3/2}}
-             $
-   \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
-   \begin{itemize}
-       \item A third try:
-       \centerline{\mi{slidefigs/nine-twentyeight}}%
-       \item $\only<2->{3}
-              \only<3->{+3}
-              \only<4->{+3}
-              \only<5->{+3}
-              \only<6->{+{\color{red}4}}
-              \only<7->{+3}
-              \only<8->{+3}
-              \only<9->{+3}
-              \only<10->{+3}
-              \only<11->{=28=9^{1.516551628}}
-             $
-   \end{itemize}
-\end{frame}
-
-\begin{frame}
-   \frametitle{$\ex(n,\{\taco,\nested\})\in\omega(n^{3/2})$}
-   \begin{itemize}
-       \item For general $n$, use recursion on subproblems of size $(n/9)\times(n/9)$
-       \centerline{\includegraphics[scale=0.8]{slidefigs/recursion}}%
-       \item[] \[ T(n) = \begin{cases}
-                 28 & \text{if $n=9$} \\
-                 28 T(n/9) & \text{if $n=9^k$} \end{cases} \]
-       \item $ T(n) = \Theta(n^{\log_9 28}) = \Theta(n^{1.516551628})$
-   \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-   \frametitle{$\ex(n,\{\taco,\nested\})$}
-
    \begin{itemize}[<+->]
-      \item Can we do better than $\Theta(n^{1.516551628})$?
-      \item $70\times70$ game has an $652$ point solution
-      \item Recursion gives $\Omega(n^{1.5252564009\ldots})$ solution for $n\times n$
-      \item That's the best lower-bound we have so far\ldots
-   \end{itemize} 
-\end{frame}
-
-\begin{frame}
-   \frametitle{$\ex(n,\{\taco,\nested\})$---Upper Bounds}
-
-   \begin{itemize}[<+->]
-      \item $O(n^2)$ upper bound is inherited from $\ex(n,\{\taco\})$
-      \item Treat $x$ and $y$ coordinates as vertices of a bipartite graph, $G$
-      \item Each round, $i$, becomes a matching, $M_i$
-      \item No edge from $M_j$, $j\neq i$ joins two vertices used in $M_i$. \\[1ex]
-        \centerline{\includegraphics{slidefigs/induced}}
-      \item Game solution gives a solution to the \emph{Rusza-Szemerédi Induced Matching Problem}
-      \item IM Problem has an $O(n^{2/e^{\log^* n}})$ upper bound
-      \item $\ex(n,\{\taco,\nested\}) \in O(n^2/e^{\log^* n})$
-   \end{itemize} 
+      \item Using these tools we have determined $\ex'(n,X)$ for any
+        two element set $X$ \emph{except} $X=\{\taco,\nested\}$.
+      \item The rules for $\ex'(n,X)$ for $\ex'(n,\{\taco,\nested\}$ give our
+        dot-puzzle game.
+      \item Did Bra\ss\ know this already in 2004?
+   \end{itemize}
+   
 \end{frame}
 
 

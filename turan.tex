@@ -155,12 +155,13 @@ Sometimes it is more natural to describe the allowable configurations than the f
 
 
 \begin{tabular}{llll}\hline
-  $\ex(n,\taco,\bat)$ & & & \\
-  $\ex(n,\taco,\nested)$ & $\Omega(n^{\log_9 28})$ & $O(n^2)$ & [here] \\
+  $\ex(n,\taco,\bat)$ & \multicolumn{2}{c}{$\Theta(n^2)$} & \thmref{taco-bat} \\
+  $\ex(n,\taco,\nested)$ & $\Omega(n^{1.549})$ & $O(n^2)$ & [various] \\
+  $\ex(n,\taco,\nested,\david)$ & $\Omega(n)$ & $O(n\log n)$ & \thmref{taco-nested-david} \\
   $\ex(n,\taco,\crossing)$ & & & \\
-  $\ex(n,\taco,\ears)$ & & & \\
+  $\ex(n,\taco,\ears)$ & \multicolumn{2}{c}{$\Theta(n^2)$} & \thmref{taco-ears} \\
+  $\ex(n,\taco,\david)$ & \multicolumn{2}{c}{$\Theta(n^2)$} & \thmref{taco-david} \\
   $\ex(n,\taco,\swords)$ & $\Omega(n)$ & $O(n\log n)$ & \thmref{taco-swords} \\
-  $\ex(n,\taco,\david)$ & & & \\
   $\ex(n,\bat,\nested)$ & \multicolumn{2}{c}{$\Theta(n^2$)} & \cite{brass:turan} \\
   $\ex(n,\bat,\crossing)$ & \multicolumn{2}{c}{$\Theta(n^2$)} & \cite{brass:turan} \\
   $\ex(n,\bat,\ears)$ & & & \\
@@ -434,6 +435,9 @@ O(n\log n)$ then follows from \lemref{top-bottom}.
 
 \section{New Results}
 
+
+
+
 % The following is the start of some bullshit argument, unless I can fix it.
 
 %Earlier, we showed that the inclusion of the $\mariposa$ configuration in
@@ -538,17 +542,6 @@ but with respect to the set $S=S_i$.
   so the theorem follows from \lemref{top-bottom}.
 \end{proof}
 
-\begin{thm}\thmlabel{swords-bat}\thmlabel{bat-swords}
-  $\ex(n,\{\swords,\bat\}) \in \Theta(n^2)$.
-\end{thm}
-
-\begin{proof}
-   The upper bound follows from the $O(n^2)$ upper bound on
-   $\ex(n,\{\swords\})$ \cite{brass:turan}.
-   For the lower-bound, we set $Q_1=\{(x,y)\in Q: x>n/2, y<n/2\}$ and
-   set $Q_2=Q_3=\cdots Q_n=\emptyset$.
-\end{proof}
-
 \begin{thm}\thmlabel{nested-swords}
   $\ex'(n,\{\nested,\swords\}) \in O(n)$.
 \end{thm}
@@ -596,9 +589,21 @@ but with respect to the set $S=S_i$.
   TODO. Similar to previous proof.
 \end{proof}
 
-\begin{thm}\thmlabel{swords-ears-david}
-  $\ex(n,\{\swords,\ears,\david\}) \in \Theta(n^2)$.
-\end{thm}
+
+\subsection{Montone Matrices, Tripod Packing, and 2-Comparable Sets}
+
+Determining the asymptotics of $\ex(n,\{\taco,\nested\})$ was given explicitly as open problem in the conclusion of Bra\ss's paper.  We spent more than a year work on this problem and this work included computer searches for solutions for small values of $n$.  Using the results of these computer searches in the Online Encyclopedia of Integer Sequences, we discovered that this problem is (asymptotically) equivalent to several other known problems.
+
+\begin{enumerate}
+  \item Monotone matrices
+  \item Tripod packing
+  \item 2-comparable sets of triples.
+\end{enumerate}
+
+One observation we have on this problem is that $\ex'(n,\{\taco,\nested\})=\Theta(\ex'(n,\{\taco,\nested,\bat,\ears\})$.  This comes from the fact that any solution\ldots
+
+
+
 
 \subsection{Disorganized Results}
 
@@ -620,7 +625,7 @@ The following theorem say that we can find very large sets of triangles, all of 
   $\ex(n,\{\ears,\bat,\mariposa\})=\Omega(n^3)$.
 \end{proof}
 
-\begin{thm}\thmlabel{blech}
+\begin{thm}\thmlabel{taco-nested-crossing}
   $\ex(n,\{\taco,\nested,\crossing\}) \in O(n\log n)$.
 \end{thm}
 
@@ -644,7 +649,57 @@ The following theorem say that we can find very large sets of triangles, all of 
   $\sum_{j=1}^n |Q_i| \le 2n-3$.
 \end{proof}
 
-\begin{thm}
+
+\begin{thm}\thmlabel{taco-nested-david}
+  $\ex'(n,\{\taco,\nested,\david\})\in O(n)$.
+\end{thm}
+
+\begin{proof}
+  Letting $S=\bigcup_{i=1}^n Q_i$ be the set of points played in
+  a solution to the resulting dot-puzzle, we can observe that $S$
+  does not contain any three points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and
+  $c=(x_1,y_1)$ with $y_0<y_1$ and $x_0<x_1$.  This implies that if we
+  remove the rightmost point from every row of $S$, then at most one
+  point remains in every column of $S$.  It immediately follows that $|S|\le 2n$.
+\end{proof}
+
+I believe \thmref{taco-nested-david} can be strengthened:
+
+\begin{conj}\thmlabel{nested-david}
+  $\ex'(n,\{\taco,\nested,\david\})\in O(n)$.
+\end{conj}
+
+
+
+\subsection{Some Easy Lower Bounds}
+
+Finally, we clean up with some easy $\Omega(n^2)$ lower bound constructions.  In each case, a matching upper bound follows from one of the results in Bra\ss \cite{brass:turan}.
+
+\begin{thm}\thmlabel{taco-david-bat-ears}
+$\ex(n,\{\taco,\david\})\in\Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n/2-i-x$.
+\end{proof}
+
+\begin{thm}\thmlabel{taco-bat}
+$\ex(n,\{\taco,\bat\})\in\Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+We take $Q_i=\{(n/2+j,j):j\in\{1,\ldots,n/2\}\}$.
+\end{proof}
+
+\begin{thm}\thmlabel{taco-bat}
+$\ex(n,\{\taco,\bat\})\in\Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+We take $Q_i=\{(n/2+j,n/2-j):j\in\{1,\ldots,n/2\}\}$.
+\end{proof}
+
+\begin{thm}\thmlabel{bat-ears-nested-david}
   $\ex'(n,\{\nested,\david\})\in \Omega(n^2)$.
 \end{thm}
 
@@ -652,9 +707,65 @@ The following theorem say that we can find very large sets of triangles, all of 
   Repeatedly take points on the diagonal.
 \end{proof}
 
-\begin{conj}
-  $\ex'(n,\{\taco,\nested,\david\})\in O(n)$.
-\end{conj}
+\begin{thm}\thmlabel{crossing-david-ears}
+  $\ex'(n,\{\crossing,\david,\ears\})\in \Omega(n^2)$.
+\end{thm}
+
+\begin{proof}[Proof Sketch]
+  Downward diagonal on the square.
+\end{proof}
+
+\begin{thm}\thmlabel{swords-bat}\thmlabel{bat-swords}
+  $\ex(n,\{\swords,\bat\}) \in \Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+   We set $Q_1=\{(x,y)\in Q: x>n/2, y<n/2\}$ and
+   set $Q_2=Q_3=\cdots Q_n=\emptyset$.
+\end{proof}
+
+\begin{thm}\thmlabel{nested-david-ears}\thmlabel{nested-david-ears}
+  $\ex(n,\{\nested,\david,\ears\}) \in \Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+   We set $Q_1=Q_2=\cdots=Q_n=\{(x,1): x\in\{1,\ldots,n\}$.
+\end{proof}
+
+\begin{thm}\thmlabel{taco-crossing}
+  $\ex(n,\{\taco,\crossing\}) \in \Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+   Diagonal downward stripes in the square.
+\end{proof}
+
+
+
+\begin{thm}\thmlabel{bat-david}
+  $\ex(n,\{\bat,\david,\ears,\swords\}) \in \Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+   We set $Q_1=\{(x,y)\in Q: x>n/2, y<n/2\}$ and
+   set $Q_2=Q_3=\cdots Q_n=\emptyset$.
+\end{proof}
+
+\begin{thm}\thmlabel{swords-ears-david}
+  $\ex(n,\{\swords,\ears,\david\}) \in \Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+TODO
+\end{proof}
+
+\begin{thm}\thmlabel{bat-ears}
+  $\ex(n,\{\bat,\ears\}) \in \Theta(n^3)$.
+\end{thm}
+
+\begin{proof}
+   We set $Q_1=Q_2=\cdots=Q_n=\{(x,y)\in Q: x>n/2, y<n/2\}$.
+\end{proof}
 
 
 

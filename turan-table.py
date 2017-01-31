@@ -7,7 +7,8 @@ import itertools
 def powerset(iterable):
     "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
     s = list(iterable)
-    return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
+    return itertools.chain.from_iterable(itertools.combinations(s, r) \
+            for r in range(len(s)+1))
 
 names = ["ears", "taco", "bat", "nested", "crossing",
          "mariposa", "swords", "david"]
@@ -75,11 +76,14 @@ def make_table(fp, upper_bounds, lower_bounds):
     cols = sorted([pack_set(s) for s in powerset(colcfgs)])
     rows = sorted([pack_set(s) for s in powerset(rowcfgs)])
 
-    fp.write(r'\begin{{tabular}}{{|cccc{}|}}\hline'.format('|c'*8) + '\n')
+    fp.write(r'\begin{{tabular}}{{|c@{{\,}}c@{{\,}}c@{{\,}}c{}|}}\hline'.format('|c'*8) + '\n')
     for i in colcfgs:
         fp.write("&&&&")
         fp.write("&".join([n2s(i, c) for c in cols]))
-        fp.write(r' \\ ' + '\n')
+        if i == colcfgs[-1]:
+            fp.write(r' \\ ' + '\n')
+        else:
+            fp.write(r' \\[-1mm] ' + '\n')
     fp.write(r'\hline')
 
     for r in rows:
@@ -117,66 +121,45 @@ if __name__ == "__main__":
 
     # These are Brass, Rote, and Swanepoel
     upper_bounds[pack(ears, swords, bat, nested)] = 1
-    upper_bounds[pack(taco, mariposa, david, crossing)] = 1
 
     # These are inherited from hypergraphs
     upper_bounds[pack(bat, nested, crossing)] = 1
     upper_bounds[pack(taco, mariposa)] = 2
     upper_bounds[pack(ears, swords, david)] = 2
 
-    # Tight new results
-    upper_bounds[pack(taco, swords)] = 1
-    upper_bounds[pack(bat, swords)] = 2
-    upper_bounds[pack(nested, swords)] = 1
-    upper_bounds[pack(crossing, swords)] = 1
-
-    upper_bounds[pack(ears, swords, david)] = 2
-
-    upper_bounds[pack(taco, nested, crossing)] = 1
-
-    # Work with Luis
-    upper_bounds[pack(taco, nested, david)] = 1
-
-
     # Up to here, everything is tight, so copy this to the lower bounds
     for k in upper_bounds:
         lower_bounds[k] = upper_bounds[k]
 
-    lower_bounds[pack(taco,david,ears)] = 2
-    lower_bounds[pack(taco,bat)] = 2
-    lower_bounds[pack(bat,david)] = 2
-
-    # diagonal stripes across the square
-    lower_bounds[pack(taco,david,bat,ears)] = 2
-
-    lower_bounds[pack(crossing,david,ears)] = 2
-
-    # The whole square in round 1
-    lower_bounds[pack(swords,bat,david,ears)] = 2
-
-    # Repeatedly take the diagonal
-    lower_bounds[pack(bat,nested,david,ears)] = 2
-
-    lower_bounds[pack(bat,ears)] = 3
-
-
-    # Trivial
-    upper_bounds[0] = 3
+    # Trivial stuff
+    upper_bounds[pack_set([])] = 3
     lower_bounds[pack_set(range(8))] = -1
     upper_bounds[pack_set(range(8))] = -1
 
+    # Upper bounds based on swords
+    upper_bounds[pack(taco, swords)] = 1
+    upper_bounds[pack(nested, swords)] = 1
+    upper_bounds[pack(crossing, swords)] = 1
+
+    # More linear upper bounds
+    upper_bounds[pack(taco, nested, david)] = 1
+    upper_bounds[pack(taco, nested, crossing)] = 1
+
+    # Tripod packing
+    lower_bounds[pack(taco, nested, bat, ears)] = 1.546  # Gowers and Long
+    upper_bounds[pack(taco, nested)] = 2 # Induced matchings
+
+    # Lower bounds
+    lower_bounds[pack(ears, bat, mariposa)] = 3
+    lower_bounds[pack(taco, david, crossing, bat, ears)] = 2
+    lower_bounds[pack(swords, bat, ears, david)] = 2
+    lower_bounds[pack(nested, ears, david)] = 2
+
+    # The butterfly is irrelevant
     s = set(range(8))-{mariposa}
     for t in s:
         lower_bounds[pack_set(s-{t})] = 1
 
-    # Loose new results
-    lower_bounds[pack(nested, david)] = 2
-
-    # Tripod packing
-    lower_bounds[pack(taco, nested)] = 1.546  # Gowers and Long
-    upper_bounds[pack(taco, nested)] = 2 # Induced matchings
-
-    lower_bounds[pack(taco, nested, bat, ears)] = 1.546  # Gowers and Long
 
     #print_everything(upper_bounds, lower_bounds)
     print("swords={}".format(upper_bounds[pack(swords)]))

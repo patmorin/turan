@@ -68,6 +68,7 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 
 \tableofcontents
 
+\newpage
 
 \section{Introduction}
 \pagenumbering{arabic}
@@ -101,7 +102,7 @@ $2^8=256$ sets, $X$ for which we can study $\ex(n,X)$.  Some of these sets
 have been previously studied.  Bra\ss, Rote, and Swanepoel used bounds on
 the set $X=\{\ears,\swords,\bat,\nested\}$ to solve an Erd\H{o}s problem
 on the maximum number of maximum area/perimeter triangles determined
-by a point set. Bra\ss \cite{brass:turan} later began a systematic
+by a point set. Bra\ss\ \cite{brass:turan} later began a systematic
 study in which he gave tight bounds for all singleton $X$ and all
 pairs of configurations in which two triangles share a single vertex.
 These previous results are listed in \tabref{previous}.
@@ -181,7 +182,7 @@ These previous results are listed in \tabref{previous}.
 
 \subsection{New Results}
 
-In the current paper, we determine, up to a logarithmic factor the
+In the current paper, we determine, up to a logarithmic factor, the
 asymptotics of $\ex(n,X)$ for 248 sets $X$.  These results are shown
 in \tabref{bigtable}.  Each entry in this table presents the asymptotic
 behaviour of $\ex(n,X)$ for the set $X$ obtained as the union of the
@@ -191,7 +192,8 @@ does not change $\ex(n,X)$ by more than a constant factor. For the
 remaining 8 sets, we have determined that the asymptotics are all the
 same and are equivalent to a problem that appears in various contexts
 and under different names, including monotone matrices, tripod packing,
-and 2-comparable triples.
+and 2-comparable triples. We discuss this problem and its rich history
+in \secref{tripods}.
 
 \begin{table}
   \begin{center}
@@ -203,16 +205,13 @@ and 2-comparable triples.
 
 \section{Points of View and Easy Results}
 
-Since there are eight possible forbidden configurations, there are
-$2^8=256$ sets, $X$ for which we can study $\ex(n,X)$.  In this section
-we present a few easy results that help reduce this number and we describe
-different variants of the problem, some of which are easier to work with.
-We begin with a result that cuts the number of interesting sets $X$
-in half.
+In this section we present an easy result that cuts our work in half
+and we describe different variants of the problem, some of which are
+easier to work with.  
 
 \subsection{Edge-Sharing Non-Overlapping Triangles are Irrelevant}
 
-The following lemma shows that including the $\taco$ confguration in
+The following lemma shows that including the $\mariposa$ confguration in
 the set $X$ of forbidden configurations has no effect on the asymptotics
 of $\ex(n,X)$.
 
@@ -239,15 +238,16 @@ of $\ex(n,X)$.
 
 \subsection{The Top/Bottom View}
 
-It will be helpful to consider an top/bottom variant of $\ex(n,X)$ that
-is defined as follows (see \figref{top-bottom}).  Partition the vertices
-of a convex $n$-gon using a horizontal line into a \emph{top half} of size
-$\lceil n/2\rceil$ and a \emph{bottom half} of size $\lfloor n/2\rfloor$.
-We define $\ex'(n,X)$ analogously to $\ex(n,X)$ except that we only count
-triangles having one vertex in the bottom half and two vertices in the
-top half.  When studying $\ex'$, each triangle we count has a naturally
-defined \emph{bottom vertex} in the bottom half and a \emph{left vertex}
-and \emph{right vertex}, each in the top half.
+It will be helpful to gain a sense of orientation by considering
+a top/bottom variant of $\ex(n,X)$ that is defined as follows (see
+\figref{top-bottom}).  Partition the vertices of a convex $n$-gon using
+a horizontal line into a \emph{top half} of size $\lceil n/2\rceil$
+and a \emph{bottom half} of size $\lfloor n/2\rfloor$.  We define
+$\ex'(n,X)$ analogously to $\ex(n,X)$ except that we only count triangles
+having one vertex in the bottom half and two vertices in the top half.
+When studying $\ex'$, each triangle we count has a naturally defined
+\emph{bottom vertex} in the bottom half and a \emph{left vertex} and
+\emph{right vertex}, each in the top half.
 
 \begin{figure}
   \begin{center}
@@ -258,8 +258,8 @@ and \emph{right vertex}, each in the top half.
   \figlabel{top-bottom}
 \end{figure}
 
-The following lemma shows that we can, without losing much precision, study
-$\ex'(n,X)$ instead of $\ex(n,X)$.
+Clearly $\ex(n,X)\ge\ex'(n,x)$.  The following lemma shows that, without
+losing much precision, we can also upper bound $\ex(n,X)$ by $\ex'(n,X)$.
 
 \begin{lem}\lemlabel{top-bottom}
   If $\ex'(n,X)\in O(n^c)$, then
@@ -294,12 +294,11 @@ $\ex'(n,X)$ instead of $\ex(n,X)$.
 \subsection{The Dot-Puzzle View}
 
 The top-bottom version of the problem gives us a sense of orientation,
-but is still difficult to visualize the sets of triangles obtained this
-way. Next, we show that there is a corresponding puzzle that is easy
-to visualize.
+but it is still difficult to visualize the sets of triangles obtained
+this way. Next, we show that there is a corresponding puzzle that is
+easy to visualize.  Refer to \figref{point-view}.  
 
-Refer to \figref{point-view}.  In this puzzle, we are given $\binom{n}{2}$
-points,
+In this puzzle, we are given $\binom{n}{2}$ points,
 \[
     Q = \{(x,y): y\in\{1,\ldots,n-1\}, x\in\{y+1,\ldots,n-1\} \} \enspace .
 \]
@@ -328,7 +327,8 @@ Of course, the constraints on which points can be selected during
 round $i$ depend on the set of forbidden configurations and the set
 $\bigcup_{j=1}^{i-1} Q_i$ of points played during previous rounds.
 By proving bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on the maximum
-number of triangles obtained in the top-bottom view.
+number of triangles obtained in the top-bottom view on a set of $2n$
+points.
 
 \Figref{forbidden-color}.a shows restrictions on the locations of points
 placed during a single round.  It is interpreted as follows:  If the
@@ -639,23 +639,6 @@ but with respect to the set $S=S_i$.
 \end{proof}
 
 
-\begin{thm}\thmlabel{taco-nested-david}
-  $\ex'(n,\{\taco,\nested,\david\})\in O(n)$.
-\end{thm}
-
-\begin{proof}
-  Let $S=\bigcup_{i=1}^n Q_i$ be the set of points played in a solution
-  to the resulting dot-puzzle.  Note that, by the inclusion of $\taco$,
-  each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
-  |Q_i|$ is the quantity we are interested in bounding.
-
-  Next, we observe that $S$ does not contain any three points
-  $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$ and
-  $x_0<x_1$.  This implies that if we remove the rightmost point from
-  every row of $S$, then at most one point remains in every column of $S$.
-  It immediately follows that $|S|\le 2n$.
-\end{proof}
-
 
 \begin{thm}\thmlabel{nested-crossing-ears}
   $\ex'(n,\{\nested,\crossing,\ears\})\in O(n)$.
@@ -690,25 +673,86 @@ but with respect to the set $S=S_i$.
 \end{proof}
 
 
-\begin{thm}\thmlabel{nested-bat-david}
-  $\ex'(n,\{\nested,\bat,\david\})\in O(n\log n)$.
+Our final two upper bounds depend on a simple lemma about forbidden
+configurations of points:
+
+\begin{lem}\lemlabel{forbidden}
+   Let $S$ be a subset of the $\{1,\ldots,n\}^2$ such with no three
+   points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$
+   and $x_0<x_1$.  Then $|S|\le 2n$.
+\end{lem}
+
+\begin{proof}
+   If we remove the rightmost point from each row of $S$, then each
+   column in what remains of $S$ contains at most one point. Otherwise we
+   could take $a$ to be the lowest point in a column, $b$ to the highest
+   point in the same column, and $c$ to be the missing rightmost point
+   in $b$'s row.
+\end{proof}
+
+\begin{thm}\thmlabel{taco-nested-david}
+  $\ex'(n,\{\taco,\nested,\david\})\in O(n)$.
 \end{thm}
 
 \begin{proof}
-  First, imagine the game modified so that the $\david$-region extends
-  upwards to infinity.  The rules for $\nested$ imply that $Q_i$ is
-  non-decreasing.  The rule for $\bat$ implies that $Q_i$ is contained
-  in the $\david$-region of the lowest-leftmost point in $Q_i$.
+  Let $S=\bigcup_{i=1}^n Q_i$ be the set of points played in a solution
+  to the resulting dot-puzzle.  Note that, by the inclusion of $\taco$,
+  each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
+  |Q_i|$ is the quantity we are interested in bounding.
 
-  Now, every point in $Q_i$ except the first and the last point in the
-  bottom row completely kills its column and its row.  Since $Q_i$
-  is non-decreasing, this means that the total number of row and
-  columns killed is at least $|Q_i|-2$. It follows immediately that
-  $\sum_{i=1}^{n}|Q_i| \le 4n$.
+  Next, we observe that $S$ does not contain any three points
+  $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$
+  and $x_0<x_1$.  This is because the rules for $\taco$ and $\nested$
+  imply that $a$ would have to have been played in a round before $b$,
+  and that $b$ would have to have been played in a round before $c$.
+  But then the rule for $\david$ implies that $c$ would have to appear
+  in a round before $a$.  Applying \lemref{forbidden} then implies that
+  $|S|\le 2n$.
+\end{proof}
 
-  Now, note that this upper bound depends only the size of $Q$.  The bound
-  still holds even if the number of rounds were unlimited.  Partition the
-  triangle $Q$ into squares in the obvious recursive way.  The preceding argument shows that 
+
+\begin{thm}\thmlabel{nested-bat-david}
+  $\ex'(n,\{\nested,\bat,\david\})\in O(n)$.
+\end{thm}
+
+\begin{proof}
+  Consider the set $Q_i$ played during some round $i$.  The rules for
+  $\nested$ imply that $Q_i$ is non-decreasing.  The rule for $\bat$
+  implies that $Q_i$ is contained in the $\david$-region, $R_i$, of the
+  lowest-leftmost point in $Q_i$.  Indeed, all of $Q_i$ except its
+  leftmost row and column is in this david region.
+
+  Suppose we remove the leftmost point in each row of $Q_i$.  For each
+  such point $p\in R_i$, the entire row containing $p$ is then killed
+  and can never be played again.  The remaining points are in the first
+  column of $Q_i$ and all but two of these (the topmost and bottommost)
+  kill an entire row that can never be played again.  This means that
+  the total number of points removed this way is not more $3n$ (one
+  charged to each row and two charged to each round).  Since $Q_i$ was
+  originally non-decreasing, the removal of these points ensures that
+  each column contains at most one point of $Q_i$
+
+  Now we let $S=\bigcup_{i=1}^n Q_i$.  We claim that $S$ fulfills the
+  requirements of \lemref{forbidden}.  To see why this is so, note that
+  if two points $a$ and $b$ of $S$ are in the same column then they
+  must have been played in different rounds.  Assume $b$ is above $a$,
+  which implies that $b$ was played in a later round than $a$.  Then, if
+  there is some point $c$ to the right of $b$, then $c$ must have played
+  during the same round as $b$ or later.  But this implies that $c$ was
+  played in a later round than $a$, which is not possible, since $c$ is in
+  $a$'s $\david$-region.  Therefore, by \lemref{forbidden}, $|S|\le 2n$.
+
+  All that remains is to account for points in $S$ that are played
+  multiple times.  In each $Q_i$ there are at most two points that can
+  be played in subsequent rounds; the topmost point in the leftmost
+  column and the rightmost point in the bottommest row.  We charge each
+  occurrence of such repeated points to the rounds in which they are
+  the topmost point in the leftmost column and/or the rightmost point
+  in the bottommost row.  In this way, each round is charged for at
+  most two such points and the total contribution of these points to
+  $\sum_{i=1}^n |Q_i|$ is at most $2n$.
+
+  In total, we obtain an upper bound of $7n$ on $\sum_{i=1}^n |Q_i|$.
 \end{proof}
 
 

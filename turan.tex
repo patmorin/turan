@@ -229,7 +229,7 @@ of $\ex(n,X)$.
   $S'$ does not contain a $\mariposa$ configuration.
 
   For any particular triangle $t\in S$, the probability that $t\in S'$
-  is exactly $1/8$ since each of $t$'s three edges much be directed
+  is exactly $1/8$ since each of $t$'s three edges must be directed
   clockwise and edge directions are chosen independently.  By linearity of
   expectation, $\E[|S'|]=|S|/8=\ex(n,X)/8$.  We conclude therefore that
   there exists some subset $S''\subseteq S$ of size least $\ex(n,X)/8$
@@ -615,7 +615,7 @@ but with respect to the set $S=S_i$.
 \subsection{More Linear Upper Bounds}
 
 \begin{thm}\thmlabel{taco-nested-crossing}
-  $\ex(n,\{\taco,\nested,\crossing\}) \in O(n\log n)$.
+  $\ex'(n,\{\taco,\nested,\crossing\}) \in O(n)$.
 \end{thm}
 
 \begin{proof}
@@ -644,13 +644,74 @@ but with respect to the set $S=S_i$.
 \end{thm}
 
 \begin{proof}
-  Letting $S=\bigcup_{i=1}^n Q_i$ be the set of points played in
-  a solution to the resulting dot-puzzle, we can observe that $S$
-  does not contain any three points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and
-  $c=(x_1,y_1)$ with $y_0<y_1$ and $x_0<x_1$.  This implies that if we
-  remove the rightmost point from every row of $S$, then at most one
-  point remains in every column of $S$.  It immediately follows that $|S|\le 2n$.
+  Let $S=\bigcup_{i=1}^n Q_i$ be the set of points played in a solution
+  to the resulting dot-puzzle.  Note that, by the inclusion of $\taco$,
+  each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
+  |Q_i|$ is the quantity we are interested in bounding.
+
+  Next, we observe that $S$ does not contain any three points
+  $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$ and
+  $x_0<x_1$.  This implies that if we remove the rightmost point from
+  every row of $S$, then at most one point remains in every column of $S$.
+  It immediately follows that $|S|\le 2n$.
 \end{proof}
+
+
+\begin{thm}\thmlabel{nested-crossing-ears}
+  $\ex'(n,\{\nested,\crossing,\ears\})\in O(n)$.
+\end{thm}
+
+\begin{proof}
+  First observe that the rules for $\nested$ imply that each $Q_i$
+  is a non-decreasing sequence of points.
+
+  Next, observe that if $Q_i$ contains $k>1$ points in a single column
+  (or row), then each of the $k$ rows (or columns) containing one of these
+  points is killed. $Q_{i+1},\ldots,Q_n$ can not contain any points in
+  these rows (or columns).  Therefore, when summing $\sum_{i=1}^n |Q_i|$,
+  the contribution of points that are not alone in their row or column
+  is at most $n$.  We therefore assume that each $Q_i$ contains at most
+  one point from each row and column, which now implies that each $Q_i$
+  is an increasing sequence of points.
+
+  Now, because of the rules for $\crossing$, this increasing
+  requirement is quite strong. In particular, if we consider the last
+  (highest-righmost) point of $Q_i$, then it must be placed so that the
+  set of points killed by its $\ears$-region contains all points in $Q_i$
+  except itself and the second-last point of $Q_i$.
+
+  To summarize, each row and column of $Q$ contributes at most point to
+  the set
+  $S=\bigcup_{i=1}^n Q_i$, so $|S|\le n$.  However, $Q_1$ eliminates $|Q_1|-2$ elements of from $S$ and, in round $i$, $Q_i$ eliminates an additional $|Q_{i}|-2$ elements from $S$.  Therefore,
+  \[
+        n\ge |S| \ge \sum_{i=1}^n (|Q_i|-2) \enspace ,
+  \] 
+  and we conclude that $\sum_{i=1}^n|Q_i| \le 3n$.
+\end{proof}
+
+
+\begin{thm}\thmlabel{nested-bat-david}
+  $\ex'(n,\{\nested,\bat,\david\})\in O(n\log n)$.
+\end{thm}
+
+\begin{proof}
+  First, imagine the game modified so that the $\david$-region extends
+  upwards to infinity.  The rules for $\nested$ imply that $Q_i$ is
+  non-decreasing.  The rule for $\bat$ implies that $Q_i$ is contained
+  in the $\david$-region of the lowest-leftmost point in $Q_i$.
+
+  Now, every point in $Q_i$ except the first and the last point in the
+  bottom row completely kills its column and its row.  Since $Q_i$
+  is non-decreasing, this means that the total number of row and
+  columns killed is at least $|Q_i|-2$. It follows immediately that
+  $\sum_{i=1}^{n}|Q_i| \le 4n$.
+
+  Now, note that this upper bound depends only the size of $Q$.  The bound
+  still holds even if the number of rounds were unlimited.  Partition the
+  triangle $Q$ into squares in the obvious recursive way.  The preceding argument shows that 
+\end{proof}
+
+
 
 
 
@@ -716,6 +777,32 @@ We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
 \begin{proof}
    Keep taking the bottom row.
 \end{proof}
+
+\begin{thm}\thmlabel{david-nested-crossing}
+  $\ex(n,\{\david,\nested,\crossing\}) \in \Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+   We repeatedly take points on the diagonal.
+\end{proof}
+
+\begin{thm}\thmlabel{bat-nested-ears}
+  $\ex(n,\{\bat,\nested,\ears\}) \in \Theta(n^2)$.
+\end{thm}
+
+\begin{proof}
+   We repeatedly take points on the diagonal inside the square.
+\end{proof}
+
+
+
+\section*{Acknowledgement}
+
+Some of this work was carried out at the e Fourth Annual Workshop on
+Geometry and Graphs, held at the Bellairs Research Institute in Barbados,
+March 6--11, 2016. The authors are grateful to the organizers and to
+the participants of this workshop for providing a stimulating working
+environment.
 
 
 \bibliographystyle{plain}

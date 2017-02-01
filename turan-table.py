@@ -190,9 +190,9 @@ if __name__ == "__main__":
     upper_bounds[pack(crossing, swords)] = 1
 
     # New linear upper bounds
-    upper_bounds[pack(taco, nested, david)] = 1
     upper_bounds[pack(taco, nested, crossing)] = 1
-    upper_bounds[pack(nested, ears, crossing)] = 1
+    upper_bounds[pack(nested, crossing, ears)] = 1
+    upper_bounds[pack(taco, nested, david)] = 1
     upper_bounds[pack(nested, bat, david)] = 1
 
     # Upper bounds based on tripod packing

@@ -91,10 +91,10 @@ def make_table(fp, upper_bounds, lower_bounds):
         for c in cols:
             x = r|c
             if upper_bounds[x] == lower_bounds[x]:
-                fp.write(r'&${}$'.format(format_exponent(upper_bounds[x])))
+                fp.write(r'&\cellcolor{{blue!10}}${}$'.format(format_exponent(upper_bounds[x])))
                 tight += 1
             else:
-                fp.write(r'&${}/{}$'.format(format_exponent(lower_bounds[x]),
+                fp.write(r'&\cellcolor{{red!10}}${}/{}$'.format(format_exponent(lower_bounds[x]),
                                             format_exponent(upper_bounds[x])))
         fp.write(r'\\ \hline' + '\n')
     fp.write(r'\end{tabular}')
@@ -102,6 +102,21 @@ def make_table(fp, upper_bounds, lower_bounds):
 
 
 def close_bounds(upper_bounds, lower_bounds):
+    # Mariposas don't matter
+    for k in list(upper_bounds.keys()):
+        s = unpack(k)
+        x = pack_set(s ^ {mariposa})
+        if x in upper_bounds and upper_bounds[x] < upper_bounds[k]:
+            upper_bounds[k] = upper_bounds[x]
+        upper_bounds[x] = upper_bounds[k]
+
+    for k in list(lower_bounds.keys()):
+        s = unpack(k)
+        x = pack_set(s ^ {mariposa})
+        if x in lower_bounds and lower_bounds[x] > lower_bounds[k]:
+            lower_bounds[k] = lower_bounds[x]
+        lower_bounds[x] = lower_bounds[k]
+
     # Create all upper bounds inherited by superset relationships
     for k in list(upper_bounds.keys()):
         these = set(unpack(k))
@@ -159,6 +174,7 @@ if __name__ == "__main__":
 
     # We have Omega(n) lower bounds for most everything
     s = set(range(8))-{mariposa}
+    upper_bounds[pack_set(s)] = 0
     for t in s:
         lower_bounds[pack_set(s-{t})] = 1
 
@@ -190,26 +206,6 @@ if __name__ == "__main__":
     lower_bounds[pack(nested, ears, david)] = 2
     lower_bounds[pack(david, nested, crossing)] = 2
     lower_bounds[pack(bat, nested, ears)] = 2
-
-
-
-    # Mariposas don't matter
-    for k in list(upper_bounds.keys()):
-        s = unpack(k)
-        x = pack_set(s ^ {mariposa})
-        if x in upper_bounds and k in upper_bounds \
-            and upper_bounds[x] != upper_bounds[k]:
-            print("Warning: upper bound {} != {}".format(tostring(x), tostring(k)))
-        upper_bounds[x] = upper_bounds[k]
-
-    for k in list(lower_bounds.keys()):
-        s = unpack(k)
-        x = pack_set(s ^ {mariposa})
-        if x in lower_bounds and k in lower_bounds \
-            and lower_bounds[x] != lower_bounds[k]:
-            print("Warning: lower bound {} != {}".format(tostring(x), tostring(k)))
-        lower_bounds[x] = lower_bounds[k]
-
 
     close_bounds(upper_bounds, lower_bounds)
 

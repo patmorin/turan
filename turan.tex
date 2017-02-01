@@ -4,7 +4,8 @@
 \usepackage{amsthm,amsmath,graphicx}
 \usepackage{pat}
 \usepackage[letterpaper]{hyperref}
-\usepackage[dvipsnames]{color}
+\usepackage[table,dvipsnames]{xcolor}
+%\usepackage[dvipsnames]{color}
 \definecolor{linkblue}{named}{Blue}
 \hypersetup{colorlinks=true, linkcolor=linkblue,  anchorcolor=linkblue,
 citecolor=linkblue, filecolor=linkblue, menucolor=linkblue,
@@ -79,7 +80,7 @@ these triangle can interact:  2 ways in which the triangles can share
 an edge (\taco\ and \mariposa), 3 ways in which the triangles can share a
 single vertex (\bat, \nested, and \crossing), and 3 ways in which
 the triangles can have no vertices in common (\ears, \swords,
-and \david).  Because it is difficult to keep track of nameless entities, we assign mnemonics to each configuration:
+and \david).  Because it is difficult to keep track of nameless entities, we assign a mnemonic to each configuration:
 
 \begin{center}
   \begin{tabular}{|c|c|c|c|c|c|c|c|c}\hline
@@ -150,7 +151,14 @@ These previous results are listed in \tabref{previous}.
 Of course, upper and lower bounds are inherited through the subset
 relationship: $\ex(n,X) \le \ex(n,Y)$ for any $X\supseteq Y$.
 \tabref{smalltable} shows the complete set of results we obtain when we
-apply this exhaustively to the list of previous results.
+apply this exhaustively to the list of previous results.  Each entry in
+this table presents the asymptotic behaviour of $\ex(n,X)$ for the set
+$X$ obtained as the union of the row and column label.  Asymptotically
+tight bounds are colored blue, and gaps between lower and upper bounds
+are coloured red. Previous results imply 35 tight bounds for 256 of the
+possible choices of $X$.  The configuration $\mariposa$ is ommitted from
+the table since a simple argument (\lemref{xcup}) shows that its inclusion
+in $X$ does not change $\ex(n,X)$ by more than a constant factor.
 
 \begin{table}
   \begin{center}
@@ -205,11 +213,7 @@ apply this exhaustively to the list of previous results.
 
 In the current paper, we determine, up to a logarithmic factor, the
 asymptotics of $\ex(n,X)$ for 248 sets $X$.  These results are shown
-in \tabref{bigtable}.  Each entry in this table presents the asymptotic
-behaviour of $\ex(n,X)$ for the set $X$ obtained as the union of the
-row and column label.  The configuration $\mariposa$ is ommitted since
-a simple argument (\lemref{xcup}) shows that its inclusion in $X$
-does not change $\ex(n,X)$ by more than a constant factor. For the
+in \tabref{bigtable}.     For the
 remaining 8 sets, we have determined that the asymptotics are all the
 same and are equivalent to a problem that appears in various contexts
 and under different names, including monotone matrices, tripod packing,
@@ -224,7 +228,15 @@ in \secref{tripods}.
   \tablabel{bigtable}
 \end{table}
 
+The remainder of this paper is organized as follows.  In
+\secref{points-of-view} we discuss different ways of thinking about
+the problem and give some easy results.  In particular, we present a
+series of puzzles whose solutions determine the asymptotic growth of
+$\ex(n,X)$.  We then use this view to derive new upper and lower bounds
+in \secref{new-results}.
+
 \section{Points of View and Easy Results}
+\seclabel{points-of-view}
 
 In this section we present an easy result that cuts our work in half
 and we describe different variants of the problem, some of which are
@@ -434,52 +446,49 @@ a $\nested$ configuration in which the shared vertex is the left vertex
 \end{figure}
 
 
-\subsection{Some Easy Bounds}
+\subsection{Some Warm-Up Exercises}
 
 We say that a point set is \emph{non-decreasing} (respectively,
 increasing, non-increasing, decreasing) if, when sorted lexicographically,
 the $y$ coordinates of the points form a non-decreasing (respectively,
 increasing, non-increasing, decreasing) sequence.
 
-From \figref{forbidden-color}, some previous upper bounds naturally
-fall out.  For example, Bra\ss's results \cite{brass:turan} that
-$\ex(\nested)\in O(n^2)$ comes from the fact points selected during a
-single round of the dot puzzle must be non-decreasing, and thus at most
-$2n-3$ points can be selected take part in $Q_i$ during a round $i$.
-Thus $\sum_{j=1}^{n}|Q_i| \le 2n^2-3n$, and the bound $\ex(\nested)\in
-O(n^2)$ immediately follow from \lemref{top-bottom}.  Bra\ss's result
-that $\ex(n,\crossing)\in O(n^2)$ is obtained in a similar way, using
-the fact that the points in any $Q_i$ must be non-increasing.
+From \figref{forbidden-color}, some previous upper bounds naturally fall
+out.  Consider Bra\ss's results \cite{brass:turan} that $\ex(\nested)\in
+O(n^2)$.  For the game defined by $X=\{\nested\}$, we have the rules:
+\begin{center}
+  \includegraphics[height=3cm]{figs/helper-3}
+\end{center}
+In particular, these rules imply that points selected during a single
+round of the dot puzzle must be non-decreasing, and thus at most $2n-3$
+points can be selected take part in $Q_i$.  Thus $\sum_{j=1}^{n}|Q_i|
+\le 2n^2-3n$, and the bound $\ex(\nested)\in O(n^2)$ immediately follow
+from \lemref{top-bottom}.
 
 Similarly, we can almost recover the result of Bra\ss, Rote and
 Swanepoel \cite{brass.rote.ea:triangles} on $\ex(\ears, \swords,
-\bat,\nested)$. 
-By forbidding $\nested$, we have the rule
+\bat,\nested)$.  Here, the rules are:
 \begin{center}
-  \includegraphics{figs/killersb-4} \enspace ,
+  \includegraphics[height=3cm]{figs/helper-2} \enspace ,
 \end{center}
-which ensures that the set of points taken during a single round form
-a non-decreasing point set.  From the forbidden configurations $\bat$,
-$\nested$, $\ears$, and $\swords$, we obtain the rule
-\begin{center}
-  \includegraphics{figs/killers-9}
-\end{center}
-for which points are disallowed in subsequent rounds.  This rule ensures
+The rule for $\nested$
+ensures that the set of points taken during a single round form
+a non-decreasing point set.  The rules for points allowed in subsequence rounds
+ensure
 that, after round $i$ any points chosen are either the topmost-rightmost
 point in $Q_i$ or are above and to the right of this point.  Taken
 together, these rules imply that
 \[
     \sum_{i=1}^n|Q_i| \le 3n-2 \enspace ,
 \]
-Since the union of $Q_i$ is a non-decreasing point set (whose size is
+since the union of $Q_i$ is a non-decreasing point set (whose size is
 therefore at most $2n-2$), and each $Q_i$ shares at most one point with
 $Q_{i+1}$.  The bound $\ex(\ears, \swords, \bat,\nested)\in
 O(n\log n)$ then follows from \lemref{top-bottom}.
 
+
 \section{New Results}
-
-
-
+\seclabel{new-results}
 
 % The following is the start of some bullshit argument, unless I can fix it.
 
@@ -542,16 +551,26 @@ points in $Q$ that can still be played in the dot-puzzle game if the
 points is $S$ have been played in previous rounds.
 
 \begin{obs}\obslabel{swords-region}
-  For any non-empty set $S\subset Q$, $\survivors(\{\swords\},S)$
-  is contained in the union of a \emph{triangular region} $T=\{(x,y)\in
-  Q: x\le \ymin(S)+1\}$, a \emph{rectangular region} $R=\{(x,y)\in Q:
-  x\ge \xmax(S),\, y\ge \ymax(S)\}$, a \emph{vertical line} $V=\{(x,y)\in Q:
-  x=\xmin(S)\}$ and a \emph{horizontal line} $H=\{(x,y)\in Q: y=\ymin(S)\}$.
+  Refer to \figref{survivors}.
+  For any non-empty set $S\subset Q$, $\survivors(\{\swords\},S)$ is
+  contained in the union of a \emph{triangular region} $T=\{(x,y)\in Q:
+  x\le \ymin(S)+1\}$, a \emph{rectangular region} $R=\{(x,y)\in Q: x\ge
+  \xmax(S),\, \ymax(S) \le y\le \xmax(S)\}$, a \emph{horizontal line}
+  $H=\{(x,y)\in Q: y=\ymin(S)\}$ and a \emph{vertical line} $V$ passing
+  through a point of $S$ with maximum $y$-coordinate.
 \end{obs}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics{figs/survivors}
+  \end{center}
+  \caption{An illustration of \obsref{swords-region}.}
+  \figlabel{survivors}
+\end{figure}
 
 \obsref{swords-region} gives us a form of \emph{potential function}
 that we can use.  We will apply it with $S=\bigcup_{j=1}^i Q_i$ so that as
-rounds proceed, any time the value of $\xmax(S)$ or $\ymax(S)$ increase,
+rounds proceed, any time the value of $\xmax(S)$ or $\ymax(S)$ increases,
 the size of the rectangle $R$ decreases. Any time the value of $\ymin(S)$
 decreases, the size of the triangle $T$ decreases.  So that we can refer
 to these point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$ and
@@ -559,8 +578,12 @@ we define $T_i$, $R_i$, $V_i$, and $H_i$ as in \obsref{swords-region},
 but with respect to the set $S=S_i$.
 
 \begin{thm}\thmlabel{taco-swords}
-  $\ex(n,\{\taco,\swords\}) \in O(n\log n)$.
+  $\ex'(n,\{\taco,\swords\}) \in O(n)$.
 \end{thm}
+
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-6}
+\end{center}
 
 \begin{proof}
   We will directly bound $\sum_{i=1}^n |Q_i|$.  We begin by noting that,
@@ -579,18 +602,20 @@ but with respect to the set $S=S_i$.
   Finally, we observe that $Q_i$ contains at most one point each from
   $H_i$ and $V_i$, so
   \[
-      \sum_{i=1}^{n}|Q_i| \le \sum_{i=1}^n(t_i+r_i+2) \le 7n \enspace .
+      \sum_{i=1}^{n}|Q_i| \le \sum_{i=1}^n(t_i+r_i+2) \le 7n \enspace . \qedhere
   \]
-  We have just shown that $\ex'(n,,\{\swords,\taco\})\in O(n)$,
-  so the theorem follows from \lemref{top-bottom}.
 \end{proof}
 
 \begin{thm}\thmlabel{nested-swords}
   $\ex'(n,\{\nested,\swords\}) \in O(n)$.
 \end{thm}
 
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-7}
+\end{center}
+
 \begin{proof}
-   The proof is similar to the proof of \thmref{swords-edgea}.
+   The proof is similar to the proof of \thmref{taco-swords}.
    The forbidden configuration $\nested$ implies that each set $Q_i$
    must be non-decreasing (see \figref{forbidden-color}a).
    We will use this fact implicitly for the rest of the proof.
@@ -620,16 +645,24 @@ but with respect to the set $S=S_i$.
    $\survivors(\{\swords\},Q_i)$ in $H_i\setminus T_i\setminus R_i$.
 
    Summing everything, we find that
-   $\ex'(n,\{\swords,\nested\})\le\sum_{j=1}^n |Q_i|\le 10n$, and
-   we finish by applying \lemref{top-bottom}.
+   $\ex'(n,\{\swords,\nested\})\le\sum_{j=1}^n |Q_i|\le 10n$.
 \end{proof}
+
 
 \begin{thm}\thmlabel{crossing-swords}
   $\ex'(n,\{\crossing,\swords\}) \in O(n)$.
 \end{thm}
 
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-8}
+\end{center}
+
 \begin{proof}
-  TODO. Similar to previous proof.
+  The rules for $\crossing$ imply that the points in each $Q_i$ can be
+  partitioned into groups $Q_{i,1},\ldots,Q_{i,\ell}$ where the elements
+  in $Q_i$ are non-increasing and the elements in $Q_{i,j}$ and $Q_{i,k}$
+  do not share any $x$- or $y$-coordinate.  With this observation, the
+  rest of the proof is analogous to the proof of \thmref{nested-swords}.
 \end{proof}
 
 
@@ -639,31 +672,29 @@ but with respect to the set $S=S_i$.
   $\ex'(n,\{\taco,\nested,\crossing\}) \in O(n)$.
 \end{thm}
 
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-9}
+\end{center}
+
+
 \begin{proof}
-  Taking the union of the rules
-  for $\taco$, $\nested$, and $\crossing$, we obtain the rule
-  \begin{center}
-     \includegraphics{figs/killers-10}
-  \end{center}
-  which ensures that during subsequent rounds we can not take a point
-  from any column or row used in the previous round.  Since we forbid
-  $\nested$, we know that the set of points taken during each round
-  is non-decreasing.
-
-  Imagine scanning the points in $Q_i$ in non-decreasing order.  Combining
-  the two preceding observations, we see that each point we scan is in
-  a row and column not used before in $Q_1,\ldots,Q_{i-1}$ and it is
-  on a row or a column that has not appeared before in the scan order.
-  Thus, each point of $Q_i$ that we scan kills one row and/or one column
-  so that this row/column can not be used in $Q_{i+1},\ldots,Q_n$.  Therefore,
-  $\sum_{j=1}^n |Q_i| \le 2n-3$.
+  Taking the union of the rules for $\taco$, $\nested$, and $\crossing$,
+  we obtain the rule which ensures that during subsequent rounds we can
+  not take a point from any column or row used in a previous round.
+  The rules for $\nested$ and $\taco$ ensure that the set of points
+  taken in each $Q_i$ is increasing.  Therefore each new point played
+  can be charged to a unique row, so the total number of points played
+  is at most $n$.
 \end{proof}
-
 
 
 \begin{thm}\thmlabel{nested-crossing-ears}
   $\ex'(n,\{\nested,\crossing,\ears\})\in O(n)$.
 \end{thm}
+
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-10}
+\end{center}
 
 \begin{proof}
   First observe that the rules for $\nested$ imply that each $Q_i$
@@ -671,7 +702,7 @@ but with respect to the set $S=S_i$.
 
   Next, observe that if $Q_i$ contains $k>1$ points in a single column
   (or row), then each of the $k$ rows (or columns) containing one of these
-  points is killed. $Q_{i+1},\ldots,Q_n$ can not contain any points in
+  points is killed, i.e., $Q_{i+1},\ldots,Q_n$ can not contain any points in
   these rows (or columns).  Therefore, when summing $\sum_{i=1}^n |Q_i|$,
   the contribution of points that are not alone in their row or column
   is at most $n$.  We therefore assume that each $Q_i$ contains at most
@@ -684,9 +715,11 @@ but with respect to the set $S=S_i$.
   set of points killed by its $\ears$-region contains all points in $Q_i$
   except itself and the second-last point of $Q_i$.
 
-  To summarize, each row and column of $Q$ contributes at most point to
+  To summarize, each row and column of $Q$ contributes at most one point to
   the set
-  $S=\bigcup_{i=1}^n Q_i$, so $|S|\le n$.  However, $Q_1$ eliminates $|Q_1|-2$ elements of from $S$ and, in round $i$, $Q_i$ eliminates an additional $|Q_{i}|-2$ elements from $S$.  Therefore,
+  $S=\bigcup_{i=1}^n Q_i$, so $|S|\le n$.  
+  However, the $\ears$-region of the rightmost point in $Q_i$ eliminates
+  $|Q_i|-2$ elements of $S$ that can never be played again.  Therefore,
   \[
         n\ge |S| \ge \sum_{i=1}^n (|Q_i|-2) \enspace ,
   \] 
@@ -715,6 +748,10 @@ configurations of points:
   $\ex'(n,\{\taco,\nested,\david\})\in O(n)$.
 \end{thm}
 
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-11}
+\end{center}
+
 \begin{proof}
   Let $S=\bigcup_{i=1}^n Q_i$ be the set of points played in a solution
   to the resulting dot-puzzle.  Note that, by the inclusion of $\taco$,
@@ -736,6 +773,11 @@ configurations of points:
   $\ex'(n,\{\nested,\bat,\david\})\in O(n)$.
 \end{thm}
 
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-12}
+\end{center}
+
+
 \begin{proof}
   Consider the set $Q_i$ played during some round $i$.  The rules for
   $\nested$ imply that $Q_i$ is non-decreasing.  The rule for $\bat$
@@ -743,6 +785,7 @@ configurations of points:
   lowest-leftmost point in $Q_i$.  Indeed, all of $Q_i$ except its
   leftmost row and column is in this david region.
 
+  Refer to \figref{need-figure-here}.
   Suppose we remove the leftmost point in each row of $Q_i$.  For each
   such point $p\in R_i$, the entire row containing $p$ is then killed
   and can never be played again.  The remaining points are in the first

@@ -79,7 +79,14 @@ these triangle can interact:  2 ways in which the triangles can share
 an edge (\taco\ and \mariposa), 3 ways in which the triangles can share a
 single vertex (\bat, \nested, and \crossing), and 3 ways in which
 the triangles can have no vertices in common (\ears, \swords,
-and \david).
+and \david).  Because it is difficult to keep track of nameless entities, we assign mnemonics to each configuration:
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c}\hline
+    \taco & \mariposa & \bat & \nested & \crossing & \ears & \swords & \david \\
+    taco & mariposa & bat & nested & crossing & ears & swords & david  \\ \hline
+  \end{tabular}
+\end{center}
 
 We consider the following class of problems:  Given a set, $X$,
 of combinatorial configurations of pairs of triangles, what is the
@@ -106,19 +113,6 @@ by a point set. Bra\ss\ \cite{brass:turan} later began a systematic
 study in which he gave tight bounds for all singleton $X$ and all
 pairs of configurations in which two triangles share a single vertex.
 These previous results are listed in \tabref{previous}.
-
-%One
-%of the results in this paper is that nearly the same bound holds even
-%if we allow the $\swords$ and $\david$ configuration. In particular,
-%our \thmref{blech} shows that $\ex(n,\{\taco,\nested,\crossing\}) \in
-%O(n\log n)$.
-%
-%Sometimes it is more natural to describe the allowable configurations than the forbidden configurations. For this, we use the notation 
-%\[
-%   \on(n,X) = \ex(n,\{\taco,\mariposa,\bat,\nested,\crossing,
-%                       \ears,\swords,\david\} \setminus X) \enspace .
-%\]
-%
 
 \begin{table}
 \begin{center}
@@ -152,6 +146,33 @@ These previous results are listed in \tabref{previous}.
 \caption{Known results on $\ex(n,X)$ for different sets $X$.}
 \tablabel{previous}
 \end{table}
+
+Of course, upper and lower bounds are inherited through the subset
+relationship: $\ex(n,X) \le \ex(n,Y)$ for any $X\supseteq Y$.
+\tabref{smalltable} shows the complete set of results we obtain when we
+apply this exhaustively to the list of previous results.
+
+\begin{table}
+  \begin{center}
+    \input{oldbounds.tex}
+  \end{center}
+  \caption{Old bounds for $\ex(n,X)$.}
+  \tablabel{smalltable}
+\end{table}
+
+
+%One
+%of the results in this paper is that nearly the same bound holds even
+%if we allow the $\swords$ and $\david$ configuration. In particular,
+%our \thmref{blech} shows that $\ex(n,\{\taco,\nested,\crossing\}) \in
+%O(n\log n)$.
+%
+%Sometimes it is more natural to describe the allowable configurations than the forbidden configurations. For this, we use the notation 
+%\[
+%   \on(n,X) = \ex(n,\{\taco,\mariposa,\bat,\nested,\crossing,
+%                       \ears,\swords,\david\} \setminus X) \enspace .
+%\]
+%
 
 
 %\begin{tabular}{llll}\hline

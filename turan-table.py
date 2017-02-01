@@ -100,10 +100,34 @@ def make_table(fp, upper_bounds, lower_bounds):
     fp.write(r'\end{tabular}')
     print("Found {} tight bounds".format(tight))
 
+
+def close_bounds(upper_bounds, lower_bounds):
+    # Create all upper bounds inherited by superset relationships
+    for k in list(upper_bounds.keys()):
+        these = set(unpack(k))
+        others = set(range(8)) - these
+        for s in powerset(others):
+            x = pack_set(these|set(s))
+            if x not in upper_bounds or upper_bounds[x] > upper_bounds[k]:
+                upper_bounds[x] = upper_bounds[k]
+
+    # Create all lower bounds inherited by subset relationship
+    for k in list(lower_bounds.keys()):
+        these = set(unpack(k))
+        for s in powerset(these):
+            x = pack_set(s)
+            if x not in lower_bounds or lower_bounds[x] < lower_bounds[k]:
+                lower_bounds[x] = lower_bounds[k]
+
+
 if __name__ == "__main__":
 
     upper_bounds = dict()
     lower_bounds = dict()
+
+    # Trivial stuff
+    upper_bounds[pack_set([])] = 3  # empty set is Theta(n^3)
+    upper_bounds[pack_set(range(8))] = 0  # complete set is Theta(1)
 
     # These are all due to Brass
     upper_bounds[pack(mariposa)] = 3
@@ -133,27 +157,33 @@ if __name__ == "__main__":
     for k in upper_bounds:
         lower_bounds[k] = upper_bounds[k]
 
-    # Trivial stuff
-    upper_bounds[pack_set([])] = 3
-    lower_bounds[pack_set(range(8))] = -1
-    upper_bounds[pack_set(range(8))] = -1
+    # We have Omega(n) lower bounds for most everything
+    s = set(range(8))-{mariposa}
+    for t in s:
+        lower_bounds[pack_set(s-{t})] = 1
 
-    # Upper bounds based on swords
+
+    close_bounds(upper_bounds, lower_bounds)
+    fp = open("oldbounds.tex", "w")
+    make_table(fp, upper_bounds, lower_bounds)
+    fp.close()
+
+    # New Upper bounds based on swords
     upper_bounds[pack(taco, swords)] = 1
     upper_bounds[pack(nested, swords)] = 1
     upper_bounds[pack(crossing, swords)] = 1
 
-    # More linear upper bounds
+    # New linear upper bounds
     upper_bounds[pack(taco, nested, david)] = 1
     upper_bounds[pack(taco, nested, crossing)] = 1
     upper_bounds[pack(nested, ears, crossing)] = 1
-    upper_bounds[pack(nested, bat, david)] = 1 # TODO: prove this
+    upper_bounds[pack(nested, bat, david)] = 1
 
-    # Tripod packing
+    # Upper bounds based on tripod packing
     lower_bounds[pack(taco, nested, bat, ears)] = 1.546  # Gowers and Long
     upper_bounds[pack(taco, nested)] = 2 # Induced matchings
 
-    # Lower bounds
+    # New lower bounds
     lower_bounds[pack(ears, bat, mariposa)] = 3
     lower_bounds[pack(taco, david, crossing, bat, ears)] = 2
     lower_bounds[pack(swords, bat, ears, david)] = 2
@@ -161,10 +191,7 @@ if __name__ == "__main__":
     lower_bounds[pack(david, nested, crossing)] = 2
     lower_bounds[pack(bat, nested, ears)] = 2
 
-    # The butterfly is irrelevant
-    s = set(range(8))-{mariposa}
-    for t in s:
-        lower_bounds[pack_set(s-{t})] = 1
+
 
     # Mariposas don't matter
     for k in list(upper_bounds.keys()):
@@ -183,22 +210,8 @@ if __name__ == "__main__":
             print("Warning: lower bound {} != {}".format(tostring(x), tostring(k)))
         lower_bounds[x] = lower_bounds[k]
 
-    # Create all upper bounds inherited by superset relationships
-    for k in list(upper_bounds.keys()):
-        these = set(unpack(k))
-        others = set(range(8)) - these
-        for s in powerset(others):
-            x = pack_set(these|set(s))
-            if x not in upper_bounds or upper_bounds[x] > upper_bounds[k]:
-                upper_bounds[x] = upper_bounds[k]
 
-    # Create all lower bounds inherited by subset relationship
-    for k in list(lower_bounds.keys()):
-        these = set(unpack(k))
-        for s in powerset(these):
-            x = pack_set(s)
-            if x not in lower_bounds or lower_bounds[x] < lower_bounds[k]:
-                lower_bounds[x] = lower_bounds[k]
+    close_bounds(upper_bounds, lower_bounds)
 
     fp = open("bounds.tex", "w")
     make_table(fp, upper_bounds, lower_bounds)

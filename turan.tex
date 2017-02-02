@@ -869,7 +869,7 @@ explicitly as open problem in the conclusion of Bra\ss's paper.  We spent
 more than a year work on this problem and this work included computer
 searches for solutions for small values of $n$.  Using the results of
 these computer searches in the Online Encyclopedia of Integer Sequences
-\cite{oeis}, we discovered that this problem is (asymptotically)
+\cite{oeis:a070214}, we discovered that this problem is (asymptotically)
 equivalent to several other known problems.
 
 \begin{enumerate}
@@ -891,42 +891,49 @@ equivalent to several other known problems.
   $\{1,\ldots,n\}$?
 \end{enumerate}
 
-There is a simple and natural construction gives a lower bound of
-$\Omega(n^{3/2})$ for these problems.  However, this bound is not
-tight. A sequence of results has steadily raised this lower bound
-\cite{tiskin,stein.szabo,hamaker.stein,}. The current record is held
-by Gowers and Long \cite{gowers.long}, who describe a construction of
-size $\Omega(n^{1.546})$.
+A simple and natural construction gives a lower bound of
+$\Omega(n^{3/2})$ for these problems.  However, this bound is
+not tight. A sequence of results has steadily raised this lower bound
+\cite{gowers.long:length,stein:combinatorial,stein:packing,stein.szabo:algebra,tiskin:packing}.
+The current record is held by Gowers and Long \cite{gowers.long:length},
+who describe a construction of size $\Omega(n^{1.546})$.
 
-The only known upper bounds for this problem come from the fact that
-a solution to this problem gives a solution to the Rusza-Szemeredi
-induced matching problem.  These upper bounds are barely subquadratic,
-with the current record being held by Fox's improved version of the
-triangle removal lemma \cite{fox}, which gives an upper bound of
-$n^{2}/e^{\Omega(\log^* n)}$.  See, for example, Gowers and Long
-\cite{gowers.long}
+The only known upper bounds for this problem come from the fact that a
+solution to this problem gives a solution to the Ruzsa-Szemer{\'e}di
+induced matching problem \cite{ruzsa.szemeredi:triple}.  These upper
+bounds are barely subquadratic, with the current record being held by
+Fox's improved version of the triangle removal lemma \cite{fox:new},
+which gives an upper bound of $n^{2}/e^{\Omega(\log^* n)}$.  See the
+discussion, for example, in Gowers and Long \cite{gowers.long:length}
 
-We point out a few bibliographic notes about these problems.  Bra\ss seems
-to have been unaware that the question he posed was equivalent to tripod
-packing and monotone matrices.
+We point out a few bibliographic notes about these problems:
 
-Tiskin, apparently unaware of the relation between tripod packing and
-the Rusza-Szemeredi induced matching problem, also proved an upper bound
-of $o(n^2)$. His proof uses tools (namely Szemeredi's Regularity Lemma)
-that are the same as the original proofs of the Rusza-Szemeredia bounds.
-
-Gowers and Long seem to be unaware that the problem on 2-comparable sets
-of triples was studied under other names.
-
-Gowers and Long arrived 2-comparable sets as a relaxation of a problem
-(the size of the largest 2-increasing sequence of triples).  proposed
-by Lo \cite{lo}.  In his discussion of this problem, Loh formulates
-a restricted version of the induced matching problem, in which the
-matching must satisfy a $\sigma$-free property and expresses hope
-\cite[Remark~9]{loh} that this restricted version has an $O(n^{3/2})$
-upper bound.  However, solutions for tripod packing correspond to
-$\sigma$-free induced matchings, so $\sigma$-free induced matchings of
-size $\omega(n^{3/2})$ are already known.
+\begin{itemize}
+  \item  Bra\ss\ \cite{brass:turan} seems to have been unaware that
+  the question he posed was equivalent to tripod packing and monotone
+  matrices.
+  
+  \item Tiskin \cite{tiskin:packing}, apparently unaware of the relation
+  between tripod packing and the Rusza-Szemeredi induced matching problem,
+  also proved an upper bound of $o(n^2)$. His proof uses the same tools
+  (namely Szemeredi's Regularity Lemma) as the original proofs of the
+  Ruzsa-Szemer{\'e}di bounds.
+  
+  \item Gowers and Long \cite{gowers.long:length} seem to be unaware
+  that the problem on 2-comparable sets of triples was studied under
+  other names.
+  
+  \item Gowers and Long \cite{gowers.long:length} arrived 2-comparable
+  sets as a relaxation of a problem (the size of the largest 2-increasing
+  sequence of triples).  proposed by Lo \cite{loh:directed}.  In his
+  discussion of this problem, Loh formulates a restricted version of
+  the induced matching problem, in which the matching must satisfy a
+  $\sigma$-free property and expresses hope \cite[Remark~9]{loh:directed}
+  that this restricted version has an $O(n^{3/2})$ upper bound.  However,
+  solutions for tripod packing correspond to $\sigma$-free induced
+  matchings, so $\sigma$-free induced matchings of size $\omega(n^{3/2})$
+  are already known.
+\end{itemize}
 
 In our context, the only new observation we have pertains to
 $\ex'(n,\{\taco,\nested,\bat,\ears\})$.
@@ -947,13 +954,9 @@ by only playing in the lower-right quadrant.
 
 \subsection{Lower Bounds}
 
-Finally, we clean up with some lower bound constructions.  In each
-case, a matching upper bound follows from one of the results in Bra\ss
-\cite{brass:turan}.  We start with very large sets of triangles, all of
-which pairwise cross.
-
-Next we present a series of fairly easy $\Omega(n^2)$ lower bound
-constructions.
+Finally, we clean up with some $\Omega(n^2)$ lower bound constructions.
+In each case, a matching upper bound follows from one of the results in
+Bra\ss \cite{brass:turan}.
 
 \begin{thm}\thmlabel{taco-david-bat-ears}
 $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
@@ -1015,8 +1018,6 @@ We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
 \begin{proof}
    We repeatedly take points on the diagonal of the lower-right quadrant.
 \end{proof}
-
-
 
 \section*{Acknowledgement}
 

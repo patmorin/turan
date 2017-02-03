@@ -269,6 +269,26 @@ of $\ex(n,X)$.
   that $\ex(n,X\cup\{\mariposa\}) \ge \ex(n,X)/8$.
 \end{proof}
 
+\subsection{Cubic-Sized Sets of Pairwise Crossing Triangles}
+
+\begin{thm}\thmlabel{pairwise-crossing}
+   $\ex(n,\{\ears,\bat,\mariposa\})=\Theta(n^3)$
+\end{thm}
+
+\begin{proof}
+  The $O(n^3)$ upper bound is immediate.  For the lower bound,
+  partition the points of the convex $n$-gon into three contiguous
+  sets, $A$, $B$, and $C$, each of size $\lfloor n/3\rfloor$ or
+  $\lceil n/3\rceil$, as appropriate.  Consider the set, $S$, of all
+  triangles having one vertex in each of $A$, $B$, and $C$. It is easy
+  to check that any two triangles in $S$ have a pair of edges that
+  cross, thus they do not form any of \ears, \bat, or \mariposa.
+  Furthermore, $|S|\ge \lfloor n/3\rfloor^3=\Omega(n^3)$, so
+  $\ex(n,\{\ears,\bat,\mariposa\})=\Omega(n^3)$.
+\end{proof}
+
+
+
 \subsection{The Top/Bottom View}
 
 It will be helpful to gain a sense of orientation by considering
@@ -447,6 +467,10 @@ a $\nested$ configuration in which the shared vertex is the left vertex
 
 
 \subsection{Some Warm-Up Exercises}
+
+For the remainder of the paper, we will study $\ex'$ using the dot-puzzle
+view. Thus, all of our results are bounds on solutions to these dot
+puzzles.
 
 We say that a point set is \emph{non-decreasing} (respectively,
 increasing, non-increasing, decreasing) if, when sorted lexicographically,
@@ -785,16 +809,24 @@ configurations of points:
   lowest-leftmost point in $Q_i$.  Indeed, all of $Q_i$ except its
   leftmost row and column is in this david region.
 
-  Refer to \figref{need-figure-here}.
-  Suppose we remove the leftmost point in each row of $Q_i$.  For each
-  such point $p\in R_i$, the entire row containing $p$ is then killed
-  and can never be played again.  The remaining points are in the first
-  column of $Q_i$ and all but two of these (the topmost and bottommost)
-  kill an entire row that can never be played again.  This means that
-  the total number of points removed this way is not more $3n$ (one
-  charged to each row and two charged to each round).  Since $Q_i$ was
-  originally non-decreasing, the removal of these points ensures that
-  each column contains at most one point of $Q_i$
+  Refer to \figref{nested-bat-david}.  Suppose we remove the leftmost
+  point in each row of $Q_i$.  For each such point $p\in R_i$, the entire
+  row containing $p$ is then killed and can never be played again. The
+  only other points we remove are in the first column of $Q_i$ and all
+  but two of these (the topmost and bottommost) kill an entire row that
+  can never be played again.  This means that the total number of points
+  removed this way is not more $3n$ (one charged to each row and two
+  charged to each round).  Since $Q_i$ was originally non-decreasing,
+  the removal of these points ensures that each column contains at most
+  one point of $Q_i$
+
+  \begin{figure}
+    \begin{center}\includegraphics{figs/nested-bat-david}\end{center}
+    \caption{The proof of \thmref{nested-bat-david}. The leftmost point
+      in each row of $Q_i$ kills an entire row (except possibly for two
+      points in the leftmost column).}
+    \figlabel{nested-bat-david}
+  \end{figure}
 
   Now we let $S=\bigcup_{i=1}^n Q_i$.  We claim that $S$ fulfills the
   requirements of \lemref{forbidden}.  To see why this is so, note that
@@ -823,48 +855,116 @@ configurations of points:
 
 
 
-\subsection{Montone Matrices, Tripod Packing, and 2-Comparable Sets}
+\subsection{Monotone Matrices, Tripod Packing, and 2-Comparable Sets}
 \seclabel{tripods}
 
-Determining the asymptotics of $\ex(n,\{\taco,\nested\})$ was given explicitly as open problem in the conclusion of Bra\ss's paper.  We spent more than a year work on this problem and this work included computer searches for solutions for small values of $n$.  Using the results of these computer searches in the Online Encyclopedia of Integer Sequences, we discovered that this problem is (asymptotically) equivalent to several other known problems.
+In this section, we discuss $\ex(n,\{\taco,\nested\})$.
+
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-13}
+\end{center}
+
+Determining the asymptotics of $\ex(n,\{\taco,\nested\})$ was given
+explicitly as open problem in the conclusion of Bra\ss's paper.  We spent
+more than a year work on this problem and this work included computer
+searches for solutions for small values of $n$.  Using the results of
+these computer searches in the Online Encyclopedia of Integer Sequences
+\cite{oeis:a070214}, we discovered that this problem is (asymptotically)
+equivalent to several other known problems.
 
 \begin{enumerate}
-  \item Monotone matrices
-  \item Tripod packing
-  \item 2-comparable sets of triples.
+  \item Monotone matrices: How many values from $\{1,\ldots,n\}$ can
+  one write in an $n\times n$ matrix so that each row is increasing,
+  each column is increasing, and for each $i\in\{1,\ldots,n\}$, the
+  positions of $i$ in the matrix form an increasing sequence?
+
+  \item Tripod packing: A \emph{tripod} with top $p\in\R^3$ is the
+  union of three closed rays at $p$ and parallel to the $x$-, $y$-,
+  and $z$-axes.  How many disjoint tripods can place with tops in
+  $\{1,\ldots,n\}^3$?
+
+  \item 2-comparable sets of triples.  Two triples of integers
+  $(a_1,a_2,a_3)$ and $(b_1,b_2,b_3)$ are \emph{2-comparable} if $a_i<
+  b_i$ for at least two values of $i\in\{1,2,3\}$ or $a_i > b_i$ for
+  at least two values of $i\in\{1,2,3\}$.  What is the largest set of
+  pairwise 2-comparable triples one can make whose entries come from
+  $\{1,\ldots,n\}$?
 \end{enumerate}
 
-One observation we have on this problem is that $\ex'(n,\{\taco,\nested\})=\Theta(\ex'(n,\{\taco,\nested,\bat,\ears\})$.  This comes from the fact that any solution\ldots
+A simple and natural construction gives a lower bound of
+$\Omega(n^{3/2})$ for these problems.  However, this bound is
+not tight. A sequence of results has steadily raised this lower bound
+\cite{gowers.long:length,stein:combinatorial,stein:packing,stein.szabo:algebra,tiskin:packing}.
+The current record is held by Gowers and Long \cite{gowers.long:length},
+who describe a construction of size $\Omega(n^{1.546})$.
+
+The only known upper bounds for this problem come from the fact that a
+solution to this problem gives a solution to the Ruzsa-Szemer{\'e}di
+induced matching problem \cite{ruzsa.szemeredi:triple}.  These upper
+bounds are barely subquadratic, with the current record being held by
+Fox's improved version of the triangle removal lemma \cite{fox:new},
+which gives an upper bound of $n^{2}/e^{\Omega(\log^* n)}$.  See the
+discussion, for example, in Gowers and Long \cite{gowers.long:length}
+
+We point out a few bibliographic notes about these problems:
+
+\begin{itemize}
+  \item  Bra\ss\ \cite{brass:turan} seems to have been unaware that
+  the question he posed was equivalent to tripod packing and monotone
+  matrices.
+  
+  \item Tiskin \cite{tiskin:packing}, apparently unaware of the relation
+  between tripod packing and the Rusza-Szemeredi induced matching problem,
+  also proved an upper bound of $o(n^2)$. His proof uses the same tools
+  (namely Szemeredi's Regularity Lemma) as the original proofs of the
+  Ruzsa-Szemer{\'e}di bounds.
+  
+  \item Gowers and Long \cite{gowers.long:length} seem to be unaware
+  that the problem on 2-comparable sets of triples was studied under
+  other names.
+  
+  \item Gowers and Long \cite{gowers.long:length} arrived 2-comparable
+  sets as a relaxation of a problem (the size of the largest 2-increasing
+  sequence of triples).  proposed by Lo \cite{loh:directed}.  In his
+  discussion of this problem, Loh formulates a restricted version of
+  the induced matching problem, in which the matching must satisfy a
+  $\sigma$-free property and expresses hope \cite[Remark~9]{loh:directed}
+  that this restricted version has an $O(n^{3/2})$ upper bound.  However,
+  solutions for tripod packing correspond to $\sigma$-free induced
+  matchings, so $\sigma$-free induced matchings of size $\omega(n^{3/2})$
+  are already known.
+\end{itemize}
+
+In our context, the only new observation we have pertains to
+$\ex'(n,\{\taco,\nested,\bat,\ears\})$.
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-14}
+\end{center}
+We observe that
+$\ex'(n,\{\taco,\nested\})\in O(\ex'(n,\{\taco,\nested,\bat,\ears\})$
+so these two functions are therefore asymptotically equivalent.
+This comes from the fact that a solution for the dot-puzzle of size $n$
+resulting from $X=\{\taco,\nested\}$ can be used as a solution for the
+dot-puzzle of size $2(n+1)$ resulting from $X=\{\taco,\nested,\bat,\ears\}$
+by only playing in the lower-right quadrant.
+
+\begin{thm}
+   $\ex'(n,\{\taco,\nested\}) \in \Theta(\ex'(n,\{\taco,\nested,\bat,\ears\})$  
+\end{thm}
 
 \subsection{Lower Bounds}
 
-Finally, we clean up with some lower bound constructions.  In each
-case, a matching upper bound follows from one of the results in Bra\ss
-\cite{brass:turan}.  We start with very large sets of triangles, all of
-which pairwise cross.
-
-\begin{thm}\thmlabel{pairwise-crossing}
-   $\ex(n,\{\ears,\bat,\mariposa\})=\Theta(n^3)$
-\end{thm}
-
-\begin{proof}
-  The $O(n^3)$ upper bound is immediate.  For the lower bound,
-  partition the points of the convex $n$-gon into three contiguous
-  sets, $A$, $B$, and $C$, each of size $\lfloor n/3\rfloor$ or
-  $\lceil n/3\rceil$, as appropriate.  Consider the set, $S$, of all
-  triangles having one vertex in each of $A$, $B$, and $C$. It is easy
-  to check that any two triangles in $S$ have a pair of edges that
-  cross, thus they do not form any of \ears, \bat, or \mariposa.
-  Furthermore, $|S|\ge \lfloor n/3\rfloor^3=\Omega(n^3)$, so
-  $\ex(n,\{\ears,\bat,\mariposa\})=\Omega(n^3)$.
-\end{proof}
-
-Next we present a series of fairly easy $\Omega(n^2)$ lower bound
-constructions.
+Finally, we clean up with some $\Omega(n^2)$ lower bound constructions.
+In each case, a matching upper bound follows from one of the results in
+Bra\ss \cite{brass:turan}.
 
 \begin{thm}\thmlabel{taco-david-bat-ears}
 $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
 \end{thm}
+
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-15}
+\end{center}
 
 \begin{proof}
 We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
@@ -873,6 +973,10 @@ We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
 \begin{thm}\thmlabel{swords-bat-ears-david}
   $\ex(n,\{\swords,\bat,\ears,\david\}) \in \Theta(n^2)$.
 \end{thm}
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-16}
+\end{center}
+
 
 \begin{proof}
    We set $Q_1=\{(x,y)\in Q: x>n/2, y<n/2\}$ and
@@ -882,6 +986,10 @@ We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
 \begin{thm}\thmlabel{nested-ears-david}
   $\ex(n,\{\nested,\ears,\david\}) \in \Theta(n^2)$.
 \end{thm}
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-17}
+\end{center}
+
 
 \begin{proof}
    Keep taking the bottom row.
@@ -890,6 +998,10 @@ We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
 \begin{thm}\thmlabel{david-nested-crossing}
   $\ex(n,\{\david,\nested,\crossing\}) \in \Theta(n^2)$.
 \end{thm}
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-18}
+\end{center}
+
 
 \begin{proof}
    We repeatedly take points on the diagonal.
@@ -898,19 +1010,21 @@ We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
 \begin{thm}\thmlabel{bat-nested-ears}
   $\ex(n,\{\bat,\nested,\ears\}) \in \Theta(n^2)$.
 \end{thm}
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-19}
+\end{center}
+
 
 \begin{proof}
-   We repeatedly take points on the diagonal inside the square.
+   We repeatedly take points on the diagonal of the lower-right quadrant.
 \end{proof}
-
-
 
 \section*{Acknowledgement}
 
-Some of this work was carried out at the e Fourth Annual Workshop on
+Some of this work was carried out at the Fourth Annual Workshop on
 Geometry and Graphs, held at the Bellairs Research Institute in Barbados,
 March 6--11, 2016. The authors are grateful to the organizers and to
-the participants of this workshop for providing a stimulating working
+the other participants of this workshop for providing a stimulating working
 environment.
 
 

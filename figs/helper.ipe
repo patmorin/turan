@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20151120151800" modified="D:20170201155632"/>
+<info created="D:20151120151800" modified="D:20170202104759"/>
 <preamble>\usepackage{kpfonts}</preamble>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
@@ -263,6 +263,13 @@ h
 <view layers="alpha nested crossing ears" active="crossing"/>
 <view layers="alpha taco nested david" active="crossing"/>
 <view layers="alpha bat nested david" active="crossing"/>
+<view layers="alpha taco nested" active="crossing"/>
+<view layers="alpha taco bat nested ears" active="crossing"/>
+<view layers="alpha taco bat ears david" active="crossing"/>
+<view layers="alpha bat ears swords david" active="crossing"/>
+<view layers="alpha nested ears david" active="crossing"/>
+<view layers="alpha nested crossing david" active="crossing"/>
+<view layers="alpha bat nested ears" active="crossing"/>
 <path layer="nested" matrix="0.9 0 0 0.9 216.8 -196.8" stroke="black" fill="brew4">
 64 496 m
 64 448 l

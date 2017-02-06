@@ -59,10 +59,14 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 
 \begin{abstract}
   We study the following family of problems: Given a set of $n$ points
-  in convex position, what is the maximum number triangles one can create
-  having these points as vertices while avoiding certain \emph{forbidden
-  configurations}.  As forbidden configurations we consider all 8 ways
-  in which a pair of triangles in such a point set can interact.
+  in convex position, what is the maximum number triangles one can
+  create having these points as vertices while avoiding certain sets
+  of \emph{forbidden configurations}.  As forbidden configurations
+  we consider all 8 ways in which a pair of triangles in such a point
+  set can interact.  This leads to 256 extremal Turán-type questions.
+  We give nearly tight (within a $\log n$ factor) bounds for 248 of these
+  questions and show that the remaining 8 questions are all asymptotically
+  equivalent to Stein's longstanding tripod packing problem.
 \end{abstract}
 
 \end{titlepage}
@@ -213,12 +217,11 @@ in $X$ does not change $\ex(n,X)$ by more than a constant factor.
 
 In the current paper, we determine, up to a logarithmic factor, the
 asymptotics of $\ex(n,X)$ for 248 sets $X$.  These results are shown
-in \tabref{bigtable}.     For the
-remaining 8 sets, we have determined that the asymptotics are all the
-same and are equivalent to a problem that appears in various contexts
-and under different names, including monotone matrices, tripod packing,
-and 2-comparable triples. We discuss this problem and its rich history
-in \secref{tripods}.
+in \tabref{bigtable}. For the remaining 8 sets, we have determined
+that the asymptotics are all the same and are equivalent to a problem
+that appears in various contexts and under different names, including
+monotone matrices, tripod packing, and 2-comparable triples. We discuss
+this problem and its rich history in \secref{tripods}.
 
 \begin{table}
   \begin{center}

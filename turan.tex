@@ -242,9 +242,9 @@ in \secref{new-results}.
 \section{Points of View and Easy Results}
 \seclabel{points-of-view}
 
-In this section we present an easy result that cuts our work in half and
-we describe different variants of the problem, some of which are easier
-to work with.
+In this section we present an easy result that cuts our work in half
+by reducing the number of problems from 256 to 128.  We then describe
+different variants of the problem, some of which are easier to work with.
 
 \subsection{Edge-Sharing Non-Overlapping Triangles are Irrelevant}
 
@@ -516,7 +516,7 @@ $Q_{i+1}$.  The bound $\ex(\ears, \swords, \bat,\nested)\in
 O(n\log n)$ then follows from \lemref{top-bottom}.
 
 
-\section{New Results}
+\section{Results Based on Dot Puzzles}
 \seclabel{new-results}
 
 % The following is the start of some bullshit argument, unless I can fix it.
@@ -599,6 +599,13 @@ points is $S$ have been played in previous rounds.
   \caption{An illustration of \obsref{swords-region}.}
   \figlabel{survivors}
 \end{figure}
+
+\begin{proof}
+  The points defining $\ymax(S)$ and $\xmin(S)$ cover everything below
+  $\ymax(S)$, except $H$, $V$, and $T$. The point defining $\ymax(S)$
+  bounds $R$ from below, the point defining $\xmax(S)$ bounds $R$ from
+  the left, and the point defining $\xmin(S)$ bounds $R$ from above.
+\end{proof}
 
 \obsref{swords-region} gives us a form of \emph{potential function}
 that we can use.  We will apply it with $S=\bigcup_{j=1}^i Q_i$ so that as

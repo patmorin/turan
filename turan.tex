@@ -59,10 +59,14 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 
 \begin{abstract}
   We study the following family of problems: Given a set of $n$ points
-  in convex position, what is the maximum number triangles one can create
-  having these points as vertices while avoiding certain \emph{forbidden
-  configurations}.  As forbidden configurations we consider all 8 ways
-  in which a pair of triangles in such a point set can interact.
+  in convex position, what is the maximum number triangles one can
+  create having these points as vertices while avoiding certain sets
+  of \emph{forbidden configurations}.  As forbidden configurations
+  we consider all 8 ways in which a pair of triangles in such a point
+  set can interact.  This leads to 256 extremal Turán-type questions.
+  We give nearly tight (within a $\log n$ factor) bounds for 248 of these
+  questions and show that the remaining 8 questions are all asymptotically
+  equivalent to Stein's longstanding tripod packing problem.
 \end{abstract}
 
 \end{titlepage}
@@ -212,19 +216,19 @@ in $X$ does not change $\ex(n,X)$ by more than a constant factor.
 \subsection{New Results}
 
 In the current paper, we determine, up to a logarithmic factor, the
-asymptotics of $\ex(n,X)$ for 248 sets $X$.  These results are shown
-in \tabref{bigtable}.     For the
-remaining 8 sets, we have determined that the asymptotics are all the
-same and are equivalent to a problem that appears in various contexts
-and under different names, including monotone matrices, tripod packing,
-and 2-comparable triples. We discuss this problem and its rich history
-in \secref{tripods}.
+asymptotics of $\ex(n,X)$ for 248 sets $X$.  These results are shown in
+\tabref{bigtable}. For the remaining 8 sets, we have determined that
+the asymptotics are all the same and are equivalent to a problem that
+appears in various contexts and under different names, including monotone
+matrices, tripod packing, and 2-comparable triples. We discuss this
+problem and its rich history in \secref{tripods}.  
 
 \begin{table}
   \begin{center}
     \input{bounds.tex}
   \end{center}
-  \caption{New and previous bounds for $\ex(n,X)$.}
+  \caption{New and previous bounds for $\ex(n,X)$, up to a factor of $\log n$.
+  For the new bounds listed as $n$, the lower bound is $\Omega(n)$ and the upper bound is $O(n\log n)$.  For the bounds listed as $n^{1.546}:n^2$, the upper bound is actually $n^2/e^{\Omega(\log^* n)}$.}
   \tablabel{bigtable}
 \end{table}
 
@@ -238,9 +242,9 @@ in \secref{new-results}.
 \section{Points of View and Easy Results}
 \seclabel{points-of-view}
 
-In this section we present an easy result that cuts our work in half
-and we describe different variants of the problem, some of which are
-easier to work with.  
+In this section we present an easy result that cuts our work in half and
+we describe different variants of the problem, some of which are easier
+to work with.
 
 \subsection{Edge-Sharing Non-Overlapping Triangles are Irrelevant}
 
@@ -272,12 +276,11 @@ of $\ex(n,X)$.
 \subsection{Cubic-Sized Sets of Pairwise Crossing Triangles}
 
 \begin{thm}\thmlabel{pairwise-crossing}
-   $\ex(n,\{\ears,\bat,\mariposa\})=\Theta(n^3)$
+   $\ex(n,\{\ears,\bat,\mariposa\})=\Omega(n^3)$
 \end{thm}
 
 \begin{proof}
-  The $O(n^3)$ upper bound is immediate.  For the lower bound,
-  partition the points of the convex $n$-gon into three contiguous
+  Partition the points of the convex $n$-gon into three contiguous
   sets, $A$, $B$, and $C$, each of size $\lfloor n/3\rfloor$ or
   $\lceil n/3\rceil$, as appropriate.  Consider the set, $S$, of all
   triangles having one vertex in each of $A$, $B$, and $C$. It is easy
@@ -353,7 +356,7 @@ easy to visualize.  Refer to \figref{point-view}.
 
 In this puzzle, we are given $\binom{n}{2}$ points,
 \[
-    Q = \{(x,y): y\in\{1,\ldots,n-1\}, x\in\{y+1,\ldots,n-1\} \} \enspace .
+    Q = \{(x,y): y\in\{1,\ldots,n-1\}, x\in\{y+1,\ldots,n\} \} \enspace .
 \]
 These points model the top/bottom view on a convex $2n$-gon, where the
 point $(x,y)$ represents a triangle whose vertices are some point on
@@ -473,9 +476,11 @@ view. Thus, all of our results are bounds on solutions to these dot
 puzzles.
 
 We say that a point set is \emph{non-decreasing} (respectively,
-increasing, non-increasing, decreasing) if, when sorted lexicographically,
-the $y$ coordinates of the points form a non-decreasing (respectively,
-increasing, non-increasing, decreasing) sequence.
+non-increasing) if, when sorted lexicographically, the $y$ coordinates of
+the points form a non-decreasing (respectively, non-increasing) sequence.
+A point set is \emph{increasing} (respectively, decreasing) if it is
+non-decreasing (respectively, non-increasing) and it's $x$ coordinates
+are distinct.
 
 From \figref{forbidden-color}, some previous upper bounds naturally fall
 out.  Consider Bra\ss's results \cite{brass:turan} that $\ex(\nested)\in
@@ -485,9 +490,9 @@ O(n^2)$.  For the game defined by $X=\{\nested\}$, we have the rules:
 \end{center}
 In particular, these rules imply that points selected during a single
 round of the dot puzzle must be non-decreasing, and thus at most $2n-3$
-points can be selected take part in $Q_i$.  Thus $\sum_{j=1}^{n}|Q_i|
-\le 2n^2-3n$, and the bound $\ex(\nested)\in O(n^2)$ immediately follow
-from \lemref{top-bottom}.
+points can be selected take part in $Q_i$.  Thus $\sum_{j=1}^{n}|Q_i| \le
+2n^2-3n$, so $\ex'(n,\nested)\in O(n^2)$ and the bound $\ex(\nested)\in
+O(n^2)$ immediately follow from \lemref{top-bottom}.
 
 Similarly, we can almost recover the result of Bra\ss, Rote and
 Swanepoel \cite{brass.rote.ea:triangles} on $\ex(\ears, \swords,
@@ -506,7 +511,7 @@ together, these rules imply that
     \sum_{i=1}^n|Q_i| \le 3n-2 \enspace ,
 \]
 since the union of $Q_i$ is a non-decreasing point set (whose size is
-therefore at most $2n-2$), and each $Q_i$ shares at most one point with
+therefore at most $2n-3$), and each $Q_i$ shares at most one point with
 $Q_{i+1}$.  The bound $\ex(\ears, \swords, \bat,\nested)\in
 O(n\log n)$ then follows from \lemref{top-bottom}.
 
@@ -565,21 +570,24 @@ immediate from bound $\ex(n,\{\swords\}\in\Theta(n^2)$ \cite{brass:turan}
 and \lemref{xcup}.
 
 In the following, we use the notation $\xmin(S)$ to denote the
-minimum $x$-coordinate of any point in the point set $S$.  If $S$
-is empty, then we define $\xmin(S)$ as $n+1$.  We define $\ymin(S)$,
-$\xmax(S)$, and $\ymax(S)$ similarly, except that $\ymin(\emptyset)
-= n$, $\ymax(\emptyset)=0$, and $\xmax(\emptyset)=1$.  For any
+minimum $x$-coordinate of any point in the point set $S$.  
+%If $S$ is empty, then we define $\xmin(S)$ as $n+1$.  
+We define $\ymin(S)$,
+$\xmax(S)$, and $\ymax(S)$ similarly.
+%, except that $\ymin(\emptyset) = n$, $\ymax(\emptyset)=0$, and 
+% $\xmax(\emptyset)=1$.  
+For any
 $X\subset\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}$
 and any $S\subset Q$, we define $\survivors(X,S)$ to be the subset of
 points in $Q$ that can still be played in the dot-puzzle game if the
 points is $S$ have been played in previous rounds.
 
 \begin{obs}\obslabel{swords-region}
-  Refer to \figref{survivors}.
+  (Refer to \figref{survivors}.)
   For any non-empty set $S\subset Q$, $\survivors(\{\swords\},S)$ is
   contained in the union of a \emph{triangular region} $T=\{(x,y)\in Q:
   x\le \ymin(S)+1\}$, a \emph{rectangular region} $R=\{(x,y)\in Q: x\ge
-  \xmax(S),\, \ymax(S) \le y\le \xmax(S)\}$, a \emph{horizontal line}
+  \xmax(S),\, \ymax(S) \le y\le \xmin(S)\}$, a \emph{horizontal line}
   $H=\{(x,y)\in Q: y=\ymin(S)\}$ and a \emph{vertical line} $V$ passing
   through a point of $S$ with maximum $y$-coordinate.
 \end{obs}
@@ -865,88 +873,142 @@ In this section, we discuss $\ex(n,\{\taco,\nested\})$.
 \end{center}
 
 Determining the asymptotics of $\ex(n,\{\taco,\nested\})$ was given
-explicitly as open problem in the conclusion of Bra\ss's paper.  We spent
-more than a year work on this problem and this work included computer
-searches for solutions for small values of $n$.  Using the results of
-these computer searches in the Online Encyclopedia of Integer Sequences
-\cite{oeis:a070214}, we discovered that this problem is (asymptotically)
-equivalent to several other known problems.
+explicitly as open problem in the conclusion of Bra\ss's paper.
+We spent more than a year work on this problem.  This work included
+computer searches for a variant of the problem played on the square grid
+$\{1,\ldots,n\}^2$.\footnote{Playing on the square grid does not change
+the asympotics of the problem.  Any solution for $\{1,\ldots,n/2\}^2$ can
+used as a solution for the triangular grid $Q$ and any upper bound for
+$\{1,\ldots,n\}^2$ is also an upper bound for the triangular grid $Q$.}
+Using the results of these computer searches in the Online Encyclopedia of
+Integer Sequences \cite{oeis:a070214}, we discovered that this problem,
+when played on the square grid, is equivalent to several other known
+problems. See \figref{tripods}.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics{figs/tripods}
+  \end{center}
+  \caption{The dot-puzzle induced by excluding the taco and nested configurations
+    has already been studied under several equivalent formulations.}
+  \figlabel{tripods}
+\end{figure}
 
 \begin{enumerate}
-  \item Monotone matrices: How many values from $\{1,\ldots,n\}$ can
-  one write in an $n\times n$ matrix so that each row is increasing,
-  each column is increasing, and for each $i\in\{1,\ldots,n\}$, the
-  positions of $i$ in the matrix form an increasing sequence?
+  \item \emph{Monotone matrix problem}: How many values from
+  $\{1,\ldots,n\}$ can one write in an $n\times n$ matrix so that each
+  row is increasing from left-to-right, each column is increasing from
+  bottom-to-top, and for each $i\in\{1,\ldots,n\}$, the positions of $i$
+  in the matrix form an increasing sequence?
 
-  \item Tripod packing: A \emph{tripod} with top $p\in\R^3$ is the
-  union of three closed rays at $p$ and parallel to the $x$-, $y$-,
-  and $z$-axes.  How many disjoint tripods can place with tops in
-  $\{1,\ldots,n\}^3$?
+  \item \emph{Tripod packing problem}: A \emph{tripod} with top $p\in\R^3$
+  is the union of three closed rays at $p$ and parallel to the $x$-,
+  $y$-, and $z$-axes.  How many disjoint tripods can be packed with tops
+  in $\{1,\ldots,n\}^3$?
 
-  \item 2-comparable sets of triples.  Two triples of integers
-  $(a_1,a_2,a_3)$ and $(b_1,b_2,b_3)$ are \emph{2-comparable} if $a_i<
-  b_i$ for at least two values of $i\in\{1,2,3\}$ or $a_i > b_i$ for
-  at least two values of $i\in\{1,2,3\}$.  What is the largest set of
-  pairwise 2-comparable triples one can make whose entries come from
-  $\{1,\ldots,n\}$?
+  \item \emph{2-comparable sets of triples problem}.  Two triples of
+  integers $(a_1,a_2,a_3)$ and $(b_1,b_2,b_3)$ are \emph{2-comparable}
+  if $a_i< b_i$ for at least two values of $i\in\{1,2,3\}$ or $a_i > b_i$
+  for at least two values of $i\in\{1,2,3\}$.  What is the largest set,
+  $S$, of pairwise 2-comparable triples one can make whose entries come
+  from $\{1,\ldots,n\}$?
 \end{enumerate}
 
-A simple and natural construction gives a lower bound of
-$\Omega(n^{3/2})$ for these problems.  However, this bound is
-not tight. A sequence of results has steadily raised this lower bound
+Several simple and natural construction give lower bounds
+of $\Omega(n^{3/2})$ for these problems.  However,
+this bound is not tight. A sequence of results using
+recursive constructions has steadily raised this lower bound
 \cite{gowers.long:length,stein:combinatorial,stein:packing,stein.szabo:algebra,tiskin:packing}.
 The current record is held by Gowers and Long \cite{gowers.long:length},
 who describe a construction of size $\Omega(n^{1.546})$.
 
+\begin{thm}[Gowers and Long \cite{gowers.long:length}]\thmlabel{taco-nested-lb}
+  $\ex'(n,\{\taco,\nested\}) \in \Omega(n^{1.546})$
+\end{thm}
+
+
+
 The only known upper bounds for this problem come from the fact that a
 solution to this problem gives a solution to the Ruzsa-Szemer{\'e}di
-induced matching problem \cite{ruzsa.szemeredi:triple}.  These upper
-bounds are barely subquadratic, with the current record being held by
-Fox's improved version of the triangle removal lemma \cite{fox:new},
-which gives an upper bound of $n^{2}/e^{\Omega(\log^* n)}$.  See the
-discussion, for example, in Gowers and Long \cite{gowers.long:length}
+induced matching problem \cite{ruzsa.szemeredi:triple}.  
+\begin{enumerate}
+  \setcounter{enumi}{3}
+  \item \emph{Induced-matching problem}: What is the maximum number
+  of edges in a bipartite graph $G=(A,B,E)$ with $|A|=|B|=n$ such that
+  $E$ can be partitioned in to $n$ \emph{induced matchings} $M_1,\ldots,M_n$?
+  That is, each $M_i$ is a matching, and for any two edges $e,f\in M_i$
+  there is no edge in $E\setminus\{e,f\}$ that joins an endpoint of $e$
+  to an endpoint of $f$.
+\end{enumerate}
+It is simple to verify that if one takes a 2-comparable set of triples
+$S=\{(a_i,b_i,c_i):i\in\{1,\ldots,m\}\}$ then the bipartite graph $G=(A,B,E)$
+with $A=B=\{1,\ldots,n\}$ and
+  \[
+     E = \{ (b_j,c_j): j\in \{1,\ldots,m\}\}
+  \]
+satisfies the conditions of the induced matching problem, with the
+partition into matchings given by
+\[
+    M_i = \{ (a,b,c)\in E : a = i \} 
+\]
+Thus, any upper bound for the induced-matching problem an upper bound
+on the size of a 2-comparable set of triples.
+
+Upper bounds for the induced matching problem are barely subquadratic,
+with the current record being held by Fox's improved version of the
+triangle removal lemma \cite{fox:new}, which gives an upper bound
+of $n^{2}/e^{\Omega(\log^* n)}$.  See the discussion, for example,
+in Gowers and Long \cite{gowers.long:length}
+
+\begin{thm}[Fox \cite{fox:new}]\thmlabel{taco-nested-ub}
+  $\ex'(n,\{\taco,\nested\}) \in n^2/e^{\Omega(\log^* n)}$
+\end{thm}
 
 We point out a few bibliographic notes about these problems:
 
 \begin{itemize}
   \item  Bra\ss\ \cite{brass:turan} seems to have been unaware that
   the question he posed was equivalent to tripod packing and monotone
-  matrices.
+  matrices (or, like us, had never heard of these problems).
   
-  \item Tiskin \cite{tiskin:packing}, apparently unaware of the relation
-  between tripod packing and the Rusza-Szemeredi induced matching problem,
-  also proved an upper bound of $o(n^2)$. His proof uses the same tools
-  (namely Szemeredi's Regularity Lemma) as the original proofs of the
-  Ruzsa-Szemer{\'e}di bounds.
-  
+  \item Tiskin \cite{tiskin:packing}, apparently unaware of the
+  relation between tripod packing and induced matchings, proved an upper
+  bound of $o(n^2)$ for tripod packing. His proof does not depend on any
+  properties of tripod packing that are not also true for induced matchings,
+  and uses the same tools
+  (namely Szemeredi's Regularity Lemma) as the original upper bounds for
+  the induced matching problem.
+
   \item Gowers and Long \cite{gowers.long:length} seem to be unaware
   that the problem on 2-comparable sets of triples was studied under
   other names.
   
-  \item Gowers and Long \cite{gowers.long:length} arrived 2-comparable
+  \item Gowers and Long \cite{gowers.long:length} arrived at 2-comparable
   sets as a relaxation of a problem (the size of the largest 2-increasing
-  sequence of triples).  proposed by Lo \cite{loh:directed}.  In his
-  discussion of this problem, Loh formulates a restricted version of
-  the induced matching problem, in which the matching must satisfy a
-  $\sigma$-free property and expresses hope \cite[Remark~9]{loh:directed}
+  sequence of triples)  proposed by Loh \cite{loh:directed}.  In his
+  discussion of this problem, Loh formulates a restricted version of the
+  induced matching problem, in which the matching must satisfy a certain
+  $\Sigma$-free property and expresses hope \cite[Remark~9]{loh:directed}
   that this restricted version has an $O(n^{3/2})$ upper bound.  However,
-  solutions for tripod packing correspond to $\sigma$-free induced
-  matchings, so $\sigma$-free induced matchings of size $\omega(n^{3/2})$
+  solutions for tripod packing correspond to $\Sigma$-free induced
+  matchings, so $\Sigma$-free induced matchings of size $\omega(n^{3/2})$
   are already known.
 \end{itemize}
+
 
 In our context, the only new observation we have pertains to
 $\ex'(n,\{\taco,\nested,\bat,\ears\})$.
 \begin{center}
    \includegraphics[height=3cm]{figs/helper-14}
 \end{center}
-We observe that
-$\ex'(n,\{\taco,\nested\})\in O(\ex'(n,\{\taco,\nested,\bat,\ears\})$
-so these two functions are therefore asymptotically equivalent.
-This comes from the fact that a solution for the dot-puzzle of size $n$
-resulting from $X=\{\taco,\nested\}$ can be used as a solution for the
-dot-puzzle of size $2(n+1)$ resulting from $X=\{\taco,\nested,\bat,\ears\}$
-by only playing in the lower-right quadrant.
+We observe that $\ex'(n,\{\taco,\nested\})\in
+O(\ex'(n,\{\taco,\nested,\bat,\ears\})$ so these two functions
+are therefore asymptotically equivalent.  This comes from the
+fact that a solution for the dot-puzzle of size $n$ resulting from
+$X=\{\taco,\nested\}$ can be used as a solution for the dot-puzzle of size
+$2(n+1)$ resulting from $X=\{\taco,\nested,\bat,\ears\}$ by only playing
+in the lower-right quadrant.  When played this way, the extra restrictions
+caused by $\bat$ and $\ears$ do not affect the lower-right quadrant.
 
 \begin{thm}
    $\ex'(n,\{\taco,\nested\}) \in \Theta(\ex'(n,\{\taco,\nested,\bat,\ears\})$  

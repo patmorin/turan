@@ -94,7 +94,7 @@ def make_table(fp, upper_bounds, lower_bounds):
                 fp.write(r'&\cellcolor{{blue!10}}${}$'.format(format_exponent(upper_bounds[x])))
                 tight += 1
             else:
-                fp.write(r'&\cellcolor{{red!10}}${}/{}$'.format(format_exponent(lower_bounds[x]),
+                fp.write(r'&\cellcolor{{red!10}}${}: {}$'.format(format_exponent(lower_bounds[x]),
                                             format_exponent(upper_bounds[x])))
         fp.write(r'\\ \hline' + '\n')
     fp.write(r'\end{tabular}')

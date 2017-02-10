@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170201142402" modified="D:20170210131220"/>
+<info created="D:20170201142402" modified="D:20170210134143"/>
 <preamble>\usepackage{amsmath}
 \DeclareMathOperator{\xmin}{xmin}
 \DeclareMathOperator{\xmax}{xmax}
@@ -281,95 +281,68 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<path layer="alpha" stroke="black" fill="brew7" opacity="30%">
-200 648 m
-200 585.104 l
-160.02 585.104 l
-160.02 648 l
-h
-</path>
-<path stroke="black" fill="brew7" opacity="30%">
-208 648 m
-208 585.104 l
-261.625 585.104 l
-261.625 648 l
-h
-</path>
-<path stroke="black" fill="brew7" opacity="30%">
-224 640 m
-224 720 l
-144 640 l
-h
-</path>
-<path matrix="1 0 0 1 -55.975 378.704" stroke="black">
+<path layer="alpha" matrix="1 0 0 1 -55.975 378.704" stroke="black">
 145.2 206.4 m
 317.2 378.4 l
 317.6 206.4 l
 h
 </path>
-<path stroke="black" fill="brew7" opacity="30%">
-200 616 m
-200 585.104 l
-261.625 585.104 l
-261.625 616 l
-h
-</path>
-<path stroke="black" fill="brew7" opacity="30%">
-192 616 m
-192 585.104 l
-127.99 585.104 l
-127.99 616 l
-h
-</path>
-<path stroke="black" fill="brew7" opacity="30%">
-184 680 m
-261.404 679.978 l
-261.225 757.104 l
-h
-</path>
-<use matrix="1 0 0 1 -19.8512 24.1335" name="mark/disk(sx)" pos="199.851 619.867" size="normal" stroke="black"/>
-<use matrix="1 0 0 1 -3.8512 0.133479" name="mark/disk(sx)" pos="199.851 619.867" size="normal" stroke="black"/>
-<path stroke="black" fill="brew7">
-180 684 m
-180 576 l
-</path>
-<path stroke="black" fill="brew7">
-268 620 m
-116 620 l
-</path>
-<path stroke="black" fill="brew7">
-268 676 m
-172 676 l
-</path>
-<text matrix="1 0 0 1 0 3" transformations="translations" pos="180 564" stroke="black" type="label" width="36.295" height="7.473" depth="2.49" halign="center" valign="baseline" style="math">\xmin(S)</text>
 <text transformations="translations" pos="112 592" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
-<text transformations="translations" pos="240 660" stroke="black" type="label" width="7.641" height="6.808" depth="0" valign="baseline" style="math">R</text>
-<text matrix="1 0 0 1 48 3" transformations="translations" pos="180 564" stroke="black" type="label" width="38.232" height="7.473" depth="2.49" halign="center" valign="baseline" style="math">\xmax(S)</text>
-<use matrix="1 0 0 1 16 8" name="mark/disk(sx)" pos="212 628" size="normal" stroke="black"/>
-<path stroke="black" fill="brew7">
-228 732 m
-228 576 l
-</path>
-<text matrix="1 0 0 1 -5 0" transformations="translations" pos="276 676" stroke="black" type="label" width="36.295" height="7.473" depth="2.49" valign="center" style="math">\xmin(S)</text>
-<path stroke="black" fill="brew7">
-148 652 m
-268 652 l
-</path>
-<text matrix="1 0 0 1 -1 0" transformations="translations" pos="272 652" stroke="black" type="label" width="38.232" height="7.473" depth="2.49" valign="center" style="math">\ymax(S)</text>
-<path stroke="black" fill="brew7" opacity="30%">
-192 624 m
-192 688 l
-128 624 l
+<text matrix="1 0 0 1 0 -2" transformations="translations" pos="204 716" stroke="black" type="label" width="8.025" height="6.808" depth="0" halign="center" valign="baseline" style="math">V</text>
+<use name="mark/disk(sx)" pos="228 708" size="normal" stroke="black"/>
+<path stroke="black" fill="brew7" opacity="50%">
+224 704 m
+212 704 l
+212 585.104 l
+224.028 585.104 l
+224.028 585.104 l
 h
 </path>
-<text matrix="1 0 0 1 -1 -32" transformations="translations" pos="272 652" stroke="black" type="label" width="36.295" height="7.473" depth="2.49" valign="center" style="math">\ymin(S)</text>
-<use name="mark/disk(sx)" pos="204 652" size="normal" stroke="black"/>
-<text matrix="1 0 0 1 10 0" transformations="translations" pos="104 620" stroke="black" type="label" width="22.79" height="8.306" depth="0" halign="right" valign="center" style="math">H^{\min}</text>
-<path stroke="black" fill="brew7">
-204 576 m
-204 712 l
+<path stroke="black" fill="brew7" opacity="50%">
+232 704 m
+232 585.104 l
+261.625 585.104 l
+261.625 703.96 l
+h
 </path>
-<text matrix="1 0 0 1 0 -2" transformations="translations" pos="204 716" stroke="black" type="label" width="8.025" height="6.808" depth="0" halign="center" valign="baseline" style="math">V</text>
-<text matrix="1 0 0 1 42 32" transformations="translations" pos="104 620" stroke="black" type="label" width="24.291" height="6.808" depth="0" halign="right" valign="center" style="math">H^{\max}</text>
+<path stroke="black" fill="brew7" opacity="50%">
+224 712 m
+224 719.879 l
+216.106 711.985 l
+h
+</path>
+<use name="mark/disk(sx)" pos="168 640" size="normal" stroke="black"/>
+<path stroke="black" fill="brew7" opacity="50%">
+172 636 m
+172 585.104 l
+261.625 585.104 l
+261.625 636 l
+h
+</path>
+<path stroke="black" fill="brew7" opacity="50%">
+164 636 m
+164 585.104 l
+144.06 585.104 l
+144.06 636 l
+h
+</path>
+<path stroke="black" fill="brew7" opacity="50%">
+164 644 m
+164 659.879 l
+148.168 644.047 l
+h
+</path>
+<path stroke="black" fill="brew7" opacity="50%">
+232.102 727.981 m
+261.293 727.981 l
+261.293 757.15 l
+h
+</path>
+<path stroke="black" fill="brew7" opacity="50%">
+172 668 m
+261.625 668 l
+261.293 757.15 l
+h
+</path>
 </page>
 </ipe>

@@ -293,7 +293,7 @@ of $\ex(n,X)$.
 
 \subsection{Linear-Sized Sets Using only a Single Configuration}
 
-Since it is not explicitly stated in previous work, and we need it to complete our table, we now observe that for any configuration $x\in\{\taco,\bat,\nested,\crossing,\ears,\swords,\david\}$, one can have a linear number of triangles such that each pair of triangles is in configuration $x$.
+Since it is not explicitly stated in previous work, and we need it to complete our table, we now observe that for any configuration $x\in\{\taco,\bat,\nested,\crossing,\ears,\swords,\david\}$, one can create a linear-sized set of triangles that avoids all configurations except $x$.
 
 \begin{thm}
 For any $X\subset\{\taco,\bat,\nested,\crossing,\ears,\swords,\david\}$,
@@ -301,16 +301,22 @@ $\ex'(n,X)\in \Omega(n)$.
 \end{thm}
 
 \begin{proof}
-  Let $x\in\{\taco,\bat,\nested,\crossing,\ears,\swords,\david\}$ be configuration not in $X$.  Label the vertices of our convex $n$-gon $1,\ldots,n$ in counterclockwise order.  We use the following constructions:
+  Let $x\in\{\taco,\bat,\nested,\crossing,\ears,\swords,\david\}$ be
+  a configuration not in $X$.  Label the vertices of our convex $n$-gon
+  $1,\ldots,n$ in counterclockwise order.  Depending on the value of $x$,
+  we use one of the following constructions:
  \begin{enumerate}
     \item For $x=\taco$ we use the set of triangles $\{(1,2,i):i\in\{3,\ldots,n\}\}$.
-    \item For $x=\bat$ we use the set of triangles $\{(1,3i-1,3i-2: i\in\{1,\ldots,\lfloor n/3\rfloor \}$.
+    \item For $x=\bat$ we use the set of triangles $\{(1,3i-1,3i-2): i\in\{1,\ldots,\lfloor n/3\rfloor \}$.
     \item For $x=\nested$ we use the set of triangles $\{(1,i,n+2-i): i\in\{2,\lfloor n/2\rfloor\}\}$.
     \item For $x=\crossing$ we use the set of triangles $\{(1,i,\lfloor n/2\rfloor+i): i\in\{2,\lfloor n/2\rfloor\}-1\}$.
     \item For $x=\ears$ we use the set of triangles $\{(3i-2,3-1,3i): i\in\{1,\lfloor n/3\rfloor\}\}$.
     \item For $x=\swords$ we use the set of triangles $\{(i,\lfloor n/2\rfloor+2i-2,\lfloor n/2\rfloor+2i-1): i\in\{1,\lfloor n/2\rfloor\}\}$.
     \item For $x=\david$ we use the set of triangles $\{(i,\lfloor n/3\rfloor+i,\lfloor 2n/3\rfloor+i): i\in\{1,\lfloor n/3\rfloor\}\}$.
  \end{enumerate}
+ In each case, the size of the set is $\Omega(n)$ and it is
+ straightforward to verify that each pair of triangles in the set forms
+ the configuration $x$ and therefore avoids all configurations in $X$.
 \end{proof}
 
 
@@ -529,10 +535,10 @@ ensures that the set of points taken during a single round form
 a non-decreasing point set.  The rules for points allowed in subsequence rounds
 ensure
 that, after round $i$ any points chosen are either the topmost-rightmost
-point in $Q_i$ or are above and to the right of this point.  Taken
+point in $Q_i$ or are above or to the right of this point.  Taken
 together, these rules imply that
 \[
-    \sum_{i=1}^n|Q_i| \le 3n-2 \enspace ,
+    \sum_{i=1}^n|Q_i| \le 3n-4 \enspace ,
 \]
 since the union of $Q_i$ is a non-decreasing point set (whose size is
 therefore at most $2n-3$), and each $Q_i$ shares at most one point with
@@ -763,7 +769,7 @@ but with respect to the set $S=S_i$.
 
 \begin{proof}
   First observe that the rules for $\nested$ imply that each $Q_i$
-  is a non-decreasing sequence of points.
+  is a non-decreasing set of points.
 
   Next, observe that if $Q_i$ contains $k>1$ points in a single column
   (or row), then each of the $k$ rows (or columns) containing one of these
@@ -796,7 +802,7 @@ Our final two upper bounds depend on a simple lemma about forbidden
 configurations of points:
 
 \begin{lem}\lemlabel{forbidden}
-   Let $S$ be a subset of the $\{1,\ldots,n\}^2$ such with no three
+   Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three
    points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$
    and $x_0<x_1$.  Then $|S|\le 2n$.
 \end{lem}
@@ -848,7 +854,7 @@ configurations of points:
   $\nested$ imply that $Q_i$ is non-decreasing.  The rule for $\bat$
   implies that $Q_i$ is contained in the $\david$-region, $R_i$, of the
   lowest-leftmost point in $Q_i$.  Indeed, all of $Q_i$ except its
-  leftmost row and column is in this david region.
+  leftmost row and column is in this $\david$-region.
 
   Refer to \figref{nested-bat-david}.  Suppose we remove the leftmost
   point in each row of $Q_i$.  For each such point $p\in R_i$, the entire
@@ -874,7 +880,7 @@ configurations of points:
   if two points $a$ and $b$ of $S$ are in the same column then they
   must have been played in different rounds.  Assume $b$ is above $a$,
   which implies that $b$ was played in a later round than $a$.  Then, if
-  there is some point $c$ to the right of $b$, then $c$ must have played
+  there is some point $c$ to the right of $b$, then $c$ must have been played
   during the same round as $b$ or later.  But this implies that $c$ was
   played in a later round than $a$, which is not possible, since $c$ is in
   $a$'s $\david$-region.  Therefore, by \lemref{forbidden}, $|S|\le 2n$.
@@ -882,7 +888,7 @@ configurations of points:
   All that remains is to account for points in $S$ that are played
   multiple times.  In each $Q_i$ there are at most two points that can
   be played in subsequent rounds; the topmost point in the leftmost
-  column and the rightmost point in the bottommest row.  We charge each
+  column and the rightmost point in the bottom-most row.  We charge each
   occurrence of such repeated points to the rounds in which they are
   the topmost point in the leftmost column and/or the rightmost point
   in the bottommost row.  In this way, each round is charged for at
@@ -991,13 +997,14 @@ Upper bounds for the induced matching problem are barely subquadratic,
 with the current record being held by Fox's improved version of the
 triangle removal lemma \cite{fox:new}, which gives an upper bound
 of $n^{2}/e^{\Omega(\log^* n)}$.  See the discussion, for example,
-in Gowers and Long \cite{gowers.long:length}
+in Gowers and Long \cite{gowers.long:length}.
 
 \begin{thm}[Fox \cite{fox:new}]\thmlabel{taco-nested-ub}
   $\ex'(n,\{\taco,\nested\}) \in n^2/e^{\Omega(\log^* n)}$
 \end{thm}
 
-We point out a few bibliographic notes about these problems:
+While discovering these results, we noticed that the literature is disjoint, and the relationships between some of these problems have gone unnoticed.
+Here we point out a few bibliographic notes:
 
 \begin{itemize}
   \item  Bra\ss\ \cite{brass:turan} seems to have been unaware that
@@ -1036,7 +1043,7 @@ $\ex'(n,\{\taco,\nested,\bat,\ears\})$.
 \end{center}
 We observe that $\ex'(n,\{\taco,\nested\})\in
 O(\ex'(n,\{\taco,\nested,\bat,\ears\})$ so these two functions
-are therefore asymptotically equivalent.  This comes from the
+therefore have the same asymptotic growth.  This comes from the
 fact that a solution for the dot-puzzle of size $n$ resulting from
 $X=\{\taco,\nested\}$ can be used as a solution for the dot-puzzle of size
 $2(n+1)$ resulting from $X=\{\taco,\nested,\bat,\ears\}$ by only playing

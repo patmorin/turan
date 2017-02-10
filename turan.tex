@@ -587,9 +587,10 @@ points is $S$ have been played in previous rounds.
   For any non-empty set $S\subset Q$, $\survivors(\{\swords\},S)$ is
   contained in the union of a \emph{triangular region} $T=\{(x,y)\in Q:
   x\le \ymin(S)+1\}$, a \emph{rectangular region} $R=\{(x,y)\in Q: x\ge
-  \xmax(S),\, \ymax(S) \le y\le \xmin(S)\}$, a \emph{horizontal line}
-  $H=\{(x,y)\in Q: y=\ymin(S)\}$ and a \emph{vertical line} $V$ passing
-  through a point of $S$ with maximum $y$-coordinate.
+  \xmax(S),\, \ymax(S) \le y\le \xmin(S)\}$, a \emph{vertical line} $V$ passing
+  through a point of $S$ with maximum $y$-coordinate,
+  a \emph{horizontal line}
+  $H^{\min}=\{(x,y)\in Q: y=\ymin(S)\}$ and a horizontal line $H^{\max}=\{(x,y)\in Q: y=\ymax(S)\}$.
 \end{obs}
 
 \begin{figure}
@@ -639,9 +640,9 @@ but with respect to the set $S=S_i$.
   implies that $\sum_{i=1}^n r_i\le 2n$.
   
   Finally, we observe that $Q_i$ contains at most one point each from
-  $H_i$ and $V_i$, so
+  $H^{\min}_i$, $H^{\max}_i$, and $V_i$, so
   \[
-      \sum_{i=1}^{n}|Q_i| \le \sum_{i=1}^n(t_i+r_i+2) \le 7n \enspace . \qedhere
+      \sum_{i=1}^{n}|Q_i| \le \sum_{i=1}^n(t_i+r_i+2) \le 8n \enspace . \qedhere
   \]
 \end{proof}
 
@@ -679,12 +680,13 @@ but with respect to the set $S=S_i$.
    1$ points of $Q_i$, then $y_{i+1}\ge y_i+v_i-1$.  This immediately
    implies that $\sum_{j=1}^n v_i \le 2n$.
 
-   Accounting for points of $Q_i$ on the horizontal line $H_i$ is similar,
+   Accounting for points of $Q_i$ on the horizontal lines $H^{\min}_i$ and $H^{\max}_i$ is similar,
    but with respect to the left-most point of 
-   $\survivors(\{\swords\},Q_i)$ in $H_i\setminus T_i\setminus R_i$.
+   $\survivors(\{\swords\},Q_i)$ in $H^{\min}_i\setminus T_i\setminus R_i$
+   and $H^{\max}_i\setminus T_i\setminus R_i$.
 
    Summing everything, we find that
-   $\ex'(n,\{\swords,\nested\})\le\sum_{j=1}^n |Q_i|\le 10n$.
+   $\ex'(n,\{\swords,\nested\})\le\sum_{j=1}^n |Q_i|\le 12n$.
 \end{proof}
 
 
@@ -744,7 +746,7 @@ but with respect to the set $S=S_i$.
   points is killed, i.e., $Q_{i+1},\ldots,Q_n$ can not contain any points in
   these rows (or columns).  Therefore, when summing $\sum_{i=1}^n |Q_i|$,
   the contribution of points that are not alone in their row or column
-  is at most $n$.  We therefore assume that each $Q_i$ contains at most
+  is at most $2n$.  We therefore assume that each $Q_i$ contains at most
   one point from each row and column, which now implies that each $Q_i$
   is an increasing sequence of points.
 

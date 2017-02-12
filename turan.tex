@@ -612,22 +612,24 @@ and any $S\subset Q$, we define $\survivors(X,S)$ to be the subset of
 points in $Q$ that can still be played in the dot-puzzle game if the
 points is $S$ have been played in previous rounds.
 
-FIXME: The following observation is totally incorrect.  A sequence of points close to the boundary can generate a whole bunch of uncovered rectangles:
-
-\begin{center}
-   \includegraphics{figs/survivors-ce}
-\end{center}
-
+%FIXME: The following observation is totally incorrect.  A sequence of points close to the boundary can generate a whole bunch of uncovered rectangles:
+%
+%\begin{center}
+%   \includegraphics{figs/survivors-ce}
+%\end{center}
+%
+% The fix was implemented by defining the ymax coordinate in terms of $S^*$.
 
 \begin{obs}\obslabel{swords-region}
-  (Refer to \figref{survivors}.)
-  For any non-empty set $S\subset Q$, $\survivors(\{\swords\},S)$ is
-  contained in the union of a \emph{triangular region} $T=\{(x,y)\in Q:
-  x\le \ymin(S)+1\}$, a \emph{rectangular region} $R=\{(x,y)\in Q: x\ge
-  \xmax(S),\, \ymax(S) \le y\le \xmin(S)\}$, a \emph{vertical line} $V$ passing
-  through a point of $S$ with maximum $y$-coordinate,
-  a \emph{horizontal line}
-  $H^{\min}=\{(x,y)\in Q: y=\ymin(S)\}$ and a horizontal line $H^{\max}=\{(x,y)\in Q: y=\ymax(S)\}$.
+  (Refer to \figref{survivors}.)  Let $S$ be any non-empty
+  subset of $Q$ and let $S^{*}= \{(x,y)\in S : y \le \xmin(S)\}$.
+  Then $\survivors(\{\swords\},S)$ is contained in the union of
+  a \emph{triangular region} $T=\{(x,y)\in Q: x\le \ymin(S)+1\}$,
+  a \emph{rectangular region} $R=\{(x,y)\in Q: x\ge \xmax(S^*),\,
+  \ymax(S^*) \le y\le \xmin(S)\}$, a \emph{vertical line} $V$ passing
+  through the rightmost point of $S$ with maximum $y$-coordinate, a
+  \emph{horizontal line} $H^{\min}=\{(x,y)\in Q: y=\ymin(S)\}$ and a
+  horizontal line $H^{\max}=\{(x,y)\in Q: y=\ymax(S^*)\}$.
 \end{obs}
 
 \begin{figure}
@@ -639,9 +641,9 @@ FIXME: The following observation is totally incorrect.  A sequence of points clo
 \end{figure}
 
 \begin{proof}
-  The points defining $\ymax(S)$ and $\xmin(S)$ cover everything
+  The points defining $\ymax(S^*)$ and $\xmin(S)$ cover everything
   below $H^{\max}$, except $H^{\min}$, $V$, and $T$.  Above $H^{\max}$,
-  the point defining $\xmax(S)$ covers everything to the left of $R$
+  the point defining $\xmax(S^*)$ covers everything to the left of $R$
   and the point defining $\xmin(S)$ covers everything above $R$.  Thus,
   everything except $T$, $R$, $V$, $H^{\min}$ and $H^{\max}$ is covered.
 \end{proof}
@@ -652,10 +654,11 @@ rounds proceed, any time the value of $\xmax(S)$ or $\ymax(S)$ increases,
 the size of the rectangle $R$ decreases. Any time the value of $\ymin(S)$
 decreases, the size of the triangle $T$ decreases.  So that we can refer
 to these point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$
-and we define $T_i$, $R_i$, $V_i$, $H^{\max}_i$, and $H^{\min}_i$ as in
-\obsref{swords-region}, but with respect to the set $S=S_i$. So that $V_i$
-is unambiguous, we define it as the vertical line passing through the
-rightmost point in $S_i$ whose $y$-coordinate is equal to $\ymax(S_i)$.
+$S_i^{*} = \{(x,y)\in S_i : y\le \xmin(S_i)\}$, and we define $T_i$,
+$R_i$, $V_i$, $H^{\max}_i$, and $H^{\min}_i$ as in \obsref{swords-region},
+but with respect to the set $S=S_i$. So that $V_i$ is unambiguous, we
+define it as the vertical line passing through the rightmost point in
+$S_i$ whose $y$-coordinate is equal to $\ymax(S_i)$.
 
 \begin{thm}\thmlabel{taco-swords}
   $\ex'(n,\{\taco,\swords\}) \in O(n)$.
@@ -676,7 +679,7 @@ rightmost point in $S_i$ whose $y$-coordinate is equal to $\ymax(S_i)$.
   implies that $\sum_{i=1}^n t_i \le 3n$.
 
   Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$, then
-  $\ymax(S_{i+1})\ge \ymax(S_i)+r_i-1$.  This immediately
+  $\ymax(S_{i+1}^*)\ge \ymax(S_i^*)+r_i-1$.  This immediately
   implies that $\sum_{i=1}^n r_i\le 2n$.
   
   Finally, we observe that $Q_i$ contains at most one point each from
@@ -685,6 +688,22 @@ rightmost point in $S_i$ whose $y$-coordinate is equal to $\ymax(S_i)$.
       \sum_{i=1}^{n}|Q_i| \le \sum_{i=1}^n(t_i+r_i+3) \le 8n \enspace . \qedhere
   \]
 \end{proof}
+
+Our next two results have similar proofs to that of \thmref{taco-swords},
+but they require a little more care to bound the number of points that
+appear in the horizontal lines $H^{\max}_i$, $H^{\min}_i$ and $V_i$.
+
+\begin{lem}
+  Let $Q_1,\ldots,Q_n$ be a solution to a dot-puzzle game that includes
+  the rules for $\swords$.  Then, $V_{i+1}$
+  \begin{enumerate}
+    \item $\xmin(S_{i+1}) \le \xmin(S_i)$;
+    \item $\ymax(S_{i+1}^*) \le \ymin(S_ii^*)$;
+    \item $\ymax(S_{i+1}^*) \le \ymin(S_ii^*)$;
+
+ 
+  \[ \sum_{i=1}^{n}\left(|Q_i\cap V_i|+|Q_i\cap H^{\max}_i|+|Q_i\cap H^{\min}_i|\right) \in O(n) \enspace . \]
+\end{lem}
 
 \begin{thm}\thmlabel{nested-swords}
   $\ex'(n,\{\nested,\swords\}) \in O(n)$.
@@ -703,7 +722,7 @@ rightmost point in $S_i$ whose $y$-coordinate is equal to $\ymax(S_i)$.
    Now, if $Q_i$ contains $t_i$ points in $T_i$, then the fact
    that $Q_i$ is non-decreasing implies that $\ymin(S_{i+1})\le
    \ymin(S_i)-\lfloor t_i/2 \rfloor$.  This immediately implies that
-   $\sum_{j=1}^n t_i \le 3n$.
+   $\sum_{i=1}^n t_i \le 3n$.
 
    Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$, then the fact
    that $Q_i$ is non-decreasing means that
@@ -711,7 +730,7 @@ rightmost point in $S_i$ whose $y$-coordinate is equal to $\ymax(S_i)$.
        \ymax(S_{i+1})+\xmax(S_{i+1}) 
              \ge \ymax(S_{i})+\xmax(S_{i}) + r_i - 1 \enspace .
    \]
-   This immediately implies that $\sum_{j=1}^n r_i \le 3n$.
+   This immediately implies that $\sum_{i=1}^n r_i \le 3n$.
 
    To account for points of $Q_i$ on the vertical line $V_i$, we consider
    the lowest point of $\survivors(\{\swords\},Q_i)$ on  

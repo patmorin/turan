@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170201142402" modified="D:20170210131220"/>
+<info created="D:20170201142402" modified="D:20170212203300"/>
 <preamble>\usepackage{amsmath}
 \DeclareMathOperator{\xmin}{xmin}
 \DeclareMathOperator{\xmax}{xmax}
@@ -344,7 +344,7 @@ h
 <text matrix="1 0 0 1 0 3" transformations="translations" pos="180 564" stroke="black" type="label" width="36.295" height="7.473" depth="2.49" halign="center" valign="baseline" style="math">\xmin(S)</text>
 <text transformations="translations" pos="112 592" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
 <text transformations="translations" pos="240 660" stroke="black" type="label" width="7.641" height="6.808" depth="0" valign="baseline" style="math">R</text>
-<text matrix="1 0 0 1 48 3" transformations="translations" pos="180 564" stroke="black" type="label" width="38.232" height="7.473" depth="2.49" halign="center" valign="baseline" style="math">\xmax(S)</text>
+<text matrix="1 0 0 1 48 3" transformations="translations" pos="180 564" stroke="black" type="label" width="42.812" height="7.473" depth="2.49" halign="center" valign="baseline" style="math">\xmax(S^*)</text>
 <use matrix="1 0 0 1 16 8" name="mark/disk(sx)" pos="212 628" size="normal" stroke="black"/>
 <path stroke="black" fill="brew7">
 228 732 m
@@ -355,7 +355,7 @@ h
 148 652 m
 268 652 l
 </path>
-<text matrix="1 0 0 1 -1 0" transformations="translations" pos="272 652" stroke="black" type="label" width="38.232" height="7.473" depth="2.49" valign="center" style="math">\ymax(S)</text>
+<text matrix="1 0 0 1 -1 0" transformations="translations" pos="272 652" stroke="black" type="label" width="42.812" height="7.473" depth="2.49" valign="center" style="math">\ymax(S^*)</text>
 <path stroke="black" fill="brew7" opacity="30%">
 192 624 m
 192 688 l

@@ -78,7 +78,7 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 \section{Introduction}
 \pagenumbering{arabic}
 
-Let $t_1$ and $t_2$ be a pair of distinct triangles whose (4--6) vertices
+Let $t_1$ and $t_2$ be a pair of distinct triangles whose (4 to 6) vertices
 are in convex position.  There are 8 combinatorially distinct ways that
 these triangles can interact:  2 ways in which the triangles can share
 an edge (\taco\ and \mariposa), 3 ways in which the triangles can share a
@@ -110,7 +110,7 @@ of triangles in a triangulation of a convex $n$-gon, i.e., $n-2$.
 \subsection{Previous Work}
 
 Since there are eight possible forbidden configurations, there are
-$2^8=256$ sets, $X$ for which we can study $\ex(n,X)$.  Some of these sets
+$2^8=256$ sets $X$ for which we can study $\ex(n,X)$.  Some of these sets
 have been previously studied.  Bra\ss, Rote, and Swanepoel used bounds on
 the set $X=\{\ears,\swords,\bat,\nested\}$ to solve an Erd\H{o}s problem
 on the maximum number of maximum area/perimeter triangles determined
@@ -276,7 +276,7 @@ of $\ex(n,X)$.
 \subsection{Cubic-Sized Sets of Pairwise Crossing Triangles}
 
 \begin{thm}\thmlabel{pairwise-crossing}
-   $\ex(n,\{\ears,\bat,\mariposa\})=\Omega(n^3)$
+   $\ex(n,\{\ears,\bat,\mariposa\})\in\Omega(n^3)$
 \end{thm}
 
 \begin{proof}
@@ -286,8 +286,8 @@ of $\ex(n,X)$.
   triangles having one vertex in each of $A$, $B$, and $C$. It is easy
   to check that any two triangles in $S$ have a pair of edges that
   cross, thus they do not form any of \ears, \bat, or \mariposa.
-  Furthermore, $|S|\ge \lfloor n/3\rfloor^3=\Omega(n^3)$, so
-  $\ex(n,\{\ears,\bat,\mariposa\})=\Omega(n^3)$.
+  Furthermore, $|S|\ge \lfloor n/3\rfloor^3\in\Omega(n^3)$, so
+  $\ex(n,\{\ears,\bat,\mariposa\})\in\Omega(n^3)$.
 \end{proof}
 
 
@@ -700,6 +700,7 @@ appear in the horizontal lines $H^{\max}_i$, $H^{\min}_i$ and $V_i$.
     \item $\xmin(S_{i+1}) \le \xmin(S_i)$;
     \item $\ymax(S_{i+1}^*) \le \ymin(S_ii^*t)$;
     \item $\ymax(S_{i+1}^*) \le \ymin(S_ii^*)$;
+  \end{enumerate}
 
  
   \[ \sum_{i=1}^{n}\left(|Q_i\cap V_i|+|Q_i\cap H^{\max}_i|+|Q_i\cap H^{\min}_i|\right) \in O(n) \enspace . \]

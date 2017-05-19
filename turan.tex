@@ -298,7 +298,7 @@ Since it is not explicitly stated in previous work, and we need it to complete o
 
 \begin{thm}
 For any $X\subset\{\taco,\bat,\nested,\crossing,\ears,\swords,\david\}$,
-$\ex'(n,X)\in \Omega(n)$.
+$\ex(n,X)\in \Omega(n)$.
 \end{thm}
 
 \begin{proof}
@@ -308,12 +308,12 @@ $\ex'(n,X)\in \Omega(n)$.
   we use one of the following constructions:
  \begin{enumerate}
     \item For $x=\taco$ we use the set of triangles $\{(1,2,i):i\in\{3,\ldots,n\}\}$.
-    \item For $x=\bat$ we use the set of triangles $\{(1,3i-1,3i-2): i\in\{1,\ldots,\lfloor n/3\rfloor \}$.
-    \item For $x=\nested$ we use the set of triangles $\{(1,i,n+2-i): i\in\{2,\lfloor n/2\rfloor\}\}$.
-    \item For $x=\crossing$ we use the set of triangles $\{(1,i,\lfloor n/2\rfloor+i): i\in\{2,\lfloor n/2\rfloor\}-1\}$.
-    \item For $x=\ears$ we use the set of triangles $\{(3i-2,3-1,3i): i\in\{1,\lfloor n/3\rfloor\}\}$.
-    \item For $x=\swords$ we use the set of triangles $\{(i,\lfloor n/2\rfloor+2i-2,\lfloor n/2\rfloor+2i-1): i\in\{1,\lfloor n/2\rfloor\}\}$.
-    \item For $x=\david$ we use the set of triangles $\{(i,\lfloor n/3\rfloor+i,\lfloor 2n/3\rfloor+i): i\in\{1,\lfloor n/3\rfloor\}\}$.
+    \item For $x=\bat$ we use the set of triangles $\{(1,2i,2i+1): i\in\{1,\ldots,\lfloor n/2\rfloor-1 \}$.
+    \item For $x=\nested$ we use the set of triangles $\{(1,i,n+2-i): i\in\{2, \ldots, \lfloor n/2\rfloor\}\}$.
+    \item For $x=\crossing$ we use the set of triangles $\{(1,i,\lfloor n/2\rfloor+i): i\in\{2,\ldots, \lfloor n/2\rfloor\}-1\}$.
+    \item For $x=\ears$ we use the set of triangles $\{(3i-2,3i-1,3i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
+    \item For $x=\swords$ we use the set of triangles $\{(i,\lfloor n/2\rfloor+2i-2,\lfloor n/2\rfloor+2i-1): i\in\{1,\ldots, \lfloor n/4\rfloor\}\}$.
+    \item For $x=\david$ we use the set of triangles $\{(i,\lfloor n/3\rfloor+i,\lfloor 2n/3\rfloor+i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
  \end{enumerate}
  In each case, the size of the set is $\Omega(n)$ and it is
  straightforward to verify that each pair of triangles in the set forms

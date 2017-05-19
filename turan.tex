@@ -29,7 +29,8 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 %\usepackage[skip=0pt]{caption}
 
 \title{\MakeUppercase{More Turán-Type Theorems for Triangles in Convex Point Sets}\thanks{This research is partially funded by NSERC.}}
-\author{Authors TBD}
+
+\author{Boris Aronov, Vida Dujmović, Ruy Fabila, Pat Morin, and Aurélien Ooms}
 
 
 \newcommand{\taco}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-edge-1}}}
@@ -236,7 +237,7 @@ The remainder of this paper is organized as follows.  In
 \secref{points-of-view} we discuss different ways of thinking about
 the problem and give some easy results.  In particular, we present a
 series of puzzles whose solutions determine the asymptotic growth of
-$\ex(n,X)$.  We then use this view to derive new upper and lower bounds
+$\ex(n,X)$.  We then use these puzzles to derive new upper and lower bounds
 in \secref{new-results}.
 
 \section{Points of View and Easy Results}
@@ -413,14 +414,14 @@ round $i$ depend on the set of forbidden configurations and the set
 $\bigcup_{j=1}^{i-1} Q_i$ of points played during previous rounds.
 By proving bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on the maximum
 number of triangles obtained in the top-bottom view on a set of $2n$
-points.
+points, i.e., bounds on $\ex'(2n, X)$.
 
 \Figref{forbidden-color}.a shows restrictions on the locations of points
 placed during a single round.  It is interpreted as follows:  If the
 central point, $p=(x,y)$, is placed during round $i$, and we wish to
 avoid some particular configuration, $c$, then we should not place any
 points in the parts of the figure that are have label $c$.  For instance,
-if we wish to avoid the configuration $c=\taco$ configuration, then we
+if we wish to avoid the $c=\taco$ configuration, then we
 should not place any points in the same row or column as $p$; such a point
 creates a $\taco$ configuration in which the shared edge
 joins a bottom vertex to a left (same row) or right (same column) vertex.
@@ -532,7 +533,7 @@ Swanepoel \cite{brass.rote.ea:triangles} on $\ex(\ears, \swords,
 \end{center}
 The rule for $\nested$
 ensures that the set of points taken during a single round form
-a non-decreasing point set.  The rules for points allowed in subsequence rounds
+a non-decreasing point set.  The rules for points allowed in subsequent rounds
 ensure
 that, after round $i$ any points chosen are either the topmost-rightmost
 point in $Q_i$ or are above or to the right of this point.  Taken
@@ -593,8 +594,8 @@ the $\swords$ configuration.
 \subsection{Forbidding Crossing Vertex-Disjoint Triangles}
 
 In this section, we focus on the configuration $\swords$ and give
-linear upper bounds bounds on $\ex'(n,\{\swords, Y\})$ for each
-$Y\in\{\taco,\nested,\crossing\}$.  In \secref{lower-bounds}, we show
+linear upper bounds bounds on $\ex'(n,\{\swords, c\})$ for each
+$c\in\{\taco,\nested,\crossing\}$.  In \secref{lower-bounds}, we show
 that $\ex'(n,\{\swords,\mariposa,\bat,\ears,\david\})\in \Omega(n^2)$.
 Together, these two results completely determine $\ex'(n,\{\swords\}\cup
 X\})$ for any $X$.

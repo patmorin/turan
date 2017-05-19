@@ -17,6 +17,8 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 \DeclareMathOperator{\xmin}{xmin}
 \DeclareMathOperator{\ymax}{ymax}
 \DeclareMathOperator{\ymin}{ymin}
+\DeclareMathOperator{\x}{x}
+\DeclareMathOperator{\y}{y}
 \DeclareMathOperator{\survivors}{survivors}
 
 \usepackage{array}
@@ -550,43 +552,6 @@ O(n\log n)$ then follows from \lemref{top-bottom}.
 \section{Results Based on Dot Puzzles}
 \seclabel{new-results}
 
-% The following is the start of some bullshit argument, unless I can fix it.
-
-%Earlier, we showed that the inclusion of the $\mariposa$ configuration in
-%the set of excluded configurations, $X$, has no effect on the asymptotics
-%of $\ex(n,X)$.  Here we show that a similar, though slightly weaker,
-%result for the $\nested$ configuration.
-%
-%\begin{lem}
-%  $\ex'(n,\{\taco,\bat\}\cup X) \in \Omega(\ex'(n,\{\taco\}\cup X)/\log n)$.
-%\end{lem} 
-%
-%\begin{proof}[Proof Sketch]
-%    Assume without loss of generality that $n$ is a power of 2 Partition
-%    $Q$ into $O(\log n)$ \emph{layers}, where layer 0 contains
-%    the \emph{square}, $L_0=\{(x,y)\in Q: x\ge n/2,\, y\le n/2\}$.
-%    Subsequent layers are obtained by recursing on the two triangles in
-%    $Q\setminus L_0$, so that $L_1$ contains two squares, $L_2$ contains
-%    four squares, and so on.
-%
-%    Let $Q_1,\ldots,Q_n$ be a play of the dot-puzzle that achieves
-%    $\ex'(n,\{\taco\}\cup X)$ while avoiding $\{\taco\}\cup X$
-%    configurations.  Observe that, because we exclude $\taco$, the sets
-%    $Q_i$ and $Q_j$ are disjoint for all $1\le i<j\le n$.
-%
-%    Then, for any layer $L_i$, the sets $Q_1\cap L_i,\ldots,Q_n\cap L_i$
-%    avoid all configurations in $\{\taco\}\cup X$ as well as $\bat$
-%    configurations.  By the pigeonhole principle, one of these layers,
-%    say $L_i$, has size $\Omega(\ex'(n,\{\taco\}\cup X)/\log n)$.
-%
-%
-%
-%points that maximize
-%\end{proof}
-%
-%is irrelevan
-%
-
 After this warm-up, and with the dot-puzzle view, we are ready to prove
 some new results.  We begin with a collection of results on forbidding
 the $\swords$ configuration.
@@ -613,15 +578,7 @@ and any $S\subset Q$, we define $\survivors(X,S)$ to be the subset of
 points in $Q$ that can still be played in the dot-puzzle game if the
 points is $S$ have been played in previous rounds.
 
-%FIXME: The following observation is totally incorrect.  A sequence of points close to the boundary can generate a whole bunch of uncovered rectangles:
-%
-%\begin{center}
-%   \includegraphics{figs/survivors-ce}
-%\end{center}
-%
-% The fix was implemented by defining the ymax coordinate in terms of $S^*$.
-
-\begin{obs}\obslabel{swords-region}
+\begin{lem}\lemlabel{swords-region}
   (Refer to \figref{survivors}.)  Let $S$ be any non-empty
   subset of $Q$ and let $S^{*}= \{(x,y)\in S : y \le \xmin(S)\}$.
   Then $\survivors(\{\swords\},S)$ is contained in the union of
@@ -631,35 +588,80 @@ points is $S$ have been played in previous rounds.
   through the rightmost point of $S$ with maximum $y$-coordinate, a
   \emph{horizontal line} $H^{\min}=\{(x,y)\in Q: y=\ymin(S)\}$ and a
   horizontal line $H^{\max}=\{(x,y)\in Q: y=\ymax(S^*)\}$.
-\end{obs}
+\end{lem}
 
 \begin{figure}
   \begin{center}
     \includegraphics{figs/survivors}
   \end{center}
-  \caption{An illustration of \obsref{swords-region}.}
+  \caption{An illustration of \lemref{swords-region}.}
   \figlabel{survivors}
 \end{figure}
 
 \begin{proof}
-  The points defining $\ymax(S^*)$ and $\xmin(S)$ cover everything
-  below $H^{\max}$, except $H^{\min}$, $V$, and $T$.  Above $H^{\max}$,
-  the point defining $\xmax(S^*)$ covers everything to the left of $R$
-  and the point defining $\xmin(S)$ covers everything above $R$.  Thus,
-  everything except $T$, $R$, $V$, $H^{\min}$ and $H^{\max}$ is covered.
+  Suppose, for the sake of contradiction that there is some point
+  \[
+    p\in \survivors(\{\swords\},S) \cap \left(Q\setminus T\setminus R \setminus H^{\min} \setminus H^{\max}\setminus V\right) \enspace . 
+  \]
+  \begin{figure}
+    \begin{center}
+      \begin{tabular}{ccc}
+         \includegraphics[width=.47\textwidth]{figs/survivors-proof-1} &
+         \includegraphics[width=.47\textwidth]{figs/survivors-proof-2} \\
+         (a) & (b) \\[1em]
+         \includegraphics[width=.47\textwidth]{figs/survivors-proof-3} &
+         \includegraphics[width=.47\textwidth]{figs/survivors-proof-4} \\
+         (c) & (d) \\[1em]
+         \includegraphics[width=.47\textwidth]{figs/survivors-proof-5} &
+         \includegraphics[width=.47\textwidth]{figs/survivors-proof-6} \\
+         (e) & (f) 
+      \end{tabular}
+    \end{center}
+    \caption{The proof of \lemref{swords-region}.}
+    \figlabel{survivors-proof}
+  \end{figure}
+  Let $a\in S$ be a point with $\y(a)=\ymin(S)$.  Since $P$ is not in $H^{\min}$ and $p$ is not eliminated by $a$, we have 
+  \begin{equation}
+      \text{($\y(p) > \ymin(S)$ and $\x(p)>\x(a)$)  or $\x(p) = \x(a)$} 
+       \eqlabel{aa}
+  \end{equation}
+  (\figref{survivors-proof}.a).
+  We also have
+  \begin{equation}
+      \y(p) \le \xmin(S) \eqlabel{ab}
+  \end{equation}
+  (\figref{survivors-proof}.b).
+  Let $c\in S^*$ be the rightmost point in such that $y(c)=\ymax(S^*)$.
+  Then, since $p$ is not in $V$ or $H^{\max}$,
+  \[
+      \y(p) > \ymax(S^*) \enspace .
+  \]
+  (\figref{survivors-proof}.c).
+  Let $b\in S^*$ be a point with $\x(b)=\xmax(S^*)$.  Then
+  \begin{equation}
+      \text{$\x(p) \ge \xmax(S^*)$ or $\y(p) = \y(b)$} \enspace .
+      \eqlabel{ac}
+  \end{equation}
+  (\figref{survivors-proof}.d).
+  Taken together with the fact that $p\not\in R$, \eqref{aa}--\eqref{ac}
+  imply that $\x(p)=\x(a)$ or that $\y(p) = \y(b)$. In the first case
+  (\figref{survivors-proof}.e)
+  $\x(p)=\x(a)$ and $\y(p) < \y(a)$ so $p$ would have to be in the
+  region covered by $b$ and $V$.  In the second case, 
+  (\figref{survivors-proof}.f)
+  $\y(p) = \y(c)$
+  and $\x(p) < x(c)$ so $p$ is contained in the region covered by $b$,
+  $a$, $H^{\max}$, $H^{\min}$, and $V$.
 \end{proof}
 
-\obsref{swords-region} gives us a form of \emph{potential function} that
+\lemref{swords-region} gives us a form of \emph{potential function} that
 we can use.  We will apply it with $S=\bigcup_{j=1}^i Q_j$ so that as
 rounds proceed, any time the value of $\xmax(S)$ or $\ymax(S)$ increases,
 the size of the rectangle $R$ decreases. Any time the value of $\ymin(S)$
 decreases, the size of the triangle $T$ decreases.  So that we can refer
-to these point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$
-$S_i^{*} = \{(x,y)\in S_i : y\le \xmin(S_i)\}$, and we define $T_i$,
-$R_i$, $V_i$, $H^{\max}_i$, and $H^{\min}_i$ as in \obsref{swords-region},
-but with respect to the set $S=S_i$. So that $V_i$ is unambiguous, we
-define it as the vertical line passing through the rightmost point in
-$S_i$ whose $y$-coordinate is equal to $\ymax(S_i)$.
+to these point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$ and
+we define $S_i^*$, $T_i$, $R_i$, $V_i$, $H^{\max}_i$, and $H^{\min}_i$
+as in \lemref{swords-region}, but with respect to the set $S=S_i$.
 
 \begin{thm}\thmlabel{taco-swords}
   $\ex'(n,\{\taco,\swords\}) \in O(n)$.

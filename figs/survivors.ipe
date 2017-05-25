@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170201142402" modified="D:20170212203300"/>
+<info created="D:20170201142402" modified="D:20170524130415"/>
 <preamble>\usepackage{amsmath}
 \DeclareMathOperator{\xmin}{xmin}
 \DeclareMathOperator{\xmax}{xmax}

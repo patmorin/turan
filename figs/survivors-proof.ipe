@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170201142402" modified="D:20170519160119"/>
+<info created="D:20170201142402" modified="D:20170523094851"/>
 <preamble>\usepackage{amsmath}
 \DeclareMathOperator{\xmin}{xmin}
 \DeclareMathOperator{\xmax}{xmax}
@@ -300,21 +300,21 @@ h
 228 732 m
 228 576 l
 </path>
-<path layer="beta-1" stroke="black" fill="brew7" opacity="30%">
+<path layer="beta-1" stroke="black" fill="brew3" opacity="30%">
 200 648 m
 200 585.104 l
 160.02 585.104 l
 160.02 648 l
 h
 </path>
-<path stroke="black" fill="brew7" opacity="30%">
+<path stroke="black" fill="brew3" opacity="30%">
 208 648 m
 208 585.104 l
 261.625 585.104 l
 261.625 648 l
 h
 </path>
-<path layer="gamma-2" stroke="black" fill="brew7" opacity="30%">
+<path layer="gamma-2" stroke="black" fill="brew4" opacity="30%">
 224 640 m
 224 720 l
 144 640 l
@@ -340,7 +340,7 @@ h
 127.99 616 l
 h
 </path>
-<path layer="xmin" stroke="black" fill="brew7" opacity="30%">
+<path layer="xmin" stroke="black" fill="brew2" opacity="30%">
 184 680 m
 261.404 679.978 l
 261.225 757.104 l

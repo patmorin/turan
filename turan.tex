@@ -19,7 +19,8 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 \DeclareMathOperator{\ymin}{ymin}
 \DeclareMathOperator{\x}{x}
 \DeclareMathOperator{\y}{y}
-\DeclareMathOperator{\survivors}{survivors}
+\DeclareMathOperator{\survivors}{\overline\kappa}
+\DeclareMathOperator{\killed}{\kappa}
 
 \usepackage{array}
 
@@ -32,7 +33,8 @@ urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
 
 \title{\MakeUppercase{More Turán-Type Theorems for Triangles in Convex Point Sets}\thanks{This research is partially funded by NSERC.}}
 
-\author{Boris Aronov, Vida Dujmović, Ruy Fabila, Pat Morin, and Aurélien Ooms}
+\author{Boris Aronov, Vida Dujmović, Ruy Fabila, Pat Morin, Aurélien Ooms,\\
+and Luís Fernando Schultz Xavier da Silveira  }
 
 
 \newcommand{\taco}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-edge-1}}}
@@ -565,8 +567,11 @@ that $\ex'(n,\{\swords,\mariposa,\bat,\ears,\david\})\in \Omega(n^2)$.
 Together, these two results completely determine $\ex'(n,\{\swords\}\cup
 X\})$ for any $X$.
 
-In the following, we use the notation $\xmin(S)$ to denote the
-minimum $x$-coordinate of any point in the point set $S$.  
+In the following, for a point $q\in Q$, we use the notations
+$\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
+For $S\subseteq Q$, we use $\xmin(S)$ to denote the
+minimum $x$-coordinate of any point in the point set $S$, i.e.,
+$\xmin(S)=\min\{\x(q) : q\in S\}$.  
 %If $S$ is empty, then we define $\xmin(S)$ as $n+1$.  
 We define $\ymin(S)$,
 $\xmax(S)$, and $\ymax(S)$ similarly.
@@ -574,9 +579,49 @@ $\xmax(S)$, and $\ymax(S)$ similarly.
 % $\xmax(\emptyset)=1$.  
 For any
 $X\subset\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}$
-and any $S\subset Q$, we define $\survivors(X,S)$ to be the subset of
-points in $Q$ that can still be played in the dot-puzzle game if the
-points is $S$ have been played in previous rounds.
+and any $S\subset Q$, we define $\killed(X,S)$ as the subset of $Q$ that can
+no longer be played in the dot-puzzle game (for configurations in $X$)
+if the points is $S$ have been played in previous rounds (these are the points
+of $Q$ $\kappa$illed by $S$).  We also define
+$\survivors(X,S)=Q\setminus\killed(X,S)$ to be the subset of points in $Q$
+that can still be played in the dot-puzzle game if the points is $S$
+have been played in previous rounds.
+
+
+
+%We say that a set $S\subset Q$ is \emph{well-behaved} if $\ymax(S)
+%\le \xmin(S)$.
+%
+%\begin{lem}\lemlabel{swords-region}
+%  (Refer to \figref{survivors}.)  Let $S$ be any well-behaved subset
+%  of $Q$.  Then $\survivors(\{\swords\},S)$ is contained in the union
+%  of a \emph{triangular region} $T=\{(x,y)\in Q: x\le \ymin(S)+1\}$, a
+%  \emph{rectangular region} $R=\{(x,y)\in Q: x\ge \xmax(S),\, \ymax(S)
+%  \le y\le \xmin(S)\}$, a \emph{vertical line} $V$ passing through the
+%  rightmost point of $S$ with maximum $y$-coordinate, a \emph{horizontal
+%  line} $H^{\min}=\{(x,y)\in Q: y=\ymin(S)\}$ and a horizontal line
+%  $H^{\max}=\{(x,y)\in Q: y=\ymax(S)\}$.
+%\end{lem}
+%
+%\begin{proof}
+%  The statement of the lemma is easily verified using the fact that,
+%  because $S$ is well-behaved, $\ymin(S)\le \ymax(S)\le \xmin(S)\le
+%  \xmax(s)$.
+%\end{proof}
+%
+%\lemref{swords-region} gives us a form of \emph{potential function} that
+%we can use.  We will apply it with $S=\bigcup_{j=1}^i Q_j$ so that as
+%rounds proceed, any time the value of $\xmax(S)$ or $\ymax(S)$ increases
+%the size of the rectangle $R$ decreases. Any time the value of $\ymin(S)$
+%decreases, the size of the triangle $T$ decreases.  So that we can refer
+%to these point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$ and
+%we define $S_i^*$, $T_i$, $R_i$, $V_i$, $H^{\max}_i$, and $H^{\min}_i$
+%as in \lemref{swords-region}, but with respect to the set $S=S_i$.
+%
+%In general, the set $S_i$ will not be well-behaved and we need some way to deal with this.  Let $i$ the smallest index such that $S_i$ is not well-behaved so that $S_{i-1}$ is well-behaved, but $S_i$ is not.
+%
+
+
 
 \begin{lem}\lemlabel{swords-region}
   (Refer to \figref{survivors}.)  Let $S$ be any non-empty
@@ -585,7 +630,7 @@ points is $S$ have been played in previous rounds.
   a \emph{triangular region} $T=\{(x,y)\in Q: x\le \ymin(S)+1\}$,
   a \emph{rectangular region} $R=\{(x,y)\in Q: x\ge \xmax(S^*),\,
   \ymax(S^*) \le y\le \xmin(S)\}$, a \emph{vertical line} $V$ passing
-  through the rightmost point of $S$ with maximum $y$-coordinate, a
+  through the rightmost point of $S^*$ with maximum $y$-coordinate, a
   \emph{horizontal line} $H^{\min}=\{(x,y)\in Q: y=\ymin(S)\}$ and a
   horizontal line $H^{\max}=\{(x,y)\in Q: y=\ymax(S^*)\}$.
 \end{lem}
@@ -620,7 +665,9 @@ points is $S$ have been played in previous rounds.
     \caption{The proof of \lemref{swords-region}.}
     \figlabel{survivors-proof}
   \end{figure}
-  Let $a\in S$ be a point with $\y(a)=\ymin(S)$.  Since $P$ is not in $H^{\min}$ and $p$ is not eliminated by $a$, we have 
+  Throughout this proof, for a point $q\in Q$, we will use the shorthand
+  $\killed(q)=\killed(\{\swords\},\{q\})$.
+  Let $a\in S$ be a point with $\y(a)=\ymin(S)$.  Since $p\not\in T\cup H^{\min}\cup\killed(a)$, we have 
   \begin{equation}
       \text{($\y(p) > \ymin(S)$ and $\x(p)>\x(a)$)  or $\x(p) = \x(a)$} 
        \eqlabel{aa}
@@ -631,37 +678,69 @@ points is $S$ have been played in previous rounds.
       \y(p) \le \xmin(S) \eqlabel{ab}
   \end{equation}
   (\figref{survivors-proof}.b).
-  Let $c\in S^*$ be the rightmost point in such that $y(c)=\ymax(S^*)$.
-  Then, since $p$ is not in $V$ or $H^{\max}$,
+  Let $b\in S^*$ be the rightmost point in $S$ such that $y(b)=\ymax(S^*)$.
+  Since $p\not\in V\cup H^{\max} \cup\killed(b)\cup\killed(a)$,
   \[
       \y(p) > \ymax(S^*) \enspace .
   \]
   (\figref{survivors-proof}.c).
-  Let $b\in S^*$ be a point with $\x(b)=\xmax(S^*)$.  Then
+  Let $c\in S^*$ be a point with $\x(c)=\xmax(S^*)$.  Then
   \begin{equation}
-      \text{$\x(p) \ge \xmax(S^*)$ or $\y(p) = \y(b)$} \enspace .
+      \text{$\x(p) \ge \xmax(S^*)$ or $\y(p) = \y(c)$} \enspace .
       \eqlabel{ac}
   \end{equation}
   (\figref{survivors-proof}.d).
   Taken together with the fact that $p\not\in R$, \eqref{aa}--\eqref{ac}
-  imply that $\x(p)=\x(a)$ or that $\y(p) = \y(b)$. In the first case
+  imply that $\x(p)=\x(a)$ or that $\y(p) = \y(c)$. In the first case
   (\figref{survivors-proof}.e)
-  $\x(p)=\x(a)$ and $\y(p) < \y(a)$ so $p$ would have to be in the
-  region covered by $b$ and $V$.  In the second case, 
+  $\x(p)=\x(a)$ and $\y(p) < \y(a)$ so $p\in\killed(b)\cup V$, a contradiction.  In the second case, 
   (\figref{survivors-proof}.f)
   $\y(p) = \y(c)$
-  and $\x(p) < x(c)$ so $p$ is contained in the region covered by $b$,
-  $a$, $H^{\max}$, $H^{\min}$, and $V$.
+  and $\x(p) < x(c)$ so $p\in\killed(b)\cup\killed(a)\cup V\cup H^{\max}\cup H^{\min}$, also a contradiction.
 \end{proof}
 
-\lemref{swords-region} gives us a form of \emph{potential function} that
-we can use.  We will apply it with $S=\bigcup_{j=1}^i Q_j$ so that as
-rounds proceed, any time the value of $\xmax(S)$ or $\ymax(S)$ increases,
-the size of the rectangle $R$ decreases. Any time the value of $\ymin(S)$
-decreases, the size of the triangle $T$ decreases.  So that we can refer
-to these point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$ and
-we define $S_i^*$, $T_i$, $R_i$, $V_i$, $H^{\max}_i$, and $H^{\min}_i$
+\lemref{swords-region} gives us a form of \emph{potential function}
+that we can use.  We will apply it with $S=\bigcup_{j=1}^i Q_j$ so that
+as rounds proceed, any time the value of $\xmax(S^*)$ or $\ymax(S^*)$
+increases---or the value of $\xmin(S)$ decreases---the size of the
+rectangle $R$ decreases. Any time the value of $\ymin(S)$ decreases,
+the size of the triangle $T$ decreases.  So that we can refer to these
+point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$ and we
+define $S_i^*$, $T_i$, $R_i$, $V_i$, $H^{\max}_i$, and $H^{\min}_i$
 as in \lemref{swords-region}, but with respect to the set $S=S_i$.
+
+The fact that $S^*$---which also determines two sides of $R$---is defined
+in terms of $\xmin(S)$ is problematic. The following lemma helps us to
+deal with that: \ldots
+
+%
+% The following lemma is not quite true
+%\begin{lem}\lemlabel{survivors-normalize}
+%  If $\xmin(Q_{i+1}) < \ymax(S_i)$, then $\survivors(X,S_{i+1})$
+%  is contained in $T_{i+1}$ and a constant number of vertical and
+%  horizontal lines.
+%\end{lem}
+%
+%\begin{proof}
+%  Refer to \figref{survivors-normalize}.
+%  Let $a\in Q_{i+1}$ be any point with $\x(a)=\xmin(Q_{i+1})$.  Let
+%  $b\in S_i$ be the leftmost point $S_i$ such that $\y(b)=\ymin(S_i)$.
+%  Let $c\in S_i^*$ be any point with $y(c)=\ymax(S_i^*)$. Then it is
+%  straightforward to verify that $\killed(X,\{a,b,c\})$ contains all
+%  of $Q\setminus T_{i+1}$ except possibly the horizontal and vertical
+%  lines through $a$, $b$, and $c$. (An important fact to remember during
+%  this verification is that $\x(b) \ge \xmin(S_i) \ge \ymax(S_i^*)\ge \x(a)$.)
+%  \begin{figure}
+%    \begin{center}
+%      \includegraphics{figs/survivors-normalize}
+%    \end{center}
+%    \caption{The proof of \lemref{survivors-normalize}.}
+%    \figlabel{survivors-normalize}
+%  \end{figure}
+%\end{proof}
+%
+%Essentially, \lemref{survivors-normalize} tells us that $Q_{i+1}$ contains a point that removes any elements from $S^*$, then the rectangle $R$ stops being relevant. 
+%
 
 \begin{thm}\thmlabel{taco-swords}
   $\ex'(n,\{\taco,\swords\}) \in O(n)$.
@@ -678,8 +757,10 @@ as in \lemref{swords-region}, but with respect to the set $S=S_i$.
   fact implicitly for the rest of the proof.
 
   Now, observe that if $Q_i$ contains $t_i\ge 2$ points in $T_i$, then
-  $\ymin(S_{i+1}) \le \xmin(S_i)-t_i+2\}$.  This immediately
-  implies that $\sum_{i=1}^n t_i \le 3n$.
+  $\ymin(S_{i+1}) \le \ymin(S_i)-t_i+2$.  This immediately implies that
+  $\sum_{i=1}^n t_i \le 3n$.
+
+  If there exists some $Q_i$ such that 
 
   Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$, then
   $\ymax(S_{i+1}^*)\ge \ymax(S_i^*)+r_i-1$.  This immediately
@@ -1021,7 +1102,7 @@ with $A=B=\{1,\ldots,n\}$ and
 satisfies the conditions of the induced matching problem, with the
 partition into matchings given by
 \[
-    M_i = \{ (a,b,c)\in E : a = i \} 
+    M_i = \{ (b,c) : (i,b,c)\in S \} 
 \]
 Thus, any upper bound for the induced-matching problem an upper bound
 on the size of a 2-comparable set of triples.

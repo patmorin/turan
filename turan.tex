@@ -9,8 +9,8 @@
 \definecolor{linkblue}{named}{Blue}
 \hypersetup{colorlinks=true, linkcolor=linkblue,  anchorcolor=linkblue,
 citecolor=linkblue, filecolor=linkblue, menucolor=linkblue,
-urlcolor=linkblue, pdfcreator=Me, pdfproducer=Me} \setlength{\parskip}{1ex}
-
+urlcolor=linkblue} 
+\setlength{\parskip}{1ex}
 
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\xmax}{xmax}
@@ -644,6 +644,11 @@ have been played in previous rounds.
 \end{figure}
 
 \begin{proof}
+  The proof, which follows, is a simple verification. Throughout, we use
+  the fact that, by definition,
+  \[
+      \ymin(S) \le \ymax(S^*) \le \xmin(S) \le \xmax(S^*) \enspace .
+  \]
   Suppose, for the sake of contradiction that there is some point
   \[
     p\in \survivors(\{\swords\},S) \cap \left(Q\setminus T\setminus R \setminus H^{\min} \setminus H^{\max}\setminus V\right) \enspace . 

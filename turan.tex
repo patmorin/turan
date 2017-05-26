@@ -502,6 +502,17 @@ a $\nested$ configuration in which the shared vertex is the left vertex
    \figlabel{forbidden-color}
 \end{figure}
 
+For any
+$X\subset\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}$
+and any $S\subset Q$, we define $\killed(X,S)$ as the subset of $Q$ that
+can no longer be played in the dot-puzzle game (for configurations in
+$X$) if the points is $S$ have been played in previous rounds (these are
+the points of $Q$ $\kappa$illed by $S$).  We use the complementary notation
+$\survivors(X,S)=Q\setminus\killed(X,S)$ to be the subset of points in
+$Q$ that can still be played in the dot-puzzle game if the points is $S$
+have been played in previous rounds.
+
+
 
 \subsection{Some Warm-Up Exercises}
 
@@ -567,6 +578,17 @@ that $\ex'(n,\{\swords,\mariposa,\bat,\ears,\david\})\in \Omega(n^2)$.
 Together, these two results completely determine $\ex'(n,\{\swords\}\cup
 X\})$ for any $X$.
 
+For a point $q\in Q$, $\killed(\{\swords\}, \{q\})$ is a fairly large
+region consisting (roughly) of three quadrants surrounding $q$ and
+an additional triangular region:  
+\begin{center}
+  \includegraphics[height=3cm]{figs/swords-kappa}
+\end{center}
+However, $\killed(\{\swords\}, \{q\})$
+has a fairly complicated shape, so much of the work in this section is
+devoted to understanding, approximately, how $\killed(\{\swords\},S)$
+evolves as points are added to the point set $S$.
+
 In the following, for a point $q\in Q$, we use the notations $\x(q)$ and
 $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.  For $S\subseteq
 Q$, we use $\xmin(S)$ to denote the minimum $x$-coordinate of any point
@@ -576,64 +598,23 @@ $\xmax(S)$, and $\ymax(S)$ similarly, except that $\ymin(\emptyset) =
 n$, $\ymax(\emptyset)=0$, and
  $\xmax(\emptyset)=1$.
 
-For any
-$X\subset\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}$
-and any $S\subset Q$, we define $\killed(X,S)$ as the subset of $Q$
-that can no longer be played in the dot-puzzle game (for configurations
-in $X$) if the points is $S$ have been played in previous rounds
-(these are the points of $Q$ $\kappa$illed by $S$).  We also define
-$\survivors(X,S)=Q\setminus\killed(X,S)$ to be the subset of points in
-$Q$ that can still be played in the dot-puzzle game if the points is $S$
-have been played in previous rounds.
-
-
-
-%We say that a set $S\subset Q$ is \emph{well-behaved} if $\ymax(S)
-%\le \xmin(S)$.
-%
-%\begin{lem}\lemlabel{swords-region}
-%  (Refer to \figref{survivors}.)  Let $S$ be any well-behaved subset
-%  of $Q$.  Then $\survivors(\{\swords\},S)$ is contained in the union
-%  of a \emph{triangular region} $T=\{(x,y)\in Q: x\le \ymin(S)+1\}$, a
-%  \emph{rectangular region} $R=\{(x,y)\in Q: x\ge \xmax(S),\, \ymax(S)
-%  \le y\le \xmin(S)\}$, a \emph{vertical line} $V$ passing through the
-%  rightmost point of $S$ with maximum $y$-coordinate, a \emph{horizontal
-%  line} $H^{\min}=\{(x,y)\in Q: y=\ymin(S)\}$ and a horizontal line
-%  $H^{\max}=\{(x,y)\in Q: y=\ymax(S)\}$.
-%\end{lem}
-%
-%\begin{proof}
-%  The statement of the lemma is easily verified using the fact that,
-%  because $S$ is well-behaved, $\ymin(S)\le \ymax(S)\le \xmin(S)\le
-%  \xmax(s)$.
-%\end{proof}
-%
-%\lemref{swords-region} gives us a form of \emph{potential function} that
-%we can use.  We will apply it with $S=\bigcup_{j=1}^i Q_j$ so that as
-%rounds proceed, any time the value of $\xmax(S)$ or $\ymax(S)$ increases
-%the size of the rectangle $R$ decreases. Any time the value of $\ymin(S)$
-%decreases, the size of the triangle $T$ decreases.  So that we can refer
-%to these point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$ and
-%we define $S_i^*$, $T_i$, $R_i$, $V_i$, $H^{\max}_i$, and $H^{\min}_i$
-%as in \lemref{swords-region}, but with respect to the set $S=S_i$.
-%
-%In general, the set $S_i$ will not be well-behaved and we need some way to deal with this.  Let $i$ the smallest index such that $S_i$ is not well-behaved so that $S_{i-1}$ is well-behaved, but $S_i$ is not.
-%
-
-
 
 \begin{lem}\lemlabel{swords-region}
   (Refer to \figref{survivors}.)  Let $S$ be any non-empty
-  subset of $Q$, let $S^{>}= \{(x,y)\in S : y > \xmin(S)\}$, and let
-  $S^\le = S\setminus S^>$.
+  subset of $Q$, let $A = \{(x,y)\in S : y > \xmin(S)\}$, and let
+  $B = S\setminus A$.
   Then $\survivors(\{\swords\},S)$ is contained in the union of
-  a \emph{triangular region} $T=\{(x,y)\in Q: x\le \ymin(S)\}$,
-  a \emph{rectangular region} $R=\{(x,y)\in Q: \xmax(S^\le) \le x \le \ymin(S^>),\,
-  \ymax(S^\le) < y\le \xmin(S)\}$, a \emph{vertical line} $V_1$ passing
-  through the rightmost point of $S^\le$ with maximum $y$-coordinate, vertical
-  line passing through a point of $S^>$ with minimum $y$-coordinate, a
+  a \emph{triangular region} 
+  \[ T=\{(x,y)\in Q: x\le \ymin(S)\} \enspace , \]
+  a \emph{rectangular region} 
+  \[ R=\{(x,y)\in Q: \xmax(B) \le x \le \ymin(A),\, 
+                 \ymax(B) < y\le \xmin(S)\} \enspace , \]
+  a \emph{vertical line} $V^1$ passing
+  through the rightmost point of $B$ with maximum $y$-coordinate, 
+  a vertical
+  line passing through a point of $A$ with minimum $y$-coordinate, a
   \emph{horizontal line} $H^{\min}=\{(x,y)\in Q: y=\ymin(S)\}$ and a
-  horizontal line $H^{\max}=\{(x,y)\in Q: y=\ymax(S^*)\}$.
+  horizontal line $H^{\max}=\{(x,y)\in Q: y=\ymax(B)\}$.
 \end{lem}
 
 \begin{figure}
@@ -645,45 +626,84 @@ have been played in previous rounds.
 \end{figure}
 
 \begin{proof}
-  The proof of \lemref{swords-region} is just a matter of checking that,
-  for any $p\not\in T\cup R\cup H^{\max}\cup H^{\min}\cup V_1\cup V_2$,
+  The proof of \lemref{swords-region}, which is illustrated already in
+  \figref{survivors}, is just a matter of checking that,
+  for any point 
+  \[  p\in Q\setminus (T\cup R\cup H^{\max}\cup H^{\min}\cup V^1\cup V^2)  
+      \enspace ,\]
   $p\in\killed(\{\swords\},q)$ for one of the (at most five) points $q$
-  that determine $\xmin(S)$, $\xmax(S^\le)$, $\ymin(S)$, $\ymax(S^\le)$
-  or $\ymin(S^>)$.  In performing this verification, it is helpful to keep
+  that determine $\xmin(S)$, $\xmax(B)$, $\ymin(S)$, $\ymax(B)$
+  or $\ymin(A)$.  In performing this verification, it is helpful to keep
   in mind that
-  \[  \ymin(S) \le \ymax(S^\le) \le \xmin(S) \le \ymin(S^>) \enspace . \] 
-  Do note, however, that (unlike the situation illustrated in
-  \figref{survivors}), it is possible that $\ymin(S^>) < \xmax(S^\le)$
+  \[  \ymin(S) \le \ymax(B) \le \xmin(S) \le \ymin(A) \enspace . \] 
+  Note, however, that (unlike the situation illustrated in
+  \figref{survivors}), it is possible that $\ymin(A) < \xmax(B)$
   in which case the rectangle $R$ is empty.
 \end{proof}
 
-We will be using \lemref{swords-region} to study the evolution of the
-dot-puzzle over $n$ rounds.  We will apply it with $S=\bigcup_{j=1}^i
-Q_j$ to study the evolution $T$ and $R$ as rounds proceed.  So that we
-can refer to these point sets as they change, we let $S_i=\bigcup_{j=1}^i
-Q_i$ and we define $S_i^>$, $S_i^\le$, $T_i$, $R_i$, $V_i$, $H^{\max}_i$,
-and $H^{\min}_i$ as in \lemref{swords-region}, but with respect to the
-set $S=S_i$.
+We will be using \lemref{swords-region} to study the evolution of
+dot-puzzle involving $\swords$ over $n$ rounds.  We will apply it
+with $S=\bigcup_{j=1}^i Q_j$ to study the evolution $T$ and $R$ as
+rounds proceed.  So that we can refer to these point sets as they
+change, we let $S_i=\bigcup_{j=1}^i Q_i$ and we define $A_i$, $B_i$,
+$T_i$, $R_i$, $V^1_i$, $V^2_i$, $H^{\max}_i$, and $H^{\min}_i$ as in
+\lemref{swords-region}, but with respect to the set $S=S_i$.
 
-The evolution of $T_i$ over time is simple, it decreases as $\ymin(S)$
-decreases.  However, the changes to $R_i$ are more complex. Sometimes
-$R_i$ shrinks because $\xmin(S)$ decreases or because $\xmax(S^\le)$ or
-$\ymax(S^\le)$ increases.  At other times, however, the rectangle $R_i$
-makes a jump to a completely new location. The following lemma explains
-these changes:
+The evolution of $T_i$ over time is easy to understand: it shrinks when
+$\ymin(S_{i+1}) < \ymin(S_i)$.  However, the changes to $R_i$ are
+more complex. Sometimes $R_i$ shrinks because $\xmin(S_{i+1})>\xmin(S_i)$,
+$\xmax(B_{i+1})>\xmax(B_i)$ or $\ymax(B_{i+1})>\ymax(B_i)$.
+Other times, however, $R_i$ makes a jump to a completely new location. The
+following lemma explains these changes:
 
-\begin{obs}\obslabel{shrink-jump}
-  Let $R_1,\ldots,R_n$ be defined as above.  Then, for any $1\le i
-  < j\le n$, $R_j \subseteq R_i$ or $\xmin(S_j) < \ymax(S_i^\le)$.
-  In particular, in the latter case, $R_i$ and $R_j$ have no $x$- or
-  $y$-coordinate in common.
-\end{obs}
+\begin{lem}\lemlabel{shrink-jump}
+  For each $i\in\{1,\ldots,n\}$, let $Q_i$, $S_i$, $A_i$, $B_i$, and $R_i$
+  be defined as above.  Then, for any $1\le i < j\le n$, $R_j \subseteq
+  R_i$ or $\xmin(S_j) < \ymax(B_i)$.  In particular, in the latter case,
+  $R_i$ and $R_j$ have no $x$- or $y$-coordinate in common.
+\end{lem}
 
-To see the utility of this observation, consider the index set
-$I=\{i\in\{2,\ldots,n\}: R_i\not\subseteq R_{i-1}\}$ and define
-$\Phi(R_i)=\ymin(S_i^>)-\ymax(S_i^\le) + \xmin(S_i) - \xmax(S_i^\le)$
-(the sum of the width and height of $R_i$).  Then \obsref{shrink-jump}
-tells us that $\sum_{i\in I}\Phi(R_i) < 2n$. 
+\begin{proof}
+  Assume $\xmin(S_j) \ge \ymax(B_i)$, otherwise there is nothing to prove.
+  Let $a\in B_i$ be a point with $\y(a)=\ymax(B_i)$.  Then $\y(a) =
+  \ymax(B_i) \le \xmin(S_j)$ so $a\in B_j$.  Let $b\in B_i$ be a point
+  with $\x(b)=\xmax(B_i)$.  Then $\y(b) \le \ymax(B_i) \le \xmin(S_j)$,
+  so $b\in B_j$.
+
+  Because $a,b\in B_j$, we have
+  \[  \ymax(B_j) \ge \ymax(B_i) , \qquad \xmax(B_j) \ge \xmax(B_i) \enspace . \]
+  Because $S_j\supseteq S_i$, it follows that $A_j\supseteq A_i$ and 
+  \[
+      \xmin(S_j) \le \xmin(S_i), \qquad \ymin(A_j) \le \ymin(A_i) \enspace .
+  \]
+  The left-hand sides of these of these four inequalities determine the
+  four sides of $R_j$, while the right-hand sides determine the four
+  sides of $R_i$, so $R_i\subseteq R_j$, as required.
+\end{proof}
+
+For a sequence $Q_1,\ldots,Q_n$ we say that $i\in\{1,\ldots,n-1\}$
+is a \emph{critical event} if $\xmin(S_{i+1}) < \ymax(B_i)$.
+\lemref{shrink-jump} says $R_i\subseteq R_{i+1}$ except when $i$ is
+a critical event.  We use this to define a \emph{potential function}, $\Phi$,
+on $R$ that decreases except during critical events.  The following lemma
+defines this potential function and upper-bounds the size of these increases.
+
+\begin{lem}\lemlabel{potential-r}
+  For each $i\in\{1,\ldots,n\}$, let $Q_i$, $S_i$, $A_i$, $B_i$, and $R_i$
+  be defined as above and define \[  \Phi(R_i)=\ymin(A_i)-\xmax(B_i) + 1 +
+  \xmin(S_i) - \ymax(B_i) \] (the number of rows and columns of $R_i$).
+  Let $I$ be the set of critical events.  Then $\sum_{i\in I}\Phi(R_i)
+  < 2n$.
+\end{lem}
+
+\begin{proof}
+  This follows immediately from \lemref{shrink-jump} since this lemma
+  implies that, for any $i,j\in I$, $R_i$ and $R_j$ have no $x$-coordinate
+  (row) or $y$-coordinate (column) in common. Therefore, since $Q$
+  contains $n-1$ columns and $n$ rows, $\sum_{i\in I}\Phi(R_i) \le 2n-1$.
+\end{proof}
+
+We now have all the pieces we need to prove our linear upper bounds.
 
 \begin{thm}\thmlabel{taco-swords}
   $\ex'(n,\{\taco,\swords\}) \in O(n)$.
@@ -699,24 +719,29 @@ tells us that $\sum_{i\in I}\Phi(R_i) < 2n$.
   at most one point from each row and each column.  We will use this
   fact implicitly for the rest of the proof.
 
-  Now, observe that if $Q_i$ contains $t_i\ge 2$ points in $T_i$, then
-  $\ymin(S_{i+1}) \le \ymin(S_i)-t_i+2$.  This immediately implies that
-  $\sum_{i=1}^n t_i \le 3n$.
+  First we count the contribution of points that are placed in
+  $T_1,\ldots,T_{n-1}$. Let $t_i=|Q_{i+1}\cap T_i|$ and observe that
+  $\ymin(S_{i+1}) \le \ymin(S_i)-t_i$.  This immediately implies that
+  $\sum_{i=1}^{n-1} t_i \le n$.
 
-  Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$ then one of
-  two things happens: If $R_{i+1}\subset R_i$, then $\Phi(R_{i+1})\le
-  \Phi(R_i)-r_i+1$ since all but one point of $Q_i\cap R_i$ kills an entire row
-  or column of $R_i$. Otherwise, $R_{i+1}\not\subseteq R_i$.  Letting $I$
-  denote the index set in which the second case occurs, we have:
+  Now we count the contribution of points that are placed in
+  $R_1,\ldots,R_{n-1}$.  Let $r_i=|Q_{i+1}\cap R_i|$.  Using the notation
+  of \lemref{potential-r}, we know that $r_i \le Phi(R_i)$.  Furthermore,
+  if $i$ is not a critical event, then $\Phi(R_{i+1})\le \Phi(R_i)-r_i+1$
+  since all but one point of $Q_{i+1}\cap R_i$ kills an entire row or
+  column of $R_i$.
+  Therefore, by \lemref{potential-r}:
   \[
-      \sum_{i=1}^n (r_i-1) \le \sum_{i\in I}\Phi(R_i) < 2n \enspace .
+      \sum_{i=1}^{n-1} (r_i-1) \le \sum_{i\in I}\Phi(R_i) < 2n \enspace ,
   \]
-  Thus, $\sum_{i=1}^n r_i < 3n$.
+  so $\sum_{i=1}^n r_i < 3n$.
   
-  Finally, we observe that $Q_i$ contains at most one point each from
-  $H^{\min}_i$, $H^{\max}_i$, $V^1_i$, and $V^2_i$, so
+  Finally, we observe that $Q_{i+1}$ contains at most one point each
+  from $H^{\min}_i$, $H^{\max}_i$, $V^1_i$, and $V^2_i$, so
   \[
-      \sum_{i=1}^{n}|Q_i| \le \sum_{i=1}^n(t_i+r_i+4) \le 10 n \enspace . \qedhere
+      \sum_{i=1}^{n}|Q_i| 
+          \le |Q_1|+\sum_{i=1}^{n-1}(t_i+r_i+4) 
+          \le 9 n \enspace . \qedhere
   \]
 \end{proof}
 
@@ -734,7 +759,7 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
 %  \end{enumerate}
 %
 % 
-%  \[ \sum_{i=1}^{n}\left(|Q_i\cap V_i|+|Q_i\cap H^{\max}_i|+|Q_i\cap H^{\min}_i|\right) \in O(n) \enspace . \]
+%  \[ \sum_{i=1}^{n}\left(|Q_i\cap V^i|+|Q_i\cap H^{\max}_i|+|Q_i\cap H^{\min}_i|\right) \in O(n) \enspace . \]
 %\end{lem}
 
 \begin{thm}\thmlabel{nested-swords}
@@ -751,30 +776,72 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
    must be non-decreasing (see \figref{forbidden-color}a).
    We will use this fact implicitly for the rest of the proof.
 
-   Now, if $Q_i$ contains $t_i$ points in $T_i$, then the fact
-   that $Q_i$ is non-decreasing implies that $\ymin(S_{i+1})\le
-   \ymin(S_i)-\lfloor t_i/2 \rfloor$.  This immediately implies that
-   $\sum_{i=1}^n t_i \le 3n$.
+   Now, if $Q_{i+1}$ contains $t_i\ge 1$ points in $T_i$, then the fact
+   that $Q_{i+1}$ is non-decreasing implies that $\ymin(S_{i+1})\le
+   \ymin(S_i)-\lceil (t_i+1)/2 \rceil$.  This immediately implies that
+   $\sum_{i=1}^{n-1} t_i \le 2n$.
 
-   Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$, then the fact
-   that $Q_i$ is non-decreasing means that $\Phi(R_{i+1}) \le \Phi(R_i)-1$
-   or that $R_{i+1}\not\subseteq R_i$.  As in the previous proof, this implies that 
-   $\sum_{i=1}^n r_i \le 3n$.
+   Similarly, if $Q_{i+1}$ contains $r_i\ge 1$ points in $R_i$, then
+   the fact that $Q_{i+1}$ is non-decreasing means that $\Phi(R_{i+1})
+   \le \Phi(R_i)-r_i+1$ or that $R_{i+1}\not\subseteq R_i$.  As in the
+   previous proof, this implies that $\sum_{i=1}^n r_i \le 3n$.
 
-   To account for points of $Q_i$ on the vertical line $V_i$, we consider
-   the lowest point of $\survivors(\{\swords\},Q_i)$ on  
-   $V_i\setminus T_i\setminus R_i$ and denote the $y$-coordinate of this
-   point by $y_i$.  If $V_i\setminus T_i\setminus R_i$ contains $v_i\ge
-   1$ points of $Q_i$, then $y_{i+1}\ge y_i+v_i-1$.  This immediately
-   implies that $\sum_{j=1}^n v_i \le 2n$.
+   To account for points that are placed on horizontal lines
+   $H^{\min}_1,\ldots,H^{\min}_{n-1}$, we use a similar, but simpler
+   potential function argument.  Let $I=\{i\in\{1,\ldots,n-1\}:
+   Q_{i+1}\cap T_i\neq\emptyset\}$ and observe that $H^{\min}_{i+1} =
+   H^{\min}_i$ if and only if $i\not\in I$.
 
-   Accounting for points of $Q_i$ on the horizontal lines $H^{\min}_i$ and $H^{\max}_i$ is similar,
-   but with respect to the left-most point of 
-   $\survivors(\{\swords\},Q_i)$ in $H^{\min}_i\setminus T_i\setminus R_i$
-   and $H^{\max}_i\setminus T_i\setminus R_i$.
+   It follows that, for distinct $i,j\in I$, $H^{\min}_i\cap
+   \survivors(S_i)$ and $H^{\min}_j\cap\survivors(S_j)$ have no
+   $x$-coordinates in common (see \figref{swords-nested-vi}).
+   \begin{figure}
+      \begin{center}
+        \includegraphics{figs/swords-nested-hmin}
+      \end{center}
+      \caption{Counting points on $H^{\min}_1,\ldots,H^{\min}_{n-1}$.}
+      \figlabel{swords-nested-vi}
+   \end{figure}
+   Thus, we can define $\Phi(H^{\min}_i)=|H^{\min}_i\cap \survivors(S_i)|$
+   and $\sum_{i\in I}\Phi(H^{\min}_i)\le n$. Now, if $i\not\in I$
+   and $Q_{i+1}$ contains $h_i$ points of $H^{\min}_i$,
+   then $\Phi(H^{\min}_{i+1}) \le \Phi(H^{\min}_i) - h_i + 1$.  Thus, we get
+   \[
+      \sum_{i=1}^{n-1}(h_i-1) \le \sum_{i\in I}\Phi(H^{\min}_i) \le n \enspace ,
+   \]
+   so $\sum_{i=1}^{n-1}h_i \le 2n$.
+
+   Counting the number of points in $V^1_1,\ldots,V^1_{n-1}$ is similar,
+   except that we use the fact that, if $Q_{i+1}$ contains $v_i$ points
+   in $V^1_i$, then all but one of these points kills an entire row of
+   $R_i$.  This yields $\sum_{i=1}^{n-1}v_i \le 2n$.  Exactly the same
+   argument shows that the number of points in $V^2_1,\ldots,V^2_{n-1}$
+   is at most $2n$.
+
+   Finally, it remains to count the contribution of points in
+   $H^{\max}_1,\ldots,H^{\max}_n$.  The movement of the line
+   $H^{\max}_i$ over time is a bit trickier.  If $i$ is a critical
+   event, then $H^{\max}_i$ moves downwards, since $\ymax(B_{i+1}) <
+   \xmin(S_{i+1}) \le \ymax(B_i)$.  Now note that, for distinct $i,j\in
+   I$, $H^{\max}_i\cap \survivors(S_i)$ has no $x$-coordinates in common
+   with $H^{\max}_j\cap \survivors(S_j)$.  Indeed, if $i< j$, then all
+   $x$-coordinates in the former line are greater than $\ymin(S_i)$
+   and all $x$-coordinates in the latter line are at most $\ymin(S_i)$.
+
+   Now, if $Q_{i+1}$ contains $k_i$ points
+   on $H^{\max}_i$, then each of these points kills the entire column
+   one unit to its left. With the exception of the column killed by the
+   leftmost point in $Q_{i+1}\cap H^{\max}_i$, this is the first time
+   this column is killed by any point in any $Q_{j+1}\cap H^{\max}_j$
+   for any $j\in\{1,\ldots,n-1\}$.  Therefore 
+   \[
+       \sum_{i=1}^{n-1}(|Q_{i+1}\cap H^{\max}_i|-1) \le n \enspace ,
+   \]
+   so the total contribution from points in $H^{\max}_1,\ldots,H^{\max}_{n-1}$
+   is at most $2n$.
 
    Summing everything, we find that
-   $\ex'(n,\{\swords,\nested\})\le\sum_{j=1}^n |Q_i|\le 12n$.
+   $\ex'(n,\{\swords,\nested\})\le\sum_{j=1}^n |Q_i|\le 13n$.
 \end{proof}
 
 
@@ -791,7 +858,7 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
   partitioned into groups $Q_{i,1},\ldots,Q_{i,\ell}$ where the elements
   in $Q_i$ are non-increasing and the elements in $Q_{i,j}$ and $Q_{i,k}$
   do not share any $x$- or $y$-coordinate.  With this observation, the
-  rest of the proof is analogous to the proof of \thmref{nested-swords}.
+  rest of the proof is similar to the proof of \thmref{nested-swords}.
 \end{proof}
 
 

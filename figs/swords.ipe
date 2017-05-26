@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170525203452" modified="D:20170525204453"/>
+<info created="D:20170525203452" modified="D:20170525222030"/>
 <preamble>\usepackage{amsopn}
 
 \DeclareMathOperator{\xmin}{xmin}
@@ -227,13 +227,13 @@ h
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
 <dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
 <textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
 <textsize name="Large" value="\Large"/>
 <textsize name="LARGE" value="\LARGE"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="Huge" value="\Huge"/>
-<textsize name="small" value="\small"/>
 <textsize name="footnote" value="\footnotesize"/>
-<textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
 <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
 <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
@@ -363,7 +363,7 @@ h
 296 656 l
 </path>
 <text matrix="1 0 0 1 268 -48" transformations="rigid" pos="96 656" stroke="black" type="label" width="36.295" height="7.473" depth="2.49" valign="center" style="math">\xmin(S)</text>
-<text matrix="-0 -1 1 -0 -399.935 611.901" transformations="rigid" pos="96 656" stroke="black" type="label" width="36.295" height="7.473" depth="2.49" valign="center" style="math">\xmin(S)</text>
+<text matrix="0 -1 1 0 -399.935 611.901" transformations="rigid" pos="96 656" stroke="black" type="label" width="36.295" height="7.473" depth="2.49" valign="center" style="math">\xmin(S)</text>
 <use matrix="1 0 0 1 -8 0" name="mark/disk(sx)" pos="264 568" size="normal" stroke="black"/>
 <path stroke="brew8" pen="ultrafat" cap="1">
 224 588 m
@@ -396,8 +396,8 @@ h
 <text matrix="1 0 0 1 268 -96" transformations="rigid" pos="96 656" stroke="black" type="label" width="36.295" height="7.473" depth="2.49" valign="center" style="math">\ymin(S)</text>
 <text matrix="0 -1 1 0 -447.935 611.901" transformations="rigid" pos="96 656" stroke="black" type="label" width="36.295" height="7.473" depth="2.49" valign="center" style="math">\ymin(S)</text>
 <text matrix="1 0 0 1 268 24" transformations="rigid" pos="96 656" stroke="black" type="label" width="43.019" height="7.631" depth="2.49" valign="center" style="math">\ymin(S^&gt;)</text>
-<text matrix="1 0 0 1 268 -68" transformations="rigid" pos="96 656" stroke="black" type="label" width="44.957" height="7.631" depth="2.49" valign="center" style="math">\ymax(S^&lt;)</text>
-<text matrix="0 -1 1 0 -359.935 611.901" transformations="rigid" pos="96 656" stroke="black" type="label" width="44.957" height="7.631" depth="2.49" valign="center" style="math">\xmax(S^&lt;)</text>
+<text matrix="1 0 0 1 268 -68" transformations="rigid" pos="96 656" stroke="black" type="label" width="44.957" height="8.396" depth="2.49" valign="center" style="math">\ymax(S^\le)</text>
+<text matrix="0 -1 1 0 -359.935 611.901" transformations="rigid" pos="96 656" stroke="black" type="label" width="44.957" height="8.396" depth="2.49" valign="center" style="math">\xmax(S^\le)</text>
 <text matrix="0 -1 1 0 -327.935 611.901" transformations="rigid" pos="96 656" stroke="black" type="label" width="43.019" height="7.631" depth="2.49" valign="center" style="math">\ymin(S^&gt;)</text>
 <text matrix="1 0 0 1 16 0" transformations="translations" pos="180 560" stroke="black" type="label" width="22.79" height="8.306" depth="0" halign="right" valign="center" style="math">H^{\min}</text>
 <text matrix="1 0 0 1 40 28" transformations="translations" pos="180 560" stroke="black" type="label" width="24.291" height="6.808" depth="0" halign="right" valign="center" style="math">H^{\max}</text>

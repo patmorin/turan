@@ -567,24 +567,23 @@ that $\ex'(n,\{\swords,\mariposa,\bat,\ears,\david\})\in \Omega(n^2)$.
 Together, these two results completely determine $\ex'(n,\{\swords\}\cup
 X\})$ for any $X$.
 
-In the following, for a point $q\in Q$, we use the notations
-$\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
-For $S\subseteq Q$, we use $\xmin(S)$ to denote the
-minimum $x$-coordinate of any point in the point set $S$, i.e.,
-$\xmin(S)=\min\{\x(q) : q\in S\}$.  
-%If $S$ is empty, then we define $\xmin(S)$ as $n+1$.  
-We define $\ymin(S)$,
-$\xmax(S)$, and $\ymax(S)$ similarly.
-%, except that $\ymin(\emptyset) = n$, $\ymax(\emptyset)=0$, and 
-% $\xmax(\emptyset)=1$.  
+In the following, for a point $q\in Q$, we use the notations $\x(q)$ and
+$\y(q)$ to denote the $x$- and $y$-coordinates of $q$.  For $S\subseteq
+Q$, we use $\xmin(S)$ to denote the minimum $x$-coordinate of any point
+in the point set $S$, i.e., $\xmin(S)=\min\{\x(q) : q\in S\}$.  If $S$
+is empty, then we define $\xmin(S)$ as $n+1$.  We define $\ymin(S)$,
+$\xmax(S)$, and $\ymax(S)$ similarly, except that $\ymin(\emptyset) =
+n$, $\ymax(\emptyset)=0$, and
+ $\xmax(\emptyset)=1$.
+
 For any
 $X\subset\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}$
-and any $S\subset Q$, we define $\killed(X,S)$ as the subset of $Q$ that can
-no longer be played in the dot-puzzle game (for configurations in $X$)
-if the points is $S$ have been played in previous rounds (these are the points
-of $Q$ $\kappa$illed by $S$).  We also define
-$\survivors(X,S)=Q\setminus\killed(X,S)$ to be the subset of points in $Q$
-that can still be played in the dot-puzzle game if the points is $S$
+and any $S\subset Q$, we define $\killed(X,S)$ as the subset of $Q$
+that can no longer be played in the dot-puzzle game (for configurations
+in $X$) if the points is $S$ have been played in previous rounds
+(these are the points of $Q$ $\kappa$illed by $S$).  We also define
+$\survivors(X,S)=Q\setminus\killed(X,S)$ to be the subset of points in
+$Q$ that can still be played in the dot-puzzle game if the points is $S$
 have been played in previous rounds.
 
 
@@ -625,127 +624,66 @@ have been played in previous rounds.
 
 \begin{lem}\lemlabel{swords-region}
   (Refer to \figref{survivors}.)  Let $S$ be any non-empty
-  subset of $Q$ and let $S^{*}= \{(x,y)\in S : y \le \xmin(S)\}$.
+  subset of $Q$, let $S^{>}= \{(x,y)\in S : y > \xmin(S)\}$, and let
+  $S^\le = S\setminus S^>$.
   Then $\survivors(\{\swords\},S)$ is contained in the union of
-  a \emph{triangular region} $T=\{(x,y)\in Q: x\le \ymin(S)+1\}$,
-  a \emph{rectangular region} $R=\{(x,y)\in Q: x\ge \xmax(S^*),\,
-  \ymax(S^*) \le y\le \xmin(S)\}$, a \emph{vertical line} $V$ passing
-  through the rightmost point of $S^*$ with maximum $y$-coordinate, a
+  a \emph{triangular region} $T=\{(x,y)\in Q: x\le \ymin(S)\}$,
+  a \emph{rectangular region} $R=\{(x,y)\in Q: \xmax(S^\le) \le x \le \ymin(S^>),\,
+  \ymax(S^\le) < y\le \xmin(S)\}$, a \emph{vertical line} $V_1$ passing
+  through the rightmost point of $S^\le$ with maximum $y$-coordinate, vertical
+  line passing through a point of $S^>$ with minimum $y$-coordinate, a
   \emph{horizontal line} $H^{\min}=\{(x,y)\in Q: y=\ymin(S)\}$ and a
   horizontal line $H^{\max}=\{(x,y)\in Q: y=\ymax(S^*)\}$.
 \end{lem}
 
 \begin{figure}
   \begin{center}
-    \includegraphics{figs/survivors}
+    \includegraphics{figs/swords}
   \end{center}
   \caption{An illustration of \lemref{swords-region}.}
   \figlabel{survivors}
 \end{figure}
 
 \begin{proof}
-  The proof, which follows, is a simple verification. Throughout, we use
-  the fact that, by definition,
-  \[
-      \ymin(S) \le \ymax(S^*) \le \xmin(S) \le \xmax(S^*) \enspace .
-  \]
-  Suppose, for the sake of contradiction that there is some point
-  \[
-    p\in \survivors(\{\swords\},S) \cap \left(Q\setminus T\setminus R \setminus H^{\min} \setminus H^{\max}\setminus V\right) \enspace . 
-  \]
-  \begin{figure}
-    \begin{center}
-      \begin{tabular}{ccc}
-         \includegraphics[width=.47\textwidth]{figs/survivors-proof-1} &
-         \includegraphics[width=.47\textwidth]{figs/survivors-proof-2} \\
-         (a) & (b) \\[1em]
-         \includegraphics[width=.47\textwidth]{figs/survivors-proof-3} &
-         \includegraphics[width=.47\textwidth]{figs/survivors-proof-4} \\
-         (c) & (d) \\[1em]
-         \includegraphics[width=.47\textwidth]{figs/survivors-proof-5} &
-         \includegraphics[width=.47\textwidth]{figs/survivors-proof-6} \\
-         (e) & (f) 
-      \end{tabular}
-    \end{center}
-    \caption{The proof of \lemref{swords-region}.}
-    \figlabel{survivors-proof}
-  \end{figure}
-  Throughout this proof, for a point $q\in Q$, we will use the shorthand
-  $\killed(q)=\killed(\{\swords\},\{q\})$.
-  Let $a\in S$ be a point with $\y(a)=\ymin(S)$.  Since $p\not\in T\cup H^{\min}\cup\killed(a)$, we have 
-  \begin{equation}
-      \text{($\y(p) > \ymin(S)$ and $\x(p)>\x(a)$)  or $\x(p) = \x(a)$} 
-       \eqlabel{aa}
-  \end{equation}
-  (\figref{survivors-proof}.a).
-  We also have
-  \begin{equation}
-      \y(p) \le \xmin(S) \eqlabel{ab}
-  \end{equation}
-  (\figref{survivors-proof}.b).
-  Let $b\in S^*$ be the rightmost point in $S$ such that $y(b)=\ymax(S^*)$.
-  Since $p\not\in V\cup H^{\max} \cup\killed(b)\cup\killed(a)$,
-  \[
-      \y(p) > \ymax(S^*) \enspace .
-  \]
-  (\figref{survivors-proof}.c).
-  Let $c\in S^*$ be a point with $\x(c)=\xmax(S^*)$.  Then
-  \begin{equation}
-      \text{$\x(p) \ge \xmax(S^*)$ or $\y(p) = \y(c)$} \enspace .
-      \eqlabel{ac}
-  \end{equation}
-  (\figref{survivors-proof}.d).
-  Taken together with the fact that $p\not\in R$, \eqref{aa}--\eqref{ac}
-  imply that $\x(p)=\x(a)$ or that $\y(p) = \y(c)$. In the first case
-  (\figref{survivors-proof}.e)
-  $\x(p)=\x(a)$ and $\y(p) < \y(a)$ so $p\in\killed(b)\cup V$, a contradiction.  In the second case, 
-  (\figref{survivors-proof}.f)
-  $\y(p) = \y(c)$
-  and $\x(p) < x(c)$ so $p\in\killed(b)\cup\killed(a)\cup V\cup H^{\max}\cup H^{\min}$, also a contradiction.
+  The proof of \lemref{swords-region} is just a matter of checking that,
+  for any $p\not\in T\cup R\cup H^{\max}\cup H^{\min}\cup V_1\cup V_2$,
+  $p\in\killed(\{\swords\},q)$ for one of the (at most five) points $q$
+  that determine $\xmin(S)$, $\xmax(S^\le)$, $\ymin(S)$, $\ymax(S^\le)$
+  or $\ymin(S^>)$.  In performing this verification, it is helpful to keep
+  in mind that
+  \[  \ymin(S) \le \ymax(S^\le) \le \xmin(S) \le \ymin(S^>) \enspace . \] 
+  Do note, however, that (unlike the situation illustrated in
+  \figref{survivors}), it is possible that $\ymin(S^>) < \xmax(S^\le)$
+  in which case the rectangle $R$ is empty.
 \end{proof}
 
-\lemref{swords-region} gives us a form of \emph{potential function}
-that we can use.  We will apply it with $S=\bigcup_{j=1}^i Q_j$ so that
-as rounds proceed, any time the value of $\xmax(S^*)$ or $\ymax(S^*)$
-increases---or the value of $\xmin(S)$ decreases---the size of the
-rectangle $R$ decreases. Any time the value of $\ymin(S)$ decreases,
-the size of the triangle $T$ decreases.  So that we can refer to these
-point sets as they change, we let $S_i=\bigcup_{j=1}^i Q_i$ and we
-define $S_i^*$, $T_i$, $R_i$, $V_i$, $H^{\max}_i$, and $H^{\min}_i$
-as in \lemref{swords-region}, but with respect to the set $S=S_i$.
+We will be using \lemref{swords-region} to study the evolution of the
+dot-puzzle over $n$ rounds.  We will apply it with $S=\bigcup_{j=1}^i
+Q_j$ to study the evolution $T$ and $R$ as rounds proceed.  So that we
+can refer to these point sets as they change, we let $S_i=\bigcup_{j=1}^i
+Q_i$ and we define $S_i^>$, $S_i^\le$, $T_i$, $R_i$, $V_i$, $H^{\max}_i$,
+and $H^{\min}_i$ as in \lemref{swords-region}, but with respect to the
+set $S=S_i$.
 
-The fact that $S^*$---which also determines two sides of $R$---is defined
-in terms of $\xmin(S)$ is problematic. The following lemma helps us to
-deal with that: \ldots
+The evolution of $T_i$ over time is simple, it decreases as $\ymin(S)$
+decreases.  However, the changes to $R_i$ are more complex. Sometimes
+$R_i$ shrinks because $\xmin(S)$ decreases or because $\xmax(S^\le)$ or
+$\ymax(S^\le)$ increases.  At other times, however, the rectangle $R_i$
+makes a jump to a completely new location. The following lemma explains
+these changes:
 
-%
-% The following lemma is not quite true
-%\begin{lem}\lemlabel{survivors-normalize}
-%  If $\xmin(Q_{i+1}) < \ymax(S_i)$, then $\survivors(X,S_{i+1})$
-%  is contained in $T_{i+1}$ and a constant number of vertical and
-%  horizontal lines.
-%\end{lem}
-%
-%\begin{proof}
-%  Refer to \figref{survivors-normalize}.
-%  Let $a\in Q_{i+1}$ be any point with $\x(a)=\xmin(Q_{i+1})$.  Let
-%  $b\in S_i$ be the leftmost point $S_i$ such that $\y(b)=\ymin(S_i)$.
-%  Let $c\in S_i^*$ be any point with $y(c)=\ymax(S_i^*)$. Then it is
-%  straightforward to verify that $\killed(X,\{a,b,c\})$ contains all
-%  of $Q\setminus T_{i+1}$ except possibly the horizontal and vertical
-%  lines through $a$, $b$, and $c$. (An important fact to remember during
-%  this verification is that $\x(b) \ge \xmin(S_i) \ge \ymax(S_i^*)\ge \x(a)$.)
-%  \begin{figure}
-%    \begin{center}
-%      \includegraphics{figs/survivors-normalize}
-%    \end{center}
-%    \caption{The proof of \lemref{survivors-normalize}.}
-%    \figlabel{survivors-normalize}
-%  \end{figure}
-%\end{proof}
-%
-%Essentially, \lemref{survivors-normalize} tells us that $Q_{i+1}$ contains a point that removes any elements from $S^*$, then the rectangle $R$ stops being relevant. 
-%
+\begin{obs}\obslabel{shrink-jump}
+  Let $R_1,\ldots,R_n$ be defined as above.  Then, for any $1\le i
+  < j\le n$, $R_j \subseteq R_i$ or $\xmin(S_j) < \ymax(S_i^\le)$.
+  In particular, in the latter case, $R_i$ and $R_j$ have no $x$- or
+  $y$-coordinate in common.
+\end{obs}
+
+To see the utility of this observation, consider the index set
+$I=\{i\in\{2,\ldots,n\}: R_i\not\subseteq R_{i-1}\}$ and define
+$\Phi(R_i)=\ymin(S_i^>)-\ymax(S_i^\le) + \xmin(S_i) - \xmax(S_i^\le)$
+(the sum of the width and height of $R_i$).  Then \obsref{shrink-jump}
+tells us that $\sum_{i\in I}\Phi(R_i) < 2n$. 
 
 \begin{thm}\thmlabel{taco-swords}
   $\ex'(n,\{\taco,\swords\}) \in O(n)$.
@@ -765,35 +703,39 @@ deal with that: \ldots
   $\ymin(S_{i+1}) \le \ymin(S_i)-t_i+2$.  This immediately implies that
   $\sum_{i=1}^n t_i \le 3n$.
 
-  If there exists some $Q_i$ such that 
-
-  Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$, then
-  $\ymax(S_{i+1}^*)\ge \ymax(S_i^*)+r_i-1$.  This immediately
-  implies that $\sum_{i=1}^n r_i\le 2n$.
+  Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$ then one of
+  two things happens: If $R_{i+1}\subset R_i$, then $\Phi(R_{i+1})\le
+  \Phi(R_i)-r_i+1$ since all but one point of $Q_i\cap R_i$ kills an entire row
+  or column of $R_i$. Otherwise, $R_{i+1}\not\subseteq R_i$.  Letting $I$
+  denote the index set in which the second case occurs, we have:
+  \[
+      \sum_{i=1}^n (r_i-1) \le \sum_{i\in I}\Phi(R_i) < 2n \enspace .
+  \]
+  Thus, $\sum_{i=1}^n r_i < 3n$.
   
   Finally, we observe that $Q_i$ contains at most one point each from
-  $H^{\min}_i$, $H^{\max}_i$, and $V_i$, so
+  $H^{\min}_i$, $H^{\max}_i$, $V^1_i$, and $V^2_i$, so
   \[
-      \sum_{i=1}^{n}|Q_i| \le \sum_{i=1}^n(t_i+r_i+3) \le 8n \enspace . \qedhere
+      \sum_{i=1}^{n}|Q_i| \le \sum_{i=1}^n(t_i+r_i+4) \le 10 n \enspace . \qedhere
   \]
 \end{proof}
 
 Our next two results have similar proofs to that of \thmref{taco-swords},
 but they require a little more care to bound the number of points that
-appear in the horizontal lines $H^{\max}_i$, $H^{\min}_i$ and $V_i$.
+appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
 
-\begin{lem}
-  Let $Q_1,\ldots,Q_n$ be a solution to a dot-puzzle game that includes
-  the rules for $\swords$.  Then, $V_{i+1}$
-  \begin{enumerate}
-    \item $\xmin(S_{i+1}) \le \xmin(S_i)$;
-    \item $\ymax(S_{i+1}^*) \le \ymin(S_ii^*t)$;
-    \item $\ymax(S_{i+1}^*) \le \ymin(S_ii^*)$;
-  \end{enumerate}
-
- 
-  \[ \sum_{i=1}^{n}\left(|Q_i\cap V_i|+|Q_i\cap H^{\max}_i|+|Q_i\cap H^{\min}_i|\right) \in O(n) \enspace . \]
-\end{lem}
+%\begin{lem}
+%  Let $Q_1,\ldots,Q_n$ be a solution to a dot-puzzle game that includes
+%  the rules for $\swords$.  Then, $V_{i+1}$
+%  \begin{enumerate}
+%    \item $\xmin(S_{i+1}) \le \xmin(S_i)$;
+%    \item $\ymax(S_{i+1}^*) \le \ymin(S_ii^*t)$;
+%    \item $\ymax(S_{i+1}^*) \le \ymin(S_ii^*)$;
+%  \end{enumerate}
+%
+% 
+%  \[ \sum_{i=1}^{n}\left(|Q_i\cap V_i|+|Q_i\cap H^{\max}_i|+|Q_i\cap H^{\min}_i|\right) \in O(n) \enspace . \]
+%\end{lem}
 
 \begin{thm}\thmlabel{nested-swords}
   $\ex'(n,\{\nested,\swords\}) \in O(n)$.
@@ -815,12 +757,9 @@ appear in the horizontal lines $H^{\max}_i$, $H^{\min}_i$ and $V_i$.
    $\sum_{i=1}^n t_i \le 3n$.
 
    Similarly, if $Q_i$ contains $r_i\ge 1$ points in $R_i$, then the fact
-   that $Q_i$ is non-decreasing means that
-   \[
-       \ymax(S_{i+1})+\xmax(S_{i+1}) 
-             \ge \ymax(S_{i})+\xmax(S_{i}) + r_i - 1 \enspace .
-   \]
-   This immediately implies that $\sum_{i=1}^n r_i \le 3n$.
+   that $Q_i$ is non-decreasing means that $\Phi(R_{i+1}) \le \Phi(R_i)-1$
+   or that $R_{i+1}\not\subseteq R_i$.  As in the previous proof, this implies that 
+   $\sum_{i=1}^n r_i \le 3n$.
 
    To account for points of $Q_i$ on the vertical line $V_i$, we consider
    the lowest point of $\survivors(\{\swords\},Q_i)$ on  

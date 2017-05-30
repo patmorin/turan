@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+    <!DOCTYPE ipestyle SYSTEM "ipe.dtd">
+    <ipestyle name="scale">
+   <color name="scale0" value="0.650980392157 0.807843137255 0.890196078431"/>
+   <color name="scale1" value="0.121568627451 0.470588235294 0.705882352941"/>
+   <color name="scale2" value="0.698039215686 0.874509803922 0.541176470588"/>
+   <color name="scale3" value="0.2 0.627450980392 0.172549019608"/>
+   <color name="scale4" value="0.98431372549 0.603921568627 0.6"/>
+   <color name="scale5" value="0.890196078431 0.101960784314 0.109803921569"/>
+   <color name="scale6" value="0.992156862745 0.749019607843 0.435294117647"/>
+   <color name="scale7" value="1.0 0.498039215686 0.0"/>
+   <color name="scale8" value="0.792156862745 0.698039215686 0.839215686275"/>
+   <color name="scale9" value="0.41568627451 0.239215686275 0.603921568627"/>
+   <color name="scale10" value="1.0 1.0 0.6"/>
+   <color name="scale11" value="0.694117647059 0.349019607843 0.156862745098"/>
+</ipestyle>

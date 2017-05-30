@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
     <!DOCTYPE ipestyle SYSTEM "ipe.dtd">
-    <ipestyle name="colors">
+    <ipestyle name="brew">
     <color name="aliceblue" value="0.941 0.973 1"/>
     <color name="brew1" value="0.552941176471 0.827450980392 0.780392156863"/>
 <color name="brew2" value="1.0 1.0 0.701960784314"/>

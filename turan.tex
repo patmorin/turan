@@ -954,6 +954,9 @@ configurations of points:
   each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
   |Q_i|$ is the quantity we are interested in bounding.
 
+  Now, the points the diagonal $y=x-1$ contribute at most $n$ points
+  to $S$, so we may assume that none of these points is included in $S$.
+
   Next, we observe that $S$ does not contain any three points
   $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$
   and $x_0<x_1$.  This is because the rules for $\taco$ and $\nested$
@@ -977,9 +980,10 @@ configurations of points:
 \begin{proof}
   Consider the set $Q_i$ played during some round $i$.  The rules for
   $\nested$ imply that $Q_i$ is non-decreasing.  The rule for $\bat$
-  implies that $Q_i$ is contained in the $\david$-region, $R_i$, of the
-  lowest-leftmost point in $Q_i$.  Indeed, all of $Q_i$ except its
-  leftmost row and column is in this $\david$-region.
+  implies that $Q_i$ is contained in the $\david$-region, $R_i$, of
+  the lowest-leftmost point in $Q_i$ FIXME: Not true! There's one extra
+  column above.  Indeed, all of $Q_i$ except its leftmost row and column
+  is in this $\david$-region.
 
   Refer to \figref{nested-bat-david}.  Suppose we remove the leftmost
   point in each row of $Q_i$.  For each such point $p\in R_i$, the entire
@@ -1185,7 +1189,7 @@ caused by $\bat$ and $\ears$ do not affect the lower-right quadrant.
 
 Finally, we clean up with some $\Omega(n^2)$ lower bound constructions.
 In each case, a matching upper bound follows from one of the results in
-Bra\ss \cite{brass:turan}.
+Bra\ss \cite{brass:turan}.  The following is essential ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot-puzzle.
 
 \begin{thm}\thmlabel{taco-david-bat-ears}
 $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
@@ -1193,10 +1197,12 @@ $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
 
 \begin{center}
    \includegraphics[height=3cm]{figs/helper-15}
+   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-2}
 \end{center}
 
 \begin{proof}
-We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
+For each $i\in\{1,\ldots,n/2\}$, we
+we set $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i\}$.
 \end{proof}
 
 \begin{thm}\thmlabel{swords-bat-ears-david}
@@ -1204,6 +1210,7 @@ We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
 \end{thm}
 \begin{center}
    \includegraphics[height=3cm]{figs/helper-16}
+   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-3}
 \end{center}
 
 
@@ -1217,6 +1224,7 @@ We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
 \end{thm}
 \begin{center}
    \includegraphics[height=3cm]{figs/helper-17}
+   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-4}
 \end{center}
 
 
@@ -1229,11 +1237,12 @@ We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
 \end{thm}
 \begin{center}
    \includegraphics[height=3cm]{figs/helper-18}
+   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-5}
 \end{center}
 
 
 \begin{proof}
-   We repeatedly take points on the diagonal.
+   We repeatedly take every second point on the diagonal $y=x+1$.
 \end{proof}
 
 \begin{thm}\thmlabel{bat-nested-ears}
@@ -1241,6 +1250,7 @@ We set $Q_i$ to be all the points of $\{n/2,\ldots,n\}^2$ on the line $y=n-x-i$.
 \end{thm}
 \begin{center}
    \includegraphics[height=3cm]{figs/helper-19}
+   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-6}
 \end{center}
 
 

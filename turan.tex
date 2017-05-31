@@ -953,7 +953,6 @@ configurations of points:
   to the resulting dot-puzzle.  Note that, by the inclusion of $\taco$,
   each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
   |Q_i|$ is the quantity we are interested in bounding.
-
   Now, the points the diagonal $y=x-1$ contribute at most $n$ points
   to $S$, so we may assume that none of these points is included in $S$.
 
@@ -963,7 +962,8 @@ configurations of points:
   imply that $a$ would have to have been played in a round before $b$,
   and that $b$ would have to have been played in a round before $c$.
   But then the rule for $\david$ implies that $c$ would have to appear
-  in a round before $a$.  Applying \lemref{forbidden} then implies that
+  in a round before $a$ (this is where it is important that $S$ not
+  contain points on the diagonal).  Applying \lemref{forbidden} then implies that
   $|S|\le 2n$.
 \end{proof}
 
@@ -972,18 +972,19 @@ configurations of points:
   $\ex'(n,\{\nested,\bat,\david\})\in O(n)$.
 \end{thm}
 
+
+%%%% TODO: This is false!
 \begin{center}
    \includegraphics[height=3cm]{figs/helper-12}
 \end{center}
 
 
 \begin{proof}
-  Consider the set $Q_i$ played during some round $i$.  The rules for
-  $\nested$ imply that $Q_i$ is non-decreasing.  The rule for $\bat$
-  implies that $Q_i$ is contained in the $\david$-region, $R_i$, of
-  the lowest-leftmost point in $Q_i$ FIXME: Not true! There's one extra
-  column above.  Indeed, all of $Q_i$ except its leftmost row and column
-  is in this $\david$-region.
+  Consider the set $Q_i$ played during some round $i$.  The rules
+  for $\nested$ imply that $Q_i$ is non-decreasing.  The rule for
+  $\bat$ implies that all but the top row of $Q_i$ is contained in
+  $R_i=\killed(\{\david\}, Q_i)$   Indeed, all of $Q_i$ except its
+  leftmost column, bottom row, and (possibly) top row is in $R_i$
 
   Refer to \figref{nested-bat-david}.  Suppose we remove the leftmost
   point in each row of $Q_i$.  For each such point $p\in R_i$, the entire

@@ -495,6 +495,8 @@ a $\nested$ configuration in which the shared vertex is the left vertex
       \begin{tabular}{c@{\hspace{1cm}}c}
         \includegraphics[width=.48\ka]{figs/crapper-2} & 
         \includegraphics[width=.48\ka]{figs/crapper-1} \\
+        \includegraphics[width=.48\ka]{figs/partition-1} &
+        \includegraphics[width=.48\ka]{figs/partition-2} \\
         (a) & (b)
       \end{tabular}
    \end{center}
@@ -923,8 +925,8 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
 \end{proof}
 
 
-Our final two upper bounds depend on a simple lemma about forbidden
-configurations of points:
+Our upper bound depends on a simple lemma about forbidden configurations
+of points:
 
 \begin{lem}\lemlabel{forbidden}
    Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three
@@ -953,8 +955,6 @@ configurations of points:
   to the resulting dot-puzzle.  Note that, by the inclusion of $\taco$,
   each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
   |Q_i|$ is the quantity we are interested in bounding.
-  Now, the points the diagonal $y=x-1$ contribute at most $n$ points
-  to $S$, so we may assume that none of these points is included in $S$.
 
   Next, we observe that $S$ does not contain any three points
   $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$
@@ -962,72 +962,118 @@ configurations of points:
   imply that $a$ would have to have been played in a round before $b$,
   and that $b$ would have to have been played in a round before $c$.
   But then the rule for $\david$ implies that $c$ would have to appear
-  in a round before $a$ (this is where it is important that $S$ not
-  contain points on the diagonal).  Applying \lemref{forbidden} then implies that
+  in a round before $a$.  Applying \lemref{forbidden} then implies that
   $|S|\le 2n$.
 \end{proof}
 
-
-\begin{thm}\thmlabel{nested-bat-david}
-  $\ex'(n,\{\nested,\bat,\david\})\in O(n)$.
+\begin{thm}\thmlabel{nested-ears-david}
+  $\ex(n,\{\nested,\ears,\david\}) \in O(n)$.
 \end{thm}
-
-
-%%%% TODO: This is false!
 \begin{center}
-   \includegraphics[height=3cm]{figs/helper-12}
+   \includegraphics[height=3cm]{figs/helper-17}
+   %\hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-4}
 \end{center}
 
-
 \begin{proof}
-  Consider the set $Q_i$ played during some round $i$.  The rules
-  for $\nested$ imply that $Q_i$ is non-decreasing.  The rule for
-  $\bat$ implies that all but the top row of $Q_i$ is contained in
-  $R_i=\killed(\{\david\}, Q_i)$   Indeed, all of $Q_i$ except its
-  leftmost column, bottom row, and (possibly) top row is in $R_i$
+   Let $S=\bigcup_{i=1}^n Q_i$.  We will show that, for each
+   $i\in\{1,\ldots,n\}$, there are at most two points of $Q_i$
+   that appear in $Q_{i+1},\ldots,Q_n$.  Refer to \figref{nested-ears-david}. 
+   Define
+   \[
+        Q_i^* = \{ (x,y)\in Q_1 : x\ge\ymax(Q_1) \} \enspace 
+   \]
+   and let $p$ be the top rightmost point in $Q_i^*$, let $q$ be the
+   highest point of $Q_i^*$ with $\x(q)=\xmin(Q_i^*)$, and let $r$ be the
+   lowest point of $Q_i^*$ with $\x(q)=\xmin(Q_i^*)$.  Now, observe that
+   $\killed(\{\nested,\ears,\david\}, \{p,q,r\}) \supseteq Q_i\setminus
+   \{p,q\}$, so $p$ and $q$ are the only points of $Q_i$ that can appear again
+   in $Q_{i+1},\ldots,Q_n$.
+   \begin{figure}
+     \begin{center}
+       \includegraphics{figs/nested-ears-david}
+     \end{center}
+     \caption{A step in the proof of \thmref{nested-ears-david}.}
+     \figlabel{nested-ears-david}
+   \end{figure}
 
-  Refer to \figref{nested-bat-david}.  Suppose we remove the leftmost
-  point in each row of $Q_i$.  For each such point $p\in R_i$, the entire
-  row containing $p$ is then killed and can never be played again. The
-  only other points we remove are in the first column of $Q_i$ and all
-  but two of these (the topmost and bottommost) kill an entire row that
-  can never be played again.  This means that the total number of points
-  removed this way is not more $3n$ (one charged to each row and two
-  charged to each round).  Since $Q_i$ was originally non-decreasing,
-  the removal of these points ensures that each column contains at most
-  one point of $Q_i$
+   We can therefore think of $Q_i$ as eliminating $|Q_i|-2$ points
+   from $S$, so $\sum_{i=1}^n(|Q_i|-2) \le |S|$ which implies that
+   that $\sum_{i=1}^n |Q_i| \le |S|+2n$.   All that remains now is to
+   bound $|S|$.
 
-  \begin{figure}
-    \begin{center}\includegraphics{figs/nested-bat-david}\end{center}
-    \caption{The proof of \thmref{nested-bat-david}. The leftmost point
-      in each row of $Q_i$ kills an entire row (except possibly for two
-      points in the leftmost column).}
-    \figlabel{nested-bat-david}
-  \end{figure}
+   For each $i\in \{1,\ldots,n\}$, let $Q_i'$ be obtained from $Q_i$ by
+   removing the leftmost point in each row.  Let $S'=\bigcup_{i=1}^n
+   Q_i'$.  We claim that $S'$ satisfies the conditions of
+   \lemref{forbidden}, so that $|S'|\le 2n$.  To see why this is so,
+   suppose that $S'$ contains three points $a\in Q_i'$, $b\in Q_j'$,
+   $c\in Q_k'$ satisfying the conditions of \lemref{forbidden}.
+   Then the rules for $\nested$ and $\david$ imply that 
+   \[
+        i \le j \le k \le i
+   \]
+   so we must have $i=j=k$.  However, this contradicts the fact (due to
+   $\nested$) that $Q_j$ is non-decreasing since the leftmost point of $Q_j$ 
+   in the same row as $b$ is to the left of $b$.
 
-  Now we let $S=\bigcup_{i=1}^n Q_i$.  We claim that $S$ fulfills the
-  requirements of \lemref{forbidden}.  To see why this is so, note that
-  if two points $a$ and $b$ of $S$ are in the same column then they
-  must have been played in different rounds.  Assume $b$ is above $a$,
-  which implies that $b$ was played in a later round than $a$.  Then, if
-  there is some point $c$ to the right of $b$, then $c$ must have been played
-  during the same round as $b$ or later.  But this implies that $c$ was
-  played in a later round than $a$, which is not possible, since $c$ is in
-  $a$'s $\david$-region.  Therefore, by \lemref{forbidden}, $|S|\le 2n$.
+   Therefore, $|S'|\le 2n$.   Now let $S''=S\setminus S'$.  Then we
+   claim that $S''$ also satisfies the conditions of \lemref{forbidden}.
+   Indeed, by the same reasoning as above, if there were $a,b,c\in
+   S''$ satisfying the conditions of \lemref{forbidden}, then it must
+   be that $a,b,c\in Q_i\setminus Q_i'$ for some $i$.  But this is a
+   contradiction since $b$ and $c$ are in the same row, and $Q_i\setminus
+   Q_i'$ contains at most one point per row.
 
-  All that remains is to account for points in $S$ that are played
-  multiple times.  In each $Q_i$ there are at most two points that can
-  be played in subsequent rounds; the topmost point in the leftmost
-  column and the rightmost point in the bottom-most row.  We charge each
-  occurrence of such repeated points to the rounds in which they are
-  the topmost point in the leftmost column and/or the rightmost point
-  in the bottommost row.  In this way, each round is charged for at
-  most two such points and the total contribution of these points to
-  $\sum_{i=1}^n |Q_i|$ is at most $2n$.
-
-  In total, we obtain an upper bound of $7n$ on $\sum_{i=1}^n |Q_i|$.
+   Thus, $|S|=|S'|+|S''| \le 4n$ and $\sum_{i=1}^{|Q_i|} \le 6n$.
 \end{proof}
-
+%\begin{proof}
+%  Consider the set $Q_i$ played during some round $i$.  The rules
+%  for $\nested$ imply that $Q_i$ is non-decreasing.  The rule for
+%  $\bat$ implies that all but the top row of $Q_i$ is contained in
+%  $R_i=\killed(\{\david\}, Q_i)$.   Indeed, all of $Q_i$ except its
+%  leftmost column, bottom row, and (possibly) top row is in $R_i$
+%
+%  Refer to \figref{nested-bat-david}.  Suppose we remove the leftmost
+%  point in each row of $Q_i$.  For each such point $p\in R_i$, the entire
+%  row containing $p$ is then killed and can never be played again. The
+%  only other points we remove are in the first column of $Q_i$ and all
+%  but two of these (the topmost and bottommost) kill an entire row that
+%  can never be played again.  This means that the total number of points
+%  removed this way is not more $3n$ (one charged to each row and two
+%  charged to each round).  Since $Q_i$ was originally non-decreasing,
+%  the removal of these points ensures that each column contains at most
+%  one point of $Q_i$
+%
+%  \begin{figure}
+%    \begin{center}\includegraphics{figs/nested-bat-david}\end{center}
+%    \caption{The proof of \thmref{nested-bat-david}. The leftmost point
+%      in each row of $Q_i$ kills an entire row (except possibly for two
+%      points in the leftmost column).}
+%    \figlabel{nested-bat-david}
+%  \end{figure}
+%
+%  Now we let $S=\bigcup_{i=1}^n Q_i$.  We claim that $S$ fulfills the
+%  requirements of \lemref{forbidden}.  To see why this is so, note that
+%  if two points $a$ and $b$ of $S$ are in the same column then they
+%  must have been played in different rounds.  Assume $b$ is above $a$,
+%  which implies that $b$ was played in a later round than $a$.  Then, if
+%  there is some point $c$ to the right of $b$, then $c$ must have been played
+%  during the same round as $b$ or later.  But this implies that $c$ was
+%  played in a later round than $a$, which is not possible, since $c$ is in
+%  $a$'s $\david$-region.  Therefore, by \lemref{forbidden}, $|S|\le 2n$.
+%
+%  All that remains is to account for points in $S$ that are played
+%  multiple times.  In each $Q_i$ there are at most two points that can
+%  be played in subsequent rounds; the topmost point in the leftmost
+%  column and the rightmost point in the bottom-most row.  We charge each
+%  occurrence of such repeated points to the rounds in which they are
+%  the topmost point in the leftmost column and/or the rightmost point
+%  in the bottommost row.  In this way, each round is charged for at
+%  most two such points and the total contribution of these points to
+%  $\sum_{i=1}^n |Q_i|$ is at most $2n$.
+%
+%  In total, we obtain an upper bound of $7n$ on $\sum_{i=1}^n |Q_i|$.
+%\end{proof}
+%
 
 
 
@@ -1220,19 +1266,6 @@ we set $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y
    set $Q_2=Q_3=\cdots Q_n=\emptyset$.
 \end{proof}
 
-\begin{thm}\thmlabel{nested-ears-david}
-  $\ex(n,\{\nested,\ears,\david\}) \in \Theta(n^2)$.
-\end{thm}
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-17}
-   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-4}
-\end{center}
-
-
-\begin{proof}
-   Keep taking the bottom row.
-\end{proof}
-
 \begin{thm}\thmlabel{david-nested-crossing}
   $\ex(n,\{\david,\nested,\crossing\}) \in \Theta(n^2)$.
 \end{thm}
@@ -1243,8 +1276,26 @@ we set $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y
 
 
 \begin{proof}
-   We repeatedly take every second point on the diagonal $y=x+1$.
+   We repeatedly take every second point on the diagonal $y=x-1$.
 \end{proof}
+
+
+\begin{thm}\thmlabel{nested-bat-david}
+  $\ex'(n,\{\nested,\bat,\david\})\in O(n)$.
+\end{thm}
+
+
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-12}
+   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-7}
+\end{center}
+
+\begin{proof}
+   We repeatedly take every second point on the diagonal $y=x-1$.
+\end{proof}
+
+
+
 
 \begin{thm}\thmlabel{bat-nested-ears}
   $\ex(n,\{\bat,\nested,\ears\}) \in \Theta(n^2)$.

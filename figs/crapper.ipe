@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
-<ipe version="70005" creator="Ipe 7.1.4">
-<info created="D:20151120151800" modified="D:20151124141028"/>
+<ipe version="70206" creator="Ipe 7.2.7">
+<info created="D:20151120151800" modified="D:20170531100955"/>
 <preamble>\usepackage{kpfonts}</preamble>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
@@ -783,7 +783,7 @@ h
 h
 </path>
 </group>
-<text layer="beta" matrix="1 0 0 1 60 -59.2" transformations="translations" pos="192 576" stroke="black" type="label" width="5.45" height="4.563" depth="2.71" halign="center" valign="center">$y$</text>
-<text matrix="1 0 0 1 135.6 17.8" transformations="translations" pos="192 576" stroke="black" type="label" width="5.28" height="4.57" depth="0.07" halign="center" valign="center">$x$</text>
+<text layer="beta" matrix="1 0 0 1 73 -59.2" transformations="translations" pos="192 576" stroke="black" type="label" width="5.45" height="4.563" depth="2.71" halign="center" valign="center" style="math">y</text>
+<text matrix="1 0 0 1 135.6 6.8" transformations="translations" pos="192 576" stroke="black" type="label" width="5.28" height="4.57" depth="0.07" halign="center" valign="center" style="math">x</text>
 </page>
 </ipe>

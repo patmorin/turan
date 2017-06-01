@@ -83,13 +83,15 @@ and Luís Fernando Schultz Xavier da Silveira  }
 \section{Introduction}
 \pagenumbering{arabic}
 
-Let $t_1$ and $t_2$ be a pair of distinct triangles whose (4 to 6) vertices
-are in convex position.  There are 8 combinatorially distinct ways that
-these triangles can interact:  2 ways in which the triangles can share
-an edge (\taco\ and \mariposa), 3 ways in which the triangles can share a
-single vertex (\bat, \nested, and \crossing), and 3 ways in which
-the triangles can have no vertices in common (\ears, \swords,
-and \david).  Because it is difficult to keep track of nameless entities, we assign a mnemonic to each configuration:
+Let $t_1$ and $t_2$ be a pair of distinct triangles whose (4 to 6)
+vertices are in convex position.  There are 8 combinatorially distinct
+ways that these triangles can interact:  2 ways in which the triangles
+can share an edge (\taco\ and \mariposa), 3 ways in which the triangles
+can share a single vertex (\bat, \nested, and \crossing), and 3 ways
+in which the triangles can have no vertices in common (\ears, \swords,
+and \david).  Because it is difficult to keep track of nameless entities,
+we assign a mnemonic to each configuration (though the reader is encourage
+to choose their own):
 
 \begin{center}
   \begin{tabular}{|c|c|c|c|c|c|c|c|c}\hline
@@ -120,9 +122,9 @@ have been previously studied.  Bra\ss, Rote, and Swanepoel used bounds on
 the set $X=\{\ears,\swords,\bat,\nested\}$ to solve an Erd\H{o}s problem
 on the maximum number of maximum area/perimeter triangles determined
 by a point set. Bra\ss\ \cite{brass:turan} later began a systematic
-study in which he gave tight bounds for all singleton $X$ and all
-pairs of configurations in which two triangles share a single vertex.
-These previous results are listed in \tabref{previous}.
+study in which he gave asymptotically tight bounds on $\ex(n,X)$ for all
+singleton $X$ and all pairs $X$ of configurations in which two triangles share
+a single vertex.  These previous results are listed in \tabref{previous}.
 
 \begin{table}
 \begin{center}
@@ -415,7 +417,7 @@ vertices are labelled $1,\ldots,n$ from right to left.
 
 Of course, the constraints on which points can be selected during
 round $i$ depend on the set of forbidden configurations and the set
-$\bigcup_{j=1}^{i-1} Q_i$ of points played during previous rounds.
+$\bigcup_{j=1}^{i-1} Q_j$ of points played during previous rounds.
 By proving bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on the maximum
 number of triangles obtained in the top-bottom view on a set of $2n$
 points, i.e., bounds on $\ex'(2n, X)$.
@@ -424,7 +426,7 @@ points, i.e., bounds on $\ex'(2n, X)$.
 placed during a single round.  It is interpreted as follows:  If the
 central point, $p=(x,y)$, is placed during round $i$, and we wish to
 avoid some particular configuration, $c$, then we should not place any
-points in the parts of the figure that are have label $c$.  For instance,
+points in the parts of the figure that have label $c$.  For instance,
 if we wish to avoid the $c=\taco$ configuration, then we
 should not place any points in the same row or column as $p$; such a point
 creates a $\taco$ configuration in which the shared edge
@@ -481,7 +483,7 @@ a $\nested$ configuration in which the shared vertex is the left vertex
 %           $\{\}$ \\
 %\end{tabular}
 %\end{center}
-%   \caption{The restrictions placed on the dot puzzle when for each of 
+%   \caption{The restrictions placed on the dot-puzzle when for each of 
 %     the forbidden subconfigurations.}
 %   \tablabel{forbidden}
 %\end{table}
@@ -515,12 +517,11 @@ $Q$ that can still be played in the dot-puzzle game if the points is $S$
 have been played in previous rounds.
 
 
-
 \subsection{Some Warm-Up Exercises}
 
-For the remainder of the paper, we will study $\ex'$ using the dot-puzzle
-view. Thus, all of our results are bounds on solutions to these dot
-puzzles.
+For the remainder of the paper, we will study $\ex'$ using the
+dot-puzzle view. Thus, all of our results are bounds on solutions to
+these dot-puzzles.
 
 We say that a point set is \emph{non-decreasing} (respectively,
 non-increasing) if, when sorted lexicographically, the $y$ coordinates of
@@ -536,7 +537,7 @@ O(n^2)$.  For the game defined by $X=\{\nested\}$, we have the rules:
   \includegraphics[height=3cm]{figs/helper-3}
 \end{center}
 In particular, these rules imply that points selected during a
-single round of the dot puzzle must be non-decreasing, and thus
+single round of the dot-puzzle must be non-decreasing, and thus
 at most $2n-3$ points can be selected take part in $Q_i$.  Thus
 $\sum_{j=1}^{n}|Q_i| \le 2n^2-3n$, so $\ex'(n,\{\nested\})\in O(n^2)$
 and the bound $\ex(n,\{\nested\})\in O(n^2)$ immediately follows from
@@ -1223,7 +1224,7 @@ caused by $\bat$ and $\ears$ do not affect the lower-right quadrant.
 
 Finally, we clean up with some $\Omega(n^2)$ lower bound constructions.
 In each case, a matching upper bound follows from one of the results in
-Bra\ss \cite{brass:turan}.  The following is essential ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot-puzzle.
+Bra\ss \cite{brass:turan}.  The following are essentialy ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot-puzzle.
 
 \begin{thm}\thmlabel{taco-david-bat-ears}
 $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
@@ -1236,7 +1237,7 @@ $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
 
 \begin{proof}
 For each $i\in\{1,\ldots,n/2\}$, we
-we set $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i\}$.
+we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i\}$.
 \end{proof}
 
 \begin{thm}\thmlabel{swords-bat-ears-david}
@@ -1249,7 +1250,7 @@ we set $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y
 
 
 \begin{proof}
-   We set $Q_1=\{(x,y)\in Q: x>n/2, y<n/2\}$ and
+   We take $Q_1=\{(x,y)\in Q: x>n/2, y<n/2\}$ and
    set $Q_2=Q_3=\cdots Q_n=\emptyset$.
 \end{proof}
 
@@ -1263,7 +1264,8 @@ we set $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y
 
 
 \begin{proof}
-   We repeatedly take every second point on the diagonal $y=x-1$.
+   We repeatedly take every second point on the diagonal $y=x-1$, i.e.,
+   for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2i-1,2(i-2): i\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
 \end{proof}
 
 
@@ -1278,7 +1280,8 @@ we set $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y
 \end{center}
 
 \begin{proof}
-   We repeatedly take every second point on the diagonal $y=x-1$.
+   We repeatedly take every second point on the diagonal $y=x-1$, i.e.,
+   for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j-1,2(j-2): j\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
 \end{proof}
 
 
@@ -1294,7 +1297,8 @@ we set $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y
 
 
 \begin{proof}
-   We repeatedly take points on the diagonal of the lower-right quadrant.
+   We repeatedly take points on the diagonal of the lower-right quadrant,
+   i.e., for each $i\in\{1,\ldots,n\}$, we take $Q_i=\{(\lfloor n/2\rfloor+i,i): i\in\{1,\ldots,\lceil n/2\rceil \}$.
 \end{proof}
 
 \section*{Acknowledgement}

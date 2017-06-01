@@ -193,7 +193,8 @@ if __name__ == "__main__":
     upper_bounds[pack(taco, nested, crossing)] = 1
     upper_bounds[pack(nested, crossing, ears)] = 1
     upper_bounds[pack(taco, nested, david)] = 1
-    # upper_bounds[pack(nested, bat, david)] = 1  # this turned to be false
+    upper_bounds[pack(nested, ears, david)] = 1 # (2)
+    # upper_bounds[pack(nested, bat, david)] = 1  # false, replaced by (1)
 
     # Upper bounds based on tripod packing
     lower_bounds[pack(taco, nested, bat, ears)] = 1.546  # Gowers and Long
@@ -203,9 +204,9 @@ if __name__ == "__main__":
     lower_bounds[pack(ears, bat, mariposa)] = 3
     lower_bounds[pack(taco, david, crossing, bat, ears)] = 2
     lower_bounds[pack(swords, bat, ears, david)] = 2
-    lower_bounds[pack(nested, ears, david)] = 2
+    # lower_bounds[pack(nested, ears, david)] = 2 # incorrect, replaced by (2)
     lower_bounds[pack(david, nested, crossing)] = 2
-    lower_bounds[pack(nested, bat, david)] = 2  # this turned to be false
+    lower_bounds[pack(nested, bat, david)] = 2  # (1)
     lower_bounds[pack(bat, nested, ears)] = 2
 
     close_bounds(upper_bounds, lower_bounds)

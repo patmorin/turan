@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170531160246" modified="D:20170531160246"/>
+<info created="D:20170531160246" modified="D:20170601051359"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -220,13 +220,13 @@ h
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
 <dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
 <textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
 <textsize name="Large" value="\Large"/>
 <textsize name="LARGE" value="\LARGE"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="Huge" value="\Huge"/>
-<textsize name="small" value="\small"/>
 <textsize name="footnote" value="\footnotesize"/>
-<textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
 <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
 <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
@@ -280,20 +280,22 @@ h
 </path>
 <use name="mark/disk(sx)" pos="224 528" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="304 624" size="normal" stroke="black"/>
-<text transformations="translations" pos="208 528" stroke="black" type="label" width="5.266" height="4.289" depth="0" valign="baseline" style="math">a</text>
-<text transformations="translations" pos="224 640" stroke="black" type="label" width="4.276" height="6.918" depth="0" valign="baseline" style="math">b</text>
-<text transformations="translations" pos="304 640" stroke="black" type="label" width="4.311" height="4.289" depth="0" valign="baseline" style="math">c</text>
+<text matrix="1 0 0 1 9 -2.1445" transformations="translations" pos="208 528" stroke="black" type="label" width="5.266" height="4.289" depth="0" halign="right" valign="baseline" style="math">a</text>
+<text matrix="1 0 0 1 0 -7" transformations="translations" pos="224 640" stroke="black" type="label" width="4.276" height="6.918" depth="0" halign="center" valign="baseline" style="math">b</text>
+<text matrix="1 0 0 1 0 -7" transformations="translations" pos="304 640" stroke="black" type="label" width="4.311" height="4.289" depth="0" halign="center" valign="baseline" style="math">c</text>
 <path stroke="black">
 228 656 m
 228 532 l
 340 532 l
 </path>
+<text matrix="1 0 0 1 -60 -7" transformations="translations" pos="224 640" stroke="black" type="label" width="7.071" height="7.49" depth="0" halign="center" valign="baseline" style="math">b&apos;</text>
 <path stroke="black" fill="brew4">
-192 628 m
+140 628 m
 300 628 l
 300 620 l
-192 620 l
+140 620 l
 </path>
 <use name="mark/disk(sx)" pos="224 624" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -60 0" name="mark/disk(sx)" pos="224 624" size="normal" stroke="black"/>
 </page>
 </ipe>

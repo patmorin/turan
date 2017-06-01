@@ -975,22 +975,29 @@ of points:
 \end{center}
 
 \begin{proof}
-   Let $S=\bigcup_{i=1}^n Q_i$.  We will show that, for each
+   Let $S=\bigcup_{i=1}^n Q_i$.  We will first show that, for each
    $i\in\{1,\ldots,n\}$, there are at most two points of $Q_i$
    that appear in $Q_{i+1},\ldots,Q_n$.  Refer to \figref{nested-ears-david}. 
    Define
    \[
         Q_i^* = \{ (x,y)\in Q_1 : x\ge\ymax(Q_1) \} \enspace 
    \]
-   and let $p$ be the top rightmost point in $Q_i^*$, let $q$ be the
-   highest point of $Q_i^*$ with $\x(q)=\xmin(Q_i^*)$, and let $r$ be the
-   lowest point of $Q_i^*$ with $\x(q)=\xmin(Q_i^*)$.  Now, observe that
+   and let $p$ and $r$ be the top rightmost and bottom leftmost points
+   in $Q_i^*$, respectively.  If there is more than one point in $Q_i^*$
+   (as in \figref{nested-ears-david}.a) with $x$-coordinate $\x(r)$
+   then we define $q$ to be the highest such point.  Otherwise
+   (as in \figref{nested-ears-david}.b), we define $q$ to be the
+   rightmost point with $y$-coordinate $\y(r)$.  Now, observe that
    $\killed(\{\nested,\ears,\david\}, \{p,q,r\}) \supseteq Q_i\setminus
-   \{p,q\}$, so $p$ and $q$ are the only points of $Q_i$ that can appear again
-   in $Q_{i+1},\ldots,Q_n$.
+   \{p,q\}$, so $p$ and $q$ are the only points of $Q_i$ that can appear
+   again in $Q_{i+1},\ldots,Q_n$.
    \begin{figure}
      \begin{center}
-       \includegraphics{figs/nested-ears-david}
+       \begin{tabular}{cc}
+         \includegraphics{figs/nested-ears-david-1} &
+         \includegraphics{figs/nested-ears-david-2} \\
+         (a) & (b)
+       \end{tabular}
      \end{center}
      \caption{A step in the proof of \thmref{nested-ears-david}.}
      \figlabel{nested-ears-david}
@@ -1001,19 +1008,28 @@ of points:
    that $\sum_{i=1}^n |Q_i| \le |S|+2n$.   All that remains now is to
    bound $|S|$.
 
-   For each $i\in \{1,\ldots,n\}$, let $Q_i'$ be obtained from $Q_i$ by
-   removing the leftmost point in each row.  Let $S'=\bigcup_{i=1}^n
-   Q_i'$.  We claim that $S'$ satisfies the conditions of
-   \lemref{forbidden}, so that $|S'|\le 2n$.  To see why this is so,
-   suppose that $S'$ contains three points $a\in Q_i'$, $b\in Q_j'$,
-   $c\in Q_k'$ satisfying the conditions of \lemref{forbidden}.
-   Then the rules for $\nested$ and $\david$ imply that 
+   For each $i\in \{1,\ldots,n\}$, let $Q_i'$ be obtained
+   from $Q_i$ by removing the leftmost point in each row.
+   Let $S'=\bigcup_{i=1}^n Q_i'$.  We claim that $S'$ satisfies the
+   conditions of \lemref{forbidden}, so that $|S'|\le 2n$.  To see why this is so, suppose that
+   $S'$ contains three points $a\in Q_i'$, $b\in Q_j'$, $c\in Q_k'$
+   satisfying the conditions of \lemref{forbidden}.  Then the rules for
+   $\nested$ and $\david$ imply that
    \[
         i \le j \le k \le i
    \]
+   (see \figref{nested-ears-david-ii})  
    so we must have $i=j=k$.  However, this contradicts the fact (due to
-   $\nested$) that $Q_j$ is non-decreasing since the leftmost point of $Q_j$ 
+   $\nested$) that $Q_j$ is non-decreasing since the leftmost point, $b'$, of $Q_j$ 
    in the same row as $b$ is to the left of $b$.
+
+   \begin{figure}
+     \begin{center}
+       \includegraphics{figs/nested-ears-david-ii} 
+     \end{center}
+     \caption{Another step in the proof of \thmref{nested-ears-david}.}
+     \figlabel{nested-ears-david-ii}
+   \end{figure}
 
    Therefore, $|S'|\le 2n$.   Now let $S''=S\setminus S'$.  Then we
    claim that $S''$ also satisfies the conditions of \lemref{forbidden}.

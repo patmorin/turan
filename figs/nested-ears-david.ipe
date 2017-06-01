@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170531154800" modified="D:20170531155000"/>
+<info created="D:20170531154800" modified="D:20170601045801"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -220,13 +220,13 @@ h
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
 <dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
 <textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
 <textsize name="Large" value="\Large"/>
 <textsize name="LARGE" value="\LARGE"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="Huge" value="\Huge"/>
-<textsize name="small" value="\small"/>
 <textsize name="footnote" value="\footnotesize"/>
-<textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
 <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
 <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
@@ -275,7 +275,10 @@ h
 </ipestyle>
 <page>
 <layer name="alpha"/>
-<view layers="alpha" active="alpha"/>
+<layer name="beta"/>
+<layer name="gamma"/>
+<view layers="alpha beta" active="alpha"/>
+<view layers="alpha gamma" active="gamma"/>
 <path layer="alpha" stroke="black" fill="brew4">
 300 756 m
 300 748 l
@@ -283,14 +286,14 @@ h
 248 756 l
 h
 </path>
-<path stroke="black" fill="brew4">
+<path layer="beta" stroke="black" fill="brew4">
 240 716 m
 248 716 l
 248 640 l
 240 640 l
 h
 </path>
-<path stroke="black" fill="brew8">
+<path layer="alpha" stroke="black" fill="brew8">
 248 680 m
 248 748 l
 320 748 l
@@ -310,21 +313,20 @@ h
 132 640 l
 h
 </path>
-<use name="mark/disk(sx)" pos="244 676" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="244 700" size="normal" stroke="black"/>
+<use layer="beta" name="mark/disk(sx)" pos="244 700" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="244 720" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="260 724" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="272 724" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="296 752" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="280 732" size="normal" stroke="black"/>
+<use layer="alpha" name="mark/disk(sx)" pos="296 752" size="normal" stroke="black"/>
+<use layer="beta" name="mark/disk(sx)" pos="280 732" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="280 740" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="232 668" size="normal" stroke="black"/>
+<use layer="alpha" name="mark/disk(sx)" pos="232 668" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="224 660" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="212 656" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="200 656" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="184 656" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="172 652" size="normal" stroke="black"/>
-<text matrix="1 0 0 1 -5 -1" transformations="translations" pos="312 756" stroke="black" type="label" width="5.012" height="4.297" depth="1.93" valign="baseline" style="math">p</text>
+<text matrix="1 0 0 1 -5 -5" transformations="translations" pos="312 756" stroke="black" type="label" width="5.012" height="4.297" depth="1.93" valign="baseline" style="math">p</text>
 <path stroke="black">
 236 764 m
 236 636 l
@@ -332,8 +334,25 @@ h
 324 764 l
 h
 </path>
-<text matrix="1 0 0 1 40 -105.137" transformations="translations" pos="240 768" stroke="black" type="label" width="12.456" height="6.863" depth="2.59" halign="center" valign="baseline" style="math">Q_i^*</text>
-<text matrix="1 0 0 1 -2 -3" transformations="translations" pos="244 728" stroke="black" type="label" width="4.805" height="4.297" depth="1.93" valign="baseline" style="math">q</text>
-<text matrix="1 0 0 1 -2 1" transformations="translations" pos="252 672" stroke="black" type="label" width="4.771" height="4.289" depth="0" valign="baseline" style="math">r</text>
+<text matrix="1 0 0 1 40 -109.137" transformations="translations" pos="240 768" stroke="black" type="label" width="12.456" height="6.863" depth="2.59" halign="center" valign="baseline" style="math">Q_i^*</text>
+<text layer="beta" matrix="1 0 0 1 -2 -3" transformations="translations" pos="244 728" stroke="black" type="label" width="4.805" height="4.297" depth="1.93" valign="baseline" style="math">q</text>
+<use layer="gamma" name="mark/disk(sx)" pos="272 676" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="276 704" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="280 712" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="284 724" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="284 736" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="284 752" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 692" size="normal" stroke="black"/>
+<text matrix="1 0 0 1 -1 -2" transformations="translations" pos="276 676" stroke="black" type="label" width="4.805" height="4.297" depth="1.93" valign="baseline" style="math">q</text>
+<path stroke="black" fill="brew4">
+268 680 m
+268 672 l
+172 672 l
+172 680 l
+h
+</path>
+<use layer="alpha" name="mark/disk(sx)" pos="244 676" size="normal" stroke="black"/>
+<use layer="gamma" name="mark/disk(sx)" pos="256 676" size="normal" stroke="black"/>
+<text layer="alpha" matrix="1 0 0 1 -8 0" transformations="translations" pos="252 672" stroke="black" type="label" width="4.771" height="4.289" depth="0" halign="center" valign="top" style="math">r</text>
 </page>
 </ipe>

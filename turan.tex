@@ -127,7 +127,7 @@ singleton $X$ and all pairs $X$ of configurations in which two triangles share
 a single vertex.  These previous results are listed in \tabref{previous}.
 
 \begin{table}
-\begin{center}
+\centering{
 \begin{tabular}{m{.55\textwidth}m{.4\textwidth}}
   \hline
   \textbf{Result} & \textbf{Ref.} \\ \hline\hline
@@ -154,7 +154,7 @@ a single vertex.  These previous results are listed in \tabref{previous}.
   $\ex(n,\{\taco,\mariposa\}) \in \Theta(n^2)$ \newline 
   $\ex(n,\{\ears,\swords,\david\}) \in \Theta(n^2)$ & from hypergraphs \\ \hline
   \end{tabular}
-\end{center}
+}
 \caption{Known results on $\ex(n,X)$ for different sets $X$.}
 \tablabel{previous}
 \end{table}
@@ -172,9 +172,9 @@ the table since a simple argument (\lemref{xcup}) shows that its inclusion
 in $X$ does not change $\ex(n,X)$ by more than a constant factor.
 
 \begin{table}
-  \begin{center}
+  \centering{
     \input{oldbounds.tex}
-  \end{center}
+  }
   \caption{Old bounds for $\ex(n,X)$.}
   \tablabel{smalltable}
 \end{table}
@@ -231,9 +231,9 @@ matrices, tripod packing, and 2-comparable triples. We discuss this
 problem and its rich history in \secref{tripods}.  
 
 \begin{table}
-  \begin{center}
+  \centering{
     \input{bounds.tex}
-  \end{center}
+  }
   \caption{New and previous bounds for $\ex(n,X)$, up to a factor of $\log n$.
   For the new bounds listed as $n$, the lower bound is $\Omega(n)$ and the upper bound is $O(n\log n)$.  For the bounds listed as $n^{1.546}:n^2$, the upper bound is actually $n^2/e^{\Omega(\log^* n)}$.}
   \tablabel{bigtable}
@@ -342,9 +342,9 @@ When studying $\ex'$, each triangle we count has a naturally defined
 \emph{right vertex}, each in the top half.
 
 \begin{figure}
-  \begin{center}
+  \centering{
     \includegraphics{figs/left-right}
-  \end{center}
+  }
   \caption{$\ex'$ only counts triangles with two vertices in the top half
      and one vertex in the bottom half.}
   \figlabel{top-bottom}
@@ -400,9 +400,9 @@ the bottom and the $x$th and $y$th points on the top, where the top
 vertices are labelled $1,\ldots,n$ from left to right.
 
 \begin{figure}
-   \begin{center}
+   \centering{
       \includegraphics{figs/point-view}
-   \end{center}
+   }
    \caption{The Dot Puzzle View of the Top/Bottom View. In this example,
      four rounds of the Dot Puzzle have been played.}
    \figlabel{point-view}
@@ -490,18 +490,17 @@ a $\nested$ configuration in which the shared vertex is the left vertex
 %
 
 \begin{figure}
-   \begin{center}
+   \centering{
       \newlength{\ka}
       \setlength{\ka}{\textwidth}
-      \addtolength{\ka}{-1cm}
       \begin{tabular}{c@{\hspace{1cm}}c}
-        \includegraphics[width=.48\ka]{figs/crapper-2} & 
-        \includegraphics[width=.48\ka]{figs/crapper-1} \\
-        \includegraphics[width=.48\ka]{figs/partition-1} &
-        \includegraphics[width=.48\ka]{figs/partition-2} \\
+        \includegraphics{figs/crapper-2} & 
+        \includegraphics{figs/crapper-1} \\[1em]
+        \includegraphics{figs/partition-1} &
+        \includegraphics{figs/partition-2} \\
         (a) & (b)
       \end{tabular}
-   \end{center}
+   }
    \caption{The regions killed by forbidden configurations during (a)~the current round and (b)~subsequent rounds.}
    \figlabel{forbidden-color}
 \end{figure}
@@ -532,10 +531,8 @@ are distinct.
 
 From \figref{forbidden-color}, some previous upper bounds naturally fall
 out.  Consider Bra\ss's results \cite{brass:turan} that $\ex(\nested)\in
-O(n^2)$.  For the game defined by $X=\{\nested\}$, we have the rules:
-\begin{center}
-  \includegraphics[height=3cm]{figs/helper-3}
-\end{center}
+O(n^2)$.  For the game defined by $X=\{\nested\}$, we have the rules:\\
+\centerline{\includegraphics[height=3cm]{figs/helper-3}}
 In particular, these rules imply that points selected during a
 single round of the dot puzzle must be non-decreasing, and thus
 at most $2n-3$ points can be selected take part in $Q_i$.  Thus
@@ -545,10 +542,8 @@ and the bound $\ex(n,\{\nested\})\in O(n^2)$ immediately follows from
 
 Similarly, we can almost recover the result of Bra\ss, Rote and
 Swanepoel \cite{brass.rote.ea:triangles} on $\ex(\ears, \swords,
-\bat,\nested)$.  Here, the rules are:
-\begin{center}
-  \includegraphics[height=3cm]{figs/helper-2} 
-\end{center}
+\bat,\nested)$.  Here, the rules are:\\
+\centerline{\includegraphics[height=3cm]{figs/helper-2}}
 The rule for $\nested$
 ensures that the set of points taken during a single round form
 a non-decreasing point set.  The rules for points allowed in subsequent rounds
@@ -615,9 +610,9 @@ $\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
   is an increasing set of points.
 
   \begin{figure}[hbtp]
-    \begin{center}
+    \centering{
        \includegraphics{figs/nested-crossing-ears-i}
-    \end{center}
+    }
     \caption{A step in the proof of \thmref{nested-crossing-ears}.}
     \figlabel{nested-crossing-ears-i}
   \end{figure}
@@ -638,16 +633,16 @@ $\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
   $\sum_{i=1}^n (|Q_i|-2) \le |S| \le n$,
   so $\sum_{i=1}^n |Q_i| \le 3n$.
   \begin{figure}[hbtp]
-    \begin{center}
+    \centering{
        \includegraphics{figs/nested-crossing-ears}
-    \end{center}
+    }
     \caption{Another step in the proof of \thmref{nested-crossing-ears}.}
     \figlabel{nested-crossing-ears}
   \end{figure}
 \end{proof}
 
 
-Our next two upper bounds depend on a simple lemma about forbidden
+Our next three upper bounds depend on a simple lemma about forbidden
 configurations of points:
 
 \begin{lem}\lemlabel{forbidden}
@@ -686,13 +681,51 @@ configurations of points:
   is a contradiction since the rule for $\taco$ implies $i\neq j$ (and
   $j\neq k)$.  Applying \lemref{forbidden} then implies that $|S|\le 2n$.
   \begin{figure}[hbtp]
-    \begin{center}
+    \centering{
       \includegraphics{figs/forbidden}
-    \end{center}
+    }
     \caption{The proof of \thmref{taco-nested-david}}
     \figlabel{forbidden}
   \end{figure}
 \end{proof}
+
+
+
+\begin{thm}\thmlabel{crossing-swords}
+  $\ex'(n,\{\crossing,\swords\}) \in O(n)$.
+\end{thm}
+
+\begin{proof}
+  \centerline{\includegraphics[height=3cm]{figs/helper-8}}
+  Let $S=\bigcup_{i=1}^n Q_i$. We claim that $S$ satisfies the conditions
+  of \lemref{forbidden}, so $|S|\le 2n$.  To see this, assume $S$
+  contains a configuration of three points $a$, $b$, and $c$ like
+  that described in \lemref{forbidden}. Then the rules for $\crossing$
+  imply that no set $Q_i$ contains both $a$ and $c$.  However,
+  the rules for $\swords$ and $\crossing$ imply that, if $a\in Q_i$,
+  $b\in Q_j$ and $c\in Q_k$ then \[  i \ge j \ge k \ge i \enspace . \]
+  (See \figref{crossing-swords}).
+  But this is a contradiction, since it implies that $i=j=k$.
+
+  \begin{figure}[htbp]
+    \centering{
+      \includegraphics{figs/crossing-swords} 
+    }
+    \caption{The proof of \thmref{crossing-swords}.}
+    \figlabel{crossing-swords}
+  \end{figure}
+
+  Now, for some $Q_i$, consider a point $p$ with $\x(p)=\xmin(Q_i)$ and,
+  in case more than one such point exists, take the the one that minimizes
+  $\y(p)$.  Now, observe that $\killed(\{\crossing,\swords\},\{p\})
+  \supseteq Q_i\setminus\{p\}$.  Indeed, every point directly above
+  or the the right of $p$ is killed by $p$ or cannot be included in
+  $Q_i$ because of the rule for $\crossing$.  Therefore, each point in
+  $Q_i$ eliminates at least $|Q_i|-1$ points of $S$. It follows that
+  $\sum_{i=1}^n |Q_i| \le |S|+n \le 3n$.
+\end{proof}
+
+
 
 \begin{thm}\thmlabel{nested-ears-david}
   $\ex(n,\{\nested,\ears,\david\}) \in O(n)$.
@@ -717,13 +750,13 @@ configurations of points:
    \{p,q\}$, so $p$ and $q$ are the only points of $Q_i$ that can appear
    again in $Q_{i+1},\ldots,Q_n$.
    \begin{figure}
-     \begin{center}
+     \centering{
        \begin{tabular}{cc}
          \includegraphics{figs/nested-ears-david-1} &
          \includegraphics{figs/nested-ears-david-2} \\
          (a) & (b)
        \end{tabular}
-     \end{center}
+     }
      \caption{A step in the proof of \thmref{nested-ears-david}.}
      \figlabel{nested-ears-david}
    \end{figure}
@@ -746,9 +779,9 @@ configurations of points:
    (see \figref{nested-ears-david-ii}).
 
    \begin{figure}
-     \begin{center}
+     \centering{
        \includegraphics{figs/nested-ears-david-ii} 
-     \end{center}
+     }
      \caption{Another step in the proof of \thmref{nested-ears-david}.}
      \figlabel{nested-ears-david-ii}
    \end{figure}
@@ -775,10 +808,8 @@ X\})$ for any $X$.
 
 For a point $q\in Q$, $\killed(\{\swords\}, \{q\})$ is a fairly large
 region consisting (roughly) of three quadrants surrounding $q$ and
-an additional triangular region:  
-\begin{center}
-  \includegraphics[height=3cm]{figs/swords-kappa}
-\end{center}
+an additional triangular region:\\
+\centerline{\includegraphics[height=3cm]{figs/swords-kappa}}
 However, $\killed(\{\swords\}, \{q\})$
 has a fairly complicated shape, so much of the work in this section is
 devoted to understanding, approximately, how $\killed(\{\swords\},S)$
@@ -812,9 +843,9 @@ n$, $\ymax(\emptyset)=0$, and
 \end{lem}
 
 \begin{figure}
-  \begin{center}
+  \centering{
     \includegraphics{figs/swords}
-  \end{center}
+  }
   \caption{An illustration of \lemref{swords-region}.}
   \figlabel{survivors}
 \end{figure}
@@ -986,9 +1017,9 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
    \survivors(S_i)$ and $H^{\min}_j\cap\survivors(S_j)$ have no
    $x$-coordinates in common (see \figref{swords-nested-vi}).
    \begin{figure}
-      \begin{center}
+      \centering{
         \includegraphics{figs/swords-nested-hmin}
-      \end{center}
+      }
       \caption{Counting points on $H^{\min}_1,\ldots,H^{\min}_{n-1}$.}
       \figlabel{swords-nested-vi}
    \end{figure}
@@ -1035,33 +1066,11 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
 \end{proof}
 
 
-\begin{thm}\thmlabel{crossing-swords}
-  $\ex'(n,\{\crossing,\swords\}) \in O(n)$.
-\end{thm}
-
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-8}
-\end{center}
-
-\begin{proof}
-  TODO: Expand this a little.
-  The rules for $\crossing$ imply that the points in each $Q_i$ can be
-  partitioned into groups $Q_{i,1},\ldots,Q_{i,\ell}$ where the elements
-  in $Q_i$ are non-increasing and the elements in $Q_{i,j}$ and $Q_{i,j+1}$
-  share at most one $x$- or $y$-coordinate.  With this observation, the
-  rest of the proof is similar to the proof of \thmref{nested-swords}.
-\end{proof}
-
-
 \subsection{Monotone Matrices, Tripod Packing, and 2-Comparable Sets}
 \seclabel{tripods}
 
-In this section, we discuss $\ex(n,\{\taco,\nested\})$.
-
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-13}
-\end{center}
-
+In this section, we discuss $\ex(n,\{\taco,\nested\})$:\\
+\centerline{[height=3cm]{figs/helper-13}}
 Determining the asymptotics of $\ex(n,\{\taco,\nested\})$ was given
 explicitly as open problem in the conclusion of Bra\ss's paper.
 We spent more than a year work on this problem.  This work included
@@ -1076,9 +1085,9 @@ when played on the square grid, is equivalent to several other known
 problems. See \figref{tripods}.
 
 \begin{figure}
-  \begin{center}
+  \centering{
     \includegraphics{figs/tripods}
-  \end{center}
+  }
   \caption{The dot puzzle induced by excluding the taco and nested configurations
     has already been studied under several equivalent formulations.}
   \figlabel{tripods}
@@ -1189,10 +1198,8 @@ a few bibliographic notes:
 
 
 In our context, the only new observation we have pertains to
-$\ex'(n,\{\taco,\nested,\bat,\ears\})$.
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-14}
-\end{center}
+$\ex'(n,\{\taco,\nested,\bat,\ears\})$:\\
+\centerline{\includegraphics[height=3cm]{figs/helper-14}}
 We observe that $\ex'(n,\{\taco,\nested\})\in
 O(\ex'(n,\{\taco,\nested,\bat,\ears\})$ so these two functions
 therefore have the same asymptotic growth.  This comes from the
@@ -1217,12 +1224,11 @@ Bra\ss \cite{brass:turan}.  The following are essentialy ``proofs by figure'' in
 $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
 \end{thm}
 
-\begin{center}
+\begin{proof}
+\centerline{
    \includegraphics[height=3cm]{figs/helper-15}
    \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-2}
-\end{center}
-
-\begin{proof}
+}
 For each $i\in\{1,\ldots,n/2\}$, we
 we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i\}$.
 \end{proof}
@@ -1230,13 +1236,14 @@ we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,
 \begin{thm}\thmlabel{swords-bat-ears-david}
   $\ex(n,\{\swords,\bat,\ears,\david\}) \in \Theta(n^2)$.
 \end{thm}
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-16}
-   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-3}
-\end{center}
+
 
 
 \begin{proof}
+\centerline{
+   \includegraphics[height=3cm]{figs/helper-16}
+   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-3}
+}
    We take $Q_1=\{(x,y)\in Q: x>n/2, y<n/2\}$ and
    set $Q_2=Q_3=\cdots Q_n=\emptyset$.
 \end{proof}
@@ -1244,13 +1251,10 @@ we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,
 \begin{thm}\thmlabel{david-nested-crossing}
   $\ex(n,\{\david,\nested,\crossing\}) \in \Theta(n^2)$.
 \end{thm}
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-18}
-   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-5}
-\end{center}
-
 
 \begin{proof}
+   \centerline{\includegraphics[height=3cm]{figs/helper-18}
+   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-5}}
    We repeatedly take every second point on the diagonal $y=x-1$, i.e.,
    for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2i-1,2(i-2): i\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
 \end{proof}
@@ -1261,29 +1265,20 @@ we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,
 \end{thm}
 
 
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-12}
-   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-7}
-\end{center}
-
 \begin{proof}
+   \centerline{\includegraphics[height=3cm]{figs/helper-12}
+   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-7}}
    We repeatedly take every second point on the diagonal $y=x-1$, i.e.,
    for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j-1,2(j-2): j\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
 \end{proof}
 
-
-
-
 \begin{thm}\thmlabel{bat-nested-ears}
   $\ex(n,\{\bat,\nested,\ears\}) \in \Theta(n^2)$.
 \end{thm}
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-19}
-   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-6}
-\end{center}
-
 
 \begin{proof}
+   \centerline{\includegraphics[height=3cm]{figs/helper-19}
+   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-6}}
    We repeatedly take points on the diagonal of the lower-right quadrant,
    i.e., for each $i\in\{1,\ldots,n\}$, we take $Q_i=\{(\lfloor n/2\rfloor+i,i): i\in\{1,\ldots,\lceil n/2\rceil \}$.
 \end{proof}

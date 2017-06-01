@@ -383,7 +383,7 @@ losing much precision, we can also upper bound $\ex(n,X)$ by $\ex'(n,X)$.
 \end{proof}
 
 
-\subsection{The Dot-Puzzle View}
+\subsection{The Dot Puzzle View}
 
 The top-bottom version of the problem gives us a sense of orientation,
 but it is still difficult to visualize the sets of triangles obtained
@@ -403,12 +403,12 @@ vertices are labelled $1,\ldots,n$ from left to right.
    \begin{center}
       \includegraphics{figs/point-view}
    \end{center}
-   \caption{The Dot-Puzzle View of the Top/Bottom View. In this example,
-     four rounds of the Dot-Puzzle have been played.}
+   \caption{The Dot Puzzle View of the Top/Bottom View. In this example,
+     four rounds of the Dot Puzzle have been played.}
    \figlabel{point-view}
 \end{figure}
 
-The dot-puzzle proceeds in $n$ rounds and during the $i$th round, the
+The dot puzzle proceeds in $n$ rounds and during the $i$th round, the
 player selects a set $Q_i\subseteq Q$ subject to certain constraints
 that depend on the points selected in rounds $1,\ldots,i-1$.  In the
 top/bottom view, the $i$th round determines which pairs of top vertices
@@ -483,7 +483,7 @@ a $\nested$ configuration in which the shared vertex is the left vertex
 %           $\{\}$ \\
 %\end{tabular}
 %\end{center}
-%   \caption{The restrictions placed on the dot-puzzle when for each of 
+%   \caption{The restrictions placed on the dot puzzle when for each of 
 %     the forbidden subconfigurations.}
 %   \tablabel{forbidden}
 %\end{table}
@@ -509,19 +509,19 @@ a $\nested$ configuration in which the shared vertex is the left vertex
 For any
 $X\subset\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}$
 and any $S\subset Q$, we define $\killed(X,S)$ as the subset of $Q$ that
-can no longer be played in the dot-puzzle game (for configurations in
+can no longer be played in the dot puzzle game (for configurations in
 $X$) if the points is $S$ have been played in previous rounds (these are
 the points of $Q$ $\kappa$illed by $S$).  We use the complementary notation
 $\survivors(X,S)=Q\setminus\killed(X,S)$ to be the subset of points in
-$Q$ that can still be played in the dot-puzzle game if the points is $S$
+$Q$ that can still be played in the dot puzzle game if the points is $S$
 have been played in previous rounds.
 
 
 \subsection{Some Warm-Up Exercises}
 
 For the remainder of the paper, we will study $\ex'$ using the
-dot-puzzle view. Thus, all of our results are bounds on solutions to
-these dot-puzzles.
+dot puzzle view. Thus, all of our results are bounds on solutions to
+these dot puzzles.
 
 We say that a point set is \emph{non-decreasing} (respectively,
 non-increasing) if, when sorted lexicographically, the $y$-coordinates of
@@ -537,7 +537,7 @@ O(n^2)$.  For the game defined by $X=\{\nested\}$, we have the rules:
   \includegraphics[height=3cm]{figs/helper-3}
 \end{center}
 In particular, these rules imply that points selected during a
-single round of the dot-puzzle must be non-decreasing, and thus
+single round of the dot puzzle must be non-decreasing, and thus
 at most $2n-3$ points can be selected take part in $Q_i$.  Thus
 $\sum_{j=1}^{n}|Q_i| \le 2n^2-3n$, so $\ex'(n,\{\nested\})\in O(n^2)$
 and the bound $\ex(n,\{\nested\})\in O(n^2)$ immediately follows from
@@ -568,10 +568,10 @@ O(n\log n)$ then follows from \lemref{top-bottom}.
 \section{Results Based on Dot Puzzles}
 \seclabel{new-results}
 
-After this warm-up, and with the dot-puzzle view, we are ready to prove
+After this warm-up, and with the dot puzzle view, we are ready to prove
 some new results.  We begin by proving several linear upper bounds.
 From this point on, each proof of a theorem will begin with a picture,
-similar to \figref{forbidden-color} that shows the rules of the dot-puzzle
+similar to \figref{forbidden-color} that shows the rules of the dot puzzle
 considered by the theorem.  For a point $q\in Q$, we use the notations
 $\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
 
@@ -671,7 +671,7 @@ configurations of points:
 \begin{proof}
   \centerline{\includegraphics[height=3cm]{figs/helper-11}}
   Let $S=\bigcup_{i=1}^n Q_i$ be the set of points played in a solution
-  to the resulting dot-puzzle.  Note that, by the inclusion of $\taco$,
+  to the resulting dot puzzle.  Note that, by the inclusion of $\taco$,
   each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
   |Q_i|$ is the quantity we are interested in bounding.
 
@@ -836,7 +836,7 @@ n$, $\ymax(\emptyset)=0$, and
 \end{proof}
 
 We will be using \lemref{swords-region} to study the evolution of
-dot-puzzle involving $\swords$ over $n$ rounds.  We will apply it
+dot puzzle involving $\swords$ over $n$ rounds.  We will apply it
 with $S=\bigcup_{j=1}^i Q_j$ to study the evolution $T$ and $R$ as
 rounds proceed.  So that we can refer to these point sets as they
 change, we let $S_i=\bigcup_{j=1}^i Q_i$ and we define $A_i$, $B_i$,
@@ -942,7 +942,7 @@ but they require a little more care to bound the number of points that
 appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
 
 %\begin{lem}
-%  Let $Q_1,\ldots,Q_n$ be a solution to a dot-puzzle game that includes
+%  Let $Q_1,\ldots,Q_n$ be a solution to a dot puzzle game that includes
 %  the rules for $\swords$.  Then, $V_{i+1}$
 %  \begin{enumerate}
 %    \item $\xmin(S_{i+1}) \le \xmin(S_i)$;
@@ -1079,7 +1079,7 @@ problems. See \figref{tripods}.
   \begin{center}
     \includegraphics{figs/tripods}
   \end{center}
-  \caption{The dot-puzzle induced by excluding the taco and nested configurations
+  \caption{The dot puzzle induced by excluding the taco and nested configurations
     has already been studied under several equivalent formulations.}
   \figlabel{tripods}
 \end{figure}
@@ -1196,8 +1196,8 @@ $\ex'(n,\{\taco,\nested,\bat,\ears\})$.
 We observe that $\ex'(n,\{\taco,\nested\})\in
 O(\ex'(n,\{\taco,\nested,\bat,\ears\})$ so these two functions
 therefore have the same asymptotic growth.  This comes from the
-fact that a solution for the dot-puzzle of size $n$ resulting from
-$X=\{\taco,\nested\}$ can be used as a solution for the dot-puzzle of size
+fact that a solution for the dot puzzle of size $n$ resulting from
+$X=\{\taco,\nested\}$ can be used as a solution for the dot puzzle of size
 $2(n+1)$ resulting from $X=\{\taco,\nested,\bat,\ears\}$ by only playing
 in the lower-right quadrant.  When played this way, the extra restrictions
 caused by $\bat$ and $\ears$ do not affect the lower-right quadrant.
@@ -1211,7 +1211,7 @@ caused by $\bat$ and $\ears$ do not affect the lower-right quadrant.
 
 Finally, we clean up with some $\Omega(n^2)$ lower bound constructions.
 In each case, a matching upper bound follows from one of the results in
-Bra\ss \cite{brass:turan}.  The following are essentialy ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot-puzzle.
+Bra\ss \cite{brass:turan}.  The following are essentialy ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot puzzle.
 
 \begin{thm}\thmlabel{taco-david-bat-ears}
 $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.

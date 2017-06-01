@@ -856,10 +856,11 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
 \end{center}
 
 \begin{proof}
+  TODO: Expand this a little.
   The rules for $\crossing$ imply that the points in each $Q_i$ can be
   partitioned into groups $Q_{i,1},\ldots,Q_{i,\ell}$ where the elements
-  in $Q_i$ are non-increasing and the elements in $Q_{i,j}$ and $Q_{i,k}$
-  do not share any $x$- or $y$-coordinate.  With this observation, the
+  in $Q_i$ are non-increasing and the elements in $Q_{i,j}$ and $Q_{i,j+1}$
+  share at most one $x$- or $y$-coordinate.  With this observation, the
   rest of the proof is similar to the proof of \thmref{nested-swords}.
 \end{proof}
 
@@ -901,32 +902,48 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
   Next, observe that if $Q_i$ contains $k>1$ points in a single column
   (or row), then each of the $k$ rows (or columns) containing one of these
   points is killed, i.e., $Q_{i+1},\ldots,Q_n$ can not contain any points in
-  these rows (or columns).  Therefore, when summing $\sum_{i=1}^n |Q_i|$,
+  these rows (or columns) (see \figref{nested-crossing-ears-i}).  
+  Therefore, when summing $\sum_{i=1}^n |Q_i|$,
   the contribution of points that are not alone in their row or column
   is at most $2n$.  We therefore assume that each $Q_i$ contains at most
   one point from each row and column, which now implies that each $Q_i$
-  is an increasing sequence of points.
+  is an increasing set of points.
 
-  Now, because of the rules for $\crossing$, this increasing
-  requirement is quite strong. In particular, if we consider the last
-  (highest-righmost) point of $Q_i$, then it must be placed so that the
-  set of points killed by its $\ears$-region contains all points in $Q_i$
-  except itself and the second-last point of $Q_i$.
+  \begin{figure}[hbtp]
+    \begin{center}
+       \includegraphics{figs/nested-crossing-ears-i}
+    \end{center}
+    \caption{A step in the proof of \thmref{nested-crossing-ears}.}
+    \figlabel{nested-crossing-ears-i}
+  \end{figure}
 
-  To summarize, each row and column of $Q$ contributes at most one point to
-  the set
-  $S=\bigcup_{i=1}^n Q_i$, so $|S|\le n$.  
-  However, the $\ears$-region of the rightmost point in $Q_i$ eliminates
-  $|Q_i|-2$ elements of $S$ that can never be played again.  Therefore,
-  \[
-        n\ge |S| \ge \sum_{i=1}^n (|Q_i|-2) \enspace ,
-  \] 
-  and we conclude that $\sum_{i=1}^n|Q_i| \le 3n$.
+  Let $S=\bigcup_{i=1}^n Q_i$ and notice that $S$ contains at most
+  one point from each row: each $Q_i$ contains at most one point
+  in each row and the first time a point $p$ appears in some row,
+  $\killed(\{\nested,\crossing\},\{p\})$ eliminates every other point
+  from that row.)  Therefore $|S|\le n$.  All that remains to account for
+  multiplicity; a single point in $S$ can appear in more than one $Q_i$.
+
+  Now, because of the rules for $\crossing$, the fact that $Q_i$ is
+  increasing is quite restrictive. In particular, if we consider the last
+  (top rightmost) point, $p$, of $Q_i$, then it must be placed so that
+  $\killed(\{\ears\}, \{p\})$ contains all of $Q_i$ except $p$ and the
+  second-last point in $Q_i$ (see \figref{nested-crossing-ears}). That is,
+  $Q_i$ contains $|Q_i|-2$ points that cannot appear in $Q_{i+1},\ldots,Q_n$. We can think of $Q_i$ as eliminating $|Q_i|-2$ points from $S$, so
+  $\sum_{i=1}^n (|Q_i|-2) \le |S| \le n$,
+  so $\sum_{i=1}^n |Q_i| \le 3n$.
+  \begin{figure}[hbtp]
+    \begin{center}
+       \includegraphics{figs/nested-crossing-ears}
+    \end{center}
+    \caption{Another step in the proof of \thmref{nested-crossing-ears}.}
+    \figlabel{nested-crossing-ears}
+  \end{figure}
 \end{proof}
 
 
-Our upper bound depends on a simple lemma about forbidden configurations
-of points:
+Our next two upper bounds depend on a simple lemma about forbidden
+configurations of points:
 
 \begin{lem}\lemlabel{forbidden}
    Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three
@@ -956,14 +973,23 @@ of points:
   each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
   |Q_i|$ is the quantity we are interested in bounding.
 
-  Next, we observe that $S$ does not contain any three points
-  $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$
-  and $x_0<x_1$.  This is because the rules for $\taco$ and $\nested$
-  imply that $a$ would have to have been played in a round before $b$,
-  and that $b$ would have to have been played in a round before $c$.
-  But then the rule for $\david$ implies that $c$ would have to appear
-  in a round before $a$.  Applying \lemref{forbidden} then implies that
-  $|S|\le 2n$.
+  Next, we claim that $S$ does not contain any three points $a$, $b$, and
+  $c$ forming the configuration described in \lemref{forbidden}. Refer
+  to \figref{forbidden}.  Suppose, for the sake of contradition,
+  that this were not the case and that $a\in Q_i$, $b\in Q_j$, and
+  $c\in Q_k$.  We have $a\in\killed(\{\nested\},\{b\})$ so $i\le j$.
+  We also have $b\in\killed(\{\nested\}, c)$ so $j\le k$.  Finally,
+  we have $c\in\killed(\{\david\}, a)$, so $k \le i$.  Taken together
+  we have, $i\le j\le k\le i$, so it must be that $i=j=k$.  But this
+  is a contradiction since the rule for $\taco$ implies $i\neq j$ (and
+  $j\neq k)$.  Applying \lemref{forbidden} then implies that $|S|\le 2n$.
+  \begin{figure}[hbtp]
+    \begin{center}
+      \includegraphics{figs/forbidden}
+    \end{center}
+    \caption{The proof of \thmref{taco-nested-david}}
+    \figlabel{forbidden}
+  \end{figure}
 \end{proof}
 
 \begin{thm}\thmlabel{nested-ears-david}
@@ -1011,17 +1037,14 @@ of points:
    For each $i\in \{1,\ldots,n\}$, let $Q_i'$ be obtained
    from $Q_i$ by removing the leftmost point in each row.
    Let $S'=\bigcup_{i=1}^n Q_i'$.  We claim that $S'$ satisfies the
-   conditions of \lemref{forbidden}, so that $|S'|\le 2n$.  To see why this is so, suppose that
-   $S'$ contains three points $a\in Q_i'$, $b\in Q_j'$, $c\in Q_k'$
-   satisfying the conditions of \lemref{forbidden}.  Then the rules for
-   $\nested$ and $\david$ imply that
-   \[
-        i \le j \le k \le i
-   \]
-   (see \figref{nested-ears-david-ii})  
-   so we must have $i=j=k$.  However, this contradicts the fact (due to
-   $\nested$) that $Q_j$ is non-decreasing since the leftmost point, $b'$, of $Q_j$ 
-   in the same row as $b$ is to the left of $b$.
+   conditions of \lemref{forbidden}, so that $|S'|\le 2n$.  To see why
+   this is so, suppose that $S'$ contains three points $a$, $b$, and $c$
+   forming the configuration described in \lemref{forbidden}.  Then, as
+   argued in the proof of \thmref{taco-nested-david}, it must be that
+   $a,b,c\in Q_i'$ for some $i$.  However, this contradicts the fact
+   (due to $\nested$) that $Q_j$ is non-decreasing since the leftmost
+   point, $b'$, of $Q_i$ in the same row as $b$ is to the left of $b$
+   (see \figref{nested-ears-david-ii}).
 
    \begin{figure}
      \begin{center}
@@ -1041,58 +1064,6 @@ of points:
 
    Thus, $|S|=|S'|+|S''| \le 4n$ and $\sum_{i=1}^{|Q_i|} \le 6n$.
 \end{proof}
-%\begin{proof}
-%  Consider the set $Q_i$ played during some round $i$.  The rules
-%  for $\nested$ imply that $Q_i$ is non-decreasing.  The rule for
-%  $\bat$ implies that all but the top row of $Q_i$ is contained in
-%  $R_i=\killed(\{\david\}, Q_i)$.   Indeed, all of $Q_i$ except its
-%  leftmost column, bottom row, and (possibly) top row is in $R_i$
-%
-%  Refer to \figref{nested-bat-david}.  Suppose we remove the leftmost
-%  point in each row of $Q_i$.  For each such point $p\in R_i$, the entire
-%  row containing $p$ is then killed and can never be played again. The
-%  only other points we remove are in the first column of $Q_i$ and all
-%  but two of these (the topmost and bottommost) kill an entire row that
-%  can never be played again.  This means that the total number of points
-%  removed this way is not more $3n$ (one charged to each row and two
-%  charged to each round).  Since $Q_i$ was originally non-decreasing,
-%  the removal of these points ensures that each column contains at most
-%  one point of $Q_i$
-%
-%  \begin{figure}
-%    \begin{center}\includegraphics{figs/nested-bat-david}\end{center}
-%    \caption{The proof of \thmref{nested-bat-david}. The leftmost point
-%      in each row of $Q_i$ kills an entire row (except possibly for two
-%      points in the leftmost column).}
-%    \figlabel{nested-bat-david}
-%  \end{figure}
-%
-%  Now we let $S=\bigcup_{i=1}^n Q_i$.  We claim that $S$ fulfills the
-%  requirements of \lemref{forbidden}.  To see why this is so, note that
-%  if two points $a$ and $b$ of $S$ are in the same column then they
-%  must have been played in different rounds.  Assume $b$ is above $a$,
-%  which implies that $b$ was played in a later round than $a$.  Then, if
-%  there is some point $c$ to the right of $b$, then $c$ must have been played
-%  during the same round as $b$ or later.  But this implies that $c$ was
-%  played in a later round than $a$, which is not possible, since $c$ is in
-%  $a$'s $\david$-region.  Therefore, by \lemref{forbidden}, $|S|\le 2n$.
-%
-%  All that remains is to account for points in $S$ that are played
-%  multiple times.  In each $Q_i$ there are at most two points that can
-%  be played in subsequent rounds; the topmost point in the leftmost
-%  column and the rightmost point in the bottom-most row.  We charge each
-%  occurrence of such repeated points to the rounds in which they are
-%  the topmost point in the leftmost column and/or the rightmost point
-%  in the bottommost row.  In this way, each round is charged for at
-%  most two such points and the total contribution of these points to
-%  $\sum_{i=1}^n |Q_i|$ is at most $2n$.
-%
-%  In total, we obtain an upper bound of $7n$ on $\sum_{i=1}^n |Q_i|$.
-%\end{proof}
-%
-
-
-
 
 \subsection{Monotone Matrices, Tripod Packing, and 2-Comparable Sets}
 \seclabel{tripods}

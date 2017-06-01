@@ -524,10 +524,10 @@ dot-puzzle view. Thus, all of our results are bounds on solutions to
 these dot-puzzles.
 
 We say that a point set is \emph{non-decreasing} (respectively,
-non-increasing) if, when sorted lexicographically, the $y$ coordinates of
+non-increasing) if, when sorted lexicographically, the $y$-coordinates of
 the points form a non-decreasing (respectively, non-increasing) sequence.
 A point set is \emph{increasing} (respectively, decreasing) if it is
-non-decreasing (respectively, non-increasing) and it's $x$ coordinates
+non-decreasing (respectively, non-increasing) and it's $x$-coordinates
 are distinct.
 
 From \figref{forbidden-color}, some previous upper bounds naturally fall
@@ -547,7 +547,7 @@ Similarly, we can almost recover the result of Bra\ss, Rote and
 Swanepoel \cite{brass.rote.ea:triangles} on $\ex(\ears, \swords,
 \bat,\nested)$.  Here, the rules are:
 \begin{center}
-  \includegraphics[height=3cm]{figs/helper-2} \enspace ,
+  \includegraphics[height=3cm]{figs/helper-2} 
 \end{center}
 The rule for $\nested$
 ensures that the set of points taken during a single round form
@@ -569,12 +569,204 @@ O(n\log n)$ then follows from \lemref{top-bottom}.
 \seclabel{new-results}
 
 After this warm-up, and with the dot-puzzle view, we are ready to prove
-some new results.  We begin with a collection of results on forbidding
-the $\swords$ configuration.
+some new results.  We begin by proving several linear upper bounds.
+From this point on, each proof of a theorem will begin with a picture,
+similar to \figref{forbidden-color} that shows the rules of the dot-puzzle
+considered by the theorem.  For a point $q\in Q$, we use the notations
+$\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
+
+\subsection{Linear Upper Bounds}
+
+\begin{thm}\thmlabel{taco-nested-crossing}
+  $\ex'(n,\{\taco,\nested,\crossing\}) \in O(n)$.
+\end{thm}
+
+
+\begin{proof}
+  \centerline{\includegraphics[height=3cm]{figs/helper-9}}
+  Taking the union of the rules for $\taco$, $\nested$, and $\crossing$,
+  we obtain the rule which ensures that during subsequent rounds we can
+  not take a point from any column or row used in a previous round.
+  The rules for $\nested$ and $\taco$ ensure that the set of points
+  taken in each $Q_i$ is increasing.  Therefore each new point played
+  can be charged to a unique row, so the total number of points played
+  is at most $n$.
+\end{proof}
+
+
+\begin{thm}\thmlabel{nested-crossing-ears}
+  $\ex'(n,\{\nested,\crossing,\ears\})\in O(n)$.
+\end{thm}
+
+
+\begin{proof}
+  \centerline{\includegraphics[height=3cm]{figs/helper-10}}
+  First observe that the rules for $\nested$ imply that each $Q_i$
+  is a non-decreasing set of points.
+
+  Next, observe that if $Q_i$ contains $k>1$ points, $p_1,\ldots,p_k$ in a single column
+  (or row), then each of the $k$ rows (or columns) containing one of these
+  points is covered by $\killed(\{\nested,\crossing\},\{p_1,\ldots,p_k\})$, i.e., $Q_{i+1},\ldots,Q_n$ can not contain any points in
+  these rows (or columns) (see \figref{nested-crossing-ears-i}).  
+  Therefore, when summing $\sum_{i=1}^n |Q_i|$,
+  the contribution of points that are not alone in their row or column
+  is at most $2n$.  We therefore assume that each $Q_i$ contains at most
+  one point from each row and column, which now implies that each $Q_i$
+  is an increasing set of points.
+
+  \begin{figure}[hbtp]
+    \begin{center}
+       \includegraphics{figs/nested-crossing-ears-i}
+    \end{center}
+    \caption{A step in the proof of \thmref{nested-crossing-ears}.}
+    \figlabel{nested-crossing-ears-i}
+  \end{figure}
+
+  Let $S=\bigcup_{i=1}^n Q_i$ and notice that $S$ contains at most
+  one point from each row: each $Q_i$ contains at most one point
+  in each row and the first time a point $p$ appears in some row,
+  $\killed(\{\nested,\crossing\},\{p\})$ eliminates every other point
+  from that row.)  Therefore $|S|\le n$.  All that remains to account for
+  multiplicity; a single point in $S$ can appear in more than one $Q_i$.
+
+  Now, because of the rules for $\crossing$, the fact that $Q_i$ is
+  increasing is quite restrictive. In particular, if we consider the last
+  (top rightmost) point, $p$, of $Q_i$, then it must be placed so that
+  $\killed(\{\ears\}, \{p\})$ contains all of $Q_i$ except $p$ and the
+  second-last point in $Q_i$ (see \figref{nested-crossing-ears}). That is,
+  $Q_i$ contains $|Q_i|-2$ points that cannot appear in $Q_{i+1},\ldots,Q_n$. We can think of $Q_i$ as eliminating $|Q_i|-2$ points from $S$, so
+  $\sum_{i=1}^n (|Q_i|-2) \le |S| \le n$,
+  so $\sum_{i=1}^n |Q_i| \le 3n$.
+  \begin{figure}[hbtp]
+    \begin{center}
+       \includegraphics{figs/nested-crossing-ears}
+    \end{center}
+    \caption{Another step in the proof of \thmref{nested-crossing-ears}.}
+    \figlabel{nested-crossing-ears}
+  \end{figure}
+\end{proof}
+
+
+Our next two upper bounds depend on a simple lemma about forbidden
+configurations of points:
+
+\begin{lem}\lemlabel{forbidden}
+   Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three
+   points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$
+   and $x_0<x_1$.  Then $|S|\le 2n$.
+\end{lem}
+
+\begin{proof}
+   If we remove the rightmost point from each row of $S$, then each
+   column in what remains of $S$ contains at most one point. Otherwise we
+   could take $a$ to be the lowest point in a column, $b$ to the highest
+   point in the same column, and $c$ to be the missing rightmost point
+   in $b$'s row.
+\end{proof}
+
+\begin{thm}\thmlabel{taco-nested-david}
+  $\ex'(n,\{\taco,\nested,\david\})\in O(n)$.
+\end{thm}
+
+\begin{proof}
+  \centerline{\includegraphics[height=3cm]{figs/helper-11}}
+  Let $S=\bigcup_{i=1}^n Q_i$ be the set of points played in a solution
+  to the resulting dot-puzzle.  Note that, by the inclusion of $\taco$,
+  each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
+  |Q_i|$ is the quantity we are interested in bounding.
+
+  Next, we claim that $S$ does not contain any three points $a$, $b$, and
+  $c$ forming the configuration described in \lemref{forbidden}. Refer
+  to \figref{forbidden}.  Suppose, for the sake of contradiction,
+  that this were not the case and that $a\in Q_i$, $b\in Q_j$, and
+  $c\in Q_k$.  We have $a\in\killed(\{\nested\},\{b\})$ so $i\le j$.
+  We also have $b\in\killed(\{\nested\}, c)$ so $j\le k$.  Finally,
+  we have $c\in\killed(\{\david\}, a)$, so $k \le i$.  Taken together
+  we have, $i\le j\le k\le i$, so it must be that $i=j=k$.  But this
+  is a contradiction since the rule for $\taco$ implies $i\neq j$ (and
+  $j\neq k)$.  Applying \lemref{forbidden} then implies that $|S|\le 2n$.
+  \begin{figure}[hbtp]
+    \begin{center}
+      \includegraphics{figs/forbidden}
+    \end{center}
+    \caption{The proof of \thmref{taco-nested-david}}
+    \figlabel{forbidden}
+  \end{figure}
+\end{proof}
+
+\begin{thm}\thmlabel{nested-ears-david}
+  $\ex(n,\{\nested,\ears,\david\}) \in O(n)$.
+\end{thm}
+
+\begin{proof}
+   \centerline{\includegraphics[height=3cm]{figs/helper-17}}
+   Let $S=\bigcup_{i=1}^n Q_i$.  We will first show that, for each
+   $i\in\{1,\ldots,n\}$, there are at most two points of $Q_i$
+   that appear in $Q_{i+1},\ldots,Q_n$.  Refer to \figref{nested-ears-david}. 
+   Define
+   \[
+        Q_i^* = \{ (x,y)\in Q_1 : x\ge\ymax(Q_1) \} \enspace 
+   \]
+   and let $p$ and $r$ be the top rightmost and bottom leftmost points
+   in $Q_i^*$, respectively.  If there is more than one point in $Q_i^*$
+   with $x$-coordinate equal to $\x(r)$ (as in \figref{nested-ears-david}.a)
+   then we define $q$ to be the highest such point.  Otherwise
+   (as in \figref{nested-ears-david}.b), we define $q$ to be the
+   rightmost point with $y$-coordinate $\y(r)$.  Now, observe that
+   $\killed(\{\nested,\ears,\david\}, \{p,q,r\}) \supseteq Q_i\setminus
+   \{p,q\}$, so $p$ and $q$ are the only points of $Q_i$ that can appear
+   again in $Q_{i+1},\ldots,Q_n$.
+   \begin{figure}
+     \begin{center}
+       \begin{tabular}{cc}
+         \includegraphics{figs/nested-ears-david-1} &
+         \includegraphics{figs/nested-ears-david-2} \\
+         (a) & (b)
+       \end{tabular}
+     \end{center}
+     \caption{A step in the proof of \thmref{nested-ears-david}.}
+     \figlabel{nested-ears-david}
+   \end{figure}
+
+   We can therefore think of $Q_i$ as eliminating $|Q_i|-2$ points
+   from $S$, so $\sum_{i=1}^n(|Q_i|-2) \le |S|$ which implies that
+   that $\sum_{i=1}^n |Q_i| \le |S|+2n$.   All that remains now is to
+   bound $|S|$.
+
+   For each $i\in \{1,\ldots,n\}$, let $Q_i'$ be obtained
+   from $Q_i$ by removing the leftmost point in each row.
+   Let $S'=\bigcup_{i=1}^n Q_i'$.  We claim that $S'$ satisfies the
+   conditions of \lemref{forbidden}, so that $|S'|\le 2n$.  To see why
+   this is so, suppose that $S'$ contains three points $a$, $b$, and $c$
+   forming the configuration described in \lemref{forbidden}.  Then, as
+   argued in the proof of \thmref{taco-nested-david}, it must be that
+   $a,b,c\in Q_i'$ for some $i$.  However, this contradicts the fact
+   (due to $\nested$) that $Q_i$ is non-decreasing since the leftmost
+   point, $b'$, of $Q_i$ in the same row as $b$ is to the left of $b$
+   (see \figref{nested-ears-david-ii}).
+
+   \begin{figure}
+     \begin{center}
+       \includegraphics{figs/nested-ears-david-ii} 
+     \end{center}
+     \caption{Another step in the proof of \thmref{nested-ears-david}.}
+     \figlabel{nested-ears-david-ii}
+   \end{figure}
+
+   Therefore, $|S'|\le 2n$.   Now let $S''=S\setminus S'$.  Then we
+   claim that $S''$ also satisfies the conditions of \lemref{forbidden}.
+   Indeed, by the same reasoning as above, if there were $a,b,c\in
+   S''$ satisfying the conditions of \lemref{forbidden}, then it must
+   be that $a,b,c\in Q_i\setminus Q_i'$ for some $i$.  But this is a
+   contradiction since $b$ and $c$ are in the same row, and $Q_i\setminus
+   Q_i'$ contains at most one point per row.
+
+   Wrapping up, we have $|S|=|S'|+|S''| \le 4n$ so $\sum_{i=1}^n|Q_i| \le 6n$.
+\end{proof}
 
 \subsection{Forbidding Crossing Vertex-Disjoint Triangles}
 
-In this section, we focus on the configuration $\swords$ and give
+Next, we focus on the configuration $\swords$ and give
 linear upper bounds bounds on $\ex'(n,\{\swords, c\})$ for each
 $c\in\{\taco,\nested,\crossing\}$.  In \secref{lower-bounds}, we show
 that $\ex'(n,\{\swords,\mariposa,\bat,\ears,\david\})\in \Omega(n^2)$.
@@ -592,8 +784,7 @@ has a fairly complicated shape, so much of the work in this section is
 devoted to understanding, approximately, how $\killed(\{\swords\},S)$
 evolves as points are added to the point set $S$.
 
-In the following, for a point $q\in Q$, we use the notations $\x(q)$ and
-$\y(q)$ to denote the $x$- and $y$-coordinates of $q$.  For $S\subseteq
+For any $S\subseteq
 Q$, we use $\xmin(S)$ to denote the minimum $x$-coordinate of any point
 in the point set $S$, i.e., $\xmin(S)=\min\{\x(q) : q\in S\}$.  If $S$
 is empty, then we define $\xmin(S)$ as $n+1$.  We define $\ymin(S)$,
@@ -712,11 +903,9 @@ We now have all the pieces we need to prove our linear upper bounds.
   $\ex'(n,\{\taco,\swords\}) \in O(n)$.
 \end{thm}
 
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-6}
-\end{center}
 
 \begin{proof}
+  \centerline{\includegraphics[height=3cm]{figs/helper-6}}
   We will directly bound $\sum_{i=1}^n |Q_i|$.  We begin by noting that,
   since we forbid $\taco$, the set of points in each $Q_i$ contains
   at most one point from each row and each column.  We will use this
@@ -729,7 +918,7 @@ We now have all the pieces we need to prove our linear upper bounds.
 
   Now we count the contribution of points that are placed in
   $R_1,\ldots,R_{n-1}$.  Let $r_i=|Q_{i+1}\cap R_i|$.  Using the notation
-  of \lemref{potential-r}, we know that $r_i \le Phi(R_i)$.  Furthermore,
+  of \lemref{potential-r}, we know that $r_i \le\Phi(R_i)$.  Furthermore,
   if $i$ is not a critical event, then $\Phi(R_{i+1})\le \Phi(R_i)-r_i+1$
   since all but one point of $Q_{i+1}\cap R_i$ kills an entire row or
   column of $R_i$.
@@ -769,11 +958,9 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
   $\ex'(n,\{\nested,\swords\}) \in O(n)$.
 \end{thm}
 
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-7}
-\end{center}
 
 \begin{proof}
+   \centerline{\includegraphics[height=3cm]{figs/helper-7}}
    The proof is similar to the proof of \thmref{taco-swords}.
    The forbidden configuration $\nested$ implies that each set $Q_i$
    must be non-decreasing (see \figref{forbidden-color}a).
@@ -822,7 +1009,7 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
    is at most $2n$.
 
    Finally, it remains to count the contribution of points in
-   $H^{\max}_1,\ldots,H^{\max}_n$.  The movement of the line
+   $H^{\max}_1,\ldots,H^{\max}_{n-1}$.  The movement of the line
    $H^{\max}_i$ over time is a bit trickier.  If $i$ is a critical
    event, then $H^{\max}_i$ moves downwards, since $\ymax(B_{i+1}) <
    \xmin(S_{i+1}) \le \ymax(B_i)$.  Now note that, for distinct $i,j\in
@@ -865,206 +1052,6 @@ appear in $H^{\max}_i$, $H^{\min}_i$ and $V^1_i$ and $V^2_i$.
   rest of the proof is similar to the proof of \thmref{nested-swords}.
 \end{proof}
 
-
-\subsection{More Linear Upper Bounds}
-
-\begin{thm}\thmlabel{taco-nested-crossing}
-  $\ex'(n,\{\taco,\nested,\crossing\}) \in O(n)$.
-\end{thm}
-
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-9}
-\end{center}
-
-
-\begin{proof}
-  Taking the union of the rules for $\taco$, $\nested$, and $\crossing$,
-  we obtain the rule which ensures that during subsequent rounds we can
-  not take a point from any column or row used in a previous round.
-  The rules for $\nested$ and $\taco$ ensure that the set of points
-  taken in each $Q_i$ is increasing.  Therefore each new point played
-  can be charged to a unique row, so the total number of points played
-  is at most $n$.
-\end{proof}
-
-
-\begin{thm}\thmlabel{nested-crossing-ears}
-  $\ex'(n,\{\nested,\crossing,\ears\})\in O(n)$.
-\end{thm}
-
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-10}
-\end{center}
-
-\begin{proof}
-  First observe that the rules for $\nested$ imply that each $Q_i$
-  is a non-decreasing set of points.
-
-  Next, observe that if $Q_i$ contains $k>1$ points in a single column
-  (or row), then each of the $k$ rows (or columns) containing one of these
-  points is killed, i.e., $Q_{i+1},\ldots,Q_n$ can not contain any points in
-  these rows (or columns) (see \figref{nested-crossing-ears-i}).  
-  Therefore, when summing $\sum_{i=1}^n |Q_i|$,
-  the contribution of points that are not alone in their row or column
-  is at most $2n$.  We therefore assume that each $Q_i$ contains at most
-  one point from each row and column, which now implies that each $Q_i$
-  is an increasing set of points.
-
-  \begin{figure}[hbtp]
-    \begin{center}
-       \includegraphics{figs/nested-crossing-ears-i}
-    \end{center}
-    \caption{A step in the proof of \thmref{nested-crossing-ears}.}
-    \figlabel{nested-crossing-ears-i}
-  \end{figure}
-
-  Let $S=\bigcup_{i=1}^n Q_i$ and notice that $S$ contains at most
-  one point from each row: each $Q_i$ contains at most one point
-  in each row and the first time a point $p$ appears in some row,
-  $\killed(\{\nested,\crossing\},\{p\})$ eliminates every other point
-  from that row.)  Therefore $|S|\le n$.  All that remains to account for
-  multiplicity; a single point in $S$ can appear in more than one $Q_i$.
-
-  Now, because of the rules for $\crossing$, the fact that $Q_i$ is
-  increasing is quite restrictive. In particular, if we consider the last
-  (top rightmost) point, $p$, of $Q_i$, then it must be placed so that
-  $\killed(\{\ears\}, \{p\})$ contains all of $Q_i$ except $p$ and the
-  second-last point in $Q_i$ (see \figref{nested-crossing-ears}). That is,
-  $Q_i$ contains $|Q_i|-2$ points that cannot appear in $Q_{i+1},\ldots,Q_n$. We can think of $Q_i$ as eliminating $|Q_i|-2$ points from $S$, so
-  $\sum_{i=1}^n (|Q_i|-2) \le |S| \le n$,
-  so $\sum_{i=1}^n |Q_i| \le 3n$.
-  \begin{figure}[hbtp]
-    \begin{center}
-       \includegraphics{figs/nested-crossing-ears}
-    \end{center}
-    \caption{Another step in the proof of \thmref{nested-crossing-ears}.}
-    \figlabel{nested-crossing-ears}
-  \end{figure}
-\end{proof}
-
-
-Our next two upper bounds depend on a simple lemma about forbidden
-configurations of points:
-
-\begin{lem}\lemlabel{forbidden}
-   Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three
-   points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$
-   and $x_0<x_1$.  Then $|S|\le 2n$.
-\end{lem}
-
-\begin{proof}
-   If we remove the rightmost point from each row of $S$, then each
-   column in what remains of $S$ contains at most one point. Otherwise we
-   could take $a$ to be the lowest point in a column, $b$ to the highest
-   point in the same column, and $c$ to be the missing rightmost point
-   in $b$'s row.
-\end{proof}
-
-\begin{thm}\thmlabel{taco-nested-david}
-  $\ex'(n,\{\taco,\nested,\david\})\in O(n)$.
-\end{thm}
-
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-11}
-\end{center}
-
-\begin{proof}
-  Let $S=\bigcup_{i=1}^n Q_i$ be the set of points played in a solution
-  to the resulting dot-puzzle.  Note that, by the inclusion of $\taco$,
-  each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
-  |Q_i|$ is the quantity we are interested in bounding.
-
-  Next, we claim that $S$ does not contain any three points $a$, $b$, and
-  $c$ forming the configuration described in \lemref{forbidden}. Refer
-  to \figref{forbidden}.  Suppose, for the sake of contradition,
-  that this were not the case and that $a\in Q_i$, $b\in Q_j$, and
-  $c\in Q_k$.  We have $a\in\killed(\{\nested\},\{b\})$ so $i\le j$.
-  We also have $b\in\killed(\{\nested\}, c)$ so $j\le k$.  Finally,
-  we have $c\in\killed(\{\david\}, a)$, so $k \le i$.  Taken together
-  we have, $i\le j\le k\le i$, so it must be that $i=j=k$.  But this
-  is a contradiction since the rule for $\taco$ implies $i\neq j$ (and
-  $j\neq k)$.  Applying \lemref{forbidden} then implies that $|S|\le 2n$.
-  \begin{figure}[hbtp]
-    \begin{center}
-      \includegraphics{figs/forbidden}
-    \end{center}
-    \caption{The proof of \thmref{taco-nested-david}}
-    \figlabel{forbidden}
-  \end{figure}
-\end{proof}
-
-\begin{thm}\thmlabel{nested-ears-david}
-  $\ex(n,\{\nested,\ears,\david\}) \in O(n)$.
-\end{thm}
-\begin{center}
-   \includegraphics[height=3cm]{figs/helper-17}
-   %\hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-4}
-\end{center}
-
-\begin{proof}
-   Let $S=\bigcup_{i=1}^n Q_i$.  We will first show that, for each
-   $i\in\{1,\ldots,n\}$, there are at most two points of $Q_i$
-   that appear in $Q_{i+1},\ldots,Q_n$.  Refer to \figref{nested-ears-david}. 
-   Define
-   \[
-        Q_i^* = \{ (x,y)\in Q_1 : x\ge\ymax(Q_1) \} \enspace 
-   \]
-   and let $p$ and $r$ be the top rightmost and bottom leftmost points
-   in $Q_i^*$, respectively.  If there is more than one point in $Q_i^*$
-   (as in \figref{nested-ears-david}.a) with $x$-coordinate $\x(r)$
-   then we define $q$ to be the highest such point.  Otherwise
-   (as in \figref{nested-ears-david}.b), we define $q$ to be the
-   rightmost point with $y$-coordinate $\y(r)$.  Now, observe that
-   $\killed(\{\nested,\ears,\david\}, \{p,q,r\}) \supseteq Q_i\setminus
-   \{p,q\}$, so $p$ and $q$ are the only points of $Q_i$ that can appear
-   again in $Q_{i+1},\ldots,Q_n$.
-   \begin{figure}
-     \begin{center}
-       \begin{tabular}{cc}
-         \includegraphics{figs/nested-ears-david-1} &
-         \includegraphics{figs/nested-ears-david-2} \\
-         (a) & (b)
-       \end{tabular}
-     \end{center}
-     \caption{A step in the proof of \thmref{nested-ears-david}.}
-     \figlabel{nested-ears-david}
-   \end{figure}
-
-   We can therefore think of $Q_i$ as eliminating $|Q_i|-2$ points
-   from $S$, so $\sum_{i=1}^n(|Q_i|-2) \le |S|$ which implies that
-   that $\sum_{i=1}^n |Q_i| \le |S|+2n$.   All that remains now is to
-   bound $|S|$.
-
-   For each $i\in \{1,\ldots,n\}$, let $Q_i'$ be obtained
-   from $Q_i$ by removing the leftmost point in each row.
-   Let $S'=\bigcup_{i=1}^n Q_i'$.  We claim that $S'$ satisfies the
-   conditions of \lemref{forbidden}, so that $|S'|\le 2n$.  To see why
-   this is so, suppose that $S'$ contains three points $a$, $b$, and $c$
-   forming the configuration described in \lemref{forbidden}.  Then, as
-   argued in the proof of \thmref{taco-nested-david}, it must be that
-   $a,b,c\in Q_i'$ for some $i$.  However, this contradicts the fact
-   (due to $\nested$) that $Q_j$ is non-decreasing since the leftmost
-   point, $b'$, of $Q_i$ in the same row as $b$ is to the left of $b$
-   (see \figref{nested-ears-david-ii}).
-
-   \begin{figure}
-     \begin{center}
-       \includegraphics{figs/nested-ears-david-ii} 
-     \end{center}
-     \caption{Another step in the proof of \thmref{nested-ears-david}.}
-     \figlabel{nested-ears-david-ii}
-   \end{figure}
-
-   Therefore, $|S'|\le 2n$.   Now let $S''=S\setminus S'$.  Then we
-   claim that $S''$ also satisfies the conditions of \lemref{forbidden}.
-   Indeed, by the same reasoning as above, if there were $a,b,c\in
-   S''$ satisfying the conditions of \lemref{forbidden}, then it must
-   be that $a,b,c\in Q_i\setminus Q_i'$ for some $i$.  But this is a
-   contradiction since $b$ and $c$ are in the same row, and $Q_i\setminus
-   Q_i'$ contains at most one point per row.
-
-   Thus, $|S|=|S'|+|S''| \le 4n$ and $\sum_{i=1}^{|Q_i|} \le 6n$.
-\end{proof}
 
 \subsection{Monotone Matrices, Tripod Packing, and 2-Comparable Sets}
 \seclabel{tripods}

@@ -799,21 +799,15 @@ configurations of points:
 
 \subsection{Forbidding Crossing Vertex-Disjoint Triangles}
 
-Next, we focus on the configuration $\swords$ and give
-linear upper bounds bounds on $\ex'(n,\{\swords, c\})$ for each
-$c\in\{\taco,\nested,\crossing\}$.  In \secref{lower-bounds}, we show
-that $\ex'(n,\{\swords,\mariposa,\bat,\ears,\david\})\in \Omega(n^2)$.
-Together, these two results completely determine $\ex'(n,\{\swords\}\cup
-X\})$ for any $X$.
-
-For a point $q\in Q$, $\killed(\{\swords\}, \{q\})$ is a fairly large
-region consisting (roughly) of three quadrants surrounding $q$ and
-an additional triangular region:\\
-\centerline{\includegraphics[height=3cm]{figs/swords-kappa}}
-However, $\killed(\{\swords\}, \{q\})$
-has a fairly complicated shape, so much of the work in this section is
-devoted to understanding, approximately, how $\killed(\{\swords\},S)$
-evolves as points are added to the point set $S$.
+Next we focus on the configuration $\swords$ and give linear upper
+bounds bounds on $\ex'(n,\{\swords, \taco\})$ and $\ex'(n,\{\swords,
+\nested\})$.  For a point $q\in Q$, $\killed(\{\swords\},
+\{q\})$ is a fairly large region consisting (roughly) of three
+quadrants surrounding $q$ and an additional triangular region:\\
+\centerline{\includegraphics[height=3cm]{figs/swords-kappa}} However,
+$\killed(\{\swords\}, \{q\})$ has a fairly complicated shape, so much of
+the work in this section is devoted to understanding, approximately, how
+$\killed(\{\swords\},S)$ evolves as points are added to the point set $S$.
 
 For any $S\subseteq
 Q$, we use $\xmin(S)$ to denote the minimum $x$-coordinate of any point
@@ -1113,7 +1107,7 @@ problems. See \figref{tripods}.
   from $\{1,\ldots,n\}$?
 \end{enumerate}
 
-Several simple and natural construction give lower bounds
+Several simple and natural constructions give lower bounds
 of $\Omega(n^{3/2})$ for these problems.  However,
 this bound is not tight. A sequence of results using
 recursive constructions has steadily raised this lower bound

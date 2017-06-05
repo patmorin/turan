@@ -33,9 +33,14 @@ urlcolor=linkblue}
 
 \title{\MakeUppercase{More Turán-Type Theorems for Triangles in Convex Point Sets}\thanks{This research is partially funded by NSERC.}}
 
-\author{Boris Aronov, Vida Dujmović, Ruy Fabila, Pat Morin, Aurélien Ooms,\\
-and Luís Fernando Schultz Xavier da Silveira  }
-
+\author{%
+Boris Aronov,
+Vida Dujmović,
+Ruy Fabila,
+Pat Morin,
+Aurélien Ooms\thanks{Supported by the Fund for Research Training in Industry and Agriculture (FRIA).},\\
+and Luís Fernando Schultz Xavier da Silveira%
+}
 
 \newcommand{\taco}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-edge-1}}}
 \newcommand{\mariposa}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-edge-2}}}
@@ -90,7 +95,7 @@ can share an edge (\taco\ and \mariposa), 3 ways in which the triangles
 can share a single vertex (\bat, \nested, and \crossing), and 3 ways
 in which the triangles can have no vertices in common (\ears, \swords,
 and \david).  Because it is difficult to keep track of nameless entities,
-we assign a mnemonic to each configuration (though the reader is encourage
+we assign a mnemonic to each configuration (though the reader is encouraged
 to choose their own):
 
 \begin{center}
@@ -314,11 +319,11 @@ $\ex(n,X)\in \Omega(n)$.
   we use one of the following constructions:
  \begin{enumerate}
     \item For $x=\taco$ we use the set of triangles $\{(1,2,i):i\in\{3,\ldots,n\}\}$.
-    \item For $x=\bat$ we use the set of triangles $\{(1,2i,2i+1): i\in\{1,\ldots,\lfloor n/2\rfloor-1 \}$.
+    \item For $x=\bat$ we use the set of triangles $\{(1,2i,2i+1): i\in\{1,\ldots,\lfloor n/2\rfloor-1 \}\}$.
     \item For $x=\nested$ we use the set of triangles $\{(1,i,n+2-i): i\in\{2, \ldots, \lfloor n/2\rfloor\}\}$.
-    \item For $x=\crossing$ we use the set of triangles $\{(1,i,\lfloor n/2\rfloor+i): i\in\{2,\ldots, \lfloor n/2\rfloor\}-1\}$.
+    \item For $x=\crossing$ we use the set of triangles $\{(1,i,\lfloor n/2\rfloor+i): i\in\{2,\ldots, \lfloor n/2\rfloor-1\}\}$.
     \item For $x=\ears$ we use the set of triangles $\{(3i-2,3i-1,3i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
-    \item For $x=\swords$ we use the set of triangles $\{(i,\lfloor n/2\rfloor+2i-2,\lfloor n/2\rfloor+2i-1): i\in\{1,\ldots, \lfloor n/4\rfloor\}\}$.
+    \item For $x=\swords$ we use the set of triangles $\{(i,\lfloor n/3\rfloor+2i-1,\lfloor n/3\rfloor+2i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
     \item For $x=\david$ we use the set of triangles $\{(i,\lfloor n/3\rfloor+i,\lfloor 2n/3\rfloor+i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
  \end{enumerate}
  In each case, the size of the set is $\Omega(n)$ and it is

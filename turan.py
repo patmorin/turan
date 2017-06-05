@@ -17,8 +17,8 @@ def edge_b(ta, tb):
     """Return true iff triangles ta and tb form an edge_b configuration"""
     if ta[1] == tb[1] and ta[2] == tb[2]: return True
     if ta[0] == tb[0]:
-        if ta[1] == tb[1] return True
-        if ta[2] == tb[2] return True
+        if ta[1] == tb[1]: return True
+        if ta[2] == tb[2]: return True
     return False
 
 def gon(n):
@@ -30,4 +30,4 @@ def gon(n):
     theta = pi/(2*n)
     return [ (cos(-pi*i/n-theta), sin(-pi*i/n-theta)) for i in range(2*n)]
 
- 
+

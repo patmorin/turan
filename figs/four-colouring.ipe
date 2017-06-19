@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170616153438" modified="D:20170616155004"/>
+<info created="D:20170616153438" modified="D:20170619091312"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -220,13 +220,13 @@ h
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
 <dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
 <textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
 <textsize name="Large" value="\Large"/>
 <textsize name="LARGE" value="\LARGE"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="Huge" value="\Huge"/>
-<textsize name="small" value="\small"/>
 <textsize name="footnote" value="\footnotesize"/>
-<textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
 <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
 <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
@@ -268,34 +268,505 @@ h
 <layer name="b"/>
 <layer name="ga"/>
 <layer name="gb"/>
-<view layers="alpha a b" active="a"/>
-<view layers="alpha a ga" active="ga"/>
-<view layers="alpha b gb" active="gb"/>
-<path layer="gb" stroke="brew1">
-234.667 437.333 m
-234.667 490.667 l
-256 490.667 l
+<layer name="g"/>
+<layer name="grid"/>
+<view layers="alpha a b g grid" active="g"/>
+<view layers="alpha a ga grid" active="ga"/>
+<view layers="alpha b gb grid" active="grid"/>
+<group layer="grid">
+<path matrix="0.666667 0 0 0.666667 42.6667 128" stroke="brew8">
+128 384 m
+320 576 l
+320 384 l
+128 384 l
 </path>
-<path stroke="brew1">
-213.333 437.333 m
-213.333 469.333 l
-245.333 469.333 l
+<path matrix="1 0 0 1 -0.000252 10.6671" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
 </path>
-<path stroke="brew1">
-181.333 405.333 m
-181.333 437.333 l
-213.333 437.333 l
+<path matrix="1 0 0 1 10.6664 10.6671" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
 </path>
-<path stroke="brew1">
+<path matrix="1 0 0 1 21.3331 10.6671" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 31.9998 10.6671" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 42.6658 10.6669" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 53.3318 10.6667" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 63.9978 10.6665" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 74.6638 10.6663" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 85.3298 10.6661" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 95.9958 10.6659" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.662 10.6657" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 10.6655 21.3342" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 21.3321 21.3342" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 31.9988 21.3342" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 42.6655 21.3342" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 53.3315 21.334" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 63.9975 21.3338" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 74.6635 21.3336" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 85.3295 21.3334" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 95.9955 21.3332" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.662 21.333" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 21.3319 32.0013" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 31.9985 32.0013" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 42.6652 32.0013" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 53.3319 32.0013" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 63.9979 32.0011" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 74.6639 32.0009" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 85.3299 32.0007" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 95.9959 32.0005" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.662 32.0003" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 31.9983 42.6684" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 42.6649 42.6684" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 53.3316 42.6684" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 63.9983 42.6684" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 74.6643 42.6682" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 85.3303 42.668" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 95.9963 42.6678" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.662 42.6676" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 42.664 53.3355" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 53.3307 53.3355" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 63.9974 53.3355" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 74.6641 53.3355" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 85.3301 53.3353" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 95.9961 53.3351" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.662 53.3349" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 53.3304 64.0026" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 63.9971 64.0026" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 74.6638 64.0026" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 85.3305 64.0026" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 95.9965 64.0024" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.662 64.0022" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 63.9968 74.6697" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 74.6635 74.6697" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 85.3302 74.6697" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 95.9969 74.6697" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.663 74.6695" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 74.6632 85.3368" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 85.3299 85.3368" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 95.9966 85.3368" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.663 85.3368" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 85.3296 96.0039" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 95.9963 96.0039" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.663 96.0039" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 95.996 106.671" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.663 106.671" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+<path matrix="1 0 0 1 106.662 117.338" stroke="brew8">
+138.667 373.333 m
+138.667 384 l
+149.333 384 l
+</path>
+</group>
+<path layer="g" stroke="black">
 149.333 384 m
-149.333 405.333 l
-181.333 405.333 l
+169.869 401.667
+181.332 405.334 c
+</path>
+<path stroke="black">
+170.667 384 m
+192.74 410.798
+202.667 426.667 c
+</path>
+<path stroke="black">
+213.333 437.333 m
+222.983 460.31
+234.667 469.334 c
+</path>
+<path layer="gb" stroke="black" arrow="normal/tiny">
+149.333 384 m
+172.472 400.892
+192 405.333 c
 </path>
 <path stroke="black" arrow="normal/tiny">
 234.667 437.333 m
-256 490.667 l
+250.921 462.14
+256 490.667 c
 </path>
-<path stroke="black" arrow="normal/tiny">
+<path layer="g" stroke="black">
+181.333 405.333 m
+199.151 430.542
+213.333 437.333 c
+</path>
+<path stroke="black">
+149.333 384 m
+183.379 393.156
+202.667 405.333 c
+</path>
+<path stroke="black">
+202.667 426.667 m
+211.335 443.31
+234.667 458.667 c
+</path>
+<path stroke="black">
+234.667 458.667 m
+245.333 490.667 l
+</path>
+<path stroke="black">
+213.333 437.333 m
+236.871 454.576
+245.333 469.334 c
+</path>
+<path stroke="black">
+234.667 469.334 m
+242.879 484.117
+256 490.667 c
+</path>
+<path stroke="black">
+224 437.333 m
+229.861 461.419
+245.333 480 c
+</path>
+<path stroke="black">
+192 405.333 m
+221.099 425.786
+234.667 448 c
+</path>
+<path stroke="black">
+170.667 394.667 m
+183.943 401.75
+202.667 426.667 c
+</path>
+<path stroke="black">
+149.333 384 m
+174.533 390.486
+192 405.333 c
+</path>
+<path stroke="black">
+149.333 384 m
+170.667 405.333 l
+</path>
+<path stroke="black">
+160 384 m
+202.667 416 l
+</path>
+<path stroke="black">
+170.667 405.333 m
+202.667 426.667 l
+</path>
+<path stroke="black">
+181.333 405.333 m
+202.667 437.333 l
+</path>
+<path stroke="black">
+181.333 405.333 m
+224 437.333 l
+</path>
+<path stroke="black">
+202.667 416 m
+234.667 458.667 l
+</path>
+<path stroke="black">
+202.667 437.333 m
+234.667 458.667 l
+</path>
+<path stroke="black">
+234.667 437.333 m
+245.333 490.667 l
+</path>
+<path stroke="black">
+245.333 469.334 m
+256 501.334 l
+</path>
+<path stroke="black">
+245.333 480 m
+256 501.334 l
+</path>
+<path stroke="black">
+245.333 490.667 m
+256 501.334 l
+</path>
+<path stroke="black">
+138.667 384 m
+170.667 394.667 l
+</path>
+<path stroke="black">
+234.667 469.334 m
+245.333 490.667 l
+</path>
+<path stroke="black">
+234.667 448 m
+245.333 490.667 l
+</path>
+<path stroke="black">
+181.333 405.333 m
+202.99 420.528
+234.667 437.333 c
+</path>
+<path stroke="black">
+202.667 405.333 m
+220.181 438.387
+234.667 458.667 c
+</path>
+<path stroke="black">
+234.667 448 m
+250.306 469.096
+256 490.667 c
+</path>
+<path stroke="black">
+234.667 437.333 m
+252.476 465.174
+256 490.667 c
+</path>
+<path stroke="black">
+234.667 458.667 m
+243.797 475.605
+256 490.667 c
+</path>
+<path layer="gb" stroke="black" arrow="normal/tiny">
 213.333 437.333 m
 245.333 469.333 l
 </path>
@@ -317,33 +788,9 @@ h
 </path>
 <path stroke="black" arrow="normal/tiny">
 149.333 384 m
-192 405.333 l
-</path>
-<path stroke="black" arrow="normal/tiny">
-149.333 384 m
 181.333 405.333 l
 </path>
-<path layer="ga" stroke="brew1">
-245.333 490.667 m
-245.333 501.333 l
-256 501.333 l
-</path>
-<path stroke="brew1">
-234.667 469.333 m
-234.667 490.667 l
-245.333 490.667 l
-</path>
-<path stroke="brew1">
-202.667 437.333 m
-202.667 458.667 l
-234.667 458.667 l
-</path>
-<path stroke="brew1">
-170.667 405.333 m
-170.667 426.667 l
-202.667 426.667 l
-</path>
-<path stroke="black" arrow="normal/tiny">
+<path layer="ga" stroke="black" arrow="normal/tiny">
 202.667 426.667 m
 170.667 405.333 l
 </path>
@@ -383,12 +830,6 @@ h
 256 501.333 m
 245.333 490.667 l
 </path>
-<path layer="alpha" matrix="0.666667 0 0 0.666667 42.6667 128" stroke="black">
-128 384 m
-320 576 l
-320 384 l
-128 384 l
-</path>
 <use layer="a" matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="320 560" size="normal" stroke="brew5"/>
 <group layer="b" matrix="0.666667 0 0 0.666667 42.6667 128">
 <use name="mark/disk(sx)" pos="144 384" size="normal" stroke="brew4"/>
@@ -404,17 +845,15 @@ h
 <use name="mark/disk(sx)" pos="304 512" size="normal" stroke="brew4"/>
 <use name="mark/disk(sx)" pos="320 544" size="normal" stroke="brew4"/>
 </group>
-<group layer="a" matrix="0.666667 0 0 0.666667 42.6667 128">
-<use name="mark/disk(sx)" pos="192 400" size="normal" stroke="brew5"/>
-<use name="mark/disk(sx)" pos="192 416" size="normal" stroke="brew5"/>
-<use name="mark/disk(sx)" pos="240 432" size="normal" stroke="brew5"/>
-<use name="mark/disk(sx)" pos="240 448" size="normal" stroke="brew5"/>
-<use name="mark/disk(sx)" pos="240 464" size="normal" stroke="brew5"/>
-<use name="mark/disk(sx)" pos="288 480" size="normal" stroke="brew5"/>
-<use name="mark/disk(sx)" pos="288 496" size="normal" stroke="brew5"/>
-<use name="mark/disk(sx)" pos="288 512" size="normal" stroke="brew5"/>
-<use name="mark/disk(sx)" pos="304 528" size="normal" stroke="brew5"/>
-<use name="mark/disk(sx)" pos="304 544" size="normal" stroke="brew5"/>
-</group>
+<use layer="alpha" matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="192 400" size="normal" stroke="brew5"/>
+<use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="192 416" size="normal" stroke="brew5"/>
+<use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="240 432" size="normal" stroke="brew5"/>
+<use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="240 448" size="normal" stroke="brew5"/>
+<use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="240 464" size="normal" stroke="brew5"/>
+<use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="288 480" size="normal" stroke="brew5"/>
+<use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="288 496" size="normal" stroke="brew5"/>
+<use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="288 512" size="normal" stroke="brew5"/>
+<use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="304 528" size="normal" stroke="brew5"/>
+<use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="304 544" size="normal" stroke="brew5"/>
 </page>
 </ipe>

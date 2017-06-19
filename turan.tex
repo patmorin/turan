@@ -970,13 +970,12 @@ that is similar to \lemref{forbidden}.
   \[
         \sum_{i=1}^n |(S_j\setminus S_j')\cap Q_i| = |S_j\setminus S_j'| \enspace .
   \]
-  
+
   Finally, we are left with the complete acyclic subgraph $H'$ whose
-  topological sort order, $\prec$, is equal to the lexicographic
-  ordering of its vertices. Now, if $Q_i$ contains $k_i$ vertices
-  $v_1\prec\cdots\prec v_{k_i}$ vertices of $H'$, then $v_1$ kills all of
-  $v_2,\ldots,v_{k_i}$ so that these vertices can not appear in any
-  $Q_{i'}$ with $i'>i$.  This implies that
+  topological sort order we denote by $\prec$.  Now, if $Q_i$ contains
+  $k_i$ vertices $v_1\prec\cdots\prec v_{k_i}$ vertices of $H'$, then
+  $v_1$ kills all of $v_2,\ldots,v_{k_i}$ so that these vertices can
+  not appear in any $Q_{i'}$ with $i'>i$.  This implies that
   \[
       \sum_{i=1}^n (|S_j'\cap Q_i|-1) =
       \sum_{i=1}^n (k_i-1) \le |S_j'|
@@ -1157,7 +1156,7 @@ $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
    \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-2}
 }
 For each $i\in\{1,\ldots,n/2\}$, we
-we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i\}$.
+we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i+1\}$.
 \end{proof}
 
 \begin{thm}\thmlabel{swords-bat-ears-david}
@@ -1183,20 +1182,18 @@ we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,
    \centerline{\includegraphics[height=3cm]{figs/helper-18}
    \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-5}}
    We repeatedly take every second point on the diagonal $y=x-1$, i.e.,
-   for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j-1,2(j-2): j\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
+   for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j,2j-1: j\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
 \end{proof}
-
 
 \begin{thm}\thmlabel{nested-bat-david}
   $\ex'(n,\{\nested,\bat,\david\})\in O(n)$.
 \end{thm}
 
-
 \begin{proof}
    \centerline{\includegraphics[height=3cm]{figs/helper-12}
    \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-7}}
    We repeatedly take every second point on the diagonal $y=x-1$, i.e.,
-   for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j-1,2(j-2): j\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
+   for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j,2j-1: j\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
 \end{proof}
 
 \begin{thm}\thmlabel{bat-nested-ears}

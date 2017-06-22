@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20151120151800" modified="D:20170202104759"/>
+<info created="D:20151120151800" modified="D:20170622094054"/>
 <preamble>\usepackage{kpfonts}</preamble>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
@@ -270,96 +270,96 @@ h
 <view layers="alpha nested ears david" active="crossing"/>
 <view layers="alpha nested crossing david" active="crossing"/>
 <view layers="alpha bat nested ears" active="crossing"/>
-<path layer="nested" matrix="0.9 0 0 0.9 216.8 -196.8" stroke="black" fill="brew4">
+<path layer="nested" matrix="0.9 0 0 0.9 133.8 -196.8" stroke="black" fill="brew4">
 64 496 m
 64 448 l
 112 448 l
 112 496 l
 h
 </path>
-<path layer="taco" matrix="0.9 0 0 0.9 141.2 -254.4" stroke="black" fill="brew2">
+<path layer="taco" matrix="0.9 0 0 0.9 58.2 -254.4" stroke="black" fill="brew2">
 128 560 m
 128 512 l
 144 512 l
 144 560 l
 h
 </path>
-<path layer="crossing" matrix="0.9 0 0 0.9 152.4 -196.8" stroke="black" fill="brew5">
+<path layer="crossing" matrix="0.9 0 0 0.9 69.4 -196.8" stroke="black" fill="brew5">
 64 496 m
 64 448 l
 112 448 l
 112 496 l
 h
 </path>
-<path layer="mariposa" matrix="0.9 0 0 0.9 77.2 -254.4" stroke="black" fill="brew1">
+<path layer="mariposa" matrix="0.9 0 0 0.9 -5.8 -254.4" stroke="black" fill="brew1">
 128 560 m
 128 512 l
 144 512 l
 144 560 l
 h
 </path>
-<path layer="bat" matrix="0.9 0 0 0.9 73.2 -254.4" stroke="black" fill="brew3">
+<path layer="bat" matrix="0.9 0 0 0.9 -9.8 -254.4" stroke="black" fill="brew3">
 80 512 m
 128 560 l
 128 512 l
 h
 </path>
-<path layer="taco" matrix="3.6 0 0 3.6 -777.2 -1704.8" stroke="black" fill="brew2">
+<path layer="taco" matrix="3.6 0 0 3.6 -860.2 -1704.8" stroke="black" fill="brew2">
 292 548 m
 292 544 l
 304 544 l
 304 548 l
 h
 </path>
-<path layer="nested" matrix="4 0 0 4 -896.4 -1923.2" stroke="black" fill="pink">
+<path layer="nested" matrix="4 0 0 4 -979.4 -1923.2" stroke="black" fill="pink">
 288 548 m
 288 548 l
 288 548 l
 288 548 l
 h
 </path>
-<path layer="taco" matrix="3.6 0 0 3.6 -780.4 -1701.6" stroke="black" fill="brew2">
+<path layer="taco" matrix="3.6 0 0 3.6 -863.4 -1701.6" stroke="black" fill="brew2">
 288 548 m
 288 560 l
 292 560 l
 292 548 l
 h
 </path>
-<path matrix="3.6 0 0 3.6 -783.6 -1704.8" stroke="black" fill="brew2">
+<path matrix="3.6 0 0 3.6 -866.6 -1704.8" stroke="black" fill="brew2">
 288 548 m
 288 544 l
 276 544 l
 276 548 l
 h
 </path>
-<path layer="mariposa" matrix="3.6 0 0 3.6 -777.2 -1698.4" stroke="black" fill="brew1">
+<path layer="mariposa" matrix="3.6 0 0 3.6 -860.2 -1698.4" stroke="black" fill="brew1">
 292 564 m
 292 560 l
 304 560 l
 304 564 l
 h
 </path>
-<path layer="crossing" matrix="3.6 0 0 3.6 -777.2 -1701.6" stroke="black" fill="brew5">
+<path layer="crossing" matrix="3.6 0 0 3.6 -860.2 -1701.6" stroke="black" fill="brew5">
 292 560 m
 292 548 l
 304 548 l
 304 560 l
 h
 </path>
-<path layer="nested" matrix="3.6 0 0 3.6 -783.6 -1701.6" stroke="black" fill="brew4">
+<path layer="nested" matrix="3.6 0 0 3.6 -866.6 -1701.6" stroke="black" fill="brew4">
 288 548 m
 288 560 l
 276 548 l
 h
 </path>
-<path layer="bat" matrix="3.6 0 0 3.6 -777.2 -1695.2" stroke="black" fill="brew3">
+<path layer="bat" matrix="3.6 0 0 3.6 -860.2 -1695.2" stroke="black" fill="brew3">
 292 564 m
 304 564 l
 304 576 l
 h
 </path>
-<use layer="alpha" matrix="4 0 0 4 -728.4 -1979.2" name="mark/disk(sx)" pos="248 560" size="large" stroke="darkgray"/>
-<group layer="mariposa" matrix="0.6 0 0 0.6 -53.6 -127.2">
+<use layer="alpha" matrix="4 0 0 4 -811.4 -1979.2" name="mark/disk(sx)" pos="248 560" size="large" stroke="darkgray"/>
+<group layer="mariposa" matrix="0.6 0 0 0.6 -136.6 -127.2">
 <path matrix="1.5 0 0 1 272 -136" stroke="black" pen="heavier">
 100 736 m
 100 720 l
@@ -373,7 +373,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 42.4 -30.4">
+<group matrix="0.6 0 0 0.6 -40.6 -30.4">
 <path matrix="1.5 0 0 1 272 -136" stroke="black" pen="heavier">
 100 736 m
 100 720 l
@@ -387,7 +387,7 @@ h
 h
 </path>
 </group>
-<group layer="taco" matrix="0.6 0 0 0.6 -21.6 -118.4">
+<group layer="taco" matrix="0.6 0 0 0.6 -104.6 -118.4">
 <path matrix="1 0 0 1 320 -96" stroke="black" pen="heavier">
 96 736 m
 108 732 l
@@ -401,7 +401,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 10.4 -86.4">
+<group matrix="0.6 0 0 0.6 -72.6 -86.4">
 <path matrix="1 0 0 1 320 -96" stroke="black" pen="heavier">
 96 736 m
 108 732 l
@@ -415,7 +415,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 42.4 -118.4">
+<group matrix="0.6 0 0 0.6 -40.6 -118.4">
 <path matrix="1 0 0 1 320 -96" stroke="black" pen="heavier">
 96 736 m
 108 732 l
@@ -429,7 +429,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 10.4 -151.2">
+<group matrix="0.6 0 0 0.6 -72.6 -151.2">
 <path matrix="1 0 0 1 320 -96" stroke="black" pen="heavier">
 96 736 m
 108 732 l
@@ -443,7 +443,7 @@ h
 h
 </path>
 </group>
-<group layer="crossing" matrix="0.6 0 0 0.6 372.4 28.8">
+<group layer="crossing" matrix="0.6 0 0 0.6 289.4 28.8">
 <path matrix="1 0 0 1 -184 -112" stroke="black" pen="heavier">
 56 544 m
 48 552 l
@@ -457,7 +457,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 308.4 -36">
+<group matrix="0.6 0 0 0.6 225.4 -36">
 <path matrix="1 0 0 1 -184 -112" stroke="black" pen="heavier">
 56 544 m
 48 552 l
@@ -471,7 +471,7 @@ h
 h
 </path>
 </group>
-<group layer="nested" matrix="0.6 0 0 0.6 350 40">
+<group layer="nested" matrix="0.6 0 0 0.6 267 40">
 <path matrix="1 0 0 1 -240 -144" stroke="black" pen="heavier">
 56 544 m
 48 552 l
@@ -485,7 +485,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 406.4 -16.8">
+<group matrix="0.6 0 0 0.6 323.4 -16.8">
 <path matrix="1 0 0 1 -240 -144" stroke="black" pen="heavier">
 56 544 m
 48 552 l
@@ -499,7 +499,7 @@ h
 h
 </path>
 </group>
-<group layer="bat" matrix="0.6 0 0 0.6 193.2 108.8">
+<group layer="bat" matrix="0.6 0 0 0.6 110.2 108.8">
 <path matrix="1 0 0 1 128 -152" stroke="black" pen="heavier">
 56 544 m
 52 560 l
@@ -513,7 +513,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 64.4 -20">
+<group matrix="0.6 0 0 0.6 -18.6 -20">
 <path matrix="1 0 0 1 128 -152" stroke="black" pen="heavier">
 56 544 m
 52 560 l
@@ -527,98 +527,98 @@ h
 h
 </path>
 </group>
-<path layer="swords" matrix="0.9 0 0 0.9 424.8 -196.8" stroke="black" fill="brew7">
+<path layer="swords" matrix="0.9 0 0 0.9 449.8 -196.8" stroke="black" fill="brew7">
 64 496 m
 64 448 l
 112 448 l
 112 496 l
 h
 </path>
-<path layer="nested" matrix="0.9 0 0 0.9 349.2 -254.4" stroke="black" fill="brew4">
+<path layer="nested" matrix="0.9 0 0 0.9 374.2 -254.4" stroke="black" fill="brew4">
 128 560 m
 128 512 l
 144 512 l
 144 560 l
 h
 </path>
-<path layer="swords" matrix="0.9 0 0 0.9 360.4 -196.8" stroke="black" fill="brew7">
+<path layer="swords" matrix="0.9 0 0 0.9 385.4 -196.8" stroke="black" fill="brew7">
 64 496 m
 64 448 l
 112 448 l
 112 496 l
 h
 </path>
-<path layer="bat" matrix="0.9 0 0 0.9 285.2 -254.4" stroke="black" fill="brew3">
+<path layer="bat" matrix="0.9 0 0 0.9 310.2 -254.4" stroke="black" fill="brew3">
 128 560 m
 128 512 l
 144 512 l
 144 560 l
 h
 </path>
-<path layer="crossing" matrix="3.6 0 0 3.6 -569.2 -1704.8" stroke="black" fill="brew5">
+<path layer="crossing" matrix="3.6 0 0 3.6 -544.2 -1704.8" stroke="black" fill="brew5">
 292 548 m
 292 544 l
 304 544 l
 304 548 l
 h
 </path>
-<path layer="alpha" matrix="4 0 0 4 -688.4 -1923.2" stroke="black" fill="pink">
+<path layer="alpha" matrix="4 0 0 4 -663.4 -1923.2" stroke="black" fill="pink">
 288 548 m
 288 548 l
 288 548 l
 288 548 l
 h
 </path>
-<path layer="crossing" matrix="3.6 0 0 3.6 -572.4 -1701.6" stroke="black" fill="brew5">
+<path layer="crossing" matrix="3.6 0 0 3.6 -547.4 -1701.6" stroke="black" fill="brew5">
 288 548 m
 288 560 l
 292 560 l
 292 548 l
 h
 </path>
-<path layer="nested" matrix="3.6 0 0 3.6 -575.6 -1704.8" stroke="black" fill="brew4">
+<path layer="nested" matrix="3.6 0 0 3.6 -550.6 -1704.8" stroke="black" fill="brew4">
 288 548 m
 288 544 l
 276 544 l
 276 548 l
 h
 </path>
-<path layer="crossing" matrix="3.6 0 0 3.6 -569.2 -1698.4" stroke="black" fill="brew5">
+<path layer="crossing" matrix="3.6 0 0 3.6 -544.2 -1698.4" stroke="black" fill="brew5">
 292 564 m
 292 560 l
 304 560 l
 304 564 l
 h
 </path>
-<path layer="david" matrix="3.6 0 0 3.6 -569.2 -1701.6" stroke="black" fill="brew8">
+<path layer="david" matrix="3.6 0 0 3.6 -544.2 -1701.6" stroke="black" fill="brew8">
 292 560 m
 292 548 l
 304 548 l
 304 560 l
 h
 </path>
-<path layer="swords" matrix="3.6 0 0 3.6 -575.6 -1701.6" stroke="black" fill="brew7">
+<path layer="swords" matrix="3.6 0 0 3.6 -550.6 -1701.6" stroke="black" fill="brew7">
 288 548 m
 288 560 l
 276 548 l
 h
 </path>
-<path matrix="3.6 0 0 3.6 -569.2 -1695.2" stroke="black" fill="brew7">
+<path matrix="3.6 0 0 3.6 -544.2 -1695.2" stroke="black" fill="brew7">
 292 564 m
 304 564 l
 304 576 l
 h
 </path>
-<path layer="taco" matrix="3.6 0 0 3.6 -572.4 -1704.8" stroke="black" fill="brew2">
+<path layer="taco" matrix="3.6 0 0 3.6 -547.4 -1704.8" stroke="black" fill="brew2">
 288 548 m
 288 544 l
 292 544 l
 292 548 l
 h
 </path>
-<use layer="alpha" matrix="4 0 0 4 -520.4 -1979.2" name="mark/disk(sx)" pos="248 560" size="large" stroke="darkgray"/>
-<use matrix="4 0 0 4 -520.4 -1979.2" name="mark/disk(sx)" pos="248 560" size="normal" stroke="darkgray"/>
-<group layer="nested" matrix="0.6 0 0 0.6 550 16">
+<use layer="alpha" matrix="4 0 0 4 -495.4 -1979.2" name="mark/disk(sx)" pos="248 560" size="large" stroke="darkgray"/>
+<use matrix="4 0 0 4 -495.4 -1979.2" name="mark/disk(sx)" pos="248 560" size="normal" stroke="darkgray"/>
+<group layer="nested" matrix="0.6 0 0 0.6 575 16">
 <path matrix="1 0 0 1 -240 -144" stroke="black" pen="heavier">
 56 544 m
 48 552 l
@@ -632,7 +632,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 582 -16.8">
+<group matrix="0.6 0 0 0.6 607 -16.8">
 <path matrix="1 0 0 1 -240 -144" stroke="black" pen="heavier">
 56 544 m
 48 552 l
@@ -646,7 +646,7 @@ h
 h
 </path>
 </group>
-<group layer="crossing" matrix="0.6 0 0 0.6 548.4 28.8">
+<group layer="crossing" matrix="0.6 0 0 0.6 573.4 28.8">
 <path matrix="1 0 0 1 -184 -112" stroke="black" pen="heavier">
 56 544 m
 48 552 l
@@ -660,7 +660,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 580.4 60.8">
+<group matrix="0.6 0 0 0.6 605.4 60.8">
 <path matrix="1 0 0 1 -184 -112" stroke="black" pen="heavier">
 56 544 m
 48 552 l
@@ -674,7 +674,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 580.4 -3.2">
+<group matrix="0.6 0 0 0.6 605.4 -3.2">
 <path matrix="1 0 0 1 -184 -112" stroke="black" pen="heavier">
 56 544 m
 48 552 l
@@ -688,7 +688,7 @@ h
 h
 </path>
 </group>
-<group layer="swords" matrix="0.6 0 0 0.6 247.6 12">
+<group layer="swords" matrix="0.6 0 0 0.6 272.6 12">
 <path matrix="0.25 0 0 0.25 264 224" stroke="black" pen="heavier">
 248 512 m
 192 560 l
@@ -702,7 +702,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 311.6 12">
+<group matrix="0.6 0 0 0.6 336.6 12">
 <path matrix="0.25 0 0 0.25 264 224" stroke="black" pen="heavier">
 248 512 m
 192 560 l
@@ -716,7 +716,7 @@ h
 h
 </path>
 </group>
-<group matrix="0.6 0 0 0.6 319.6 132.8">
+<group matrix="0.6 0 0 0.6 344.6 132.8">
 <path matrix="0.25 0 0 0.25 264 224" stroke="black" pen="heavier">
 248 512 m
 192 560 l
@@ -730,7 +730,7 @@ h
 h
 </path>
 </group>
-<group layer="bat" matrix="0.6 0 0 0.6 297.2 -12">
+<group layer="bat" matrix="0.6 0 0 0.6 322.2 -12">
 <path matrix="1 0 0 1 128 -152" stroke="black" pen="heavier">
 56 544 m
 52 560 l
@@ -744,7 +744,7 @@ h
 h
 </path>
 </group>
-<group layer="swords" matrix="0.6 0 0 0.6 255.6 68.8">
+<group layer="swords" matrix="0.6 0 0 0.6 280.6 68.8">
 <path matrix="0.25 0 0 0.25 264 224" stroke="black" pen="heavier">
 248 512 m
 192 560 l
@@ -758,7 +758,7 @@ h
 h
 </path>
 </group>
-<group layer="david" matrix="0.6 0 0 0.6 345.2 62.4">
+<group layer="david" matrix="0.6 0 0 0.6 370.2 62.4">
 <path matrix="0.25 0 0 0.25 208 248" stroke="black" pen="heavier">
 240 512 m
 240 576 l
@@ -772,7 +772,7 @@ h
 h
 </path>
 </group>
-<group layer="taco" matrix="0.6 0 0 0.6 218.4 -118.4">
+<group layer="taco" matrix="0.6 0 0 0.6 243.4 -118.4">
 <path matrix="1 0 0 1 320 -96" stroke="black" pen="heavier">
 96 736 m
 108 732 l
@@ -786,13 +786,13 @@ h
 h
 </path>
 </group>
-<path layer="ears" matrix="0.9 0 0 0.9 281.2 -254.4" stroke="black" fill="brew6">
+<path layer="ears" matrix="0.9 0 0 0.9 306.2 -254.4" stroke="black" fill="brew6">
 80 512 m
 128 560 l
 128 512 l
 h
 </path>
-<group matrix="0.6 0 0 0.6 334.8 -77.6">
+<group matrix="0.6 0 0 0.6 359.8 -77.6">
 <path matrix="0.1875 0 0 0.25 36 360" stroke="black" pen="heavier">
 224 512 m
 224 576 l
@@ -806,13 +806,13 @@ h
 h
 </path>
 </group>
-<path layer="alpha" stroke="black">
+<path layer="alpha" matrix="1 0 0 1 -83 0" stroke="black">
 145.2 206.4 m
 317.2 378.4 l
 317.6 206.4 l
 h
 </path>
-<path stroke="black">
+<path matrix="1 0 0 1 25 0" stroke="black">
 353.2 206.4 m
 525.2 378.4 l
 525.6 206.4 l

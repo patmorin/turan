@@ -1,11 +1,12 @@
 \documentclass{patmorin}
 \listfiles
 \usepackage[utf8]{inputenc}
+\usepackage{microtype}
 \usepackage{amsthm,amsmath,graphicx}
 \usepackage{pat}
 \usepackage[letterpaper]{hyperref}
 \usepackage[table,dvipsnames]{xcolor}
-%\usepackage[dvipsnames]{color}
+%\usepackage[dvipsnames]{colour}
 \definecolor{linkblue}{named}{Blue}
 \hypersetup{colorlinks=true, linkcolor=linkblue,  anchorcolor=linkblue,
 citecolor=linkblue, filecolor=linkblue, menucolor=linkblue,
@@ -24,6 +25,8 @@ urlcolor=linkblue}
 
 \usepackage{array}
 
+\newcommand{\borisspace}{\,}
+
 
 % To reduce space in lists
 \usepackage{enumitem}  
@@ -31,18 +34,27 @@ urlcolor=linkblue}
 
 %\usepackage[skip=0pt]{caption}
 
-\title{\MakeUppercase{More Turán-Type Theorems for Triangles in Convex Point Sets}\thanks{This research is partially funded by NSERC.}}
+\title{\MakeUppercase{More Turán-Type Theorems for Triangles in Convex Point Sets}}
 
 \author{%
-Boris Aronov,
-Vida Dujmović,
-Ruy Fabila,
-Pat Morin,
-Aurélien Ooms\thanks{Supported by the Fund for Research Training in Industry and Agriculture (FRIA).
-Département d'Informatique, Université libre de Bruxelles (ULB), Belgium.
-\texttt{aureooms@ulb.ac.be}
-},\\
-and Luís Fernando Schultz Xavier da Silveira%
+Boris Aronov\thanks{%
+    Partially supported by NSF Grants CCF-11-17336, CCF-12-18791, and
+    CCF-15-40656, and by BSF grant 2014/170. Department of Computer
+    Science and Engineering, Tandon School of Engineering, New York
+    University, USA. },\,
+Vida Dujmović\thanks{%
+    Partially supported by NSERC and the Ontario Ministry of Research
+    and Innovation. Department of Computer Science and Electrical Engineering,
+    University of Ottawa, Canada.},
+Pat Morin\thanks{%
+    Partially supported by NSERC. School of Computer Science, Carleton
+    University, Canada.},\,
+Aurélien Ooms\thanks{%
+    Supported by the Fund for Research Training in Industry and
+    Agriculture (FRIA).  Département d'Informatique, Université libre 
+    de Bruxelles (ULB), Belgium.  %\texttt{aureooms@ulb.ac.be}
+},\,\\
+and Luís Fernando Schultz Xavier da Silveira\footnotemark[2]
 }
 
 \newcommand{\taco}{\raisebox{-.1ex}{\includegraphics[height=1.6ex]{figs/triangles-edge-1}}}
@@ -115,7 +127,7 @@ points in convex position, and such that no pair of triangles in $S$
 forms a configuration in $X$.  We call the size of such a set $\ex(n,X)$.
 For example, 
 \begin{equation}
-    \ex(n,\{\taco,\nested,\crossing,\swords,\david\}) = n-2 \enspace .
+    \ex(n,\{\taco,\nested,\crossing,\swords,\david\}) = n-2 \borisspace .
 \end{equation}
 This is because the set $X=\{\taco,\nested,\crossing,\swords,\david\}$
 forbids any form of crossings between the edges of triangles. Thus, the
@@ -174,7 +186,7 @@ relationship: $\ex(n,X) \le \ex(n,Y)$ for any $X\supseteq Y$.
 apply this exhaustively to the list of previous results.  Each entry in
 this table presents the asymptotic behaviour of $\ex(n,X)$ for the set
 $X$ obtained as the union of the row and column label.  Asymptotically
-tight bounds are colored blue, and gaps between lower and upper bounds
+tight bounds are coloured blue, and gaps between lower and upper bounds
 are coloured red. Previous results imply 35 tight bounds for 256 of the
 possible choices of $X$.  The configuration $\mariposa$ is ommitted from
 the table since a simple argument (\lemref{xcup}) shows that its inclusion
@@ -198,7 +210,7 @@ in $X$ does not change $\ex(n,X)$ by more than a constant factor.
 %Sometimes it is more natural to describe the allowable configurations than the forbidden configurations. For this, we use the notation 
 %\[
 %   \on(n,X) = \ex(n,\{\taco,\mariposa,\bat,\nested,\crossing,
-%                       \ears,\swords,\david\} \setminus X) \enspace .
+%                       \ears,\swords,\david\} \setminus X) \borisspace .
 %\]
 %
 
@@ -244,7 +256,7 @@ problem and its rich history in \secref{tripods}.
     \input{bounds.tex}
   }
   \caption{New and previous bounds for $\ex(n,X)$, up to a factor of $\log n$.
-  For the new bounds listed as $n$, the lower bound is $\Omega(n)$ and the upper bound is $O(n\log n)$.  For the bounds listed as $n^{1.546}:n^2$, the upper bound is actually $n^2/e^{\Omega(\log^* n)}$.}
+  For the new bounds listed as $n$, the lower bound is $\Omega(n)$ and the upper bound is $O(n\log n)$.  For the bounds in green, listed as $n^{1.546}:n^2$, the upper bound is actually $n^2/e^{\Omega(\log^* n)}$.}
   \tablabel{bigtable}
 \end{table}
 
@@ -292,7 +304,7 @@ of $\ex(n,X)$.
 \subsection{Cubic-Sized Sets of Pairwise Crossing Triangles}
 
 \begin{thm}\thmlabel{pairwise-crossing}
-   $\ex(n,\{\ears,\bat,\mariposa\})\in\Omega(n^3)$
+   $\ex(n,\{\ears,\bat,\mariposa\})\in\Omega(n^3)$.
 \end{thm}
 
 \begin{proof}
@@ -337,7 +349,7 @@ $\ex(n,X)\in \Omega(n)$.
        & \david
       \end{tabular}
     }
-    \caption{The proof of \thmref{linear-lower}.}
+    \caption{Constructions used in the proof of \thmref{linear-lower}.}
     \figlabel{linear-lower}
   \end{figure}
  \begin{enumerate}
@@ -387,7 +399,7 @@ losing much precision, we can also upper bound $\ex(n,X)$ by $\ex'(n,X)$.
      \ex(n,X)\in 
         \begin{cases} 
             O(n^c)     & \text{if $c>1$} \\
-            O(n\log n) & \text{if $c=1$}
+            O(n\log n) & \text{if $c=1$.}
         \end{cases}
   \]
 \end{lem}
@@ -406,7 +418,7 @@ losing much precision, we can also upper bound $\ex(n,X)$ by $\ex'(n,X)$.
         most $\ex(\lfloor n/2\rfloor,X)$ such triangles.
    \end{enumerate}
    Thus, we obtain the recurrence inequality:
-   \[  \ex(n,X) \le O(n^{c}) + \ex(\lceil n/2\rceil,X) + \ex(\lfloor n/2\rfloor,X) \]
+   \[  \ex(n,X) \le O(n^{c}) + \ex(\lceil n/2\rceil,X) + \ex(\lfloor n/2\rfloor,X) \borisspace ,\]
    which resolves to $O(n^c)$ for $c>1$ and $O(n\log n)$ for $c=1$.
 \end{proof}
 
@@ -420,7 +432,7 @@ easy to visualize.  Refer to \figref{point-view}.
 
 In this puzzle, we are given $\binom{n}{2}$ points,
 \[
-    Q = \{(x,y): y\in\{1,\ldots,n-1\}, x\in\{y+1,\ldots,n\} \} \enspace .
+    Q = \{(x,y): y\in\{1,\ldots,n-1\}, x\in\{y+1,\ldots,n\} \} \borisspace .
 \]
 These points model the top/bottom view on a convex $2n$-gon, where the
 point $(x,y)$ represents a triangle whose vertices are some point on
@@ -450,7 +462,7 @@ By proving bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on the maximum
 number of triangles obtained in the top-bottom view on a set of $2n$
 points, i.e., bounds on $\ex'(2n, X)$.
 
-\Figref{forbidden-color}.a shows restrictions on the locations of points
+\Figref{forbidden-colour}.a shows restrictions on the locations of points
 placed during a single round.  It is interpreted as follows:  If the
 central point, $p=(x,y)$, is placed during round $i$, and we wish to
 avoid some particular configuration, $c$, then we should not place any
@@ -460,9 +472,9 @@ should not place any points in the same row or column as $p$; such a point
 creates a $\taco$ configuration in which the shared edge
 joins a bottom vertex to a left (same row) or right (same column) vertex.
 
-\Figref{forbidden-color}.b shows the constraints placed on the locations
+\Figref{forbidden-colour}.b shows the constraints placed on the locations
 of points placed in subsequent rounds.  Its interpretation is similar
-\figref{forbidden-color}.a. For example, if we wish to avoid a
+\figref{forbidden-colour}.a. For example, if we wish to avoid a
 $\nested$ configuration and we place the central point, $p$, during round
 $i$, then, in every round $j>i$, we should not place any point directly
 to the left or directly below $p$.  Any such point creates 
@@ -530,12 +542,12 @@ a $\nested$ configuration in which the shared vertex is the left vertex
       \end{tabular}
    }
    \caption{The regions killed by forbidden configurations during (a)~the current round and (b)~subsequent rounds.}
-   \figlabel{forbidden-color}
+   \figlabel{forbidden-colour}
 \end{figure}
 
 For any
 $X\subset\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}$
-and any $S\subset Q$, we define $\killed(X,S)$ as the subset of $Q$ that
+and any $S\subseteq Q$, we define $\killed(X,S)$ as the subset of $Q$ that
 can no longer be played in the dot puzzle game (for configurations in
 $X$) if the points is $S$ have been played in previous rounds (these are
 the points of $Q$ $\kappa$illed by $S$).  We use the complementary notation
@@ -557,7 +569,7 @@ A point set is \emph{increasing} (respectively, decreasing) if it is
 non-decreasing (respectively, non-increasing) and no two of its points
 points have the same $x$-coordinate or the same $y$-coordinate.
 
-From \figref{forbidden-color}, some previous upper bounds naturally fall
+From \figref{forbidden-colour}, some previous upper bounds naturally fall
 out.  Consider Bra\ss's results \cite{brass:turan} that $\ex(n,\{\nested\})\in
 O(n^2)$.  For the game defined by $X=\{\nested\}$, we have the rules:\\
 \centerline{\includegraphics[height=3cm]{figs/helper-3}}
@@ -578,7 +590,7 @@ allowed in subsequent rounds ensure that, after round $i$ any points
 chosen are not below or to the left of the topmost-rightmost point
 in $Q_i$.  Taken together, these rules imply that
 \[
-    \sum_{i=1}^n|Q_i| \le 3n-4 \enspace ,
+    \sum_{i=1}^n|Q_i| \le 3n-4 \borisspace ,
 \]
 since the union of $Q_i$ is a non-decreasing point set (whose size is
 therefore at most $2n-3$), and each $Q_i$ shares at most one point with
@@ -592,7 +604,7 @@ O(n\log n)$ then follows from \lemref{top-bottom}.
 After this warm-up, and with the dot puzzle view, we are ready to prove
 some new results.  We begin by proving several linear upper bounds.
 From this point on, each proof of a theorem will begin with a picture,
-similar to \figref{forbidden-color} that shows the rules of the dot puzzle
+similar to \figref{forbidden-colour} that shows the rules of the dot puzzle
 considered by the theorem.  For a point $q\in Q$, we use the notations
 $\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
 
@@ -669,12 +681,13 @@ $\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
 
 
 Our next three upper bounds depend on a simple lemma about forbidden
-configurations of points:
+configurations of points.  We that three points $a=(x_0,y_0)$,
+$b=(x_0,y_1)$, and $c=(x_1,y_1)$ form a \emph{$\Gamma$-configuration} if
+$y_0<y_1$ and $x_0<x_1$.
 
 \begin{lem}\lemlabel{forbidden}
-   Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three
-   points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $y_0<y_1$
-   and $x_0<x_1$.  Then $|S|\le 2n$.
+   Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three points $a$,
+   $b$, and $c$ that form a $\Gamma$-configuration. Then $|S|\le 2n$.
 \end{lem}
 
 \begin{proof}
@@ -697,7 +710,7 @@ configurations of points:
   |Q_i|$ is the quantity we are interested in bounding.
 
   Next, we claim that $S$ does not contain any three points $a$, $b$, and
-  $c$ forming the configuration described in \lemref{forbidden}. Refer
+  $c$ forming a $\Gamma$-configuration. Refer
   to \figref{forbidden}.  Suppose, for the sake of contradiction,
   that this were not the case and that $a\in Q_i$, $b\in Q_j$, and
   $c\in Q_k$.  We have $a\in\killed(\{\nested\},\{b\})$ so $i\le j$.
@@ -710,8 +723,9 @@ configurations of points:
     \centering{
       \includegraphics{figs/forbidden}
     }
-    \caption{The proof of \thmref{taco-nested-david}. Any point $c$
-     that SE-dominates $b$ will complete the forbidden configuration $a,b,c$.}
+    \caption{The proof of \thmref{taco-nested-david}.}
+%    \caption{The proof of \thmref{taco-nested-david}. Any point $c$
+%     that SE-dominates $b$ will complete the $L$-configuration $a,b,c$.}
     \figlabel{forbidden}
   \end{figure}
 \end{proof}
@@ -726,13 +740,13 @@ configurations of points:
   \centerline{\includegraphics[height=3cm]{figs/helper-8}}
   Let $S=\bigcup_{i=1}^n Q_i$. We claim that $S$ satisfies the conditions
   of \lemref{forbidden}, so $|S|\le 2n$.  To see this, assume $S$
-  contains a configuration of three points $a$, $b$, and $c$ like
-  that described in \lemref{forbidden}. Then the rules for $\crossing$
-  imply that no set $Q_i$ contains both $a$ and $c$.  However,
-  the rules for $\swords$ and $\crossing$ imply that, if $a\in Q_i$,
-  $b\in Q_j$ and $c\in Q_k$ then \[  i \ge j \ge k \ge i \enspace . \]
-  (See \figref{crossing-swords}).
-  But this is a contradiction, since it implies that $i=j=k$.
+  contains a $\Gamma$-configuration  $a$, $b$, and $c$. Then the rules
+  for $\crossing$ imply that no set $Q_i$ contains both $a$ and $c$.
+  However, the rules for $\swords$ and $\crossing$ imply that, if $a\in
+  Q_i$, $b\in Q_j$ and $c\in Q_k$ then 
+  \[  i \ge j \ge k \ge i \borisspace . \] 
+  (See \figref{crossing-swords}).  But this is a contradiction,
+  since it implies that $i=j=k$.
 
   \begin{figure}[htbp]
     \centering{
@@ -746,9 +760,9 @@ configurations of points:
   in case more than one such point exists, take the the one that minimizes
   $\y(p)$.  Observe that $\killed(\{\crossing,\swords\},\{p\})
   \supseteq Q_i\setminus\{p\}$.  Indeed, every point directly above
-  or the the right of $p$ is killed by $p$ or cannot be included in
-  $Q_i$ because of the rule for $\crossing$.  Therefore, each point in
-  $Q_i$ eliminates at least $|Q_i|-1$ points of $S$. It follows that
+  and every point to the right of $p$ is killed by $p$ or cannot be included in
+  $Q_i$ because of the rule for $\crossing$.  Therefore, $Q_i$ 
+  eliminates at least $|Q_i|-1$ points of $S$. It follows that
   $\sum_{i=1}^n |Q_i| \le |S|+n \le 3n$.
 \end{proof}
 
@@ -765,7 +779,7 @@ configurations of points:
    that appear in $Q_{i+1},\ldots,Q_n$.  Refer to \figref{nested-ears-david}. 
    Define
    \[
-        Q_i^* = \{ (x,y)\in Q_1 : x\ge\ymax(Q_1) \} \enspace 
+        Q_i^* = \{ (x,y)\in Q_1 : x\ge\ymax(Q_1) \} \borisspace 
    \]
    and let $p$ and $r$ be the top rightmost and bottom leftmost points
    in $Q_i^*$, respectively.  If there is more than one point in $Q_i^*$
@@ -793,14 +807,13 @@ configurations of points:
    $\sum_{i=1}^n |Q_i| \le |S|+2n$.   All that remains now is to bound
    $|S|$.
 
-   For each $i\in \{1,\ldots,n\}$, let $Q_i'$ be obtained
-   from $Q_i$ by removing the leftmost point in each row.
-   Let $S'=\bigcup_{i=1}^n Q_i'$.  We claim that $S'$ satisfies the
-   conditions of \lemref{forbidden}, so that $|S'|\le 2n$.  To see why
-   this is so, suppose that $S'$ contains three points $a$, $b$, and $c$
-   forming the configuration described in \lemref{forbidden}.  Then, as
-   argued in the proof of \thmref{taco-nested-david}, it must be that
-   $a,b,c\in Q_i'$ for some $i$.  However, this contradicts the fact
+   For each $i\in \{1,\ldots,n\}$, let $Q_i'$ be obtained from $Q_i$ by
+   removing the leftmost point in each row.  Let $S'=\bigcup_{i=1}^n
+   Q_i'$.  We claim that $S'$ satisfies the conditions of
+   \lemref{forbidden}, so that $|S'|\le 2n$.  To see why this is so,
+   suppose that $S'$ contains a $\Gamma$-configuration $a$, $b$, and $c$.
+   Then, as argued in the proof of \thmref{taco-nested-david}, it must be
+   that $a,b,c\in Q_i'$ for some $i$.  However, this contradicts the fact
    (due to $\nested$) that $Q_i$ is non-decreasing since the leftmost
    point, $b'$, of $Q_i$ in the same row as $b$ is to the left of $b$
    (see \figref{nested-ears-david-ii}).
@@ -816,7 +829,7 @@ configurations of points:
    Therefore, $|S'|\le 2n$.   Now let $S''=S\setminus S'$.  Then we
    claim that $S''$ also satisfies the conditions of \lemref{forbidden}.
    Indeed, by the same reasoning as above, if there were $a,b,c\in
-   S''$ satisfying the conditions of \lemref{forbidden}, then it must
+   S''$ forming a $\Gamma$-configuration, then it must
    be that $a,b,c\in Q_i\setminus Q_i'$ for some $i$.  But this is a
    contradiction since $b$ and $c$ are in the same row, and $Q_i\setminus
    Q_i'$ contains at most one point per row.
@@ -828,32 +841,35 @@ configurations of points:
 
 Next we focus on the configuration $\swords$ and give linear upper bounds
 bounds on $\ex'(n,\{\swords, \taco\})$ and $\ex'(n,\{\swords, \nested\})$.
-We begin with another lemma about forbidden configurations of points
-that is similar to \lemref{forbidden}.
+We begin with another lemma about forbidden configurations of points that
+is similar to \lemref{forbidden}.  
+We say that a point $(x_i,y_i)$ \emph{SE-dominates} a point $(x_j,y_j)$
+if $x_i > x_j$ and $y_i < y_j$. 
+We say that three points $a=(x_0,y_0)$,
+$b=(x_0,y_1)$, and $c=(x_1,y_1)$ form a \emph{lazy-$L$-configuration}
+if $y_1>y_0$ and $c$ SE-dominates $b$.
 
 \begin{figure}
   \centering{\includegraphics{figs/se-domination}}
-  \caption{The proof of \lemref{forbidden-ii}}.
+  \caption{The proof of \lemref{forbidden-ii}.}
   \figlabel{se-domination}
 \end{figure}
 
 \begin{lem}\lemlabel{forbidden-ii}
    Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three
-   points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$ with $x_1>x_0$ and 
-   $y_2>y_1>y_0$.  Then $|S|\le 2n$.
+   points $a$, $b$, and $c$ forming a lazy-$L$-configuration.  Then $|S|\le 2n$.
 \end{lem}
 
 \begin{proof}
   Refer to \figref{se-domination}.
-  We say that a point $(x_i,y_i)$ \emph{SE-dominates} a point $(x_j,y_j)$
-  if $x_i > x_j$ and $y_i < y_j$.  Consider the \emph{Pareto boundary}
+  Consider the \emph{Pareto boundary}
   $P\subseteq S$ containing each point of $S$ that is not SE-dominated by any
   other point in $S$.  The set $P$ is non-decreasing, so it has size at
   most $2n$.  We claim that the set $S\setminus P$ has at most one point
   in each column, so $|S|\le 3n$.  To see why this claim is true, observe
   that if some column of $P\setminus S$ contains two points $a$ and $b$
   with $a$ above $b$, then at least one point $c$ in $P$ SE-dominates $b$
-  so that $a$, $b$, and $c$ would form the forbidden configuration.
+  so that $a$, $b$, and $c$ would form the lazy-$L$-configuration.
 \end{proof}
 
 \begin{thm}\thmlabel{taco-swords}
@@ -864,16 +880,15 @@ that is similar to \lemref{forbidden}.
 \begin{proof}
   \centerline{\includegraphics[height=3cm]{figs/helper-6}} Let
   $S=\bigcup_{i=1}^n Q_i$. Then the rules for $\taco$ imply that
-  $|S|=\sum_{i=1}^n |Q_i|$, so it suffices to bound $|S|$.
-  We claim that $S$ satisfies the conditions of \lemref{forbidden-ii},
-  so $|S|\le 3n$.
+  $|S|=\sum_{i=1}^n |Q_i|$, so it suffices to bound $|S|$.  We claim that
+  $S$ contains no lazy-$L$-configuration so, by \lemref{forbidden-ii},
+  $|S|\le 3n$.
 
-  Suppose there were $a\in Q_i$, $b\in Q_j$, and $c\in Q_k$ forming the
-  forbidden configuration of \lemref{forbidden-ii}.  
-  Now, $a\in\killed(\{\swords\}, \{c\})$ and 
+  Suppose there were $a\in Q_i$, $b\in Q_j$, and $c\in Q_k$ forming a
+  lazy-$L$-configuration.  Now, $a\in\killed(\{\swords\}, \{c\})$ and
   $c\in\killed(\{\swords\}, \{a\})$, so it must be that $i=k$.  The same
-  argument, applied to $b$ and $c$, implies that $j=k$, so  
-  $i=j=k$.  But this is a contradiction since the rules for $\taco$ imply that
+  argument, applied to $b$ and $c$, implies that $j=k$, so $i=j=k$.
+  But this is a contradiction since the rules for $\taco$ imply that
   $i\neq j$.
 \end{proof}
 
@@ -893,11 +908,11 @@ that is similar to \lemref{forbidden}.
 
    Consider the graph $G$ with vertex set $S$ and that contains an
    edge $uw$ if and only if the $x$-coordinate of $u$ is equal to the
-   $y$-coordinate of $w$.  We claim that $G$ is 4-colorable.  To prove
+   $y$-coordinate of $w$.  We claim that $G$ is 4-colourable.  To prove
    this, we partition $S$ into two sets $A$ and $B$ and show that each of
    the graphs $G[A]$ and $G[B]$ induced by $A$ and $B$ is 2-colourable
-   (in fact, $G[A]$ and $G[B]$ are each forests). Thus, if we color $A$
-   with colors $\{1,2\}$ and $B$ with colours $\{3,4\}$, then we obtain
+   (in fact, $G[A]$ and $G[B]$ are each forests). Thus, if we colour $A$
+   with colours $\{1,2\}$ and $B$ with colours $\{3,4\}$, then we obtain
    a 4-colouring of $G$.
 
    Refer to \figref{four-colouring}.  Remove the bottom-most point of
@@ -909,7 +924,7 @@ that is similar to \lemref{forbidden}.
    is also obviously acyclic, so there is an ordering $v_1,\ldots,v_{|A|}$
    of $A$ such that, for every $i\in\{1,\ldots,|A|\}$, $v_i$ is adjacent
    in $G[A]$ to at most one of $v_1,\ldots,v_{i-1}$.  We can therefore
-   greedily 2-color $G[A]$ by colouring $v_1,\ldots,v_{|A|}$ in order and,
+   greedily 2-colour $G[A]$ by colouring $v_1,\ldots,v_{|A|}$ in order and,
    when colouring $v_i$, we use any colour in $\{1,2\}$ not already used
    by $v_i$'s at most one neighbour in $v_1,\ldots,v_{i-1}$.
 
@@ -957,18 +972,19 @@ that is similar to \lemref{forbidden}.
   Suppose now that $H$ contains a directed cycle
   $C=u_0,\ldots,u_{\ell-1}$.  Since the points in
   this cycle all kill each other, i.e., $u_{k+1\bmod
-  \ell}\in\killed(\{\nested,\swords\},\{u_k\})$), it must be the case
-  that all the vertices of $C$ are played in the same round $i'\in\{1,\ldots,n\}$ and never
-  played again, i.e., $V(C)\subset Q_{i'}$
-  and $V(C)\cap Q_{j'}=\emptyset$ for all $j'\in\{1,\ldots,n\}\setminus
-  \{i'\}$.
+  \ell}\in\killed(\{\nested,\swords\},\{u_k\})$), it must be
+  the case that all the vertices of $C$ are played in the same
+  round $i'\in\{1,\ldots,n\}$ and never played again, i.e.,
+  $V(C)\subseteq Q_{i'}$ and $V(C)\cap Q_{j'}=\emptyset$ for all
+  $j'\in\{1,\ldots,n\}\setminus \{i'\}$.
 
   Now, if we repeatedly find a cycle in $H$ and remove its vertices, we
   will eventually be left with an acyclic subgraph $H'$ with vertex set
   is $S'_j\subseteq S_j$.  From the preceding discussion, we know that
   each cycle vertex we remove contributes only 1 to $\sum_{i=1}^n |Q_i|$:
   \[
-        \sum_{i=1}^n |(S_j\setminus S_j')\cap Q_i| = |S_j\setminus S_j'| \enspace .
+        \sum_{i=1}^n |(S_j\setminus S_j')\cap Q_i| 
+             = |S_j\setminus S_j'| \borisspace .
   \]
 
   Finally, we are left with the complete acyclic subgraph $H'$ whose
@@ -978,7 +994,7 @@ that is similar to \lemref{forbidden}.
   not appear in any $Q_{i'}$ with $i'>i$.  This implies that
   \[
       \sum_{i=1}^n (|S_j'\cap Q_i|-1) =
-      \sum_{i=1}^n (k_i-1) \le |S_j'|
+      \sum_{i=1}^n (k_i-1) \le |S_j'| \borisspace ,
   \]
   so $\sum_{i=1}^n k_i \le |S_j'|+n$.  Putting everything together, we have
   \begin{align*}
@@ -987,7 +1003,7 @@ that is similar to \lemref{forbidden}.
          & = \sum_{j=1}^4\left(\sum_{i=1}^n (|Q_i\cap(S_j\setminus S_j')|
               + |Q_i\cap S_j'|\right) \\
          & \le \sum_{j=1}^4\left(|S_j\setminus S_j'| + |S_j'|+n\right) \\
-         & = |S|+4n \le 6n \enspace . \qedhere 
+         & = |S|+4n \le 6n \borisspace . \qedhere 
   \end{align*}
 \end{proof}
 
@@ -1048,10 +1064,8 @@ The current record is held by Gowers and Long \cite{gowers.long:length},
 who describe a construction of size $\Omega(n^{1.546})$.
 
 \begin{thm}[Gowers and Long \cite{gowers.long:length}]\thmlabel{taco-nested-lb}
-  $\ex'(n,\{\taco,\nested\}) \in \Omega(n^{1.546})$
+  $\ex'(n,\{\taco,\nested\}) \in \Omega(n^{1.546})$.
 \end{thm}
-
-
 
 The only known upper bounds for this problem come from the fact that a
 solution to this problem gives a solution to the Ruzsa-Szemer{\'e}di
@@ -1074,7 +1088,7 @@ with $A=B=\{1,\ldots,n\}$ and
 satisfies the conditions of the induced matching problem, with the
 partition into matchings given by
 \[
-    M_i = \{ (b,c) : (i,b,c)\in S \} 
+    M_i = \{ (b,c) : (i,b,c)\in S \} \borisspace . 
 \]
 Thus, any upper bound for the induced-matching problem is also an upper bound
 on the size of a 2-comparable set of triples.
@@ -1086,7 +1100,7 @@ of $n^{2}/e^{\Omega(\log^* n)}$.  See the discussion, for example,
 in Gowers and Long \cite{gowers.long:length}.
 
 \begin{thm}[Fox \cite{fox:new}]\thmlabel{taco-nested-ub}
-  $\ex'(n,\{\taco,\nested\}) \in n^2/e^{\Omega(\log^* n)}$
+  $\ex'(n,\{\taco,\nested\}) \in n^2/e^{\Omega(\log^* n)}$.
 \end{thm}
 
 While discovering these results, we noticed that the relationships
@@ -1136,7 +1150,7 @@ in the lower-right quadrant.  When played this way, the extra restrictions
 caused by $\bat$ and $\ears$ do not affect the lower-right quadrant.
 
 \begin{thm}
-   $\ex'(n,\{\taco,\nested\}) \in \Theta(\ex'(n,\{\taco,\nested,\bat,\ears\})$  
+   $\ex'(n,\{\taco,\nested\}) \in \Theta(\ex'(n,\{\taco,\nested,\bat,\ears\})$.
 \end{thm}
 
 \subsection{Lower Bounds}
@@ -1144,7 +1158,7 @@ caused by $\bat$ and $\ears$ do not affect the lower-right quadrant.
 
 Finally, we clean up with some $\Omega(n^2)$ lower bound constructions.
 In each case, a matching upper bound follows from one of the results in
-Bra\ss \cite{brass:turan}.  The following are essentialy ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot puzzle.
+Bra\ss \cite{brass:turan}.  The following are essentially ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot puzzle.
 
 \begin{thm}\thmlabel{taco-david-bat-ears}
 $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.

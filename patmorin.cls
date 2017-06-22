@@ -128,3 +128,20 @@
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
 \pagestyle{fancy}
+
+\usepackage{marvosym}
+\makeatletter
+\renewcommand*{\@fnsymbol}[1]{\ensuremath{\ifcase#1 %
+   %\or \text{\Sun}
+   \or \text{\Mercury}
+   \or \text{\Venus}
+   \or \text{\Earth}
+   \or \text{\Mars}
+   \or \text{\Jupiter}
+   \or \text{\Saturn}
+   \or \text{\Uranus}
+   \or \text{\Neptune}
+   \or \text{\Pluto}
+  \else\@ctrerr\fi}}
+\makeatother
+

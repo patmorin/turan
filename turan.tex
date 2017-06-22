@@ -952,14 +952,13 @@ if $y_1>y_0$ and $c$ SE-dominates $b$.
    contains the edge $\overrightarrow{uw}$ if and only if
    $u$ kills $w$, i.e., $w\in\killed(\{\nested,\swords\},\{u\})$.
    We claim that this graph is \emph{complete}, i.e., for any $u,w\in
-   S$ at least one of $\overrightarrow{uw}$ or $\overrightarrow{wu}$ is
+   S_j$ at least one of $\overrightarrow{uw}$ or $\overrightarrow{wu}$ is
    in $E$.  To see why this is so, consider any two distinct points $u,w\in S_j$
    with $u=(x_0,y_0)$ and $w=(x_1,y_1)$.  Since $S$ (and hence $S_j$)
    is non-decreasing we may assume, without loss of generality that
    $x_0\le x_1$ and $y_0\le y_1$.
-   There are only
-   three cases to consider:
-  \begin{enumerate}
+   There are five cases to consider: 
+   \begin{enumerate}
     \item $y_0=y_1$, so $x_0 < x_1$. In this case $u\in\killed(\{\nested\},w)$, so $\overrightarrow{wu}\in E$.
     \item $x_0=x_1$, so $y_0 < y_1$. In this case $u\in\killed(\{\nested\},w)$, so $\overrightarrow{wu}\in E$.
     \item $x_0 < x_1$, $y_0 < y_1$, and $y_1 > x_0$.  In this case $w\in\killed(\{\swords\}, \{u\})$, so $\overrightarrow{uw}\in E$.
@@ -987,11 +986,11 @@ if $y_1>y_0$ and $c$ SE-dominates $b$.
              = |S_j\setminus S_j'| \borisspace .
   \]
 
-  Finally, we are left with the complete acyclic subgraph $H'$ whose
-  topological sort order we denote by $\prec$.  Now, if $Q_i$ contains
-  $k_i$ vertices $v_1\prec\cdots\prec v_{k_i}$ vertices of $H'$, then
-  $v_1$ kills all of $v_2,\ldots,v_{k_i}$ so that these vertices can
-  not appear in any $Q_{i'}$ with $i'>i$.  This implies that
+  Finally, we are left with the complete acyclic subgraph $H'$ with vertex
+  set $S_j'$ and whose topological sort order we denote by $\prec$.  Now,
+  if $Q_i$ contains $k_i$ vertices $v_1\prec\cdots\prec v_{k_i}$ vertices
+  of $H'$, then $v_1$ kills all of $v_2,\ldots,v_{k_i}$ so that these
+  vertices can not appear in any $Q_{i'}$ with $i'>i$.  This implies that
   \[
       \sum_{i=1}^n (|S_j'\cap Q_i|-1) =
       \sum_{i=1}^n (k_i-1) \le |S_j'| \borisspace ,

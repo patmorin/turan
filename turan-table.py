@@ -96,22 +96,24 @@ def make_table(fp, upper_bounds, lower_bounds, old_upper_bounds=None,
             x = r|c
             if upper_bounds[x] == lower_bounds[x]:
                 colour = 'green'
-            #elif lower_bounds[x] - int(lower_bounds[x] > 0.1):
-            #    colour = 'green'
             else:
                 colour = 'red'
 
+            modifier = ''
             if old_upper_bounds[x] == upper_bounds[x] \
                   and old_lower_bounds[x] == lower_bounds[x]:
                 opacity = 10
             else:
                 opacity = 40
+                if old_upper_bounds[x] > 1 and upper_bounds[x] == 1:
+                    modifier='^*'
 
             if 1 < lower_bounds[x] < 2:
                 fp.write(r'&\cellcolor{{{}!{}}}tripods'.format(colour, opacity))
             elif upper_bounds[x] == lower_bounds[x]:
-                fp.write(r'&\cellcolor{{{}!{}}}${}$'.format(colour, opacity,
-                                                            format_exponent(upper_bounds[x])))
+                fp.write(r'&\cellcolor{{{}!{}}}${}{}$'.format(colour, opacity,
+                                                            format_exponent(upper_bounds[x]),
+                                                            modifier))
                 tight += 1
             else:
                 fp.write(r'&\cellcolor{{{}!{}}}${}:{}$'.format(colour, opacity,

@@ -22,8 +22,10 @@ urlcolor=linkblue}
 \DeclareMathOperator{\y}{y}
 \DeclareMathOperator{\survivors}{\overline\kappa}
 \DeclareMathOperator{\killed}{\kappa}
+\DeclareMathOperator{\tripod}{tripod}
 
 \usepackage{array}
+\newcolumntype{C}{ >{\centering\arraybackslash} m{3em} }
 
 \newcommand{\borisspace}{\,}
 
@@ -188,7 +190,7 @@ this table presents the asymptotic behaviour of $\ex(n,X)$ for the set
 $X$ obtained as the union of the row and column label.  Asymptotically
 tight bounds are coloured blue, and gaps between lower and upper bounds
 are coloured red. Previous results imply 35 tight bounds for 256 of the
-possible choices of $X$.  The configuration $\mariposa$ is ommitted from
+possible choices of $X$.  The configuration $\mariposa$ is omitted from
 the table since a simple argument (\lemref{xcup}) shows that its inclusion
 in $X$ does not change $\ex(n,X)$ by more than a constant factor.
 
@@ -254,25 +256,29 @@ problem and its rich history in \secref{tripods}.
 \begin{table}
   \centering{
     \input{bounds.tex}
+    \\[1ex]
+    $n^*=n:n\log n$ \quad $\mathrm{tripods}=n^{1.546}:n^2/e^{\Omega(\log^* n)}$
   }
   \caption{New and previous bounds for $\ex(n,X)$, up to a factor of $\log n$.
-  For the new bounds listed as $n$, the lower bound is $\Omega(n)$ and the upper bound is $O(n\log n)$.  For the bounds in green, listed as $n^{1.546}:n^2$, the upper bound is actually $n^2/e^{\Omega(\log^* n)}$.}
+  New results are in dark(er) green.}
+  % For the new bounds listed as $n$, the lower bound is $\Omega(n)$ and the upper bound is $O(n\log n)$.  For the bounds listed as ``tripods'', the lower bound is $\Omega(n^{1.546})$ and the upper bound is $n^2/e^{\Omega(\log^*n)}$.}
   \tablabel{bigtable}
 \end{table}
 
-The remainder of this paper is organized as follows.  In
-\secref{points-of-view} we discuss different ways of thinking about
-the problem and give some easy results.  In particular, we present a
-series of puzzles whose solutions determine the asymptotic growth of
-$\ex(n,X)$.  We then use these puzzles to derive new upper and lower bounds
-in \secref{new-results}.
+The rest of this paper is organized as follows.  In
+\secref{easy-results} we present a few easy results that we need for
+completeness.  In \secref{points-of-view} we discuss different ways
+of thinking about the problem.  In particular, we present a series of
+puzzles whose solutions determine the asymptotic growth of $\ex(n,X)$.
+In \secref{new-results}, which represents the technical meat of the paper,
+we use these puzzles to derive new upper and lower bounds.
 
-\section{Points of View and Easy Results}
-\seclabel{points-of-view}
+\section{Easy Results}
+\seclabel{easy-results}
 
 In this section we present an easy result that cuts our work in half
-by reducing the number of problems from 256 to 128.  We then describe
-different variants of the problem, some of which are easier to work with.
+by reducing the number of problems from 256 to 128.  We then describe some
+easy lower bound constructions that are required to complete our table.
 
 \subsection{Mariposas are Irrelevant}
 
@@ -324,7 +330,7 @@ of $\ex(n,X)$.
 Since it is not explicitly stated in previous work, and we need it to complete our table, we now observe that for any configuration $x\in\{\taco,\bat,\nested,\crossing,\ears,\swords,\david\}$, one can create a linear-sized set of triangles that avoids all configurations except $x$.
 
 \begin{thm}\thmlabel{linear-lower}
-For any $X\subset\{\taco,\bat,\nested,\crossing,\ears,\swords,\david\}$,
+For any $X\subsetneq\{\taco,\bat,\nested,\crossing,\ears,\swords,\david\}$,
 $\ex(n,X)\in \Omega(n)$.
 \end{thm}
 
@@ -353,13 +359,13 @@ $\ex(n,X)\in \Omega(n)$.
     \figlabel{linear-lower}
   \end{figure}
  \begin{enumerate}
-    \item For $x=\taco$ we use the set of triangles $\{(1,2,i):i\in\{3,\ldots,n\}\}$.
-    \item For $x=\bat$ we use the set of triangles $\{(1,2i,2i+1): i\in\{1,\ldots,\lfloor n/2\rfloor-1 \}\}$.
-    \item For $x=\nested$ we use the set of triangles $\{(1,i,n+2-i): i\in\{2, \ldots, \lfloor n/2\rfloor\}\}$.
-    \item For $x=\crossing$ we use the set of triangles $\{(1,i,\lfloor n/2\rfloor+i): i\in\{2,\ldots, \lfloor n/2\rfloor\}\}$.
-    \item For $x=\ears$ we use the set of triangles $\{(3i-2,3i-1,3i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
-    \item For $x=\swords$ we use the set of triangles $\{(i,\lfloor n/3\rfloor+2i-1,\lfloor n/3\rfloor+2i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
-    \item For $x=\david$ we use the set of triangles $\{(i,\lfloor n/3\rfloor+i,\lfloor 2n/3\rfloor+i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
+    \item For $x=\taco$, we use the set of triangles $\{(1,2,i):i\in\{3,\ldots,n\}\}$.
+    \item For $x=\bat$, we use the set of triangles $\{(1,2i,2i+1): i\in\{1,\ldots,\lfloor n/2\rfloor-1 \}\}$.
+    \item For $x=\nested$, we use the set of triangles $\{(1,i,n+2-i): i\in\{2, \ldots, \lfloor n/2\rfloor\}\}$.
+    \item For $x=\crossing$, we use the set of triangles $\{(1,i,\lfloor n/2\rfloor+i): i\in\{2,\ldots, \lfloor n/2\rfloor\}\}$.
+    \item For $x=\ears$, we use the set of triangles $\{(3i-2,3i-1,3i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
+    \item For $x=\swords$, we use the set of triangles $\{(i,\lfloor n/3\rfloor+2i-1,\lfloor n/3\rfloor+2i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
+    \item For $x=\david$, we use the set of triangles $\{(i,\lfloor n/3\rfloor+i,\lfloor 2n/3\rfloor+i): i\in\{1,\ldots, \lfloor n/3\rfloor\}\}$.
  \end{enumerate}
  In each case, the size of the set is $\Omega(n)$ and it is
  straightforward to verify that each pair of triangles in the set forms
@@ -367,6 +373,10 @@ $\ex(n,X)\in \Omega(n)$.
 \end{proof}
 
 
+\section{Points of View}
+\seclabel{points-of-view}
+
+In this section we describe different, but equivalent (up to a logarithmic factor), views of the problem.  One of these (the dot puzzle view) will be our main line of attack for the most difficult cases.
 
 \subsection{The Top/Bottom View}
 
@@ -398,7 +408,7 @@ losing much precision, we can also upper bound $\ex(n,X)$ by $\ex'(n,X)$.
   \[
      \ex(n,X)\in 
         \begin{cases} 
-            O(n^c)     & \text{if $c>1$} \\
+            O(n^c)     & \text{if $c>1$,} \\
             O(n\log n) & \text{if $c=1$.}
         \end{cases}
   \]
@@ -419,7 +429,7 @@ losing much precision, we can also upper bound $\ex(n,X)$ by $\ex'(n,X)$.
    \end{enumerate}
    Thus, we obtain the recurrence inequality:
    \[  \ex(n,X) \le O(n^{c}) + \ex(\lceil n/2\rceil,X) + \ex(\lfloor n/2\rfloor,X) \borisspace ,\]
-   which resolves to $O(n^c)$ for $c>1$ and $O(n\log n)$ for $c=1$.
+   which solves to $O(n^c)$ for $c>1$ and $O(n\log n)$ for $c=1$.
 \end{proof}
 
 
@@ -472,7 +482,7 @@ should not place any points in the same row or column as $p$; such a point
 creates a $\taco$ configuration in which the shared edge
 joins a bottom vertex to a left (same row) or right (same column) vertex.
 
-\Figref{forbidden-colour}.b shows the constraints placed on the locations
+\Figref{forbidden-colour}.b shows the restrictions on the locations
 of points placed in subsequent rounds.  Its interpretation is similar
 \figref{forbidden-colour}.a. For example, if we wish to avoid a
 $\nested$ configuration and we place the central point, $p$, during round
@@ -546,10 +556,10 @@ a $\nested$ configuration in which the shared vertex is the left vertex
 \end{figure}
 
 For any
-$X\subset\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}$
+$X\subseteq\{\taco,\mariposa,\bat,\nested,\crossing,\ears,\swords,\david\}$
 and any $S\subseteq Q$, we define $\killed(X,S)$ as the subset of $Q$ that
 can no longer be played in the dot puzzle game (for configurations in
-$X$) if the points is $S$ have been played in previous rounds (these are
+$X$) if the points in $S$ have been played in previous rounds (these are
 the points of $Q$ $\kappa$illed by $S$).  We use the complementary notation
 $\survivors(X,S)=Q\setminus\killed(X,S)$ to be the subset of points in
 $Q$ that can still be played in the dot puzzle game if the points is $S$
@@ -601,7 +611,7 @@ O(n\log n)$ then follows from \lemref{top-bottom}.
 \section{Results Based on Dot Puzzles}
 \seclabel{new-results}
 
-After this warm-up, and with the dot puzzle view, we are ready to prove
+After this warm-up, and armed with the dot puzzle view, we are ready to prove
 some new results.  We begin by proving several linear upper bounds.
 From this point on, each proof of a theorem will begin with a picture,
 similar to \figref{forbidden-colour} that shows the rules of the dot puzzle
@@ -659,7 +669,7 @@ $\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
   one point from each row: each $Q_i$ contains at most one point
   in each row and the first time a point $p$ appears in some row,
   $\killed(\{\nested,\crossing\},\{p\})$ eliminates every other point
-  from that row.)  Therefore $|S|\le n$.  All that remains is to account for
+  from that row.  Therefore $|S|\le n$.  All that remains is to account for
   multiplicity; a single point in $S$ can appear in more than one $Q_i$.
 
   Now, because of the rules for $\crossing$, the fact that $Q_i$ is
@@ -988,7 +998,7 @@ if $y_1>y_0$ and $c$ SE-dominates $b$.
 
   Finally, we are left with the complete acyclic subgraph $H'$ with vertex
   set $S_j'$ and whose topological sort order we denote by $\prec$.  Now,
-  if $Q_i$ contains $k_i$ vertices $v_1\prec\cdots\prec v_{k_i}$ vertices
+  if $Q_i$ contains $k_i$ vertices $v_1\prec\cdots\prec v_{k_i}$ 
   of $H'$, then $v_1$ kills all of $v_2,\ldots,v_{k_i}$ so that these
   vertices can not appear in any $Q_{i'}$ with $i'>i$.  This implies that
   \[
@@ -1014,10 +1024,10 @@ In this section, we discuss $\ex(n,\{\taco,\nested\})$:\\
 \centerline{\includegraphics[height=3cm]{figs/helper-13}}
 Determining the asymptotics of $\ex(n,\{\taco,\nested\})$ was given
 explicitly as an open problem in the conclusion of Bra\ss's paper.
-We spent more than a year working on this problem. This work included
+We spent more than a year working on this problem and this work included
 computer searches for a variant of the problem played on the square grid
 $\{1,\ldots,n\}^2$.\footnote{Playing on the square grid does not change
-the asymptotics of the problem. Any solution for $\{1,\ldots,n/2\}^2$ can
+the asymptotics of the problem. Any solution for $\{1,\ldots,\lfloor n/2\rfloor-1\}^2$ can
 be used as a solution for the triangular grid $Q$ and any upper bound for
 $\{1,\ldots,n\}^2$ is also an upper bound for the triangular grid $Q$.}
 Using the results of these computer searches in the Online Encyclopedia of
@@ -1041,9 +1051,12 @@ problems. See \figref{tripods}.
   bottom-to-top, and for each $i\in\{1,\ldots,n\}$, the positions of $i$
   in the matrix form an increasing sequence?
 
-  \item \emph{Tripod packing problem}: A \emph{tripod} with top $p\in\R^3$
-  is the union of three closed rays at $p$ and parallel to the $x$-,
-  $y$-, and $z$-axes.  How many disjoint tripods can be packed with tops
+  \item \emph{Tripod packing problem}: A \emph{tripod} with top $p=(x,y,z)\in\R^3$
+  is the union of three closed rays originating at $p$ and directed in
+  the positive x-, y-, and z-directions, i.e.,
+  \[ \tripod(x,y,z) = \bigcup_{0\le t<\infty}\{ (x+t,y,z),(x,y+t,z),(x,y,z+t)\}
+      \borisspace . \]
+  How many disjoint tripods can be packed with tops
   in $\{1,\ldots,n\}^3$?
 
   \item \emph{2-comparable sets of triples problem}.  Two triples of
@@ -1056,7 +1069,7 @@ problems. See \figref{tripods}.
 
 Several simple and natural constructions give lower bounds
 of $\Omega(n^{3/2})$ for these problems.  However,
-this bound is not tight. A sequence of results using
+this bound is not tight. A sequence of 
 recursive constructions has steadily raised this lower bound
 \cite{gowers.long:length,stein:combinatorial,stein:packing,stein.szabo:algebra,tiskin:packing}.
 The current record is held by Gowers and Long \cite{gowers.long:length},
@@ -1066,14 +1079,14 @@ who describe a construction of size $\Omega(n^{1.546})$.
   $\ex'(n,\{\taco,\nested\}) \in \Omega(n^{1.546})$.
 \end{thm}
 
-The only known upper bounds for this problem come from the fact that a
+The only known upper bound for this problem come from the fact that a
 solution to this problem gives a solution to the Ruzsa-Szemer{\'e}di
 induced matching problem \cite{ruzsa.szemeredi:triple}.  
 \begin{enumerate}
   \setcounter{enumi}{3}
   \item \emph{Induced-matching problem}: What is the maximum number
   of edges in a bipartite graph $G=(A,B,E)$ with $|A|=|B|=n$ such that
-  $E$ can be partitioned in to $n$ \emph{induced matchings} $M_1,\ldots,M_n$?
+  $E$ can be partitioned into $n$ \emph{induced matchings} $M_1,\ldots,M_n$?
   That is, each $M_i$ is a matching, and for any two edges $e,f\in M_i$
   there is no edge in $E$ that joins an endpoint of $e$
   to an endpoint of $f$.
@@ -1092,7 +1105,7 @@ partition into matchings given by
 Thus, any upper bound for the induced-matching problem is also an upper bound
 on the size of a 2-comparable set of triples.
 
-Upper bounds for the induced matching problem are barely subquadratic,
+Known upper bounds for the induced matching problem are barely subquadratic,
 with the current record being held by Fox's improved version of the
 triangle removal lemma \cite{fox:new}, which gives an upper bound
 of $n^{2}/e^{\Omega(\log^* n)}$.  See the discussion, for example,
@@ -1103,8 +1116,8 @@ in Gowers and Long \cite{gowers.long:length}.
 \end{thm}
 
 While discovering these results, we noticed that the relationships
-between some of these problems have gone unnoticed.  Here we point out
-a few bibliographic notes:
+between some of these problems have gone unnoticed.  Here we make 
+a few bibliographic notes.
 
 \begin{itemize}
   \item  Bra\ss\ \cite{brass:turan} seems to have been unaware that
@@ -1176,8 +1189,6 @@ we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,
   $\ex(n,\{\swords,\bat,\ears,\david\}) \in \Theta(n^2)$.
 \end{thm}
 
-
-
 \begin{proof}
 \centerline{
    \includegraphics[height=3cm]{figs/helper-16}
@@ -1199,7 +1210,7 @@ we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,
 \end{proof}
 
 \begin{thm}\thmlabel{nested-bat-david}
-  $\ex'(n,\{\nested,\bat,\david\})\in O(n)$.
+  $\ex'(n,\{\nested,\bat,\david\})\in \Theta(n)$.
 \end{thm}
 
 \begin{proof}

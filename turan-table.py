@@ -70,13 +70,16 @@ def n2s(i, cfgs):
         return r'\{}'.format(names[i])
     return ''
 
-def make_table(fp, upper_bounds, lower_bounds):
+def make_table(fp, upper_bounds, lower_bounds, old_upper_bounds=None,
+               old_lower_bounds=None):
+    if not old_upper_bounds: old_upper_bounds = upper_bounds
+    if not old_lower_bounds: old_lower_bounds = lower_bounds
     colcfgs = [swords, david, ears]
     rowcfgs = [taco, bat, nested, crossing]
     cols = sorted([pack_set(s) for s in powerset(colcfgs)])
     rows = sorted([pack_set(s) for s in powerset(rowcfgs)])
     tight = 0
-    fp.write(r'\begin{{tabular}}{{|c@{{\,}}c@{{\,}}c@{{\,}}c{}|}}\hline'.format('|c'*8) + '\n')
+    fp.write(r'\begin{{tabular}}{{|c@{{\,}}c@{{\,}}c@{{\,}}c{}|}}\hline'.format('|C'*8) + '\n')
     for i in colcfgs:
         fp.write("&&&&")
         fp.write("&".join([n2s(i, c) for c in cols]))
@@ -88,17 +91,32 @@ def make_table(fp, upper_bounds, lower_bounds):
 
     for r in rows:
         fp.write("&".join([n2s(i, r) for i in rowcfgs]))
+        fp.write(r'$\rule{0mm}{1em}$')
         for c in cols:
             x = r|c
             if upper_bounds[x] == lower_bounds[x]:
-                fp.write(r'&\cellcolor{{blue!10}}${}$'.format(format_exponent(upper_bounds[x])))
-                tight += 1
-            elif lower_bounds[x] - int(lower_bounds[x]) > .01:
-                fp.write(r'&\cellcolor{{green!10}}${}: {}$'.format(format_exponent(lower_bounds[x]),
-                                            format_exponent(upper_bounds[x])))
+                colour = 'green'
+            #elif lower_bounds[x] - int(lower_bounds[x] > 0.1):
+            #    colour = 'green'
             else:
-                fp.write(r'&\cellcolor{{red!10}}${}: {}$'.format(format_exponent(lower_bounds[x]),
-                                            format_exponent(upper_bounds[x])))
+                colour = 'red'
+
+            if old_upper_bounds[x] == upper_bounds[x] \
+                  and old_lower_bounds[x] == lower_bounds[x]:
+                opacity = 10
+            else:
+                opacity = 40
+
+            if 1 < lower_bounds[x] < 2:
+                fp.write(r'&\cellcolor{{{}!{}}}tripods'.format(colour, opacity))
+            elif upper_bounds[x] == lower_bounds[x]:
+                fp.write(r'&\cellcolor{{{}!{}}}${}$'.format(colour, opacity,
+                                                            format_exponent(upper_bounds[x])))
+                tight += 1
+            else:
+                fp.write(r'&\cellcolor{{{}!{}}}${}:{}$'.format(colour, opacity,
+                                                         format_exponent(lower_bounds[x]),
+                                                         format_exponent(upper_bounds[x])))
         fp.write(r'\\ \hline' + '\n')
     fp.write(r'\end{tabular}')
     print("Found {} tight bounds".format(tight))
@@ -187,6 +205,9 @@ if __name__ == "__main__":
     make_table(fp, upper_bounds, lower_bounds)
     fp.close()
 
+    old_upper_bounds = dict(upper_bounds)
+    old_lower_bounds = dict(lower_bounds)
+
     # New Upper bounds based on swords
     upper_bounds[pack(taco, swords)] = 1
     upper_bounds[pack(nested, swords)] = 1
@@ -215,5 +236,5 @@ if __name__ == "__main__":
     close_bounds(upper_bounds, lower_bounds)
 
     fp = open("bounds.tex", "w")
-    make_table(fp, upper_bounds, lower_bounds)
+    make_table(fp, upper_bounds, lower_bounds, old_upper_bounds, old_lower_bounds)
     fp.close()

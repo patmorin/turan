@@ -10,8 +10,8 @@ def powerset(iterable):
     return itertools.chain.from_iterable(itertools.combinations(s, r) \
             for r in range(len(s)+1))
 
-names = ["ears", "taco", "bat", "nested", "crossing",
-         "mariposa", "swords", "david"]
+names = ["bat", "crossing", "taco", "nested",
+         "mariposa", "david", "ears", "swords"]
 for i in range(len(names)):
     globals()[names[i]] = i
 #taco, mariposa, bat, nested, crossing, swords, david, ears = range(8)
@@ -76,8 +76,8 @@ def make_table(fp, upper_bounds, lower_bounds, old_upper_bounds=None,
     if not old_lower_bounds: old_lower_bounds = lower_bounds
     colcfgs = [swords, david, ears]
     rowcfgs = [taco, bat, nested, crossing]
-    cols = sorted([pack_set(s) for s in powerset(colcfgs)])
-    rows = sorted([pack_set(s) for s in powerset(rowcfgs)])
+    cols = sorted([pack_set(s) for s in powerset(colcfgs)])[::-1]
+    rows = sorted([pack_set(s) for s in powerset(rowcfgs)])[::-1]
     tight = 0
     fp.write(r'\begin{{tabular}}{{|c@{{\,}}c@{{\,}}c@{{\,}}c{}|}}\hline'.format('|C'*8) + '\n')
     for i in colcfgs:

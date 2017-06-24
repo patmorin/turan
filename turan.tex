@@ -13,11 +13,6 @@ citecolor=linkblue, filecolor=linkblue, menucolor=linkblue,
 urlcolor=linkblue} 
 \setlength{\parskip}{1ex}
 
-\DeclareMathOperator{\sign}{sign}
-\DeclareMathOperator{\xmax}{xmax}
-\DeclareMathOperator{\xmin}{xmin}
-\DeclareMathOperator{\ymax}{ymax}
-\DeclareMathOperator{\ymin}{ymin}
 \DeclareMathOperator{\x}{x}
 \DeclareMathOperator{\y}{y}
 \DeclareMathOperator{\survivors}{\overline\kappa}
@@ -278,7 +273,7 @@ we use these puzzles to derive new upper and lower bounds.
 
 In this section we present an easy result that cuts our work in half
 by reducing the number of problems from 256 to 128.  We then describe some
-easy lower bound constructions that are required to complete our table.
+easy lower bound constructions that are required for completeness.
 
 \subsection{Mariposas are Irrelevant}
 
@@ -314,7 +309,7 @@ of $\ex(n,X)$.
 \end{thm}
 
 \begin{proof}
-  Partition the points of the convex $n$-gon into three contiguous
+  Partition the vertices of the convex $n$-gon into three contiguous
   sets, $A$, $B$, and $C$, each of size $\lfloor n/3\rfloor$ or
   $\lceil n/3\rceil$, as appropriate.  Consider the set, $S$, of all
   triangles having one vertex in each of $A$, $B$, and $C$. It is easy
@@ -325,7 +320,7 @@ of $\ex(n,X)$.
 \end{proof}
 
 
-\subsection{Linear-Sized Sets Using only a Single Configuration}
+\subsection{Linear-Sized Sets Using Only a Single Configuration}
 
 Since it is not explicitly stated in previous work, and we need it to complete our table, we now observe that for any configuration $x\in\{\taco,\bat,\nested,\crossing,\ears,\swords,\david\}$, one can create a linear-sized set of triangles that avoids all configurations except $x$.
 
@@ -369,7 +364,7 @@ $\ex(n,X)\in \Omega(n)$.
  \end{enumerate}
  In each case, the size of the set is $\Omega(n)$ and it is
  straightforward to verify that each pair of triangles in the set forms
- the configuration $x$ and therefore avoids all configurations in $X$.
+ the configuration $x$ and therefore avoids all configurations in~$X$.
 \end{proof}
 
 
@@ -427,7 +422,7 @@ losing much precision, we can also upper bound $\ex(n,X)$ by $\ex'(n,X)$.
       \item It has all three vertices in the bottom half; there are at
         most $\ex(\lfloor n/2\rfloor,X)$ such triangles.
    \end{enumerate}
-   Thus, we obtain the recurrence inequality:
+   Thus, we obtain the recurrence inequality
    \[  \ex(n,X) \le O(n^{c}) + \ex(\lceil n/2\rceil,X) + \ex(\lfloor n/2\rfloor,X) \borisspace ,\]
    which solves to $O(n^c)$ for $c>1$ and $O(n\log n)$ for $c=1$.
 \end{proof}
@@ -453,7 +448,7 @@ vertices are labelled $1,\ldots,n$ from left to right.
    \centering{
       \includegraphics{figs/point-view}
    }
-   \caption{The Dot Puzzle View of the Top/Bottom View. In this example,
+   \caption{The dot puzzle view of the top/bottom view. In this example,
      four rounds of the Dot Puzzle have been played.}
    \figlabel{point-view}
 \end{figure}
@@ -472,7 +467,7 @@ By proving bounds on $\sum_{i=1}^n |Q_i|$ we obtain bounds on the maximum
 number of triangles obtained in the top-bottom view on a set of $2n$
 points, i.e., bounds on $\ex'(2n, X)$.
 
-\Figref{forbidden-colour}.a shows restrictions on the locations of points
+\Figref{forbidden-colour}(a) shows restrictions on the locations of points
 placed during a single round.  It is interpreted as follows:  If the
 central point, $p=(x,y)$, is placed during round $i$, and we wish to
 avoid some particular configuration, $c$, then we should not place any
@@ -482,9 +477,9 @@ should not place any points in the same row or column as $p$; such a point
 creates a $\taco$ configuration in which the shared edge
 joins a bottom vertex to a left (same row) or right (same column) vertex.
 
-\Figref{forbidden-colour}.b shows the restrictions on the locations
+\Figref{forbidden-colour}(b) shows the restrictions on the locations
 of points placed in subsequent rounds.  Its interpretation is similar
-\figref{forbidden-colour}.a. For example, if we wish to avoid a
+\figref{forbidden-colour}(a). For example, if we wish to avoid a
 $\nested$ configuration and we place the central point, $p$, during round
 $i$, then, in every round $j>i$, we should not place any point directly
 to the left or directly below $p$.  Any such point creates 
@@ -616,7 +611,7 @@ some new results.  We begin by proving several linear upper bounds.
 From this point on, each proof of a theorem will begin with a picture,
 similar to \figref{forbidden-colour} that shows the rules of the dot puzzle
 considered by the theorem.  For a point $q\in Q$, we use the notations
-$\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
+$\x(q)$ and $\y(q)$ to denote the x- and y-coordinates of $q$.
 
 \subsection{Linear Upper Bounds}
 
@@ -672,11 +667,11 @@ $\x(q)$ and $\y(q)$ to denote the $x$- and $y$-coordinates of $q$.
   from that row.  Therefore $|S|\le n$.  All that remains is to account for
   multiplicity; a single point in $S$ can appear in more than one $Q_i$.
 
-  Now, because of the rules for $\crossing$, the fact that $Q_i$ is
+  Now, because of the rules for $\crossing$, the condition that $Q_i$ is
   increasing is quite restrictive. In particular, if we consider the last
   (top rightmost) point, $p$, of $Q_i$, then it must be placed so that
   $\killed(\{\ears\}, \{p\})$ contains all of $Q_i$ except $p$ and the
-  second-last point in $Q_i$ (see \figref{nested-crossing-ears}). That is,
+  second-to-last point in $Q_i$ (see \figref{nested-crossing-ears}). That is,
   $Q_i$ contains $|Q_i|-2$ points that cannot appear in $Q_{i+1},\ldots,Q_n$. We can think of $Q_i$ as eliminating $|Q_i|-2$ points from $S$, so
   $\sum_{i=1}^n (|Q_i|-2) \le |S| \le n$,
   so $\sum_{i=1}^n |Q_i| \le 3n$.
@@ -704,7 +699,7 @@ $y_0<y_1$ and $x_0<x_1$.
    If we remove the rightmost point from each row of $S$, then each
    column in what remains of $S$ contains at most one point. Otherwise, we
    could take $a$ to be the lowest point in a column, $b$ to be the highest
-   point in the same column, and $c$ to be the missing rightmost point
+   point in the same column, and $c$ to be the removed rightmost point
    in $b$'s row.
 \end{proof}
 
@@ -766,13 +761,13 @@ $y_0<y_1$ and $x_0<x_1$.
     \figlabel{crossing-swords}
   \end{figure}
 
-  Now, for some $Q_i$, consider a point $p\in Q_i$ with $\x(p)=\xmin(Q_i)$ and,
-  in case more than one such point exists, take the the one that minimizes
-  $\y(p)$.  Observe that $\killed(\{\crossing,\swords\},\{p\})
+  Now, for some $Q_i$, consider a point $p\in Q_i$ with minimum x-coordinate
+  and, in case more than one such point exists, take the the one that
+  minimizes $\y(p)$.  Observe that $\killed(\{\crossing,\swords\},\{p\})
   \supseteq Q_i\setminus\{p\}$.  Indeed, every point directly above
-  and every point to the right of $p$ is killed by $p$ or cannot be included in
-  $Q_i$ because of the rule for $\crossing$.  Therefore, $Q_i$ 
-  eliminates at least $|Q_i|-1$ points of $S$. It follows that
+  and every point to the right of $p$ is killed by $p$ or cannot be
+  included in $Q_i$ because of the rule for $\crossing$.  Therefore,
+  $Q_i$ eliminates at least $|Q_i|-1$ points of $S$. It follows that
   $\sum_{i=1}^n |Q_i| \le |S|+n \le 3n$.
 \end{proof}
 
@@ -789,13 +784,13 @@ $y_0<y_1$ and $x_0<x_1$.
    that appear in $Q_{i+1},\ldots,Q_n$.  Refer to \figref{nested-ears-david}. 
    Define
    \[
-        Q_i^* = \{ (x,y)\in Q_1 : x\ge\ymax(Q_1) \} \borisspace 
+        Q_i^* = \{ (x,y)\in Q_i : x\ge\max\{y(p):p\in Q_i\} \} \borisspace ,
    \]
    and let $p$ and $r$ be the top rightmost and bottom leftmost points
    in $Q_i^*$, respectively.  If there is more than one point in $Q_i^*$
-   with $x$-coordinate equal to $\x(r)$ (as in \figref{nested-ears-david}.a)
+   with $x$-coordinate equal to $\x(r)$ (as in \figref{nested-ears-david}(a))
    then we define $q$ to be the highest such point.  Otherwise
-   (as in \figref{nested-ears-david}.b), we define $q$ to be the
+   (as in \figref{nested-ears-david}(b)), we define $q$ to be the
    rightmost point with $y$-coordinate $\y(r)$.  Now, observe that
    $\killed(\{\nested,\ears,\david\}, \{p,q,r\}) \supseteq Q_i\setminus
    \{p,q\}$, so $p$ and $q$ are the only points of $Q_i$ that can appear
@@ -851,13 +846,12 @@ $y_0<y_1$ and $x_0<x_1$.
 
 Next we focus on the configuration $\swords$ and give linear upper bounds
 bounds on $\ex'(n,\{\swords, \taco\})$ and $\ex'(n,\{\swords, \nested\})$.
-We begin with another lemma about forbidden configurations of points that
-is similar to \lemref{forbidden}.  
-We say that a point $(x_i,y_i)$ \emph{SE-dominates} a point $(x_j,y_j)$
-if $x_i > x_j$ and $y_i < y_j$. 
-We say that three points $a=(x_0,y_0)$,
-$b=(x_0,y_1)$, and $c=(x_1,y_1)$ form a \emph{lazy-$L$-configuration}
-if $y_1>y_0$ and $c$ SE-dominates $b$.
+We begin with another lemma about forbidden configurations of points
+that is similar to \lemref{forbidden}.  We say that a point $(x_i,y_i)$
+\emph{SE-dominates} a point $(x_j,y_j)$ if $x_i > x_j$ and $y_i < y_j$.
+We say that three points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$
+form a \emph{lazy-$L$-configuration} if $y_1>y_0$ and $c$ SE-dominates
+$b$.
 
 \begin{figure}
   \centering{\includegraphics{figs/se-domination}}
@@ -866,20 +860,20 @@ if $y_1>y_0$ and $c$ SE-dominates $b$.
 \end{figure}
 
 \begin{lem}\lemlabel{forbidden-ii}
-   Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three
-   points $a$, $b$, and $c$ forming a lazy-$L$-configuration.  Then $|S|\le 2n$.
+   Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three points $a$,
+   $b$, and $c$ forming a lazy-$L$-configuration.  Then $|S|\le 3n$.
 \end{lem}
 
 \begin{proof}
-  Refer to \figref{se-domination}.
-  Consider the \emph{Pareto boundary}
-  $P\subseteq S$ containing each point of $S$ that is not SE-dominated by any
-  other point in $S$.  The set $P$ is non-decreasing, so it has size at
-  most $2n$.  We claim that the set $S\setminus P$ has at most one point
-  in each column, so $|S|\le 3n$.  To see why this claim is true, observe
-  that if some column of $P\setminus S$ contains two points $a$ and $b$
-  with $a$ above $b$, then at least one point $c$ in $P$ SE-dominates $b$
-  so that $a$, $b$, and $c$ would form the lazy-$L$-configuration.
+  Refer to \figref{se-domination}.  Consider the \emph{Pareto boundary}
+  $P\subseteq S$ containing each point of $S$ that is not SE-dominated
+  by any other point in $S$.  The set $P$ is non-decreasing, so it
+  has size at most $2n$.  We claim that the set $S\setminus P$ has at
+  most one point in each column, so $|S|\le 3n$.  To see why this claim
+  is true, observe that if some column of $P\setminus S$ contains two
+  points $a$ and $b$ with $a$ above $b$, then at least one point $c$
+  in $P$ SE-dominates $b$, so that $a$, $b$, and $c$ would form the
+  lazy-$L$-configuration.
 \end{proof}
 
 \begin{thm}\thmlabel{taco-swords}
@@ -890,7 +884,7 @@ if $y_1>y_0$ and $c$ SE-dominates $b$.
 \begin{proof}
   \centerline{\includegraphics[height=3cm]{figs/helper-6}} Let
   $S=\bigcup_{i=1}^n Q_i$. Then the rules for $\taco$ imply that
-  $|S|=\sum_{i=1}^n |Q_i|$, so it suffices to bound $|S|$.  We claim that
+  $|S|=\sum_{i=1}^n |Q_i|$, so it suffices to bound~$|S|$.  We claim that
   $S$ contains no lazy-$L$-configuration so, by \lemref{forbidden-ii},
   $|S|\le 3n$.
 
@@ -935,7 +929,7 @@ if $y_1>y_0$ and $c$ SE-dominates $b$.
    of $A$ such that, for every $i\in\{1,\ldots,|A|\}$, $v_i$ is adjacent
    in $G[A]$ to at most one of $v_1,\ldots,v_{i-1}$.  We can therefore
    greedily 2-colour $G[A]$ by colouring $v_1,\ldots,v_{|A|}$ in order and,
-   when colouring $v_i$, we use any colour in $\{1,2\}$ not already used
+   when colouring~$v_i$, we use any colour in $\{1,2\}$ not already used
    by $v_i$'s at most one neighbour in $v_1,\ldots,v_{i-1}$.
 
    \begin{figure}
@@ -965,16 +959,16 @@ if $y_1>y_0$ and $c$ SE-dominates $b$.
    S_j$ at least one of $\overrightarrow{uw}$ or $\overrightarrow{wu}$ is
    in $E$.  To see why this is so, consider any two distinct points $u,w\in S_j$
    with $u=(x_0,y_0)$ and $w=(x_1,y_1)$.  Since $S$ (and hence $S_j$)
-   is non-decreasing we may assume, without loss of generality that
+   is non-decreasing, we may assume without loss of generality that
    $x_0\le x_1$ and $y_0\le y_1$.
    There are five cases to consider: 
    \begin{enumerate}
-    \item $y_0=y_1$, so $x_0 < x_1$. In this case $u\in\killed(\{\nested\},w)$, so $\overrightarrow{wu}\in E$.
-    \item $x_0=x_1$, so $y_0 < y_1$. In this case $u\in\killed(\{\nested\},w)$, so $\overrightarrow{wu}\in E$.
-    \item $x_0 < x_1$, $y_0 < y_1$, and $y_1 > x_0$.  In this case $w\in\killed(\{\swords\}, \{u\})$, so $\overrightarrow{uw}\in E$.
-    \item $x_0 < x_1$, $y_0 < y_1$, and $y_1 < x_0$.  In this case $u\in\killed(\{\swords\}, \{w\})$, so $\overrightarrow{wu}\in E$.
-    \item $x_0 < x_1$, $y_0 < y_1$, and $y_1 = x_0$.  This case can not occur,
-      since in this case the graph $G$ contains the edge $uw$, so $u$ and $w$
+    \item $y_0=y_1$, so $x_0 < x_1$. In this case, $u\in\killed(\{\nested\},w)$, so $\overrightarrow{wu}\in E$.
+    \item $x_0=x_1$, so $y_0 < y_1$. In this case, $u\in\killed(\{\nested\},w)$, so $\overrightarrow{wu}\in E$.
+    \item $x_0 < x_1$, $y_0 < y_1$, and $y_1 > x_0$.  In this case, $w\in\killed(\{\swords\}, \{u\})$, so $\overrightarrow{uw}\in E$.
+    \item $x_0 < x_1$, $y_0 < y_1$, and $y_1 < x_0$.  In this case, $u\in\killed(\{\swords\}, \{w\})$, so $\overrightarrow{wu}\in E$.
+    \item $x_0 < x_1$, $y_0 < y_1$, and $y_1 = x_0$.  This case cannot occur
+      since, in this case, the graph $G$ contains the edge $uw$, so $u$ and $w$
       are assigned different colours and at most one of them is $j$.
   \end{enumerate}
 
@@ -1039,14 +1033,15 @@ problems. See \figref{tripods}.
   \centering{
     \includegraphics{figs/tripods}
   }
-  \caption{The dot puzzle induced by excluding the taco and nested configurations
-    has already been studied under several equivalent formulations.}
+  \caption{The dot puzzle induced by excluding the taco and nested
+       configurations has already been studied under several equivalent
+       formulations.}
   \figlabel{tripods}
 \end{figure}
 
 \begin{enumerate}
   \item \emph{Monotone matrix problem}: How many values from
-  $\{1,\ldots,n\}$ can one write in an $n\times n$ matrix so that each
+  $\{1,\ldots,n\}$ can one write in an $n\times n$ matrix, so that each
   row is increasing from left-to-right, each column is increasing from
   bottom-to-top, and for each $i\in\{1,\ldots,n\}$, the positions of $i$
   in the matrix form an increasing sequence?
@@ -1141,7 +1136,7 @@ a few bibliographic notes.
   sequence of triples)  proposed by Loh \cite{loh:directed}.  In his
   discussion of this problem, Loh formulates a restricted version of the
   induced matching problem, in which the matching must satisfy a certain
-  $\Sigma$-free property and expresses hope \cite[Remark~9]{loh:directed}
+  $\Sigma$-free property and expresses hope \cite[remark on page~9]{loh:directed}
   that this restricted version has an $O(n^{3/2})$ upper bound.  However,
   solutions for tripod packing correspond to $\Sigma$-free induced
   matchings, so $\Sigma$-free induced matchings of size $\omega(n^{3/2})$
@@ -1170,7 +1165,7 @@ caused by $\bat$ and $\ears$ do not affect the lower-right quadrant.
 
 Finally, we clean up with some $\Omega(n^2)$ lower bound constructions.
 In each case, a matching upper bound follows from one of the results in
-Bra\ss \cite{brass:turan}.  The following are essentially ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot puzzle.
+Bra\ss\ \cite{brass:turan}.  The following are essentially ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot puzzle.
 
 \begin{thm}\thmlabel{taco-david-bat-ears}
 $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
@@ -1181,8 +1176,8 @@ $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
    \includegraphics[height=3cm]{figs/helper-15}
    \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-2}
 }
-For each $i\in\{1,\ldots,n/2\}$, we
-we take $Q_i$ to be all the points of $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i+1\}$.
+For each $i\in\{1,\ldots,n/2\}$, we take $Q_i$ to be all the points of
+$Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i+1\}$.
 \end{proof}
 
 \begin{thm}\thmlabel{swords-bat-ears-david}

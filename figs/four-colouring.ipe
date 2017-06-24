@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170616153438" modified="D:20170619091312"/>
+<info created="D:20170616153438" modified="D:20170623230636"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -845,7 +845,7 @@ h
 <use name="mark/disk(sx)" pos="304 512" size="normal" stroke="brew4"/>
 <use name="mark/disk(sx)" pos="320 544" size="normal" stroke="brew4"/>
 </group>
-<use layer="alpha" matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="192 400" size="normal" stroke="brew5"/>
+<use layer="a" matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="192 400" size="normal" stroke="brew5"/>
 <use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="192 416" size="normal" stroke="brew5"/>
 <use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="240 432" size="normal" stroke="brew5"/>
 <use matrix="0.666667 0 0 0.666667 42.6667 128" name="mark/disk(sx)" pos="240 448" size="normal" stroke="brew5"/>

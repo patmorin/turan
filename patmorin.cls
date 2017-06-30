@@ -134,7 +134,7 @@
 \renewcommand*{\@fnsymbol}[1]{\ensuremath{\ifcase#1 %
    %\or \text{\Sun}
    \or \text{\Mercury}
-   \or \text{\Venus}
+   %\or \text{\Venus}
    \or \text{\Earth}
    \or \text{\Mars}
    \or \text{\Jupiter}

@@ -71,8 +71,30 @@ and Luís Fernando Schultz Xavier da Silveira\footnotemark[2]
 
 
 
-%\usepackage{lineno}
-%\linenumbers
+\usepackage[mathlines]{lineno}
+\linenumbers
+\setlength{\linenumbersep}{2.5cm}
+\rightlinenumbers
+\linenumbers
+\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+  \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+  \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+  \renewenvironment{#1}%
+     {\linenomath\csname old#1\endcsname}%
+     {\csname oldend#1\endcsname\endlinenomath}}% 
+\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+  \patchAmsMathEnvironmentForLineno{#1}%
+  \patchAmsMathEnvironmentForLineno{#1*}}%
+\AtBeginDocument{%
+\patchBothAmsMathEnvironmentsForLineno{equation}%
+\patchBothAmsMathEnvironmentsForLineno{align}%
+\patchBothAmsMathEnvironmentsForLineno{flalign}%
+\patchBothAmsMathEnvironmentsForLineno{alignat}%
+\patchBothAmsMathEnvironmentsForLineno{gather}%
+\patchBothAmsMathEnvironmentsForLineno{multline}%
+}
+
+
 
 \pagenumbering{roman}
 \begin{document}

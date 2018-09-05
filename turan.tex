@@ -631,7 +631,7 @@ O(n\log n)$ then follows from \lemref{top-bottom}.
 After this warm-up, and armed with the dot puzzle view, we are ready to prove
 some new results.  We begin by proving several linear upper bounds.
 From this point on, each proof of a theorem will begin with a picture,
-similar to \figref{forbidden-colour} that shows the rules of the dot puzzle
+similar to \figref{forbidden-colour}, that shows the rules of the dot puzzle
 considered by the theorem.  For a point $q\in Q$, we use the notations
 $\x(q)$ and $\y(q)$ to denote the x- and y-coordinates of $q$.
 
@@ -707,8 +707,8 @@ $\x(q)$ and $\y(q)$ to denote the x- and y-coordinates of $q$.
 \end{proof}
 
 
-Our next three upper bounds depend on a simple lemma about forbidden
-configurations of points.  We that three points $a=(x_0,y_0)$,
+Our next four upper bounds depend on a simple lemma about forbidden
+configurations of points.  We say that three points $a=(x_0,y_0)$,
 $b=(x_0,y_1)$, and $c=(x_1,y_1)$ form a \emph{$\Gamma$-configuration} if
 $y_0<y_1$ and $x_0<x_1$.
 
@@ -863,6 +863,79 @@ $y_0<y_1$ and $x_0<x_1$.
 
    Wrapping up, we have $|S|=|S'|+|S''| \le 4n$ so $\sum_{i=1}^n|Q_i| \le 6n$.
 \end{proof}
+
+
+\begin{thm}\thmlabel{nested-bat-david}
+  $\ex'(n,\{\nested,\bat,\david\})\in O(n)$.
+\end{thm}
+
+\begin{center}
+   \includegraphics[height=3cm]{figs/helper-12}
+\end{center}
+
+
+\begin{proof}
+  Consider the set $Q_i$ played during some round $i$.  The rules for
+  $\nested$ imply that $Q_i$ is non-decreasing.  Consider the following
+  subsets of $Q_i$:
+  \begin{enumerate}
+    \item the set $L_i$ of points in the left-most column of $Q_i$;
+    \item the set $T_i$ of points in the top-most row of $Q_i$; 
+    \item the set $B_i$ of points in the bottom-most row of $Q_i$; and 
+    \item the set $N_i=Q_i\setminus(L_i\cup T_i\cup B_i)$.
+  \end{enumerate}
+  Let $p_i$ denote the lowest left-most point of $Q_i$ (the unique point
+  in $B_i\cap L_i$).  The rule for $\bat$ implies that every point of
+  $N_i$ is contained in $\killed(\{\david\},\{p_i\})$.
+  
+  Refer to \figref{nested-bat-david}.  Observe that, for any point $p\in
+  N_i$, the entire row containing $p$ is killed in the sense that it is
+  contained in $\killed(\{p_i\},\{\david\})\cup\killed(\{\nested\},\{p\})$.
+  Next, let $t_i$ be
+  the topmost point in $L_i$ and observe that, for any point $p\in
+  L_i\setminus\{t_i,p_i\}$, the entire row containing $p$ is killed by
+  $\killed(\{p_i\},\{\david\})\cup\killed(\{\nested\},\{t_i,p\})$.
+
+  Consider the operation of removing the leftmost point from each
+  row of $Q_i$, for each $i\in \{1,\ldots,n\}$.  We claim that
+  this removes a total of at most $4n$ points from $Q_1,\ldots,Q_n$.
+  Indeed, by the preceding discussion, if we remove a point $p\in N_i$
+  or $p\in L_i\setminus\{t_i,p_i\}$ then this point can be charged to
+  a row that is never used again in $Q_{i+1},\ldots,Q_n$.  For each
+  round $i\in\{1,\ldots,n\}$, there are only three other choices for $p$:
+  $p=p_i$, $p=t_i$, or $p$ is the leftmost point in $T_i$.  Thus, we
+  can charge each row for removing at most one point and each round
+  for removing at most 3 points.
+
+  \begin{figure}
+    \begin{center}\includegraphics{figs/nested-bat-david}\end{center}
+    \caption{The proof of \thmref{nested-bat-david}.} 
+    \figlabel{nested-bat-david}
+  \end{figure}
+
+  Now we let $S=\bigcup_{i=1}^n Q_i$.  We claim that $S$ fulfills the
+  requirements of \lemref{forbidden}.  To see why this is so, note that
+  if two points $a$ and $b$ of $S$ are in the same column then they
+  must have been played in different rounds.  Assume $b$ is above $a$,
+  which implies that $b$ was played in a later round than $a$.  Then, if
+  there is some point $c$ to the right of $b$, then $c$ must have been played
+  during the same round as $b$ or later.  But this implies that $c$ was
+  played in a later round than $a$, which is not possible, since $c$ is in
+  $a$'s $\david$-region.  Therefore, by \lemref{forbidden}, $|S|\le 2n$.
+
+  All that remains is to account for points in $S$ that are played
+  multiple times.  In each $Q_i$ there are at most two points that can
+  be played in subsequent rounds: the topmost point in $L_i$ or the
+  rightmost point in $B_i$ and the rightmost point in $T_i$.  We charge
+  each occurrence of such repeated points to the rounds in which they
+  are these extreme points. In this way, each round is charged for at
+  most two such points and the total contribution of these points to
+  $\sum_{i=1}^n |Q_i|$ is at most $2n$.
+
+  In total, we obtain an upper bound of $7n$ on $\sum_{i=1}^n |Q_i|$.
+\end{proof}
+
+
 
 \subsection{Forbidding Swords}
 
@@ -1226,16 +1299,18 @@ $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i+1\}$.
    for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j,2j-1): j\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
 \end{proof}
 
-\begin{thm}\thmlabel{nested-bat-david}
-  $\ex'(n,\{\nested,\bat,\david\})\in \Theta(n)$.
-\end{thm}
-
-\begin{proof}
-   \centerline{\includegraphics[height=3cm]{figs/helper-12}
-   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-7}}
-   We repeatedly take every second point on the diagonal $y=x-1$, i.e.,
-   for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j,2j-1): j\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
-\end{proof}
+%\noindent TODO: The following proof is wrong, and the theorem may be incorrect.  If so, it leaves exactly one hole in our table.
+%
+%\begin{thm}\thmlabel{nested-bat-david}
+%  $\ex'(n,\{\nested,\bat,\david\})\in \Theta(n^2)$.
+%\end{thm}
+%
+%\begin{proof}
+%   \centerline{\includegraphics[height=3cm]{figs/helper-12}
+%   \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-7}}
+%   We repeatedly take every second point on the diagonal $y=x-1$, i.e.,
+%   for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j,2j-1): j\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
+%\end{proof}
 
 \begin{thm}\thmlabel{bat-nested-ears}
   $\ex(n,\{\bat,\nested,\ears\}) \in \Theta(n^2)$.

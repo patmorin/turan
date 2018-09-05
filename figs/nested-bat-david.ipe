@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170202093502" modified="D:20170202093822"/>
+<info created="D:20170202093502" modified="D:20180904154713"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -265,11 +265,32 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<path layer="alpha" stroke="black" fill="brew4">
-268 636 m
+<path layer="alpha" stroke="black" fill="brew8">
+384 648 m
+384 596 l
+276 596 l
+276 648 l
+h
+</path>
+<path stroke="black" fill="brew4">
+324 644 m
+324 636 l
+264 636 l
+264 644 l
+h
+</path>
+<path stroke="black" fill="brew4">
+300 636 m
+300 628 l
+256 628 l
+256 636 l
+h
+</path>
+<path stroke="black" fill="brew4">
+268 620 m
 268 576 l
 276 576 l
-276 636 l
+276 620 l
 h
 </path>
 <path stroke="black">
@@ -281,22 +302,6 @@ h
 <use name="mark/disk(sx)" pos="272 608" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="272 624" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="272 592" size="normal" stroke="black"/>
-<path stroke="black" fill="brew8">
-384 656 m
-384 596 l
-276 596 l
-276 656 l
-h
-</path>
-<use name="mark/disk(sx)" pos="272 640" size="normal" stroke="black"/>
-<use name="mark/disk(sx)" pos="368 648" size="normal" stroke="black"/>
-<path stroke="black" fill="brew4">
-268 628 m
-268 620 l
-248 620 l
-248 628 l
-h
-</path>
 <path stroke="black" fill="brew4">
 268 612 m
 268 604 l
@@ -304,13 +309,31 @@ h
 232 612 l
 h
 </path>
-<path stroke="black" fill="brew4">
-364 652 m
-364 644 l
-272 644 l
-272 652 l
+<use name="mark/disk(sx)" pos="304 632" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="316 632" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="328 632" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="328 640" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 652" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="348 652" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="360 652" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 652" size="normal" stroke="black"/>
+<path stroke="black" fill="brew3">
+276 656 m
+384 656 l
+384 764 l
 h
 </path>
-<use name="mark/disk(sx)" pos="376 648" size="normal" stroke="black"/>
+<path stroke="black" fill="brew3" cap="1">
+240 612 m
+240 612 l
+h
+</path>
+<text matrix="1 0 0 1 13 4" transformations="translations" pos="256 620" stroke="black" type="label" width="6.914" height="6.132" depth="1.49" halign="right" valign="center" style="math">t_i</text>
+<use name="mark/cross(sx)" pos="272 592" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="272 608" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="272 624" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="304 632" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="328 640" size="large" stroke="black"/>
+<use name="mark/cross(sx)" pos="336 652" size="large" stroke="black"/>
 </page>
 </ipe>

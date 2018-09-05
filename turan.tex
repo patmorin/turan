@@ -215,7 +215,7 @@ in $X$ does not change $\ex(n,X)$ by more than a constant factor.
   \centering{
     \input{oldbounds.tex}
   }
-  \caption{Old bounds for $\ex(n,X)$.}
+  \caption{Previous lower and upper bounds for $\ex(n,X)$. T2 denotes a (easy) lower bound of $\Omega(n)$ that appears in \thmref{linear-lower}.  F denotes an obvious, or folklore result. H denotes a bound that follows from the corresponding bound on 3-regular hypergraphs.}
   \tablabel{smalltable}
 \end{table}
 
@@ -277,7 +277,7 @@ problem and its rich history in \secref{tripods}.
     $n^*=n:n\log n$ \quad $\mathrm{tripods}=n^{1.546}:n^2/e^{\Omega(\log^* n)}$
   }
   \caption{New and previous bounds for $\ex(n,X)$, up to a factor of $\log n$.
-  New near-optimal results are in dark(er) green.}
+  New near-optimal results are in dark(er) green. TX denotes Theorem~X in this paper and [X] denotes reference X in this paper. For example T16:[1] denotes a lower bound that appears in Theorem~16 and an upper bound due to Bra\ss\ \cite{brass:turan}.}
   % For the new bounds listed as $n$, the lower bound is $\Omega(n)$ and the upper bound is $O(n\log n)$.  For the bounds listed as ``tripods'', the lower bound is $\Omega(n^{1.546})$ and the upper bound is $n^2/e^{\Omega(\log^*n)}$.}
   \tablabel{bigtable}
 \end{table}
@@ -446,7 +446,7 @@ losing much precision, we can also upper bound $\ex(n,X)$ by $\ex'(n,X)$.
    \end{enumerate}
    Thus, we obtain the recurrence inequality
    \[  \ex(n,X) \le O(n^{c}) + \ex(\lceil n/2\rceil,X) + \ex(\lfloor n/2\rfloor,X) \borisspace ,\]
-   which solves to $O(n^c)$ for $c>1$ and $O(n\log n)$ for $c=1$.
+   which solves to $O(n^c)$ for $c>1$ and $O(n\log n)$ for $c=1$ \cite[Section~4.3]{cormen.leiserson.ea:introduction}.
 \end{proof}
 
 
@@ -607,9 +607,9 @@ $\sum_{j=1}^{n}|Q_i| \le 2n^2-3n$, so $\ex'(n,\{\nested\})\in O(n^2)$
 and the bound $\ex(n,\{\nested\})\in O(n^2)$ immediately follows from
 \lemref{top-bottom}.
 
-Similarly, we can almost recover the result of Bra\ss, Rote and
-Swanepoel \cite{brass.rote.ea:triangles} on $\ex(n,\{\ears, \swords,
-\bat,\nested\})$.  Here, the rules are:\\
+Similarly, we can almost recover the result $\ex(n,\{\ears, \swords,
+\bat,\nested\})\le n$ of Bra\ss, Rote and
+Swanepoel \cite{brass.rote.ea:triangles}.  Here, the rules are:\\
 \centerline{\includegraphics[height=3cm]{figs/helper-2}}
 The rule for $\nested$ ensures that the set of points taken during a
 single round form a non-decreasing point set.  The rules for points
@@ -648,7 +648,8 @@ $\x(q)$ and $\y(q)$ to denote the x- and y-coordinates of $q$.
   we obtain the rule which ensures that during subsequent rounds we can
   not take a point from any column or row used in a previous round.
   The rules for $\nested$ and $\taco$ ensure that the set of points
-  taken in each $Q_i$ is increasing.  Therefore each new point played
+  taken in each $Q_i$ is increasing. In particular each $Q_i$ contains at most
+  one point in each row.  Therefore each new point played
   can be charged to a unique row, so the total number of points played
   is at most $n$.
 \end{proof}
@@ -661,17 +662,15 @@ $\x(q)$ and $\y(q)$ to denote the x- and y-coordinates of $q$.
 
 \begin{proof}
   \centerline{\includegraphics[height=3cm]{figs/helper-10}}
-  First observe that the rules for $\nested$ imply that each $Q_i$
-  is a non-decreasing set of points.
-
-  Next, observe that if $Q_i$ contains $k>1$ points, $p_1,\ldots,p_k$ in a single column
+  Observe that if $Q_i$ contains $k>1$ points, $p_1,\ldots,p_k$ in a single column
   (or row), then each of the $k$ rows (or columns) containing one of these
-  points is covered by $\killed(\{\nested,\crossing\},\{p_1,\ldots,p_k\})$, i.e., $Q_{i+1},\ldots,Q_n$ can not contain any points in
+  points is completely covered by $\killed(\{\nested,\crossing\},\{p_1,\ldots,p_k\})$, i.e., $Q_{i+1},\ldots,Q_n$ can not contain any points in
   these rows (or columns) (see \figref{nested-crossing-ears-i}).  
   Therefore, when summing $\sum_{i=1}^n |Q_i|$,
   the contribution of points that are not alone in their row or column
   is at most $2n$.  We therefore assume that each $Q_i$ contains at most
-  one point from each row and column, which now implies that each $Q_i$
+  one point from each row and column.  Since the rules for $\nested$ imply
+  that $Q_i$ is non-decreasing, this implies that each $Q_i$
   is an increasing set of points.
 
   \begin{figure}[hbtp]
@@ -813,10 +812,12 @@ $y_0<y_1$ and $x_0<x_1$.
    with $x$-coordinate equal to $\x(r)$ (as in \figref{nested-ears-david}(a))
    then we define $q$ to be the highest such point.  Otherwise
    (as in \figref{nested-ears-david}(b)), we define $q$ to be the
-   rightmost point with $y$-coordinate $\y(r)$.  Now, observe that
+   rightmost point with $y$-coordinate $\y(r)$ (note that this includes the
+   case where $p=r$).  Now, observe that
    $\killed(\{\nested,\ears,\david\}, \{p,q,r\}) \supseteq Q_i\setminus
    \{p,q\}$, so $p$ and $q$ are the only points of $Q_i$ that can appear
-   again in $Q_{i+1},\ldots,Q_n$.
+   again in $Q_{i+1},\ldots,Q_n$. (Note that \figref{nested-ears-david} only illustrates the case in which $y(p)=x(r)$; if $y(p) < x(r)$, then even $p$
+   is contained in $\killed(\{\nested,\ears,\david\}, \{p,q,r\}$.)
    \begin{figure}
      \centering{
        \begin{tabular}{cc}
@@ -842,7 +843,7 @@ $y_0<y_1$ and $x_0<x_1$.
    Then, as argued in the proof of \thmref{taco-nested-david}, it must be
    that $a,b,c\in Q_i'$ for some $i$.  However, this contradicts the fact
    (due to $\nested$) that $Q_i$ is non-decreasing since the leftmost
-   point, $b'$, of $Q_i$ in the same row as $b$ is to the left of $b$
+   point, $b'$, of $Q_i$ in the same row as $b$ is to the left of $a$
    (see \figref{nested-ears-david-ii}).
 
    \begin{figure}
@@ -944,8 +945,8 @@ bounds on $\ex'(n,\{\swords, \taco\})$ and $\ex'(n,\{\swords, \nested\})$.
 We begin with another lemma about forbidden configurations of points
 that is similar to \lemref{forbidden}.  We say that a point $(x_i,y_i)$
 \emph{SE-dominates} a point $(x_j,y_j)$ if $x_i > x_j$ and $y_i < y_j$.
-We say that three points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c=(x_1,y_1)$
-form a \emph{lazy-$L$-configuration} if $y_1>y_0$ and $c$ SE-dominates
+We say that three points $a=(x_0,y_0)$, $b=(x_0,y_1)$, and $c$
+form an \emph{obtuse-$L$-configuration} if $y_1<y_0$ and $c$ SE-dominates
 $b$.
 
 \begin{figure}
@@ -956,7 +957,7 @@ $b$.
 
 \begin{lem}\lemlabel{forbidden-ii}
    Let $S$ be a subset of $\{1,\ldots,n\}^2$ with no three points $a$,
-   $b$, and $c$ forming a lazy-$L$-configuration.  Then $|S|\le 3n$.
+   $b$, and $c$ forming an obtuse-$L$-configuration.  Then $|S|\le 3n$.
 \end{lem}
 
 \begin{proof}
@@ -968,7 +969,7 @@ $b$.
   is true, observe that if some column of $P\setminus S$ contains two
   points $a$ and $b$ with $a$ above $b$, then at least one point $c$
   in $P$ SE-dominates $b$, so that $a$, $b$, and $c$ would form the
-  lazy-$L$-configuration.
+  obtuse-$L$-configuration.
 \end{proof}
 
 \begin{thm}\thmlabel{taco-swords}
@@ -980,11 +981,11 @@ $b$.
   \centerline{\includegraphics[height=3cm]{figs/helper-6}} Let
   $S=\bigcup_{i=1}^n Q_i$. Then the rules for $\taco$ imply that
   $|S|=\sum_{i=1}^n |Q_i|$, so it suffices to bound~$|S|$.  We claim that
-  $S$ contains no lazy-$L$-configuration so, by \lemref{forbidden-ii},
+  $S$ contains no obtuse-$L$-configuration so, by \lemref{forbidden-ii},
   $|S|\le 3n$.
 
-  Suppose there were $a\in Q_i$, $b\in Q_j$, and $c\in Q_k$ forming a
-  lazy-$L$-configuration.  Now, $a\in\killed(\{\swords\}, \{c\})$ and
+  Suppose there were $a\in Q_i$, $b\in Q_j$, and $c\in Q_k$ forming an
+  obtuse-$L$-configuration.  Now, $a\in\killed(\{\swords\}, \{c\})$ and
   $c\in\killed(\{\swords\}, \{a\})$, so it must be that $i=k$.  The same
   argument, applied to $b$ and $c$, implies that $j=k$, so $i=j=k$.
   But this is a contradiction since the rules for $\taco$ imply that
@@ -1018,15 +1019,8 @@ $b$.
    $S$ from each column and what remains is the set $A$.  Observe that,
    since $S$ is non-decreasing, $A$ contains at most one point per row.
    Imagine directing the edges of $G[A]$ from right to left (top to
-   bottom).  Then, since each row contains at most one point of $A$, the
-   resulting directed graph has maximum in-degree 1.  This directed graph
-   is also obviously acyclic, so there is an ordering $v_1,\ldots,v_{|A|}$
-   of $A$ such that, for every $i\in\{1,\ldots,|A|\}$, $v_i$ is adjacent
-   in $G[A]$ to at most one of $v_1,\ldots,v_{i-1}$.  We can therefore
-   greedily 2-colour $G[A]$ by colouring $v_1,\ldots,v_{|A|}$ in order and,
-   when colouring~$v_i$, we use any colour in $\{1,2\}$ not already used
-   by $v_i$'s at most one neighbour in $v_1,\ldots,v_{i-1}$.
-
+   bottom).  This directed graph is obviously acyclic and, since each row contains at most one point of $A$, has maximum in-degree 1.  Therefore $G[A]$
+   is a forest and can be 2-coloured using the colours $\{1,2\}$. 
    \begin{figure}
       \centering{
        \begin{tabular}{ccc}
@@ -1040,19 +1034,19 @@ $b$.
                \thmref{nested-swords}.}
       \figlabel{four-colouring}
    \end{figure}
-   The graph $G[B] = G[S\setminus A]$ can be 2-coloured in a similar
-   manner using the fact that each column contains at most most one
-   point of $B$.
+   By a similar argument, using the fact that each column contains at
+   most one point of $B$, the graph $G[B] = G[S\setminus A]$ can be
+   2-coloured using the colours $\{3,4\}$.
 
-   The 4-colouring of $G$ partitions $S$ into 4 colour classes
+   The resulting 4-colouring of $G$ partitions $S$ into 4 colour classes
    $S_1,\ldots,S_4$.  We now argue that each of these colour
    classes contributes $O(n)$ to $\sum_{i=1}^n|Q_i|$.
-   Consider a (new) directed graph $H_j=(S_j,E)$ that
+   Consider a (new) directed graph $H_j=(S_j,E_j)$ that
    contains the edge $\overrightarrow{uw}$ if and only if
    $u$ kills $w$, i.e., $w\in\killed(\{\nested,\swords\},\{u\})$.
    We claim that this graph is \emph{complete}, i.e., for any $u,w\in
    S_j$ at least one of $\overrightarrow{uw}$ or $\overrightarrow{wu}$ is
-   in $E$.  To see why this is so, consider any two distinct points $u,w\in S_j$
+   in $E_j$.  To see why this is so, consider any two distinct points $u,w\in S_j$
    with $u=(x_0,y_0)$ and $w=(x_1,y_1)$.  Since $S$ (and hence $S_j$)
    is non-decreasing, we may assume without loss of generality that
    $x_0\le x_1$ and $y_0\le y_1$.
@@ -1067,7 +1061,7 @@ $b$.
       are assigned different colours and at most one of them is $j$.
   \end{enumerate}
 
-  Suppose now that $H$ contains a directed cycle
+  Suppose now that $H_j$ contains a directed cycle
   $C=u_0,\ldots,u_{\ell-1}$.  Since the points in
   this cycle all kill each other, i.e., $u_{k+1\bmod
   \ell}\in\killed(\{\nested,\swords\},\{u_k\})$), it must be
@@ -1076,8 +1070,8 @@ $b$.
   $V(C)\subseteq Q_{i'}$ and $V(C)\cap Q_{j'}=\emptyset$ for all
   $j'\in\{1,\ldots,n\}\setminus \{i'\}$.
 
-  Now, if we repeatedly find a cycle in $H$ and remove its vertices, we
-  will eventually be left with an acyclic subgraph $H'$ with vertex set
+  Now, if we repeatedly find a cycle in $H_j$ and remove its vertices, we
+  will eventually be left with an acyclic subgraph $H_j'$ with vertex set
   is $S'_j\subseteq S_j$.  From the preceding discussion, we know that
   each cycle vertex we remove contributes only 1 to $\sum_{i=1}^n |Q_i|$:
   \[
@@ -1085,16 +1079,15 @@ $b$.
              = |S_j\setminus S_j'| \borisspace .
   \]
 
-  Finally, we are left with the complete acyclic subgraph $H'$ with vertex
+  Finally, we are left with the complete acyclic subgraph $H_j'$ with vertex
   set $S_j'$ and whose topological sort order we denote by $\prec$.  Now,
-  if $Q_i$ contains $k_i$ vertices $v_1\prec\cdots\prec v_{k_i}$ 
-  of $H'$, then $v_1$ kills all of $v_2,\ldots,v_{k_i}$ so that these
+  if $Q_i$ contains vertices $v_1\prec\cdots\prec v_{k}$ 
+  of $H_j'$, then $v_1$ kills all of $v_2,\ldots,v_{k}$ so that these
   vertices can not appear in any $Q_{i'}$ with $i'>i$.  This implies that
   \[
-      \sum_{i=1}^n (|S_j'\cap Q_i|-1) =
-      \sum_{i=1}^n (k_i-1) \le |S_j'| \borisspace ,
+      \sum_{i=1}^n (|S_j'\cap Q_i|-1) \le |S_j'| \borisspace ,
   \]
-  so $\sum_{i=1}^n k_i \le |S_j'|+n$.  Putting everything together, we have
+  so $\sum_{i=1}^n |S_j'\cap Q_i| \le |S_j'|+n$.  Putting everything together, we have
   \begin{align*}
      \sum_{i=1}^n|Q_i| 
          & = \sum_{j=1}^4\left(\sum_{i=1}^n |Q_i\cap S_j|\right) \\
@@ -1195,11 +1188,14 @@ partition into matchings given by
 Thus, any upper bound for the induced-matching problem is also an upper bound
 on the size of a 2-comparable set of triples.
 
-Known upper bounds for the induced matching problem are barely subquadratic,
-with the current record being held by Fox's improved version of the
-triangle removal lemma \cite{fox:new}, which gives an upper bound
-of $n^{2}/e^{\Omega(\log^* n)}$.  See the discussion, for example,
-in Gowers and Long \cite{gowers.long:length}.
+Known upper bounds for the induced matching problem are barely
+subquadratic, with the current record being held by Fox's improved
+version of the triangle removal lemma \cite{fox:new}, which gives an
+upper bound of $n^{2}/e^{\Omega(\log^* n)}$.  See the discussion, for
+example, in Gowers and Long \cite{gowers.long:length}.  Lower bounds for
+the induced matching problem are surprisingly high; a result of Behrend
+\cite{behrend:on} can be used to construct $n$ vertex graphs with 
+$n^2/e^{O(\sqrt{\log n})}$ edges that can be decomposed into induced matchings.
 
 \begin{thm}[Fox \cite{fox:new}]\thmlabel{taco-nested-ub}
   $\ex'(n,\{\taco,\nested\}) \in n^2/e^{\Omega(\log^* n)}$.
@@ -1258,11 +1254,11 @@ caused by $\bat$ and $\ears$ do not affect the lower-right quadrant.
 \subsection{Lower Bounds}
 \seclabel{lower-bounds}
 
-Finally, we clean up with some $\Omega(n^2)$ lower bound constructions.
+Finally, we finish up with some $\Omega(n^2)$ lower bound constructions.
 In each case, a matching upper bound follows from one of the results in
 Bra\ss\ \cite{brass:turan}.  The following are essentially ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot puzzle.
 
-\begin{thm}\thmlabel{taco-david-bat-ears}
+\begin{thm}\thmlabel{taco-david-crossing-bat-ears}\label{dilwad}
 $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.
 \end{thm}
 
@@ -1285,7 +1281,7 @@ $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i+1\}$.
    \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-3}
 }
    We take $Q_1=\{(x,y)\in Q: x>n/2, y<n/2\}$ and
-   set $Q_2=Q_3=\cdots Q_n=\emptyset$.
+   set $Q_2=Q_3=\cdots=Q_n=\emptyset$.
 \end{proof}
 
 \begin{thm}\thmlabel{david-nested-crossing}
@@ -1296,7 +1292,7 @@ $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i+1\}$.
    \centerline{\includegraphics[height=3cm]{figs/helper-18}
    \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-5}}
    We repeatedly take every second point on the diagonal $y=x-1$, i.e.,
-   for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j,2j-1): j\in\{1,\ldots,\lfloor n/2\rfloor\}\}$.
+   for each $i\in\{1,\ldots,n\}$, $Q_i=\{(2j,2j-1): j\in\{1,\ldots,n/2\}\}$.
 \end{proof}
 
 %\noindent TODO: The following proof is wrong, and the theorem may be incorrect.  If so, it leaves exactly one hole in our table.
@@ -1320,7 +1316,7 @@ $Q'=\{n/2,\ldots,n\}^2$ on the line $\{(x,y):y=3n/2-x-i+1\}$.
    \centerline{\includegraphics[height=3cm]{figs/helper-19}
    \hspace{2cm}\includegraphics[height=3cm]{figs/lower-bounds-6}}
    We repeatedly take points on the diagonal of the lower-right quadrant,
-   i.e., for each $i\in\{1,\ldots,n\}$, we take $Q_i=\{(\lfloor n/2\rfloor+i,i): i\in\{1,\ldots,\lceil n/2\rceil \}$.
+   i.e., for each $i\in\{1,\ldots,n\}$, we take $Q_i=\{(n/2+i,i): i\in\{1,\ldots,n/2\}$.
 \end{proof}
 
 \section*{Acknowledgement}

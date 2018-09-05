@@ -94,31 +94,35 @@ def make_table(fp, upper_bounds, lower_bounds, old_upper_bounds=None,
         fp.write(r'$\rule{0mm}{1em}$')
         for c in cols:
             x = r|c
-            if upper_bounds[x] == lower_bounds[x]:
+            if upper_bounds[x][0] == lower_bounds[x][0]:
                 colour = 'green'
+                tight += 1
             else:
                 colour = 'red'
 
             modifier = ''
-            if old_upper_bounds[x] == upper_bounds[x] \
-                  and old_lower_bounds[x] == lower_bounds[x]:
+            if old_upper_bounds[x][0] == upper_bounds[x][0] \
+                  and old_lower_bounds[x][0] == lower_bounds[x][0]:
                 opacity = 10
             else:
                 opacity = 40
-                if old_upper_bounds[x] > 1 and upper_bounds[x] == 1:
+                if old_upper_bounds[x][0] > 1 and upper_bounds[x][0] == 1:
                     modifier='^*'
 
-            if 1 < lower_bounds[x] < 2:
+            if 1 < lower_bounds[x][0] < 2:
                 fp.write(r'&\cellcolor{{{}!{}}}tripods'.format(colour, opacity))
-            elif upper_bounds[x] == lower_bounds[x]:
-                fp.write(r'&\cellcolor{{{}!{}}}${}{}$'.format(colour, opacity,
-                                                            format_exponent(upper_bounds[x]),
-                                                            modifier))
-                tight += 1
+            elif upper_bounds[x][0] == lower_bounds[x][0]:
+                fp.write(r'&\cellcolor{{{}!{}}}${}{}$\newline {}:{}'.format(colour, opacity,
+                                                            format_exponent(upper_bounds[x][0]),
+                                                            modifier,
+                                                            lower_bounds[x][1],
+                                                            upper_bounds[x][1]))
             else:
-                fp.write(r'&\cellcolor{{{}!{}}}${}:{}$'.format(colour, opacity,
-                                                         format_exponent(lower_bounds[x]),
-                                                         format_exponent(upper_bounds[x])))
+                fp.write(r'&\cellcolor{{{}!{}}}${}:{}$\newline {}:{}'.format(colour, opacity,
+                                                         format_exponent(lower_bounds[x][0]),
+                                                         format_exponent(upper_bounds[x][0]),
+                                                         lower_bounds[x][1],
+                                                         upper_bounds[x][1]))
         fp.write(r'\\ \hline' + '\n')
     fp.write(r'\end{tabular}')
     print("Found {} tight bounds".format(tight))
@@ -129,14 +133,14 @@ def close_bounds(upper_bounds, lower_bounds):
     for k in list(upper_bounds.keys()):
         s = unpack(k)
         x = pack_set(s ^ {mariposa})
-        if x in upper_bounds and upper_bounds[x] < upper_bounds[k]:
+        if x in upper_bounds and upper_bounds[x][0] < upper_bounds[k][0]:
             upper_bounds[k] = upper_bounds[x]
         upper_bounds[x] = upper_bounds[k]
 
     for k in list(lower_bounds.keys()):
         s = unpack(k)
         x = pack_set(s ^ {mariposa})
-        if x in lower_bounds and lower_bounds[x] > lower_bounds[k]:
+        if x in lower_bounds and lower_bounds[x][0] > lower_bounds[k][0]:
             lower_bounds[k] = lower_bounds[x]
         lower_bounds[x] = lower_bounds[k]
 
@@ -146,7 +150,7 @@ def close_bounds(upper_bounds, lower_bounds):
         others = set(range(8)) - these
         for s in powerset(others):
             x = pack_set(these|set(s))
-            if x not in upper_bounds or upper_bounds[x] > upper_bounds[k]:
+            if x not in upper_bounds or upper_bounds[x][0] > upper_bounds[k][0]:
                 upper_bounds[x] = upper_bounds[k]
 
     # Create all lower bounds inherited by subset relationship
@@ -154,7 +158,7 @@ def close_bounds(upper_bounds, lower_bounds):
         these = set(unpack(k))
         for s in powerset(these):
             x = pack_set(s)
-            if x not in lower_bounds or lower_bounds[x] < lower_bounds[k]:
+            if x not in lower_bounds or lower_bounds[x][0] < lower_bounds[k][0]:
                 lower_bounds[x] = lower_bounds[k]
 
 
@@ -164,32 +168,32 @@ if __name__ == "__main__":
     lower_bounds = dict()
 
     # Trivial stuff
-    upper_bounds[pack_set([])] = 3  # empty set is Theta(n^3)
-    upper_bounds[pack_set(range(8))] = 0  # complete set is Theta(1)
+    upper_bounds[pack_set([])] = (3, 'F')  # empty set is Theta(n^3)
+    upper_bounds[pack_set(range(8))] = (0, 'F')  # complete set is Theta(1)
 
     # These are all due to Brass
-    upper_bounds[pack(mariposa)] = 3
-    upper_bounds[pack(taco)] = 2
+    upper_bounds[pack(mariposa)] = (3, r'\cite{brass:turan}')
+    upper_bounds[pack(taco)] = (2, r'\cite{brass:turan}')
 
-    upper_bounds[pack(bat)] = 3
-    upper_bounds[pack(nested)] = 2
-    upper_bounds[pack(crossing)] = 2
+    upper_bounds[pack(bat)] = (3, r'\cite{brass:turan}')
+    upper_bounds[pack(nested)] = (2, r'\cite{brass:turan}')
+    upper_bounds[pack(crossing)] = (2, r'\cite{brass:turan}')
 
-    upper_bounds[pack(ears)] = 3
-    upper_bounds[pack(swords)] = 2
-    upper_bounds[pack(david)] = 2
+    upper_bounds[pack(ears)] = (3, r'\cite{brass:turan}')
+    upper_bounds[pack(swords)] = (2, r'\cite{brass:turan}')
+    upper_bounds[pack(david)] = (2, r'\cite{brass:turan}')
 
-    upper_bounds[pack(bat, nested)] = 2
-    upper_bounds[pack(nested, crossing)] = 2
-    upper_bounds[pack(bat, crossing)] = 2
+    upper_bounds[pack(bat, nested)] = (2, r'\cite{brass:turan}')
+    upper_bounds[pack(nested, crossing)] = (2, r'\cite{brass:turan}')
+    upper_bounds[pack(bat, crossing)] = (2, r'\cite{brass:turan}')
 
     # This is Brass, Rote, and Swanepoel
-    upper_bounds[pack(ears, swords, bat, nested)] = 1
+    upper_bounds[pack(ears, swords, bat, nested)] = (1, r'\cite{brass.rote.ea:triangles}')
 
     # These are inherited from hypergraphs
-    upper_bounds[pack(bat, nested, crossing)] = 1
-    upper_bounds[pack(taco, mariposa)] = 2
-    upper_bounds[pack(ears, swords, david)] = 2
+    upper_bounds[pack(bat, nested, crossing)] = (1, 'H')
+    upper_bounds[pack(taco)] = (2, 'H')
+    upper_bounds[pack(ears, swords, david)] = (2, ('H'))
 
     # Up to here, everything is tight, so copy this to the lower bounds
     for k in upper_bounds:
@@ -197,43 +201,65 @@ if __name__ == "__main__":
 
     # We have Omega(n) lower bounds for most everything
     s = set(range(8))-{mariposa}
-    upper_bounds[pack_set(s)] = 0
+    upper_bounds[pack_set(s)] = (0, 'F')
     for t in s:
-        lower_bounds[pack_set(s-{t})] = 1
+        lower_bounds[pack_set(s-{t})] = (1, r'T\ref{thm:linear-lower}')
 
+    for k in upper_bounds:
+        if not type(upper_bounds[k]) is tuple:
+            print(k, type(upper_bounds[k]))
+
+    for k in lower_bounds:
+        if not type(lower_bounds[k]) is tuple:
+            print(k, type(lower_bounds[k]))
 
     close_bounds(upper_bounds, lower_bounds)
     fp = open("oldbounds.tex", "w")
     make_table(fp, upper_bounds, lower_bounds)
     fp.close()
 
+    for k in upper_bounds:
+        if not type(upper_bounds[k]) is tuple:
+            print(k, type(upper_bounds[k]))
+
+    for k in lower_bounds:
+        if not type(lower_bounds[k]) is tuple:
+            print(k, type(lower_bounds[k]))
+
     old_upper_bounds = dict(upper_bounds)
     old_lower_bounds = dict(lower_bounds)
 
     # New Upper bounds based on swords
-    upper_bounds[pack(taco, swords)] = 1
-    upper_bounds[pack(nested, swords)] = 1
-    upper_bounds[pack(crossing, swords)] = 1
+    upper_bounds[pack(taco, swords)] = (1, r'T\ref{thm:taco-swords}')
+    upper_bounds[pack(nested, swords)] = (1, r'T\ref{thm:nested-swords}')
+    upper_bounds[pack(crossing, swords)] = (1, r'T\ref{thm:crossing-swords}')
 
     # New linear upper bounds
-    upper_bounds[pack(taco, nested, crossing)] = 1
-    upper_bounds[pack(nested, crossing, ears)] = 1
-    upper_bounds[pack(taco, nested, david)] = 1
-    upper_bounds[pack(nested, ears, david)] = 1 # (2)
-    upper_bounds[pack(nested, bat, david)] = 1  # false, replaced by (1)
+    upper_bounds[pack(taco, nested, crossing)] = (1, r'T\ref{thm:taco-nested-crossing}')
+    upper_bounds[pack(nested, crossing, ears)] = (1, r'T\ref{thm:nested-crossing-ears}')
+    upper_bounds[pack(taco, nested, david)] = (1, r'T\ref{thm:taco-nested-david}')
+    upper_bounds[pack(nested, ears, david)] = (1, r'T\ref{thm:nested-ears-david}') # (2)
+    upper_bounds[pack(nested, bat, david)] = (1, r'T\ref{thm:nested-bat-david}')  # new, replaces (1)
 
     # Upper bounds based on tripod packing
-    lower_bounds[pack(taco, nested, bat, ears)] = 1.546  # Gowers and Long
-    upper_bounds[pack(taco, nested)] = 2 # Induced matchings
+    lower_bounds[pack(taco, nested, bat, ears)] = (1.546, r'\cite{gowers.long:length}')  # Gowers and Long
+    upper_bounds[pack(taco, nested)] = (2, r'\cite{ruzsa.szemeredi:triple}') # Induced matchings
 
     # New lower bounds
-    lower_bounds[pack(ears, bat, mariposa)] = 3
-    lower_bounds[pack(taco, david, crossing, bat, ears)] = 2
-    lower_bounds[pack(swords, bat, ears, david)] = 2
+    lower_bounds[pack(ears, bat)] = (3, r'T\ref{thm:pairwise-crossing}')
+    lower_bounds[pack(taco, david, crossing, bat, ears)] = (2, r'T\ref{dilwad}')
+    lower_bounds[pack(swords, bat, ears, david)] = (2, r'T\ref{thm:swords-bat-ears-david}')
     # lower_bounds[pack(nested, ears, david)] = 2 # incorrect, replaced by (2)
-    lower_bounds[pack(david, nested, crossing)] = 2
-    #lower_bounds[pack(nested, bat, david)] = 1 # 2  # (1)
-    lower_bounds[pack(bat, nested, ears)] = 2
+    lower_bounds[pack(david, nested, crossing)] = (2, r'T\ref{thm:david-nested-crossing}')
+    #lower_bounds[pack(nested, bat, david)] = 2  # (1)
+    lower_bounds[pack(bat, nested, ears)] = (2, r'T\ref{thm:bat-nested-ears}')
+    for k in upper_bounds:
+        if not type(upper_bounds[k]) is tuple:
+            print(k, type(upper_bounds[k]))
+
+    for k in lower_bounds:
+        if not type(lower_bounds[k]) is tuple:
+            print(k, type(lower_bounds[k]))
 
     close_bounds(upper_bounds, lower_bounds)
 

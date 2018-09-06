@@ -880,12 +880,12 @@ $y_0<y_1$ and $x_0<x_1$.
   $\nested$ imply that $Q_i$ is non-decreasing.  Consider the following
   subsets of $Q_i$:
   \begin{enumerate}
-    \item the set $L_i$ of points in the left-most column of $Q_i$;
-    \item the set $T_i$ of points in the top-most row of $Q_i$; 
-    \item the set $B_i$ of points in the bottom-most row of $Q_i$; and 
+    \item the set $L_i$ of points in the leftmost column of $Q_i$;
+    \item the set $T_i$ of points in the topmost row of $Q_i$; 
+    \item the set $B_i$ of points in the bottommost row of $Q_i$; and 
     \item the set $N_i=Q_i\setminus(L_i\cup T_i\cup B_i)$.
   \end{enumerate}
-  Let $p_i$ denote the lowest left-most point of $Q_i$ (the unique point
+  Let $p_i$ denote the lowest leftmost point of $Q_i$ (the unique point
   in $B_i\cap L_i$).  The rule for $\bat$ implies that every point of
   $N_i$ is contained in $\killed(\{\david\},\{p_i\})$.
   
@@ -914,15 +914,20 @@ $y_0<y_1$ and $x_0<x_1$.
     \figlabel{nested-bat-david}
   \end{figure}
 
-  Now we let $S=\bigcup_{i=1}^n Q_i$.  We claim that $S$ fulfills the
-  requirements of \lemref{forbidden}.  To see why this is so, note that
-  if two points $a$ and $b$ of $S$ are in the same column then they
-  must have been played in different rounds.  Assume $b$ is above $a$,
-  which implies that $b$ was played in a later round than $a$.  Then, if
-  there is some point $c$ to the right of $b$, then $c$ must have been played
-  during the same round as $b$ or later.  But this implies that $c$ was
-  played in a later round than $a$, which is not possible, since $c$ is in
-  $a$'s $\david$-region.  Therefore, by \lemref{forbidden}, $|S|\le 2n$.
+  For each $i\in\{1,\ldots,n\}$, let $Q_i'$ be the subset of $Q_i$
+  obtained by removing the leftmost point in each row and observe
+  that $Q_i'$ is an increasing set of points.  By the preceding
+  discussions $\sum_{i=1}^n|Q_i| \le 4n+\sum_{i=1}^n|Q_i'|$.  Let
+  $S=\bigcup_{i=1}^n Q_i'$.  We claim that $S$ fulfills the requirements
+  of \lemref{forbidden}.  To see why this is so, note that, since each
+  $Q_i'$ is an increasing set, if two points $a$ and $b$ of $S$ are in
+  the same column then they must have been played in different rounds.
+  Assume $b$ is above $a$, which implies that $b$ was played in a later
+  round than $a$.  Then, if there is some point $c$ to the right of $b$,
+  then $c$ must have been played during the same round as $b$ or later.
+  But this implies that $c$ was played in a later round than $a$, which
+  is not possible, since $c$ is in $a$'s $\david$-region.  Therefore,
+  by \lemref{forbidden}, $|S|\le 2n$.
 
   All that remains is to account for points in $S$ that are played
   multiple times.  In each $Q_i$ there are at most two points that can
@@ -933,7 +938,12 @@ $y_0<y_1$ and $x_0<x_1$.
   most two such points and the total contribution of these points to
   $\sum_{i=1}^n |Q_i|$ is at most $2n$.
 
-  In total, we obtain an upper bound of $4n + |S|+2n\le 8n$ on $\sum_{i=1}^n |Q_i|$.
+  In summary,
+  \[
+    \sum_{i=1}^n |Q_i| \le 
+    4n+\sum_{i=1}^n |Q_i'| \le  
+    4n+2n + |S| \le 8n \borisspace . \qedhere
+  \]
 \end{proof}
 
 

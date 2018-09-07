@@ -157,8 +157,9 @@ of triangles in a triangulation of a convex $n$-gon, i.e., $n-2$.
 
 Since there are eight possible forbidden configurations, there are
 $2^8=256$ sets $X$ for which we can study $\ex(n,X)$.  Some of these sets
-have been previously studied.  Bra\ss, Rote, and Swanepoel used bounds for
-the set $X=\{\ears,\swords,\bat,\nested\}$ to solve an Erd\H{o}s problem
+have been previously studied.  Bra\ss, Rote, and Swanepoel showed that
+$\ex(n,\{\ears,\swords,\bat,\nested\})\le n$ in order to solve an 
+Erd\H{o}s problem
 on the maximum number of maximum area/perimeter triangles determined
 by a point set. Bra\ss\ \cite{brass:turan} later began a systematic
 study in which he gave asymptotically tight bounds on $\ex(n,X)$ for all
@@ -205,7 +206,7 @@ relationship: $\ex(n,X) \le \ex(n,Y)$ for any $X\supseteq Y$.
 apply this exhaustively to the list of previous results.  Each entry in
 this table presents the asymptotic behaviour of $\ex(n,X)$ for the set
 $X$ obtained as the union of the row and column label.  Asymptotically
-tight bounds are coloured blue, and gaps between lower and upper bounds
+tight bounds are coloured green, and gaps between lower and upper bounds
 are coloured red. Previous results imply 35 tight bounds for 256 of the
 possible choices of $X$.  The configuration $\mariposa$ is omitted from
 the table since a simple argument (\lemref{xcup}) shows that its inclusion
@@ -617,7 +618,7 @@ allowed in subsequent rounds ensure that, after round $i$ any points
 chosen are not below or to the left of the topmost-rightmost point
 in $Q_i$.  Taken together, these rules imply that
 \[
-    \sum_{i=1}^n|Q_i| \le 3n-4 \borisspace ,
+    \ex'(n,\{\ears,\swords,\bat,\nested\})\le \sum_{i=1}^n|Q_i| \le 3n-4 \borisspace ,
 \]
 since the union of $Q_i$ is a non-decreasing point set (whose size is
 therefore at most $2n-3$), and each $Q_i$ shares at most one point with
@@ -647,9 +648,9 @@ $\x(q)$ and $\y(q)$ to denote the x- and y-coordinates of $q$.
   Taking the union of the rules for $\taco$, $\nested$, and $\crossing$,
   we obtain the rule which ensures that during subsequent rounds we can
   not take a point from any column or row used in a previous round.
-  The rules for $\nested$ and $\taco$ ensure that the set of points
-  taken in each $Q_i$ is increasing. In particular each $Q_i$ contains at most
-  one point in each row.  Therefore each new point played
+  The rules for $\taco$ ensure that the set of points taken in each $Q_i$
+  includes at most one point in each row (or column).
+  Therefore each new point played
   can be charged to a unique row, so the total number of points played
   is at most $n$.
 \end{proof}
@@ -735,16 +736,15 @@ $y_0<y_1$ and $x_0<x_1$.
   each element of $S$ appears in exactly one $Q_i$, so $|S|=\sum_{i=1}^n
   |Q_i|$ is the quantity we are interested in bounding.
 
-  Next, we claim that $S$ does not contain any three points $a$, $b$, and
-  $c$ forming a $\Gamma$-configuration. Refer
-  to \figref{forbidden}.  Suppose, for the sake of contradiction,
-  that this were not the case and that $a\in Q_i$, $b\in Q_j$, and
-  $c\in Q_k$.  We have $a\in\killed(\{\nested\},\{b\})$ so $i\le j$.
-  We also have $b\in\killed(\{\nested\}, c)$ so $j\le k$.  Finally,
-  we have $c\in\killed(\{\david\}, a)$, so $k \le i$.  Taken together
-  we have, $i\le j\le k\le i$, so it must be that $i=j=k$.  But this
-  is a contradiction since the rule for $\taco$ implies $i\neq j$ (and
-  $j\neq k)$.  Applying \lemref{forbidden} then implies that $|S|\le 2n$.
+  Next, we claim that $S$ does not contain any three points $a$, $b$,
+  and $c$ forming a $\Gamma$-configuration. Refer to \figref{forbidden}.
+  Suppose, for the sake of contradiction, that this were not the
+  case and that $a\in Q_i$, $b\in Q_j$, and $c\in Q_k$.  We have
+  $a\in\killed(\{\nested\},\{b\})$ so $i\le j$ and the rules for $\taco$
+  implies $i\neq j$, so $i<j$.  We also have $b\in\killed(\{\nested\},
+  c)$ so $j\le k$.  Finally, we have $c\in\killed(\{\david\}, a)$, so
+  $k \le i$.  Taken together, this gives the contradiction $i < j \le
+  k \le i$.  Therefore, $S$ contains no $\Gamma$-configuration and applying \lemref{forbidden} then implies that $|S|\le 2n$.
   \begin{figure}[hbtp]
     \centering{
       \includegraphics{figs/forbidden}
@@ -764,8 +764,7 @@ $y_0<y_1$ and $x_0<x_1$.
 
 \begin{proof}
   \centerline{\includegraphics[height=3cm]{figs/helper-8}}
-  Let $S=\bigcup_{i=1}^n Q_i$. We claim that $S$ satisfies the conditions
-  of \lemref{forbidden}, so $|S|\le 2n$.  To see this, assume $S$
+  Let $S=\bigcup_{i=1}^n Q_i$. We claim that $S$ has no $\Gamma$-configuration so, by \lemref{forbidden}, $|S|\le 2n$.  To see this, assume $S$
   contains a $\Gamma$-configuration  $a$, $b$, and $c$. Then the rules
   for $\crossing$ imply that no set $Q_i$ contains both $a$ and $c$.
   However, the rules for $\swords$ and $\crossing$ imply that, if $a\in
@@ -837,8 +836,9 @@ $y_0<y_1$ and $x_0<x_1$.
 
    For each $i\in \{1,\ldots,n\}$, let $Q_i'$ be obtained from $Q_i$ by
    removing the leftmost point in each row.  Let $S'=\bigcup_{i=1}^n
-   Q_i'$.  We claim that $S'$ satisfies the conditions of
-   \lemref{forbidden}, so that $|S'|\le 2n$.  To see why this is so,
+   Q_i'$.  We claim that $S'$ contains no $\Gamma$-configuration so,
+   by 
+   \lemref{forbidden}, $|S'|\le 2n$.  To see why this is so,
    suppose that $S'$ contains a $\Gamma$-configuration $a$, $b$, and $c$.
    Then, as argued in the proof of \thmref{taco-nested-david}, it must be
    that $a,b,c\in Q_i'$ for some $i$.  However, this contradicts the fact
@@ -854,7 +854,7 @@ $y_0<y_1$ and $x_0<x_1$.
      \figlabel{nested-ears-david-ii}
    \end{figure}
 
-   Therefore, $|S'|\le 2n$.   Now let $S''=S\setminus S'$.  Then we
+   Therefore, $|S'|\le 2n$.   Now let $S''=S\setminus S'$.  We
    claim that $S''$ also satisfies the conditions of \lemref{forbidden}.
    Indeed, by the same reasoning as above, if there were $a,b,c\in
    S''$ forming a $\Gamma$-configuration, then it must
@@ -915,19 +915,18 @@ $y_0<y_1$ and $x_0<x_1$.
   \end{figure}
 
   For each $i\in\{1,\ldots,n\}$, let $Q_i'$ be the subset of $Q_i$
-  obtained by removing the leftmost point in each row and observe
-  that $Q_i'$ is an increasing set of points.  By the preceding
-  discussions $\sum_{i=1}^n|Q_i| \le 4n+\sum_{i=1}^n|Q_i'|$.  Let
-  $S=\bigcup_{i=1}^n Q_i'$.  We claim that $S$ fulfills the requirements
-  of \lemref{forbidden}.  To see why this is so, note that, since each
-  $Q_i'$ is an increasing set, if two points $a$ and $b$ of $S$ are in
-  the same column then they must have been played in different rounds.
-  Assume $b$ is above $a$, which implies that $b$ was played in a later
-  round than $a$.  Then, if there is some point $c$ to the right of $b$,
-  then $c$ must have been played during the same round as $b$ or later.
-  But this implies that $c$ was played in a later round than $a$, which
-  is not possible, since $c$ is in $a$'s $\david$-region.  Therefore,
-  by \lemref{forbidden}, $|S|\le 2n$.
+  obtained by removing the leftmost point in each row and observe that
+  $Q_i'$ is an increasing set of points.  By the preceding discussions
+  $\sum_{i=1}^n|Q_i| \le 4n+\sum_{i=1}^n|Q_i'|$.  Let $S=\bigcup_{i=1}^n
+  Q_i'$.  We claim that $S$ contains no $\Gamma$-configuration.
+  To see why this is so, observe that, since each $Q_i'$ is an
+  increasing set, if two points $a\in Q_i'$ and $b\in Q_j'$ of $S$
+  are in the same column then $i\neq j$.  Assume $b$ is above $a$,
+  then $a\in\killed(\{\nested\},\{b\})$ so $i < j$.  Now, if $c\in
+  Q_k'$ is to the right of $b$, then $b\in\killed(\{\nested\},\{c\})$,
+  so $j \le k$. Therefore, $i < j \le k$, but this is not possible
+  since $c\in\killed(\{\david\},\{a\})$, so $k \le i$. Therefore, by
+  \lemref{forbidden}, $|S|\le 2n$.
 
   All that remains is to account for points in $S$ that are played
   multiple times.  In each $Q_i$ there are at most two points that can
@@ -1172,7 +1171,7 @@ who describe a construction of size $\Omega(n^{1.546})$.
   $\ex'(n,\{\taco,\nested\}) \in \Omega(n^{1.546})$.
 \end{thm}
 
-The only known upper bound for this problem come from the fact that a
+The only known upper bound for this problem comes from the fact that a
 solution to this problem gives a solution to the Ruzsa-Szemer{\'e}di
 induced matching problem \cite{ruzsa.szemeredi:triple}.  
 \begin{enumerate}
@@ -1266,7 +1265,7 @@ caused by $\bat$ and $\ears$ do not affect the lower-right quadrant.
 
 Finally, we finish up with some $\Omega(n^2)$ lower bound constructions.
 In each case, a matching upper bound follows from one of the results in
-Bra\ss\ \cite{brass:turan}.  The following are essentially ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot puzzle.
+Bra\ss\ \cite{brass:turan}.  The following are essentially ``proofs by figure'' in which a brief description of the solution is illustrated alongside the rules of each dot puzzle. In order to avoid floors and ceilings, we assume $n$ is even.
 
 \begin{thm}\thmlabel{taco-david-crossing-bat-ears}\label{dilwad}
 $\ex(n,\{\taco,\david,\crossing,\bat,\ears\})\in\Theta(n^2)$.

@@ -143,7 +143,7 @@ We consider the following class of problems:  Given a set, $X$,
 of combinatorial configurations of pairs of triangles, what is the
 size of a largest set, $S$, of triangles one can create whose vertices are $n$
 points in convex position, and such that no pair of triangles in $S$
-forms a configuration in $X$.  We call the size of such a set $\ex(n,X)$.
+forms a configuration in $X$?  We call the size of such a set $\ex(n,X)$.
 For example, 
 \begin{equation}
     \ex(n,\{\taco,\nested,\crossing,\swords,\david\}) = n-2 \borisspace .
@@ -166,6 +166,7 @@ study in which he gave asymptotically tight bounds on $\ex(n,X)$ for all
 singleton $X$ and all pairs $X$ of configurations in which two triangles share
 a single vertex.
 %These previous results are listed in \tabref{previous}.
+
 
 %\begin{table}
 %\centering{
@@ -211,13 +212,15 @@ are coloured red. Previous results imply 35 tight bounds for 256 of the
 possible choices of $X$.  The configuration $\mariposa$ is omitted from
 the table since a simple argument (\lemref{xcup}) shows that its inclusion
 in $X$ does not change $\ex(n,X)$ by more than a constant factor.
+Some of the results in \tabref{smalltable} are marked with an F if they are easy, or folklore. Some others are marked with H if they follow from a corresponding bound for 3-regular hypergraphs. Specifically, if $X$ includes $\{\bat,\nested,\crossing\}$ then no pair of triangles can share a vertex, so $\ex(n,X)\le n/3$ and if $X$ includes $\{\taco,\mariposa\}$ then no pair of triangles can share an edge, so $\ex(n,X)\le \binom{n}{2}$.
+
+
 
 \begin{table}
   \centering{
     \input{oldbounds.tex}
   }
-  \caption{Previous lower and upper bounds for $\ex(n,X)$. T2 denotes a (easy) lower bound of $\Omega(n)$ that appears in \thmref{linear-lower}.  F denotes an obvious, or folklore result. H denotes a bound that follows from the corresponding bound on 3-regular hypergraphs.}
-  \tablabel{smalltable}
+	\caption{Previous lower and upper bounds for $\ex(n,X)$. T2 denotes a (easy) lower bound of $\Omega(n)$ that appears in \thmref{linear-lower}.  F denotes an obvious, or folklore result. H denotes a bound that follows from the corresponding bound on 3-regular hypergraphs.}  \tablabel{smalltable}
 \end{table}
 
 
@@ -806,13 +809,14 @@ $y_0<y_1$ and $x_0<x_1$.
    \[
         Q_i^* = \{ (x,y)\in Q_i : x\ge\max\{y(p):p\in Q_i\} \} \borisspace ,
    \]
-   and let $p$ and $r$ be the top rightmost and bottom leftmost points
-   in $Q_i^*$, respectively.  If there is more than one point in $Q_i^*$
-   with $x$-coordinate equal to $\x(r)$ (as in \figref{nested-ears-david}(a))
-   then we define $q$ to be the highest such point.  Otherwise
-   (as in \figref{nested-ears-david}(b)), we define $q$ to be the
-   rightmost point with $y$-coordinate $\y(r)$ (note that this includes the
-   case where $p=r$).  Now, observe that
+   and let $p$ and $r$ be the top rightmost and bottom leftmost
+   points in $Q_i^*$, respectively.  If there is more than one
+   point in $Q_i^*$ with $x$-coordinate equal to $\x(r)$ (as in
+   \figref{nested-ears-david}(a)) then we define $q$ to be the
+   highest such point (note that this includes the case where $p=r$).
+   Otherwise (as in \figref{nested-ears-david}(b)), we define $q$ to
+   be the rightmost point with $y$-coordinate $\y(r)$ (note that this
+   includes the case where $q=r$).  Now, observe that
    $\killed(\{\nested,\ears,\david\}, \{p,q,r\}) \supseteq Q_i\setminus
    \{p,q\}$, so $p$ and $q$ are the only points of $Q_i$ that can appear
    again in $Q_{i+1},\ldots,Q_n$. (Note that \figref{nested-ears-david} only illustrates the case in which $y(p)=x(r)$; if $y(p) < x(r)$, then even $p$
@@ -891,11 +895,11 @@ $y_0<y_1$ and $x_0<x_1$.
   
   Refer to \figref{nested-bat-david}.  Observe that, for any point $p\in
   N_i$, the entire row containing $p$ is killed in the sense that it is
-  contained in $\killed(\{p_i\},\{\david\})\cup\killed(\{\nested\},\{p\})$.
+  contained in $\killed(\{\david\},\{p_i\})\cup\killed(\{\nested\},\{p\})$.
   Next, let $t_i$ be
   the topmost point in $L_i$ and observe that, for any point $p\in
   L_i\setminus\{t_i,p_i\}$, the entire row containing $p$ is killed by
-  $\killed(\{p_i\},\{\david\})\cup\killed(\{\nested\},\{t_i,p\})$.
+  $\killed(\{\david\},\{p_i\})\cup\killed(\{\nested\},\{t_i,p\})$.
 
   Consider the operation of removing the leftmost point from each
   row of $Q_i$, for each $i\in \{1,\ldots,n\}$.  We claim that
@@ -930,7 +934,7 @@ $y_0<y_1$ and $x_0<x_1$.
 
   All that remains is to account for points in $S$ that are played
   multiple times.  In each $Q_i$ there are at most two points that can
-  be played in subsequent rounds: the topmost point in $L_i$ or the
+  be played in subsequent rounds: the
   rightmost point in $B_i$ and the rightmost point in $T_i$.  We charge
   each occurrence of such repeated points to the rounds in which they
   are these extreme points. In this way, each round is charged for at
@@ -1081,7 +1085,7 @@ $b$.
 
   Now, if we repeatedly find a cycle in $H_j$ and remove its vertices, we
   will eventually be left with an acyclic subgraph $H_j'$ with vertex set
-  is $S'_j\subseteq S_j$.  From the preceding discussion, we know that
+  $S'_j\subseteq S_j$.  From the preceding discussion, we know that
   each cycle vertex we remove contributes only 1 to $\sum_{i=1}^n |Q_i|$:
   \[
         \sum_{i=1}^n |(S_j\setminus S_j')\cap Q_i| 

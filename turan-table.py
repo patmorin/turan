@@ -205,26 +205,10 @@ if __name__ == "__main__":
     for t in s:
         lower_bounds[pack_set(s-{t})] = (1, r'T\ref{thm:linear-lower}')
 
-    for k in upper_bounds:
-        if not type(upper_bounds[k]) is tuple:
-            print(k, type(upper_bounds[k]))
-
-    for k in lower_bounds:
-        if not type(lower_bounds[k]) is tuple:
-            print(k, type(lower_bounds[k]))
-
     close_bounds(upper_bounds, lower_bounds)
     fp = open("oldbounds.tex", "w")
     make_table(fp, upper_bounds, lower_bounds)
     fp.close()
-
-    for k in upper_bounds:
-        if not type(upper_bounds[k]) is tuple:
-            print(k, type(upper_bounds[k]))
-
-    for k in lower_bounds:
-        if not type(lower_bounds[k]) is tuple:
-            print(k, type(lower_bounds[k]))
 
     old_upper_bounds = dict(upper_bounds)
     old_lower_bounds = dict(lower_bounds)
@@ -253,15 +237,30 @@ if __name__ == "__main__":
     lower_bounds[pack(david, nested, crossing)] = (2, r'T\ref{thm:david-nested-crossing}')
     #lower_bounds[pack(nested, bat, david)] = 2  # (1)
     lower_bounds[pack(bat, nested, ears)] = (2, r'T\ref{thm:bat-nested-ears}')
-    for k in upper_bounds:
-        if not type(upper_bounds[k]) is tuple:
-            print(k, type(upper_bounds[k]))
 
+    saved_ubs = dict(upper_bounds)
+    saved_lbs = dict(lower_bounds)
+
+    extremal_ubs = set()
+    for k in upper_bounds:
+        if k in old_upper_bounds and upper_bounds[k] != old_upper_bounds[k]:
+            extremal_ubs.add(k)
+    extremal_lbs = set()
     for k in lower_bounds:
-        if not type(lower_bounds[k]) is tuple:
-            print(k, type(lower_bounds[k]))
+        if k in old_lower_bounds and lower_bounds[k] != old_lower_bounds[k]:
+            extremal_lbs.add(k)
 
     close_bounds(upper_bounds, lower_bounds)
+
+    # Highlight extremal new bounds
+    for k in extremal_ubs:
+        if saved_ubs[k][1].startswith('T'):
+            upper_bounds[k] = (upper_bounds[k][0],
+                               r'\textbf{{{}}}'.format(upper_bounds[k][1]))
+    for k in extremal_lbs:
+        if saved_lbs[k][1].startswith('T'):
+            lower_bounds[k] = (lower_bounds[k][0],
+                               r'\textbf{{{}}}'.format(lower_bounds[k][1]))
 
     fp = open("bounds.tex", "w")
     make_table(fp, upper_bounds, lower_bounds, old_upper_bounds, old_lower_bounds)

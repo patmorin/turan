@@ -79,7 +79,8 @@ def make_table(fp, upper_bounds, lower_bounds, old_upper_bounds=None,
     cols = sorted([pack_set(s) for s in powerset(colcfgs)])[::-1]
     rows = sorted([pack_set(s) for s in powerset(rowcfgs)])[::-1]
     tight = 0
-    fp.write(r'\begin{{tabular}}{{|c@{{\,}}c@{{\,}}c@{{\,}}c{}|}}\hline'.format('|C'*8) + '\n')
+    fp.write(r'\setlength{\tabcolsep}{0mm}')
+    fp.write(r'\begin{{tabular}}{{|@{{\,\,}}c@{{\,}}c@{{\,}}c@{{\,\,}}c@{{\,}}{}|}}\hline'.format('|C'*8) + '\n')
     for i in colcfgs:
         fp.write("&&&&")
         fp.write("&".join([n2s(i, c) for c in cols]))
@@ -125,6 +126,7 @@ def make_table(fp, upper_bounds, lower_bounds, old_upper_bounds=None,
                                                          upper_bounds[x][1]))
         fp.write(r'\\ \hline' + '\n')
     fp.write(r'\end{tabular}')
+    fp.write(r'\setlength{\tabcolsep}{6pt}')
     print("Found {} tight bounds".format(tight))
 
 
